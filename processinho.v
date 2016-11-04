@@ -1,5 +1,5 @@
 /*
- * datapath.v
+ * processinho.v
  * 
  */
  
@@ -7,17 +7,41 @@ module processinho(
 	input clock,
 	input reset,
 	input latch_ula,
-	input[1:0] ula_operation,
-	input[3:0] operando1,
-	input[3:0] operando2,
-	output[7:0] result
+	input[3:0] ula_operation,
+	input[3:0] operando,
+	input setRegA,
+	input setRegB,
+	output[9:0] result,
+	output[7:0] HEX0,
+	output[7:0] HEX1,
+	output[7:0] HEX2,
+	output[7:0] HEX3
 );
 
 wire[7:0]  register_operand;
-wire[15:0] ula_result;
+wire[7:0] ula_result;
+//wire setRegA;
+//wire setRegB;
+wire[3:0] regAValue;
+wire[3:0] regBValue;
 
-ula m_ula(clock, reset, operando1, operando2, ula_operation, ula_result);
+// Registradores de uso geral RegA e RegB
+general_register regA(clock, reset, setRegA, operando, regAValue);
+general_register regB(clock, reset, setRegB, operando, regBValue);
 
-assign result = ula_result;
+// Instancia a ULA
+ula m_ula(clock, reset, regAValue, regBValue, ula_operation, ula_result);
+
+// Coloca o resultado da ula nos displays de 7 segmentos
+BCDdecode display0(ula_result % 10, HEX0);
+BCDdecode display1(ula_result/10 <= 9 ? ula_result/10 : ( (ula_result%100) / 10), HEX1);
+BCDdecode display2 ((ula_result/100 <= 9 ? ula_result/100 : ( (ula_result%1000) / 100)), HEX2);
+BCDdecode display3(8, HEX3);
+
+
+//assign result = ula_result; // Armazena o valor da ula
+//assign result = regAValue;
+assign result = regBValue;
+assign HEX3 = ~HEX3;
 
 endmodule

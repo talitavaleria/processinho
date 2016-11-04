@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for processinho
-Thu Nov  3 16:32:11 2016
+Fri Nov  4 11:18:36 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1.78 SJ Web Edition
 
 
@@ -18,34 +18,36 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1.78 SJ Web E
  10. Slow Model Minimum Pulse Width Summary
  11. Slow Model Setup: 'ula_operation[0]'
  12. Slow Model Hold: 'ula_operation[0]'
- 13. Slow Model Minimum Pulse Width: 'ula_operation[0]'
- 14. Setup Times
- 15. Hold Times
- 16. Clock to Output Times
- 17. Minimum Clock to Output Times
- 18. Fast Model Setup Summary
- 19. Fast Model Hold Summary
- 20. Fast Model Recovery Summary
- 21. Fast Model Removal Summary
- 22. Fast Model Minimum Pulse Width Summary
- 23. Fast Model Setup: 'ula_operation[0]'
- 24. Fast Model Hold: 'ula_operation[0]'
- 25. Fast Model Minimum Pulse Width: 'ula_operation[0]'
- 26. Setup Times
- 27. Hold Times
- 28. Clock to Output Times
- 29. Minimum Clock to Output Times
- 30. Multicorner Timing Analysis Summary
- 31. Setup Times
- 32. Hold Times
- 33. Clock to Output Times
- 34. Minimum Clock to Output Times
- 35. Setup Transfers
- 36. Hold Transfers
- 37. Report TCCS
- 38. Report RSKM
- 39. Unconstrained Paths
- 40. TimeQuest Timing Analyzer Messages
+ 13. Slow Model Minimum Pulse Width: 'clock'
+ 14. Slow Model Minimum Pulse Width: 'ula_operation[0]'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Fast Model Setup Summary
+ 20. Fast Model Hold Summary
+ 21. Fast Model Recovery Summary
+ 22. Fast Model Removal Summary
+ 23. Fast Model Minimum Pulse Width Summary
+ 24. Fast Model Setup: 'ula_operation[0]'
+ 25. Fast Model Hold: 'ula_operation[0]'
+ 26. Fast Model Minimum Pulse Width: 'clock'
+ 27. Fast Model Minimum Pulse Width: 'ula_operation[0]'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Multicorner Timing Analysis Summary
+ 33. Setup Times
+ 34. Hold Times
+ 35. Clock to Output Times
+ 36. Minimum Clock to Output Times
+ 37. Setup Transfers
+ 38. Hold Transfers
+ 39. Report TCCS
+ 40. Report RSKM
+ 41. Unconstrained Paths
+ 42. TimeQuest Timing Analyzer Messages
 
 
 
@@ -97,36 +99,33 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
 ; Clock Name       ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets              ;
 +------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
+; clock            ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock }            ;
 ; ula_operation[0] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { ula_operation[0] } ;
 +------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Slow Model Fmax Summary                                                                                          ;
-+-------------+-----------------+------------------+---------------------------------------------------------------+
-; Fmax        ; Restricted Fmax ; Clock Name       ; Note                                                          ;
-+-------------+-----------------+------------------+---------------------------------------------------------------+
-; 3571.43 MHz ; 380.08 MHz      ; ula_operation[0] ; limit due to minimum period restriction (max I/O toggle rate) ;
-+-------------+-----------------+------------------+---------------------------------------------------------------+
-This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
-
-
-+------------------------------------------+
-; Slow Model Setup Summary                 ;
-+------------------+-------+---------------+
-; Clock            ; Slack ; End Point TNS ;
-+------------------+-------+---------------+
-; ula_operation[0] ; 0.360 ; 0.000         ;
-+------------------+-------+---------------+
+---------------------------
+; Slow Model Fmax Summary ;
+---------------------------
+No paths to report.
 
 
 +-------------------------------------------+
-; Slow Model Hold Summary                   ;
+; Slow Model Setup Summary                  ;
 +------------------+--------+---------------+
 ; Clock            ; Slack  ; End Point TNS ;
 +------------------+--------+---------------+
-; ula_operation[0] ; -1.236 ; -8.397        ;
+; ula_operation[0] ; -1.957 ; -8.696        ;
 +------------------+--------+---------------+
+
+
++------------------------------------------+
+; Slow Model Hold Summary                  ;
++------------------+-------+---------------+
+; Clock            ; Slack ; End Point TNS ;
++------------------+-------+---------------+
+; ula_operation[0] ; 1.067 ; 0.000         ;
++------------------+-------+---------------+
 
 
 -------------------------------
@@ -146,201 +145,273 @@ No paths to report.
 +------------------+--------+---------------+
 ; Clock            ; Slack  ; End Point TNS ;
 +------------------+--------+---------------+
+; clock            ; -1.631 ; -11.407       ;
 ; ula_operation[0] ; -1.631 ; -1.631        ;
 +------------------+--------+---------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Setup: 'ula_operation[0]'                                                                                          ;
-+-------+------------------+---------------------+------------------+------------------+--------------+------------+------------+
-; Slack ; From Node        ; To Node             ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
-+-------+------------------+---------------------+------------------+------------------+--------------+------------+------------+
-; 0.360 ; ula_operation[0] ; ula:m_ula|result[0] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 4.199      ; 3.343      ;
-; 0.437 ; ula_operation[0] ; ula:m_ula|result[2] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 4.197      ; 3.222      ;
-; 0.470 ; ula_operation[0] ; ula:m_ula|result[1] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 4.198      ; 3.229      ;
-; 0.532 ; ula_operation[0] ; ula:m_ula|result[7] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 4.193      ; 3.118      ;
-; 0.594 ; ula_operation[0] ; ula:m_ula|result[4] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 4.200      ; 3.106      ;
-; 0.599 ; ula_operation[0] ; ula:m_ula|result[3] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 4.328      ; 3.092      ;
-; 0.770 ; ula_operation[0] ; ula:m_ula|result[5] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 4.177      ; 3.106      ;
-; 0.821 ; ula_operation[0] ; ula:m_ula|result[6] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 4.196      ; 3.075      ;
-; 0.860 ; ula_operation[0] ; ula:m_ula|result[0] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 4.199      ; 3.343      ;
-; 0.937 ; ula_operation[0] ; ula:m_ula|result[2] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 4.197      ; 3.222      ;
-; 0.970 ; ula_operation[0] ; ula:m_ula|result[1] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 4.198      ; 3.229      ;
-; 1.032 ; ula_operation[0] ; ula:m_ula|result[7] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 4.193      ; 3.118      ;
-; 1.094 ; ula_operation[0] ; ula:m_ula|result[4] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 4.200      ; 3.106      ;
-; 1.099 ; ula_operation[0] ; ula:m_ula|result[3] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 4.328      ; 3.092      ;
-; 1.270 ; ula_operation[0] ; ula:m_ula|result[5] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 4.177      ; 3.106      ;
-; 1.321 ; ula_operation[0] ; ula:m_ula|result[6] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 4.196      ; 3.075      ;
-+-------+------------------+---------------------+------------------+------------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'ula_operation[0]'                                                                                                        ;
++--------+-----------------------------------+---------------------+--------------+------------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node             ; Launch Clock ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+---------------------+--------------+------------------+--------------+------------+------------+
+; -1.957 ; general_register:regA|valueOut[2] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; 0.500        ; 1.099      ; 2.513      ;
+; -1.926 ; general_register:regB|valueOut[0] ; ula:m_ula|result[1] ; clock        ; ula_operation[0] ; 0.500        ; 1.293      ; 2.343      ;
+; -1.883 ; general_register:regB|valueOut[2] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; 0.500        ; 1.099      ; 2.439      ;
+; -1.877 ; general_register:regA|valueOut[0] ; ula:m_ula|result[1] ; clock        ; ula_operation[0] ; 0.500        ; 1.293      ; 2.294      ;
+; -1.865 ; general_register:regB|valueOut[0] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; 0.500        ; 1.099      ; 2.421      ;
+; -1.816 ; general_register:regA|valueOut[0] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; 0.500        ; 1.099      ; 2.372      ;
+; -1.799 ; general_register:regA|valueOut[2] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; 0.500        ; 1.290      ; 2.443      ;
+; -1.776 ; general_register:regA|valueOut[1] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; 0.500        ; 1.099      ; 2.332      ;
+; -1.749 ; general_register:regB|valueOut[1] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; 0.500        ; 1.099      ; 2.305      ;
+; -1.725 ; general_register:regB|valueOut[2] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; 0.500        ; 1.290      ; 2.369      ;
+; -1.707 ; general_register:regB|valueOut[0] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; 0.500        ; 1.290      ; 2.351      ;
+; -1.658 ; general_register:regA|valueOut[0] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; 0.500        ; 1.290      ; 2.302      ;
+; -1.643 ; general_register:regA|valueOut[3] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; 0.500        ; 1.290      ; 2.287      ;
+; -1.618 ; general_register:regA|valueOut[1] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; 0.500        ; 1.290      ; 2.262      ;
+; -1.591 ; general_register:regB|valueOut[1] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; 0.500        ; 1.290      ; 2.235      ;
+; -1.541 ; general_register:regB|valueOut[0] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; 0.500        ; 1.293      ; 2.194      ;
+; -1.492 ; general_register:regA|valueOut[0] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; 0.500        ; 1.293      ; 2.145      ;
+; -1.484 ; general_register:regA|valueOut[1] ; ula:m_ula|result[1] ; clock        ; ula_operation[0] ; 0.500        ; 1.293      ; 1.901      ;
+; -1.473 ; general_register:regB|valueOut[0] ; ula:m_ula|result[0] ; clock        ; ula_operation[0] ; 0.500        ; 1.098      ; 2.263      ;
+; -1.465 ; general_register:regB|valueOut[3] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; 0.500        ; 1.290      ; 2.109      ;
+; -1.453 ; general_register:regB|valueOut[1] ; ula:m_ula|result[1] ; clock        ; ula_operation[0] ; 0.500        ; 1.293      ; 1.870      ;
+; -1.452 ; general_register:regA|valueOut[1] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; 0.500        ; 1.293      ; 2.105      ;
+; -1.444 ; general_register:regA|valueOut[3] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; 0.500        ; 1.099      ; 2.000      ;
+; -1.425 ; general_register:regB|valueOut[1] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; 0.500        ; 1.293      ; 2.078      ;
+; -1.423 ; general_register:regA|valueOut[0] ; ula:m_ula|result[0] ; clock        ; ula_operation[0] ; 0.500        ; 1.098      ; 2.213      ;
+; -1.282 ; general_register:regA|valueOut[2] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; 0.500        ; 1.293      ; 1.935      ;
+; -1.270 ; general_register:regB|valueOut[3] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; 0.500        ; 1.099      ; 1.826      ;
+; -1.207 ; general_register:regB|valueOut[2] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; 0.500        ; 1.293      ; 1.860      ;
++--------+-----------------------------------+---------------------+--------------+------------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Hold: 'ula_operation[0]'                                                                                            ;
-+--------+------------------+---------------------+------------------+------------------+--------------+------------+------------+
-; Slack  ; From Node        ; To Node             ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
-+--------+------------------+---------------------+------------------+------------------+--------------+------------+------------+
-; -1.236 ; ula_operation[0] ; ula:m_ula|result[3] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 4.328      ; 3.092      ;
-; -1.121 ; ula_operation[0] ; ula:m_ula|result[6] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 4.196      ; 3.075      ;
-; -1.094 ; ula_operation[0] ; ula:m_ula|result[4] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 4.200      ; 3.106      ;
-; -1.075 ; ula_operation[0] ; ula:m_ula|result[7] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 4.193      ; 3.118      ;
-; -1.071 ; ula_operation[0] ; ula:m_ula|result[5] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 4.177      ; 3.106      ;
-; -0.975 ; ula_operation[0] ; ula:m_ula|result[2] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 4.197      ; 3.222      ;
-; -0.969 ; ula_operation[0] ; ula:m_ula|result[1] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 4.198      ; 3.229      ;
-; -0.856 ; ula_operation[0] ; ula:m_ula|result[0] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 4.199      ; 3.343      ;
-; -0.736 ; ula_operation[0] ; ula:m_ula|result[3] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 4.328      ; 3.092      ;
-; -0.621 ; ula_operation[0] ; ula:m_ula|result[6] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 4.196      ; 3.075      ;
-; -0.594 ; ula_operation[0] ; ula:m_ula|result[4] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 4.200      ; 3.106      ;
-; -0.575 ; ula_operation[0] ; ula:m_ula|result[7] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 4.193      ; 3.118      ;
-; -0.571 ; ula_operation[0] ; ula:m_ula|result[5] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 4.177      ; 3.106      ;
-; -0.475 ; ula_operation[0] ; ula:m_ula|result[2] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 4.197      ; 3.222      ;
-; -0.469 ; ula_operation[0] ; ula:m_ula|result[1] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 4.198      ; 3.229      ;
-; -0.356 ; ula_operation[0] ; ula:m_ula|result[0] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 4.199      ; 3.343      ;
-+--------+------------------+---------------------+------------------+------------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'ula_operation[0]'                                                                                                        ;
++-------+-----------------------------------+---------------------+--------------+------------------+--------------+------------+------------+
+; Slack ; From Node                         ; To Node             ; Launch Clock ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------+---------------------+--------------+------------------+--------------+------------+------------+
+; 1.067 ; general_register:regB|valueOut[2] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; -0.500       ; 1.293      ; 1.860      ;
+; 1.077 ; general_register:regB|valueOut[1] ; ula:m_ula|result[1] ; clock        ; ula_operation[0] ; -0.500       ; 1.293      ; 1.870      ;
+; 1.108 ; general_register:regA|valueOut[1] ; ula:m_ula|result[1] ; clock        ; ula_operation[0] ; -0.500       ; 1.293      ; 1.901      ;
+; 1.142 ; general_register:regA|valueOut[2] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; -0.500       ; 1.293      ; 1.935      ;
+; 1.227 ; general_register:regB|valueOut[3] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; -0.500       ; 1.099      ; 1.826      ;
+; 1.285 ; general_register:regB|valueOut[1] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; -0.500       ; 1.293      ; 2.078      ;
+; 1.312 ; general_register:regA|valueOut[1] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; -0.500       ; 1.293      ; 2.105      ;
+; 1.319 ; general_register:regB|valueOut[3] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; -0.500       ; 1.290      ; 2.109      ;
+; 1.352 ; general_register:regA|valueOut[0] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; -0.500       ; 1.293      ; 2.145      ;
+; 1.401 ; general_register:regA|valueOut[3] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; -0.500       ; 1.099      ; 2.000      ;
+; 1.401 ; general_register:regB|valueOut[0] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; -0.500       ; 1.293      ; 2.194      ;
+; 1.445 ; general_register:regB|valueOut[1] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; -0.500       ; 1.290      ; 2.235      ;
+; 1.472 ; general_register:regA|valueOut[1] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; -0.500       ; 1.290      ; 2.262      ;
+; 1.497 ; general_register:regA|valueOut[3] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; -0.500       ; 1.290      ; 2.287      ;
+; 1.501 ; general_register:regA|valueOut[0] ; ula:m_ula|result[1] ; clock        ; ula_operation[0] ; -0.500       ; 1.293      ; 2.294      ;
+; 1.512 ; general_register:regA|valueOut[0] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; -0.500       ; 1.290      ; 2.302      ;
+; 1.550 ; general_register:regB|valueOut[0] ; ula:m_ula|result[1] ; clock        ; ula_operation[0] ; -0.500       ; 1.293      ; 2.343      ;
+; 1.561 ; general_register:regB|valueOut[0] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; -0.500       ; 1.290      ; 2.351      ;
+; 1.579 ; general_register:regB|valueOut[2] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; -0.500       ; 1.290      ; 2.369      ;
+; 1.615 ; general_register:regA|valueOut[0] ; ula:m_ula|result[0] ; clock        ; ula_operation[0] ; -0.500       ; 1.098      ; 2.213      ;
+; 1.653 ; general_register:regA|valueOut[2] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; -0.500       ; 1.290      ; 2.443      ;
+; 1.665 ; general_register:regB|valueOut[0] ; ula:m_ula|result[0] ; clock        ; ula_operation[0] ; -0.500       ; 1.098      ; 2.263      ;
+; 1.706 ; general_register:regB|valueOut[1] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; -0.500       ; 1.099      ; 2.305      ;
+; 1.733 ; general_register:regA|valueOut[1] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; -0.500       ; 1.099      ; 2.332      ;
+; 1.773 ; general_register:regA|valueOut[0] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; -0.500       ; 1.099      ; 2.372      ;
+; 1.822 ; general_register:regB|valueOut[0] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; -0.500       ; 1.099      ; 2.421      ;
+; 1.840 ; general_register:regB|valueOut[2] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; -0.500       ; 1.099      ; 2.439      ;
+; 1.914 ; general_register:regA|valueOut[2] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; -0.500       ; 1.099      ; 2.513      ;
++-------+-----------------------------------+---------------------+--------------+------------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Minimum Pulse Width: 'ula_operation[0]'                                                                       ;
-+--------+--------------+----------------+------------------+------------------+------------+------------------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock            ; Clock Edge ; Target                       ;
-+--------+--------------+----------------+------------------+------------------+------------+------------------------------+
-; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; ula_operation[0] ; Rise       ; ula_operation[0]             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Mux8~0clkctrl|inclk[0] ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Mux8~0clkctrl|inclk[0] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Mux8~0clkctrl|outclk   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Mux8~0clkctrl|outclk   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Mux8~0|combout         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Mux8~0|combout         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Mux8~0|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Mux8~0|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[0]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[0]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[1]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[1]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[2]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[2]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[3]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[3]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[4]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[4]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[5]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[5]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[6]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[6]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[7]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[7]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[0]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[0]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[1]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[1]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[2]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[2]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[3]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[3]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[4]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[4]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[5]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[5]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[6]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[6]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[7]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[7]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; ula_operation[0]|combout     ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; ula_operation[0]|combout     ;
-+--------+--------------+----------------+------------------+------------------+------------+------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clock'                                                                            ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                            ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clock ; Rise       ; clock                             ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; general_register:regA|valueOut[0] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; general_register:regA|valueOut[0] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; general_register:regA|valueOut[1] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; general_register:regA|valueOut[1] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; general_register:regA|valueOut[2] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; general_register:regA|valueOut[2] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; general_register:regA|valueOut[3] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; general_register:regA|valueOut[3] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; general_register:regB|valueOut[0] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; general_register:regB|valueOut[0] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; general_register:regB|valueOut[1] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; general_register:regB|valueOut[1] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; general_register:regB|valueOut[2] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; general_register:regB|valueOut[2] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; general_register:regB|valueOut[3] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; general_register:regB|valueOut[3] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|inclk[0]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|inclk[0]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|outclk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|outclk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regA|valueOut[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regA|valueOut[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regA|valueOut[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regA|valueOut[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regA|valueOut[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regA|valueOut[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regA|valueOut[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regA|valueOut[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regB|valueOut[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regB|valueOut[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regB|valueOut[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regB|valueOut[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regB|valueOut[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regB|valueOut[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regB|valueOut[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regB|valueOut[3]|clk              ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Setup Times                                                                          ;
-+-------------------+------------------+-------+-------+------------+------------------+
-; Data Port         ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
-+-------------------+------------------+-------+-------+------------+------------------+
-; operando1[*]      ; ula_operation[0] ; 6.501 ; 6.501 ; Fall       ; ula_operation[0] ;
-;  operando1[0]     ; ula_operation[0] ; 4.053 ; 4.053 ; Fall       ; ula_operation[0] ;
-;  operando1[1]     ; ula_operation[0] ; 6.132 ; 6.132 ; Fall       ; ula_operation[0] ;
-;  operando1[2]     ; ula_operation[0] ; 6.501 ; 6.501 ; Fall       ; ula_operation[0] ;
-;  operando1[3]     ; ula_operation[0] ; 6.254 ; 6.254 ; Fall       ; ula_operation[0] ;
-; operando2[*]      ; ula_operation[0] ; 7.588 ; 7.588 ; Fall       ; ula_operation[0] ;
-;  operando2[0]     ; ula_operation[0] ; 6.243 ; 6.243 ; Fall       ; ula_operation[0] ;
-;  operando2[1]     ; ula_operation[0] ; 7.555 ; 7.555 ; Fall       ; ula_operation[0] ;
-;  operando2[2]     ; ula_operation[0] ; 7.588 ; 7.588 ; Fall       ; ula_operation[0] ;
-;  operando2[3]     ; ula_operation[0] ; 7.320 ; 7.320 ; Fall       ; ula_operation[0] ;
-; ula_operation[*]  ; ula_operation[0] ; 0.287 ; 0.287 ; Fall       ; ula_operation[0] ;
-;  ula_operation[0] ; ula_operation[0] ; 0.140 ; 0.140 ; Fall       ; ula_operation[0] ;
-;  ula_operation[1] ; ula_operation[0] ; 0.287 ; 0.287 ; Fall       ; ula_operation[0] ;
-+-------------------+------------------+-------+-------+------------+------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'ula_operation[0]'                                                                         ;
++--------+--------------+----------------+------------------+------------------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock            ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+------------------+------------+--------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; ula_operation[0] ; Rise       ; ula_operation[0]               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Equal0~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Equal0~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Equal0~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Equal0~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Equal0~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Equal0~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Equal0~0|datac           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Equal0~0|datac           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[0]|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[0]|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[1]|datac          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[1]|datac          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[2]|datac          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[2]|datac          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[3]|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[3]|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[4]|datac          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[4]|datac          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[0]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[0]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[1]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[1]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[2]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[2]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[3]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[3]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; ula_operation[0]|combout       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; ula_operation[0]|combout       ;
++--------+--------------+----------------+------------------+------------------+------------+--------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Hold Times                                                                             ;
-+-------------------+------------------+--------+--------+------------+------------------+
-; Data Port         ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
-+-------------------+------------------+--------+--------+------------+------------------+
-; operando1[*]      ; ula_operation[0] ; 0.081  ; 0.081  ; Fall       ; ula_operation[0] ;
-;  operando1[0]     ; ula_operation[0] ; 0.081  ; 0.081  ; Fall       ; ula_operation[0] ;
-;  operando1[1]     ; ula_operation[0] ; -0.853 ; -0.853 ; Fall       ; ula_operation[0] ;
-;  operando1[2]     ; ula_operation[0] ; -1.027 ; -1.027 ; Fall       ; ula_operation[0] ;
-;  operando1[3]     ; ula_operation[0] ; -0.379 ; -0.379 ; Fall       ; ula_operation[0] ;
-; operando2[*]      ; ula_operation[0] ; -0.688 ; -0.688 ; Fall       ; ula_operation[0] ;
-;  operando2[0]     ; ula_operation[0] ; -0.917 ; -0.917 ; Fall       ; ula_operation[0] ;
-;  operando2[1]     ; ula_operation[0] ; -0.761 ; -0.761 ; Fall       ; ula_operation[0] ;
-;  operando2[2]     ; ula_operation[0] ; -1.192 ; -1.192 ; Fall       ; ula_operation[0] ;
-;  operando2[3]     ; ula_operation[0] ; -0.688 ; -0.688 ; Fall       ; ula_operation[0] ;
-; ula_operation[*]  ; ula_operation[0] ; 1.802  ; 1.802  ; Fall       ; ula_operation[0] ;
-;  ula_operation[0] ; ula_operation[0] ; 1.236  ; 1.236  ; Fall       ; ula_operation[0] ;
-;  ula_operation[1] ; ula_operation[0] ; 1.802  ; 1.802  ; Fall       ; ula_operation[0] ;
-+-------------------+------------------+--------+--------+------------+------------------+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; operando[*]  ; clock      ; 1.481 ; 1.481 ; Rise       ; clock           ;
+;  operando[0] ; clock      ; 1.481 ; 1.481 ; Rise       ; clock           ;
+;  operando[1] ; clock      ; 1.360 ; 1.360 ; Rise       ; clock           ;
+;  operando[2] ; clock      ; 1.035 ; 1.035 ; Rise       ; clock           ;
+;  operando[3] ; clock      ; 0.069 ; 0.069 ; Rise       ; clock           ;
+; reset        ; clock      ; 5.062 ; 5.062 ; Rise       ; clock           ;
+; setRegA      ; clock      ; 0.783 ; 0.783 ; Rise       ; clock           ;
+; setRegB      ; clock      ; 0.598 ; 0.598 ; Rise       ; clock           ;
++--------------+------------+-------+-------+------------+-----------------+
 
 
-+-------------------------------------------------------------------------------+
-; Clock to Output Times                                                         ;
-+------------+------------------+-------+-------+------------+------------------+
-; Data Port  ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
-+------------+------------------+-------+-------+------------+------------------+
-; result[*]  ; ula_operation[0] ; 9.032 ; 9.032 ; Fall       ; ula_operation[0] ;
-;  result[0] ; ula_operation[0] ; 7.912 ; 7.912 ; Fall       ; ula_operation[0] ;
-;  result[1] ; ula_operation[0] ; 8.278 ; 8.278 ; Fall       ; ula_operation[0] ;
-;  result[2] ; ula_operation[0] ; 8.608 ; 8.608 ; Fall       ; ula_operation[0] ;
-;  result[3] ; ula_operation[0] ; 8.999 ; 8.999 ; Fall       ; ula_operation[0] ;
-;  result[4] ; ula_operation[0] ; 8.801 ; 8.801 ; Fall       ; ula_operation[0] ;
-;  result[5] ; ula_operation[0] ; 8.950 ; 8.950 ; Fall       ; ula_operation[0] ;
-;  result[6] ; ula_operation[0] ; 8.885 ; 8.885 ; Fall       ; ula_operation[0] ;
-;  result[7] ; ula_operation[0] ; 9.032 ; 9.032 ; Fall       ; ula_operation[0] ;
-+------------+------------------+-------+-------+------------+------------------+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; operando[*]  ; clock      ; 0.182  ; 0.182  ; Rise       ; clock           ;
+;  operando[0] ; clock      ; -1.233 ; -1.233 ; Rise       ; clock           ;
+;  operando[1] ; clock      ; -1.108 ; -1.108 ; Rise       ; clock           ;
+;  operando[2] ; clock      ; -0.785 ; -0.785 ; Rise       ; clock           ;
+;  operando[3] ; clock      ; 0.182  ; 0.182  ; Rise       ; clock           ;
+; reset        ; clock      ; -3.932 ; -3.932 ; Rise       ; clock           ;
+; setRegA      ; clock      ; -0.535 ; -0.535 ; Rise       ; clock           ;
+; setRegB      ; clock      ; -0.350 ; -0.350 ; Rise       ; clock           ;
++--------------+------------+--------+--------+------------+-----------------+
 
 
-+-------------------------------------------------------------------------------+
-; Minimum Clock to Output Times                                                 ;
-+------------+------------------+-------+-------+------------+------------------+
-; Data Port  ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
-+------------+------------------+-------+-------+------------+------------------+
-; result[*]  ; ula_operation[0] ; 7.912 ; 7.912 ; Fall       ; ula_operation[0] ;
-;  result[0] ; ula_operation[0] ; 7.912 ; 7.912 ; Fall       ; ula_operation[0] ;
-;  result[1] ; ula_operation[0] ; 8.278 ; 8.278 ; Fall       ; ula_operation[0] ;
-;  result[2] ; ula_operation[0] ; 8.608 ; 8.608 ; Fall       ; ula_operation[0] ;
-;  result[3] ; ula_operation[0] ; 8.999 ; 8.999 ; Fall       ; ula_operation[0] ;
-;  result[4] ; ula_operation[0] ; 8.801 ; 8.801 ; Fall       ; ula_operation[0] ;
-;  result[5] ; ula_operation[0] ; 8.950 ; 8.950 ; Fall       ; ula_operation[0] ;
-;  result[6] ; ula_operation[0] ; 8.885 ; 8.885 ; Fall       ; ula_operation[0] ;
-;  result[7] ; ula_operation[0] ; 9.032 ; 9.032 ; Fall       ; ula_operation[0] ;
-+------------+------------------+-------+-------+------------+------------------+
++---------------------------------------------------------------------------------+
+; Clock to Output Times                                                           ;
++------------+------------------+--------+--------+------------+------------------+
+; Data Port  ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
++------------+------------------+--------+--------+------------+------------------+
+; result[*]  ; clock            ; 10.695 ; 10.695 ; Rise       ; clock            ;
+;  result[0] ; clock            ; 9.644  ; 9.644  ; Rise       ; clock            ;
+;  result[1] ; clock            ; 10.219 ; 10.219 ; Rise       ; clock            ;
+;  result[2] ; clock            ; 10.695 ; 10.695 ; Rise       ; clock            ;
+;  result[3] ; clock            ; 10.239 ; 10.239 ; Rise       ; clock            ;
+; HEX0[*]    ; ula_operation[0] ; 15.306 ; 15.306 ; Fall       ; ula_operation[0] ;
+;  HEX0[0]   ; ula_operation[0] ; 14.667 ; 14.667 ; Fall       ; ula_operation[0] ;
+;  HEX0[1]   ; ula_operation[0] ; 14.789 ; 14.789 ; Fall       ; ula_operation[0] ;
+;  HEX0[2]   ; ula_operation[0] ; 14.864 ; 14.864 ; Fall       ; ula_operation[0] ;
+;  HEX0[3]   ; ula_operation[0] ; 14.968 ; 14.968 ; Fall       ; ula_operation[0] ;
+;  HEX0[4]   ; ula_operation[0] ; 15.306 ; 15.306 ; Fall       ; ula_operation[0] ;
+;  HEX0[5]   ; ula_operation[0] ; 14.780 ; 14.780 ; Fall       ; ula_operation[0] ;
+;  HEX0[6]   ; ula_operation[0] ; 14.835 ; 14.835 ; Fall       ; ula_operation[0] ;
+; HEX1[*]    ; ula_operation[0] ; 14.763 ; 14.763 ; Fall       ; ula_operation[0] ;
+;  HEX1[0]   ; ula_operation[0] ; 14.763 ; 14.763 ; Fall       ; ula_operation[0] ;
+;  HEX1[2]   ; ula_operation[0] ; 14.381 ; 14.381 ; Fall       ; ula_operation[0] ;
+;  HEX1[3]   ; ula_operation[0] ; 14.399 ; 14.399 ; Fall       ; ula_operation[0] ;
+;  HEX1[4]   ; ula_operation[0] ; 13.557 ; 13.557 ; Fall       ; ula_operation[0] ;
+;  HEX1[5]   ; ula_operation[0] ; 14.419 ; 14.419 ; Fall       ; ula_operation[0] ;
+;  HEX1[6]   ; ula_operation[0] ; 11.148 ; 11.148 ; Fall       ; ula_operation[0] ;
++------------+------------------+--------+--------+------------+------------------+
 
 
-+------------------------------------------+
-; Fast Model Setup Summary                 ;
-+------------------+-------+---------------+
-; Clock            ; Slack ; End Point TNS ;
-+------------------+-------+---------------+
-; ula_operation[0] ; 1.014 ; 0.000         ;
-+------------------+-------+---------------+
++---------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                   ;
++------------+------------------+--------+--------+------------+------------------+
+; Data Port  ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
++------------+------------------+--------+--------+------------+------------------+
+; result[*]  ; clock            ; 9.644  ; 9.644  ; Rise       ; clock            ;
+;  result[0] ; clock            ; 9.644  ; 9.644  ; Rise       ; clock            ;
+;  result[1] ; clock            ; 10.219 ; 10.219 ; Rise       ; clock            ;
+;  result[2] ; clock            ; 10.695 ; 10.695 ; Rise       ; clock            ;
+;  result[3] ; clock            ; 10.239 ; 10.239 ; Rise       ; clock            ;
+; HEX0[*]    ; ula_operation[0] ; 9.181  ; 9.181  ; Fall       ; ula_operation[0] ;
+;  HEX0[0]   ; ula_operation[0] ; 10.225 ; 10.225 ; Fall       ; ula_operation[0] ;
+;  HEX0[1]   ; ula_operation[0] ; 10.347 ; 10.347 ; Fall       ; ula_operation[0] ;
+;  HEX0[2]   ; ula_operation[0] ; 9.181  ; 9.181  ; Fall       ; ula_operation[0] ;
+;  HEX0[3]   ; ula_operation[0] ; 9.992  ; 9.992  ; Fall       ; ula_operation[0] ;
+;  HEX0[4]   ; ula_operation[0] ; 9.524  ; 9.524  ; Fall       ; ula_operation[0] ;
+;  HEX0[5]   ; ula_operation[0] ; 10.338 ; 10.338 ; Fall       ; ula_operation[0] ;
+;  HEX0[6]   ; ula_operation[0] ; 10.240 ; 10.240 ; Fall       ; ula_operation[0] ;
+; HEX1[*]    ; ula_operation[0] ; 10.387 ; 10.387 ; Fall       ; ula_operation[0] ;
+;  HEX1[0]   ; ula_operation[0] ; 11.801 ; 11.801 ; Fall       ; ula_operation[0] ;
+;  HEX1[2]   ; ula_operation[0] ; 11.332 ; 11.332 ; Fall       ; ula_operation[0] ;
+;  HEX1[3]   ; ula_operation[0] ; 11.437 ; 11.437 ; Fall       ; ula_operation[0] ;
+;  HEX1[4]   ; ula_operation[0] ; 10.766 ; 10.766 ; Fall       ; ula_operation[0] ;
+;  HEX1[5]   ; ula_operation[0] ; 11.459 ; 11.459 ; Fall       ; ula_operation[0] ;
+;  HEX1[6]   ; ula_operation[0] ; 10.387 ; 10.387 ; Fall       ; ula_operation[0] ;
++------------+------------------+--------+--------+------------+------------------+
 
 
 +-------------------------------------------+
-; Fast Model Hold Summary                   ;
+; Fast Model Setup Summary                  ;
 +------------------+--------+---------------+
 ; Clock            ; Slack  ; End Point TNS ;
 +------------------+--------+---------------+
-; ula_operation[0] ; -1.007 ; -7.416        ;
+; ula_operation[0] ; -0.414 ; -1.666        ;
 +------------------+--------+---------------+
+
+
++------------------------------------------+
+; Fast Model Hold Summary                  ;
++------------------+-------+---------------+
+; Clock            ; Slack ; End Point TNS ;
++------------------+-------+---------------+
+; ula_operation[0] ; 0.758 ; 0.000         ;
++------------------+-------+---------------+
 
 
 -------------------------------
@@ -360,149 +431,199 @@ No paths to report.
 +------------------+--------+---------------+
 ; Clock            ; Slack  ; End Point TNS ;
 +------------------+--------+---------------+
+; clock            ; -1.380 ; -9.380        ;
 ; ula_operation[0] ; -1.380 ; -1.380        ;
 +------------------+--------+---------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Setup: 'ula_operation[0]'                                                                                          ;
-+-------+------------------+---------------------+------------------+------------------+--------------+------------+------------+
-; Slack ; From Node        ; To Node             ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
-+-------+------------------+---------------------+------------------+------------------+--------------+------------+------------+
-; 1.014 ; ula_operation[0] ; ula:m_ula|result[0] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 2.264      ; 1.410      ;
-; 1.032 ; ula_operation[0] ; ula:m_ula|result[2] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 2.262      ; 1.380      ;
-; 1.037 ; ula_operation[0] ; ula:m_ula|result[1] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 2.263      ; 1.386      ;
-; 1.102 ; ula_operation[0] ; ula:m_ula|result[7] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 2.259      ; 1.305      ;
-; 1.103 ; ula_operation[0] ; ula:m_ula|result[4] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 2.264      ; 1.320      ;
-; 1.120 ; ula_operation[0] ; ula:m_ula|result[3] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 2.303      ; 1.296      ;
-; 1.169 ; ula_operation[0] ; ula:m_ula|result[5] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 2.250      ; 1.310      ;
-; 1.187 ; ula_operation[0] ; ula:m_ula|result[6] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 2.261      ; 1.303      ;
-; 1.514 ; ula_operation[0] ; ula:m_ula|result[0] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 2.264      ; 1.410      ;
-; 1.532 ; ula_operation[0] ; ula:m_ula|result[2] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 2.262      ; 1.380      ;
-; 1.537 ; ula_operation[0] ; ula:m_ula|result[1] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 2.263      ; 1.386      ;
-; 1.602 ; ula_operation[0] ; ula:m_ula|result[7] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 2.259      ; 1.305      ;
-; 1.603 ; ula_operation[0] ; ula:m_ula|result[4] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 2.264      ; 1.320      ;
-; 1.620 ; ula_operation[0] ; ula:m_ula|result[3] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 2.303      ; 1.296      ;
-; 1.669 ; ula_operation[0] ; ula:m_ula|result[5] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 2.250      ; 1.310      ;
-; 1.687 ; ula_operation[0] ; ula:m_ula|result[6] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 2.261      ; 1.303      ;
-+-------+------------------+---------------------+------------------+------------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'ula_operation[0]'                                                                                                        ;
++--------+-----------------------------------+---------------------+--------------+------------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node             ; Launch Clock ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+---------------------+--------------+------------------+--------------+------------+------------+
+; -0.414 ; general_register:regA|valueOut[2] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; 0.500        ; 0.378      ; 0.940      ;
+; -0.388 ; general_register:regB|valueOut[0] ; ula:m_ula|result[1] ; clock        ; ula_operation[0] ; 0.500        ; 0.459      ; 0.870      ;
+; -0.386 ; general_register:regB|valueOut[0] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; 0.500        ; 0.378      ; 0.912      ;
+; -0.382 ; general_register:regB|valueOut[2] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; 0.500        ; 0.378      ; 0.908      ;
+; -0.372 ; general_register:regA|valueOut[0] ; ula:m_ula|result[1] ; clock        ; ula_operation[0] ; 0.500        ; 0.459      ; 0.854      ;
+; -0.370 ; general_register:regA|valueOut[0] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; 0.500        ; 0.378      ; 0.896      ;
+; -0.357 ; general_register:regA|valueOut[2] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; 0.500        ; 0.456      ; 0.921      ;
+; -0.348 ; general_register:regA|valueOut[1] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; 0.500        ; 0.378      ; 0.874      ;
+; -0.343 ; general_register:regB|valueOut[1] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; 0.500        ; 0.378      ; 0.869      ;
+; -0.329 ; general_register:regB|valueOut[0] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; 0.500        ; 0.456      ; 0.893      ;
+; -0.325 ; general_register:regB|valueOut[2] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; 0.500        ; 0.456      ; 0.889      ;
+; -0.313 ; general_register:regA|valueOut[0] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; 0.500        ; 0.456      ; 0.877      ;
+; -0.291 ; general_register:regA|valueOut[1] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; 0.500        ; 0.456      ; 0.855      ;
+; -0.288 ; general_register:regA|valueOut[3] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; 0.500        ; 0.456      ; 0.852      ;
+; -0.286 ; general_register:regB|valueOut[1] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; 0.500        ; 0.456      ; 0.850      ;
+; -0.254 ; general_register:regB|valueOut[0] ; ula:m_ula|result[0] ; clock        ; ula_operation[0] ; 0.500        ; 0.378      ; 0.856      ;
+; -0.253 ; general_register:regB|valueOut[0] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; 0.500        ; 0.460      ; 0.825      ;
+; -0.245 ; general_register:regA|valueOut[1] ; ula:m_ula|result[1] ; clock        ; ula_operation[0] ; 0.500        ; 0.459      ; 0.727      ;
+; -0.243 ; general_register:regA|valueOut[0] ; ula:m_ula|result[0] ; clock        ; ula_operation[0] ; 0.500        ; 0.378      ; 0.845      ;
+; -0.242 ; general_register:regA|valueOut[3] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; 0.500        ; 0.378      ; 0.768      ;
+; -0.242 ; general_register:regB|valueOut[1] ; ula:m_ula|result[1] ; clock        ; ula_operation[0] ; 0.500        ; 0.459      ; 0.724      ;
+; -0.237 ; general_register:regA|valueOut[0] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; 0.500        ; 0.460      ; 0.809      ;
+; -0.224 ; general_register:regB|valueOut[3] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; 0.500        ; 0.456      ; 0.788      ;
+; -0.215 ; general_register:regA|valueOut[1] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; 0.500        ; 0.460      ; 0.787      ;
+; -0.210 ; general_register:regB|valueOut[1] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; 0.500        ; 0.460      ; 0.782      ;
+; -0.176 ; general_register:regB|valueOut[3] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; 0.500        ; 0.378      ; 0.702      ;
+; -0.176 ; general_register:regA|valueOut[2] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; 0.500        ; 0.460      ; 0.748      ;
+; -0.146 ; general_register:regB|valueOut[2] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; 0.500        ; 0.460      ; 0.718      ;
++--------+-----------------------------------+---------------------+--------------+------------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Hold: 'ula_operation[0]'                                                                                            ;
-+--------+------------------+---------------------+------------------+------------------+--------------+------------+------------+
-; Slack  ; From Node        ; To Node             ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
-+--------+------------------+---------------------+------------------+------------------+--------------+------------+------------+
-; -1.007 ; ula_operation[0] ; ula:m_ula|result[3] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 2.303      ; 1.296      ;
-; -0.958 ; ula_operation[0] ; ula:m_ula|result[6] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 2.261      ; 1.303      ;
-; -0.954 ; ula_operation[0] ; ula:m_ula|result[7] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 2.259      ; 1.305      ;
-; -0.944 ; ula_operation[0] ; ula:m_ula|result[4] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 2.264      ; 1.320      ;
-; -0.940 ; ula_operation[0] ; ula:m_ula|result[5] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 2.250      ; 1.310      ;
-; -0.882 ; ula_operation[0] ; ula:m_ula|result[2] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 2.262      ; 1.380      ;
-; -0.877 ; ula_operation[0] ; ula:m_ula|result[1] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 2.263      ; 1.386      ;
-; -0.854 ; ula_operation[0] ; ula:m_ula|result[0] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 2.264      ; 1.410      ;
-; -0.507 ; ula_operation[0] ; ula:m_ula|result[3] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 2.303      ; 1.296      ;
-; -0.458 ; ula_operation[0] ; ula:m_ula|result[6] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 2.261      ; 1.303      ;
-; -0.454 ; ula_operation[0] ; ula:m_ula|result[7] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 2.259      ; 1.305      ;
-; -0.444 ; ula_operation[0] ; ula:m_ula|result[4] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 2.264      ; 1.320      ;
-; -0.440 ; ula_operation[0] ; ula:m_ula|result[5] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 2.250      ; 1.310      ;
-; -0.382 ; ula_operation[0] ; ula:m_ula|result[2] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 2.262      ; 1.380      ;
-; -0.377 ; ula_operation[0] ; ula:m_ula|result[1] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 2.263      ; 1.386      ;
-; -0.354 ; ula_operation[0] ; ula:m_ula|result[0] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 2.264      ; 1.410      ;
-+--------+------------------+---------------------+------------------+------------------+--------------+------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'ula_operation[0]'                                                                                                        ;
++-------+-----------------------------------+---------------------+--------------+------------------+--------------+------------+------------+
+; Slack ; From Node                         ; To Node             ; Launch Clock ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------+---------------------+--------------+------------------+--------------+------------+------------+
+; 0.758 ; general_register:regB|valueOut[2] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; -0.500       ; 0.460      ; 0.718      ;
+; 0.765 ; general_register:regB|valueOut[1] ; ula:m_ula|result[1] ; clock        ; ula_operation[0] ; -0.500       ; 0.459      ; 0.724      ;
+; 0.768 ; general_register:regA|valueOut[1] ; ula:m_ula|result[1] ; clock        ; ula_operation[0] ; -0.500       ; 0.459      ; 0.727      ;
+; 0.788 ; general_register:regA|valueOut[2] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; -0.500       ; 0.460      ; 0.748      ;
+; 0.822 ; general_register:regB|valueOut[1] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; -0.500       ; 0.460      ; 0.782      ;
+; 0.824 ; general_register:regB|valueOut[3] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; -0.500       ; 0.378      ; 0.702      ;
+; 0.827 ; general_register:regA|valueOut[1] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; -0.500       ; 0.460      ; 0.787      ;
+; 0.832 ; general_register:regB|valueOut[3] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; -0.500       ; 0.456      ; 0.788      ;
+; 0.849 ; general_register:regA|valueOut[0] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; -0.500       ; 0.460      ; 0.809      ;
+; 0.865 ; general_register:regB|valueOut[0] ; ula:m_ula|result[2] ; clock        ; ula_operation[0] ; -0.500       ; 0.460      ; 0.825      ;
+; 0.890 ; general_register:regA|valueOut[3] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; -0.500       ; 0.378      ; 0.768      ;
+; 0.894 ; general_register:regB|valueOut[1] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; -0.500       ; 0.456      ; 0.850      ;
+; 0.895 ; general_register:regA|valueOut[0] ; ula:m_ula|result[1] ; clock        ; ula_operation[0] ; -0.500       ; 0.459      ; 0.854      ;
+; 0.896 ; general_register:regA|valueOut[3] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; -0.500       ; 0.456      ; 0.852      ;
+; 0.899 ; general_register:regA|valueOut[1] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; -0.500       ; 0.456      ; 0.855      ;
+; 0.911 ; general_register:regB|valueOut[0] ; ula:m_ula|result[1] ; clock        ; ula_operation[0] ; -0.500       ; 0.459      ; 0.870      ;
+; 0.921 ; general_register:regA|valueOut[0] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; -0.500       ; 0.456      ; 0.877      ;
+; 0.933 ; general_register:regB|valueOut[2] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; -0.500       ; 0.456      ; 0.889      ;
+; 0.937 ; general_register:regB|valueOut[0] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; -0.500       ; 0.456      ; 0.893      ;
+; 0.965 ; general_register:regA|valueOut[2] ; ula:m_ula|result[4] ; clock        ; ula_operation[0] ; -0.500       ; 0.456      ; 0.921      ;
+; 0.967 ; general_register:regA|valueOut[0] ; ula:m_ula|result[0] ; clock        ; ula_operation[0] ; -0.500       ; 0.378      ; 0.845      ;
+; 0.978 ; general_register:regB|valueOut[0] ; ula:m_ula|result[0] ; clock        ; ula_operation[0] ; -0.500       ; 0.378      ; 0.856      ;
+; 0.991 ; general_register:regB|valueOut[1] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; -0.500       ; 0.378      ; 0.869      ;
+; 0.996 ; general_register:regA|valueOut[1] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; -0.500       ; 0.378      ; 0.874      ;
+; 1.018 ; general_register:regA|valueOut[0] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; -0.500       ; 0.378      ; 0.896      ;
+; 1.030 ; general_register:regB|valueOut[2] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; -0.500       ; 0.378      ; 0.908      ;
+; 1.034 ; general_register:regB|valueOut[0] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; -0.500       ; 0.378      ; 0.912      ;
+; 1.062 ; general_register:regA|valueOut[2] ; ula:m_ula|result[3] ; clock        ; ula_operation[0] ; -0.500       ; 0.378      ; 0.940      ;
++-------+-----------------------------------+---------------------+--------------+------------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Minimum Pulse Width: 'ula_operation[0]'                                                                       ;
-+--------+--------------+----------------+------------------+------------------+------------+------------------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock            ; Clock Edge ; Target                       ;
-+--------+--------------+----------------+------------------+------------------+------------+------------------------------+
-; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; ula_operation[0] ; Rise       ; ula_operation[0]             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Mux8~0clkctrl|inclk[0] ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Mux8~0clkctrl|inclk[0] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Mux8~0clkctrl|outclk   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Mux8~0clkctrl|outclk   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Mux8~0|combout         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Mux8~0|combout         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Mux8~0|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Mux8~0|datad           ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[0]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[0]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[1]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[1]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[2]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[2]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[3]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[3]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[4]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[4]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[5]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[5]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[6]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[6]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[7]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[7]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[0]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[0]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[1]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[1]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[2]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[2]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[3]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[3]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[4]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[4]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[5]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[5]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[6]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[6]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[7]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[7]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; ula_operation[0]|combout     ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; ula_operation[0]|combout     ;
-+--------+--------------+----------------+------------------+------------------+------------+------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clock'                                                                            ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                            ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; general_register:regA|valueOut[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; general_register:regA|valueOut[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; general_register:regA|valueOut[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; general_register:regA|valueOut[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; general_register:regA|valueOut[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; general_register:regA|valueOut[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; general_register:regA|valueOut[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; general_register:regA|valueOut[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; general_register:regB|valueOut[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; general_register:regB|valueOut[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; general_register:regB|valueOut[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; general_register:regB|valueOut[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; general_register:regB|valueOut[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; general_register:regB|valueOut[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; general_register:regB|valueOut[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; general_register:regB|valueOut[3] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|inclk[0]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|inclk[0]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|outclk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|outclk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regA|valueOut[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regA|valueOut[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regA|valueOut[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regA|valueOut[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regA|valueOut[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regA|valueOut[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regA|valueOut[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regA|valueOut[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regB|valueOut[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regB|valueOut[0]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regB|valueOut[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regB|valueOut[1]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regB|valueOut[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regB|valueOut[2]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regB|valueOut[3]|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regB|valueOut[3]|clk              ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Setup Times                                                                            ;
-+-------------------+------------------+--------+--------+------------+------------------+
-; Data Port         ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
-+-------------------+------------------+--------+--------+------------+------------------+
-; operando1[*]      ; ula_operation[0] ; 1.903  ; 1.903  ; Fall       ; ula_operation[0] ;
-;  operando1[0]     ; ula_operation[0] ; 0.855  ; 0.855  ; Fall       ; ula_operation[0] ;
-;  operando1[1]     ; ula_operation[0] ; 1.686  ; 1.686  ; Fall       ; ula_operation[0] ;
-;  operando1[2]     ; ula_operation[0] ; 1.903  ; 1.903  ; Fall       ; ula_operation[0] ;
-;  operando1[3]     ; ula_operation[0] ; 1.709  ; 1.709  ; Fall       ; ula_operation[0] ;
-; operando2[*]      ; ula_operation[0] ; 2.203  ; 2.203  ; Fall       ; ula_operation[0] ;
-;  operando2[0]     ; ula_operation[0] ; 1.749  ; 1.749  ; Fall       ; ula_operation[0] ;
-;  operando2[1]     ; ula_operation[0] ; 2.190  ; 2.190  ; Fall       ; ula_operation[0] ;
-;  operando2[2]     ; ula_operation[0] ; 2.203  ; 2.203  ; Fall       ; ula_operation[0] ;
-;  operando2[3]     ; ula_operation[0] ; 2.114  ; 2.114  ; Fall       ; ula_operation[0] ;
-; ula_operation[*]  ; ula_operation[0] ; -0.461 ; -0.461 ; Fall       ; ula_operation[0] ;
-;  ula_operation[0] ; ula_operation[0] ; -0.514 ; -0.514 ; Fall       ; ula_operation[0] ;
-;  ula_operation[1] ; ula_operation[0] ; -0.461 ; -0.461 ; Fall       ; ula_operation[0] ;
-+-------------------+------------------+--------+--------+------------+------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'ula_operation[0]'                                                                         ;
++--------+--------------+----------------+------------------+------------------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock            ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+------------------+------------+--------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; ula_operation[0] ; Rise       ; ula_operation[0]               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Equal0~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Equal0~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Equal0~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Equal0~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Equal0~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Equal0~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Equal0~0|datac           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Equal0~0|datac           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[0]|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[0]|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[1]|datac          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[1]|datac          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[2]|datac          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[2]|datac          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[3]|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[3]|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[4]|datac          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[4]|datac          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[0]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[0]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[1]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[1]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[2]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[2]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[3]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[3]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[4]            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; ula_operation[0]|combout       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; ula_operation[0]|combout       ;
++--------+--------------+----------------+------------------+------------------+------------+--------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Hold Times                                                                           ;
-+-------------------+------------------+-------+-------+------------+------------------+
-; Data Port         ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
-+-------------------+------------------+-------+-------+------------+------------------+
-; operando1[*]      ; ula_operation[0] ; 0.595 ; 0.595 ; Fall       ; ula_operation[0] ;
-;  operando1[0]     ; ula_operation[0] ; 0.595 ; 0.595 ; Fall       ; ula_operation[0] ;
-;  operando1[1]     ; ula_operation[0] ; 0.162 ; 0.162 ; Fall       ; ula_operation[0] ;
-;  operando1[2]     ; ula_operation[0] ; 0.033 ; 0.033 ; Fall       ; ula_operation[0] ;
-;  operando1[3]     ; ula_operation[0] ; 0.329 ; 0.329 ; Fall       ; ula_operation[0] ;
-; operando2[*]      ; ula_operation[0] ; 0.189 ; 0.189 ; Fall       ; ula_operation[0] ;
-;  operando2[0]     ; ula_operation[0] ; 0.117 ; 0.117 ; Fall       ; ula_operation[0] ;
-;  operando2[1]     ; ula_operation[0] ; 0.168 ; 0.168 ; Fall       ; ula_operation[0] ;
-;  operando2[2]     ; ula_operation[0] ; 0.035 ; 0.035 ; Fall       ; ula_operation[0] ;
-;  operando2[3]     ; ula_operation[0] ; 0.189 ; 0.189 ; Fall       ; ula_operation[0] ;
-; ula_operation[*]  ; ula_operation[0] ; 1.189 ; 1.189 ; Fall       ; ula_operation[0] ;
-;  ula_operation[0] ; ula_operation[0] ; 1.007 ; 1.007 ; Fall       ; ula_operation[0] ;
-;  ula_operation[1] ; ula_operation[0] ; 1.189 ; 1.189 ; Fall       ; ula_operation[0] ;
-+-------------------+------------------+-------+-------+------------+------------------+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; operando[*]  ; clock      ; 0.091  ; 0.091  ; Rise       ; clock           ;
+;  operando[0] ; clock      ; 0.091  ; 0.091  ; Rise       ; clock           ;
+;  operando[1] ; clock      ; 0.058  ; 0.058  ; Rise       ; clock           ;
+;  operando[2] ; clock      ; -0.072 ; -0.072 ; Rise       ; clock           ;
+;  operando[3] ; clock      ; -0.525 ; -0.525 ; Rise       ; clock           ;
+; reset        ; clock      ; 2.240  ; 2.240  ; Rise       ; clock           ;
+; setRegA      ; clock      ; -0.204 ; -0.204 ; Rise       ; clock           ;
+; setRegB      ; clock      ; -0.264 ; -0.264 ; Rise       ; clock           ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; operando[*]  ; clock      ; 0.648  ; 0.648  ; Rise       ; clock           ;
+;  operando[0] ; clock      ; 0.029  ; 0.029  ; Rise       ; clock           ;
+;  operando[1] ; clock      ; 0.066  ; 0.066  ; Rise       ; clock           ;
+;  operando[2] ; clock      ; 0.194  ; 0.194  ; Rise       ; clock           ;
+;  operando[3] ; clock      ; 0.648  ; 0.648  ; Rise       ; clock           ;
+; reset        ; clock      ; -1.762 ; -1.762 ; Rise       ; clock           ;
+; setRegA      ; clock      ; 0.324  ; 0.324  ; Rise       ; clock           ;
+; setRegB      ; clock      ; 0.384  ; 0.384  ; Rise       ; clock           ;
++--------------+------------+--------+--------+------------+-----------------+
 
 
 +-------------------------------------------------------------------------------+
@@ -510,15 +631,26 @@ No paths to report.
 +------------+------------------+-------+-------+------------+------------------+
 ; Data Port  ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
 +------------+------------------+-------+-------+------------+------------------+
-; result[*]  ; ula_operation[0] ; 4.522 ; 4.522 ; Fall       ; ula_operation[0] ;
-;  result[0] ; ula_operation[0] ; 4.028 ; 4.028 ; Fall       ; ula_operation[0] ;
-;  result[1] ; ula_operation[0] ; 4.176 ; 4.176 ; Fall       ; ula_operation[0] ;
-;  result[2] ; ula_operation[0] ; 4.310 ; 4.310 ; Fall       ; ula_operation[0] ;
-;  result[3] ; ula_operation[0] ; 4.451 ; 4.451 ; Fall       ; ula_operation[0] ;
-;  result[4] ; ula_operation[0] ; 4.445 ; 4.445 ; Fall       ; ula_operation[0] ;
-;  result[5] ; ula_operation[0] ; 4.456 ; 4.456 ; Fall       ; ula_operation[0] ;
-;  result[6] ; ula_operation[0] ; 4.416 ; 4.416 ; Fall       ; ula_operation[0] ;
-;  result[7] ; ula_operation[0] ; 4.522 ; 4.522 ; Fall       ; ula_operation[0] ;
+; result[*]  ; clock            ; 5.308 ; 5.308 ; Rise       ; clock            ;
+;  result[0] ; clock            ; 4.900 ; 4.900 ; Rise       ; clock            ;
+;  result[1] ; clock            ; 4.970 ; 4.970 ; Rise       ; clock            ;
+;  result[2] ; clock            ; 5.308 ; 5.308 ; Rise       ; clock            ;
+;  result[3] ; clock            ; 5.129 ; 5.129 ; Rise       ; clock            ;
+; HEX0[*]    ; ula_operation[0] ; 6.761 ; 6.761 ; Fall       ; ula_operation[0] ;
+;  HEX0[0]   ; ula_operation[0] ; 6.449 ; 6.449 ; Fall       ; ula_operation[0] ;
+;  HEX0[1]   ; ula_operation[0] ; 6.519 ; 6.519 ; Fall       ; ula_operation[0] ;
+;  HEX0[2]   ; ula_operation[0] ; 6.630 ; 6.630 ; Fall       ; ula_operation[0] ;
+;  HEX0[3]   ; ula_operation[0] ; 6.624 ; 6.624 ; Fall       ; ula_operation[0] ;
+;  HEX0[4]   ; ula_operation[0] ; 6.761 ; 6.761 ; Fall       ; ula_operation[0] ;
+;  HEX0[5]   ; ula_operation[0] ; 6.528 ; 6.528 ; Fall       ; ula_operation[0] ;
+;  HEX0[6]   ; ula_operation[0] ; 6.545 ; 6.545 ; Fall       ; ula_operation[0] ;
+; HEX1[*]    ; ula_operation[0] ; 6.587 ; 6.587 ; Fall       ; ula_operation[0] ;
+;  HEX1[0]   ; ula_operation[0] ; 6.587 ; 6.587 ; Fall       ; ula_operation[0] ;
+;  HEX1[2]   ; ula_operation[0] ; 6.446 ; 6.446 ; Fall       ; ula_operation[0] ;
+;  HEX1[3]   ; ula_operation[0] ; 6.433 ; 6.433 ; Fall       ; ula_operation[0] ;
+;  HEX1[4]   ; ula_operation[0] ; 6.146 ; 6.146 ; Fall       ; ula_operation[0] ;
+;  HEX1[5]   ; ula_operation[0] ; 6.462 ; 6.462 ; Fall       ; ula_operation[0] ;
+;  HEX1[6]   ; ula_operation[0] ; 5.310 ; 5.310 ; Fall       ; ula_operation[0] ;
 +------------+------------------+-------+-------+------------+------------------+
 
 
@@ -527,87 +659,101 @@ No paths to report.
 +------------+------------------+-------+-------+------------+------------------+
 ; Data Port  ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
 +------------+------------------+-------+-------+------------+------------------+
-; result[*]  ; ula_operation[0] ; 4.028 ; 4.028 ; Fall       ; ula_operation[0] ;
-;  result[0] ; ula_operation[0] ; 4.028 ; 4.028 ; Fall       ; ula_operation[0] ;
-;  result[1] ; ula_operation[0] ; 4.176 ; 4.176 ; Fall       ; ula_operation[0] ;
-;  result[2] ; ula_operation[0] ; 4.310 ; 4.310 ; Fall       ; ula_operation[0] ;
-;  result[3] ; ula_operation[0] ; 4.451 ; 4.451 ; Fall       ; ula_operation[0] ;
-;  result[4] ; ula_operation[0] ; 4.445 ; 4.445 ; Fall       ; ula_operation[0] ;
-;  result[5] ; ula_operation[0] ; 4.456 ; 4.456 ; Fall       ; ula_operation[0] ;
-;  result[6] ; ula_operation[0] ; 4.416 ; 4.416 ; Fall       ; ula_operation[0] ;
-;  result[7] ; ula_operation[0] ; 4.522 ; 4.522 ; Fall       ; ula_operation[0] ;
+; result[*]  ; clock            ; 4.900 ; 4.900 ; Rise       ; clock            ;
+;  result[0] ; clock            ; 4.900 ; 4.900 ; Rise       ; clock            ;
+;  result[1] ; clock            ; 4.970 ; 4.970 ; Rise       ; clock            ;
+;  result[2] ; clock            ; 5.308 ; 5.308 ; Rise       ; clock            ;
+;  result[3] ; clock            ; 5.129 ; 5.129 ; Rise       ; clock            ;
+; HEX0[*]    ; ula_operation[0] ; 4.567 ; 4.567 ; Fall       ; ula_operation[0] ;
+;  HEX0[0]   ; ula_operation[0] ; 4.895 ; 4.895 ; Fall       ; ula_operation[0] ;
+;  HEX0[1]   ; ula_operation[0] ; 4.968 ; 4.968 ; Fall       ; ula_operation[0] ;
+;  HEX0[2]   ; ula_operation[0] ; 4.567 ; 4.567 ; Fall       ; ula_operation[0] ;
+;  HEX0[3]   ; ula_operation[0] ; 4.846 ; 4.846 ; Fall       ; ula_operation[0] ;
+;  HEX0[4]   ; ula_operation[0] ; 4.699 ; 4.699 ; Fall       ; ula_operation[0] ;
+;  HEX0[5]   ; ula_operation[0] ; 4.983 ; 4.983 ; Fall       ; ula_operation[0] ;
+;  HEX0[6]   ; ula_operation[0] ; 4.926 ; 4.926 ; Fall       ; ula_operation[0] ;
+; HEX1[*]    ; ula_operation[0] ; 5.001 ; 5.001 ; Fall       ; ula_operation[0] ;
+;  HEX1[0]   ; ula_operation[0] ; 5.503 ; 5.503 ; Fall       ; ula_operation[0] ;
+;  HEX1[2]   ; ula_operation[0] ; 5.326 ; 5.326 ; Fall       ; ula_operation[0] ;
+;  HEX1[3]   ; ula_operation[0] ; 5.349 ; 5.349 ; Fall       ; ula_operation[0] ;
+;  HEX1[4]   ; ula_operation[0] ; 5.111 ; 5.111 ; Fall       ; ula_operation[0] ;
+;  HEX1[5]   ; ula_operation[0] ; 5.371 ; 5.371 ; Fall       ; ula_operation[0] ;
+;  HEX1[6]   ; ula_operation[0] ; 5.001 ; 5.001 ; Fall       ; ula_operation[0] ;
 +------------+------------------+-------+-------+------------+------------------+
 
 
 +-------------------------------------------------------------------------------+
 ; Multicorner Timing Analysis Summary                                           ;
-+-------------------+-------+--------+----------+---------+---------------------+
-; Clock             ; Setup ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
-+-------------------+-------+--------+----------+---------+---------------------+
-; Worst-case Slack  ; 0.360 ; -1.236 ; N/A      ; N/A     ; -1.631              ;
-;  ula_operation[0] ; 0.360 ; -1.236 ; N/A      ; N/A     ; -1.631              ;
-; Design-wide TNS   ; 0.0   ; -8.397 ; 0.0      ; 0.0     ; -1.631              ;
-;  ula_operation[0] ; 0.000 ; -8.397 ; N/A      ; N/A     ; -1.631              ;
-+-------------------+-------+--------+----------+---------+---------------------+
++-------------------+--------+-------+----------+---------+---------------------+
+; Clock             ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++-------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack  ; -1.957 ; 0.758 ; N/A      ; N/A     ; -1.631              ;
+;  clock            ; N/A    ; N/A   ; N/A      ; N/A     ; -1.631              ;
+;  ula_operation[0] ; -1.957 ; 0.758 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS   ; -8.696 ; 0.0   ; 0.0      ; 0.0     ; -13.038             ;
+;  clock            ; N/A    ; N/A   ; N/A      ; N/A     ; -11.407             ;
+;  ula_operation[0] ; -8.696 ; 0.000 ; N/A      ; N/A     ; -1.631              ;
++-------------------+--------+-------+----------+---------+---------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Setup Times                                                                          ;
-+-------------------+------------------+-------+-------+------------+------------------+
-; Data Port         ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
-+-------------------+------------------+-------+-------+------------+------------------+
-; operando1[*]      ; ula_operation[0] ; 6.501 ; 6.501 ; Fall       ; ula_operation[0] ;
-;  operando1[0]     ; ula_operation[0] ; 4.053 ; 4.053 ; Fall       ; ula_operation[0] ;
-;  operando1[1]     ; ula_operation[0] ; 6.132 ; 6.132 ; Fall       ; ula_operation[0] ;
-;  operando1[2]     ; ula_operation[0] ; 6.501 ; 6.501 ; Fall       ; ula_operation[0] ;
-;  operando1[3]     ; ula_operation[0] ; 6.254 ; 6.254 ; Fall       ; ula_operation[0] ;
-; operando2[*]      ; ula_operation[0] ; 7.588 ; 7.588 ; Fall       ; ula_operation[0] ;
-;  operando2[0]     ; ula_operation[0] ; 6.243 ; 6.243 ; Fall       ; ula_operation[0] ;
-;  operando2[1]     ; ula_operation[0] ; 7.555 ; 7.555 ; Fall       ; ula_operation[0] ;
-;  operando2[2]     ; ula_operation[0] ; 7.588 ; 7.588 ; Fall       ; ula_operation[0] ;
-;  operando2[3]     ; ula_operation[0] ; 7.320 ; 7.320 ; Fall       ; ula_operation[0] ;
-; ula_operation[*]  ; ula_operation[0] ; 0.287 ; 0.287 ; Fall       ; ula_operation[0] ;
-;  ula_operation[0] ; ula_operation[0] ; 0.140 ; 0.140 ; Fall       ; ula_operation[0] ;
-;  ula_operation[1] ; ula_operation[0] ; 0.287 ; 0.287 ; Fall       ; ula_operation[0] ;
-+-------------------+------------------+-------+-------+------------+------------------+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; operando[*]  ; clock      ; 1.481 ; 1.481 ; Rise       ; clock           ;
+;  operando[0] ; clock      ; 1.481 ; 1.481 ; Rise       ; clock           ;
+;  operando[1] ; clock      ; 1.360 ; 1.360 ; Rise       ; clock           ;
+;  operando[2] ; clock      ; 1.035 ; 1.035 ; Rise       ; clock           ;
+;  operando[3] ; clock      ; 0.069 ; 0.069 ; Rise       ; clock           ;
+; reset        ; clock      ; 5.062 ; 5.062 ; Rise       ; clock           ;
+; setRegA      ; clock      ; 0.783 ; 0.783 ; Rise       ; clock           ;
+; setRegB      ; clock      ; 0.598 ; 0.598 ; Rise       ; clock           ;
++--------------+------------+-------+-------+------------+-----------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Hold Times                                                                           ;
-+-------------------+------------------+-------+-------+------------+------------------+
-; Data Port         ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
-+-------------------+------------------+-------+-------+------------+------------------+
-; operando1[*]      ; ula_operation[0] ; 0.595 ; 0.595 ; Fall       ; ula_operation[0] ;
-;  operando1[0]     ; ula_operation[0] ; 0.595 ; 0.595 ; Fall       ; ula_operation[0] ;
-;  operando1[1]     ; ula_operation[0] ; 0.162 ; 0.162 ; Fall       ; ula_operation[0] ;
-;  operando1[2]     ; ula_operation[0] ; 0.033 ; 0.033 ; Fall       ; ula_operation[0] ;
-;  operando1[3]     ; ula_operation[0] ; 0.329 ; 0.329 ; Fall       ; ula_operation[0] ;
-; operando2[*]      ; ula_operation[0] ; 0.189 ; 0.189 ; Fall       ; ula_operation[0] ;
-;  operando2[0]     ; ula_operation[0] ; 0.117 ; 0.117 ; Fall       ; ula_operation[0] ;
-;  operando2[1]     ; ula_operation[0] ; 0.168 ; 0.168 ; Fall       ; ula_operation[0] ;
-;  operando2[2]     ; ula_operation[0] ; 0.035 ; 0.035 ; Fall       ; ula_operation[0] ;
-;  operando2[3]     ; ula_operation[0] ; 0.189 ; 0.189 ; Fall       ; ula_operation[0] ;
-; ula_operation[*]  ; ula_operation[0] ; 1.802 ; 1.802 ; Fall       ; ula_operation[0] ;
-;  ula_operation[0] ; ula_operation[0] ; 1.236 ; 1.236 ; Fall       ; ula_operation[0] ;
-;  ula_operation[1] ; ula_operation[0] ; 1.802 ; 1.802 ; Fall       ; ula_operation[0] ;
-+-------------------+------------------+-------+-------+------------+------------------+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; operando[*]  ; clock      ; 0.648  ; 0.648  ; Rise       ; clock           ;
+;  operando[0] ; clock      ; 0.029  ; 0.029  ; Rise       ; clock           ;
+;  operando[1] ; clock      ; 0.066  ; 0.066  ; Rise       ; clock           ;
+;  operando[2] ; clock      ; 0.194  ; 0.194  ; Rise       ; clock           ;
+;  operando[3] ; clock      ; 0.648  ; 0.648  ; Rise       ; clock           ;
+; reset        ; clock      ; -1.762 ; -1.762 ; Rise       ; clock           ;
+; setRegA      ; clock      ; 0.324  ; 0.324  ; Rise       ; clock           ;
+; setRegB      ; clock      ; 0.384  ; 0.384  ; Rise       ; clock           ;
++--------------+------------+--------+--------+------------+-----------------+
 
 
-+-------------------------------------------------------------------------------+
-; Clock to Output Times                                                         ;
-+------------+------------------+-------+-------+------------+------------------+
-; Data Port  ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
-+------------+------------------+-------+-------+------------+------------------+
-; result[*]  ; ula_operation[0] ; 9.032 ; 9.032 ; Fall       ; ula_operation[0] ;
-;  result[0] ; ula_operation[0] ; 7.912 ; 7.912 ; Fall       ; ula_operation[0] ;
-;  result[1] ; ula_operation[0] ; 8.278 ; 8.278 ; Fall       ; ula_operation[0] ;
-;  result[2] ; ula_operation[0] ; 8.608 ; 8.608 ; Fall       ; ula_operation[0] ;
-;  result[3] ; ula_operation[0] ; 8.999 ; 8.999 ; Fall       ; ula_operation[0] ;
-;  result[4] ; ula_operation[0] ; 8.801 ; 8.801 ; Fall       ; ula_operation[0] ;
-;  result[5] ; ula_operation[0] ; 8.950 ; 8.950 ; Fall       ; ula_operation[0] ;
-;  result[6] ; ula_operation[0] ; 8.885 ; 8.885 ; Fall       ; ula_operation[0] ;
-;  result[7] ; ula_operation[0] ; 9.032 ; 9.032 ; Fall       ; ula_operation[0] ;
-+------------+------------------+-------+-------+------------+------------------+
++---------------------------------------------------------------------------------+
+; Clock to Output Times                                                           ;
++------------+------------------+--------+--------+------------+------------------+
+; Data Port  ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
++------------+------------------+--------+--------+------------+------------------+
+; result[*]  ; clock            ; 10.695 ; 10.695 ; Rise       ; clock            ;
+;  result[0] ; clock            ; 9.644  ; 9.644  ; Rise       ; clock            ;
+;  result[1] ; clock            ; 10.219 ; 10.219 ; Rise       ; clock            ;
+;  result[2] ; clock            ; 10.695 ; 10.695 ; Rise       ; clock            ;
+;  result[3] ; clock            ; 10.239 ; 10.239 ; Rise       ; clock            ;
+; HEX0[*]    ; ula_operation[0] ; 15.306 ; 15.306 ; Fall       ; ula_operation[0] ;
+;  HEX0[0]   ; ula_operation[0] ; 14.667 ; 14.667 ; Fall       ; ula_operation[0] ;
+;  HEX0[1]   ; ula_operation[0] ; 14.789 ; 14.789 ; Fall       ; ula_operation[0] ;
+;  HEX0[2]   ; ula_operation[0] ; 14.864 ; 14.864 ; Fall       ; ula_operation[0] ;
+;  HEX0[3]   ; ula_operation[0] ; 14.968 ; 14.968 ; Fall       ; ula_operation[0] ;
+;  HEX0[4]   ; ula_operation[0] ; 15.306 ; 15.306 ; Fall       ; ula_operation[0] ;
+;  HEX0[5]   ; ula_operation[0] ; 14.780 ; 14.780 ; Fall       ; ula_operation[0] ;
+;  HEX0[6]   ; ula_operation[0] ; 14.835 ; 14.835 ; Fall       ; ula_operation[0] ;
+; HEX1[*]    ; ula_operation[0] ; 14.763 ; 14.763 ; Fall       ; ula_operation[0] ;
+;  HEX1[0]   ; ula_operation[0] ; 14.763 ; 14.763 ; Fall       ; ula_operation[0] ;
+;  HEX1[2]   ; ula_operation[0] ; 14.381 ; 14.381 ; Fall       ; ula_operation[0] ;
+;  HEX1[3]   ; ula_operation[0] ; 14.399 ; 14.399 ; Fall       ; ula_operation[0] ;
+;  HEX1[4]   ; ula_operation[0] ; 13.557 ; 13.557 ; Fall       ; ula_operation[0] ;
+;  HEX1[5]   ; ula_operation[0] ; 14.419 ; 14.419 ; Fall       ; ula_operation[0] ;
+;  HEX1[6]   ; ula_operation[0] ; 11.148 ; 11.148 ; Fall       ; ula_operation[0] ;
++------------+------------------+--------+--------+------------+------------------+
 
 
 +-------------------------------------------------------------------------------+
@@ -615,35 +761,46 @@ No paths to report.
 +------------+------------------+-------+-------+------------+------------------+
 ; Data Port  ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
 +------------+------------------+-------+-------+------------+------------------+
-; result[*]  ; ula_operation[0] ; 4.028 ; 4.028 ; Fall       ; ula_operation[0] ;
-;  result[0] ; ula_operation[0] ; 4.028 ; 4.028 ; Fall       ; ula_operation[0] ;
-;  result[1] ; ula_operation[0] ; 4.176 ; 4.176 ; Fall       ; ula_operation[0] ;
-;  result[2] ; ula_operation[0] ; 4.310 ; 4.310 ; Fall       ; ula_operation[0] ;
-;  result[3] ; ula_operation[0] ; 4.451 ; 4.451 ; Fall       ; ula_operation[0] ;
-;  result[4] ; ula_operation[0] ; 4.445 ; 4.445 ; Fall       ; ula_operation[0] ;
-;  result[5] ; ula_operation[0] ; 4.456 ; 4.456 ; Fall       ; ula_operation[0] ;
-;  result[6] ; ula_operation[0] ; 4.416 ; 4.416 ; Fall       ; ula_operation[0] ;
-;  result[7] ; ula_operation[0] ; 4.522 ; 4.522 ; Fall       ; ula_operation[0] ;
+; result[*]  ; clock            ; 4.900 ; 4.900 ; Rise       ; clock            ;
+;  result[0] ; clock            ; 4.900 ; 4.900 ; Rise       ; clock            ;
+;  result[1] ; clock            ; 4.970 ; 4.970 ; Rise       ; clock            ;
+;  result[2] ; clock            ; 5.308 ; 5.308 ; Rise       ; clock            ;
+;  result[3] ; clock            ; 5.129 ; 5.129 ; Rise       ; clock            ;
+; HEX0[*]    ; ula_operation[0] ; 4.567 ; 4.567 ; Fall       ; ula_operation[0] ;
+;  HEX0[0]   ; ula_operation[0] ; 4.895 ; 4.895 ; Fall       ; ula_operation[0] ;
+;  HEX0[1]   ; ula_operation[0] ; 4.968 ; 4.968 ; Fall       ; ula_operation[0] ;
+;  HEX0[2]   ; ula_operation[0] ; 4.567 ; 4.567 ; Fall       ; ula_operation[0] ;
+;  HEX0[3]   ; ula_operation[0] ; 4.846 ; 4.846 ; Fall       ; ula_operation[0] ;
+;  HEX0[4]   ; ula_operation[0] ; 4.699 ; 4.699 ; Fall       ; ula_operation[0] ;
+;  HEX0[5]   ; ula_operation[0] ; 4.983 ; 4.983 ; Fall       ; ula_operation[0] ;
+;  HEX0[6]   ; ula_operation[0] ; 4.926 ; 4.926 ; Fall       ; ula_operation[0] ;
+; HEX1[*]    ; ula_operation[0] ; 5.001 ; 5.001 ; Fall       ; ula_operation[0] ;
+;  HEX1[0]   ; ula_operation[0] ; 5.503 ; 5.503 ; Fall       ; ula_operation[0] ;
+;  HEX1[2]   ; ula_operation[0] ; 5.326 ; 5.326 ; Fall       ; ula_operation[0] ;
+;  HEX1[3]   ; ula_operation[0] ; 5.349 ; 5.349 ; Fall       ; ula_operation[0] ;
+;  HEX1[4]   ; ula_operation[0] ; 5.111 ; 5.111 ; Fall       ; ula_operation[0] ;
+;  HEX1[5]   ; ula_operation[0] ; 5.371 ; 5.371 ; Fall       ; ula_operation[0] ;
+;  HEX1[6]   ; ula_operation[0] ; 5.001 ; 5.001 ; Fall       ; ula_operation[0] ;
 +------------+------------------+-------+-------+------------+------------------+
 
 
-+---------------------------------------------------------------------------------+
-; Setup Transfers                                                                 ;
-+------------------+------------------+----------+----------+----------+----------+
-; From Clock       ; To Clock         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+------------------+------------------+----------+----------+----------+----------+
-; ula_operation[0] ; ula_operation[0] ; 0        ; 0        ; 8        ; 8        ;
-+------------------+------------------+----------+----------+----------+----------+
++---------------------------------------------------------------------------+
+; Setup Transfers                                                           ;
++------------+------------------+----------+----------+----------+----------+
+; From Clock ; To Clock         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+------------------+----------+----------+----------+----------+
+; clock      ; ula_operation[0] ; 0        ; 0        ; 28       ; 0        ;
++------------+------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
-+---------------------------------------------------------------------------------+
-; Hold Transfers                                                                  ;
-+------------------+------------------+----------+----------+----------+----------+
-; From Clock       ; To Clock         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+------------------+------------------+----------+----------+----------+----------+
-; ula_operation[0] ; ula_operation[0] ; 0        ; 0        ; 8        ; 8        ;
-+------------------+------------------+----------+----------+----------+----------+
++---------------------------------------------------------------------------+
+; Hold Transfers                                                            ;
++------------+------------------+----------+----------+----------+----------+
+; From Clock ; To Clock         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+------------------+----------+----------+----------+----------+
+; clock      ; ula_operation[0] ; 0        ; 0        ; 28       ; 0        ;
++------------+------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
@@ -666,10 +823,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 9     ; 9    ;
-; Unconstrained Input Port Paths  ; 62    ; 62   ;
-; Unconstrained Output Ports      ; 8     ; 8    ;
-; Unconstrained Output Port Paths ; 8     ; 8    ;
+; Unconstrained Input Ports       ; 7     ; 7    ;
+; Unconstrained Input Port Paths  ; 24    ; 24   ;
+; Unconstrained Output Ports      ; 17    ; 17   ;
+; Unconstrained Output Port Paths ; 62    ; 62   ;
 +---------------------------------+-------+------+
 
 
@@ -679,58 +836,62 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1.78 SJ Web Edition
-    Info: Processing started: Thu Nov  3 16:32:11 2016
+    Info: Processing started: Fri Nov  4 11:18:35 2016
 Info: Command: quartus_sta processinho -c processinho
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (335093): TimeQuest Timing Analyzer is analyzing 8 combinational loops as latches.
+Warning (335093): TimeQuest Timing Analyzer is analyzing 5 combinational loops as latches.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'processinho.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name ula_operation[0] ula_operation[0]
+    Info (332105): create_clock -period 1.000 -name clock clock
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
-Info (332146): Worst-case setup slack is 0.360
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):     0.360         0.000 ula_operation[0] 
+Info (332140): No fmax paths to report
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case hold slack is -1.236
+Info (332146): Worst-case setup slack is -1.957
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.236        -8.397 ula_operation[0] 
+    Info (332119):    -1.957        -8.696 ula_operation[0] 
+Info (332146): Worst-case hold slack is 1.067
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     1.067         0.000 ula_operation[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -1.631
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -11.407 clock 
     Info (332119):    -1.631        -1.631 ula_operation[0] 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
-Info (332146): Worst-case setup slack is 1.014
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):     1.014         0.000 ula_operation[0] 
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case hold slack is -1.007
+Info (332146): Worst-case setup slack is -0.414
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.007        -7.416 ula_operation[0] 
+    Info (332119):    -0.414        -1.666 ula_operation[0] 
+Info (332146): Worst-case hold slack is 0.758
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.758         0.000 ula_operation[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -1.380
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
+    Info (332119):    -1.380        -9.380 clock 
     Info (332119):    -1.380        -1.380 ula_operation[0] 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 594 megabytes
-    Info: Processing ended: Thu Nov  3 16:32:11 2016
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 596 megabytes
+    Info: Processing ended: Fri Nov  4 11:18:36 2016
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 
