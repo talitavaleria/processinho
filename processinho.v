@@ -25,6 +25,7 @@ begin
 	reset = 0;
 end
 
+wire[11:0] BCDCODE;
 wire[7:0] register_operand;
 wire[7:0] ula_result;
 wire[3:0] regAValue;
@@ -38,15 +39,19 @@ general_register regB(clock, reset, setRegB, operando, regBValue);
 ula m_ula(clock, reset, regAValue, regBValue, ula_operation, ula_result);
 
 // Coloca o resultado da ula nos displays de 7 segmentos
-BCDdecode display0(ula_result % 10, HEX0);
-BCDdecode display1(ula_result/10 <= 9 ? ula_result/10 : ( (ula_result%100) / 10), HEX1);
-BCDdecode display2 ((ula_result/100 <= 9 ? ula_result/100 : ( (ula_result%1000) / 100)), HEX2);
-BCDdecode display3(8, HEX3);
+Display disp(BCDCODE, HEX3, HEX2, HEX1, HEX0);
+
+
+//BCDdecode display0(ula_result % 10, HEX0);
+//BCDdecode display1(ula_result/10 <= 9 ? ula_result/10 : ( (ula_result%100) / 10), HEX1);
+//BCDdecode display2 ((ula_result/100 <= 9 ? ula_result/100 : ( (ula_result%1000) / 100)), HEX2);
+//BCDdecode display3(8, HEX3);
 
 
 //assign result = ula_result; // Armazena o valor da ula
 //assign result = regAValue;
+//assign HEX3 = ~HEX3;
 assign result = ula_result;
-assign HEX3 = ~HEX3;
+assign BCDCODE =((ula_result%10)+(ula_result/10)+(ula_result/100));
 
 endmodule

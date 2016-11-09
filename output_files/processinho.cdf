@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C20F484) Path("/home/talitav/Documents/PEM/Sistemas digitais/processinho/output_files/") File("processinho.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C20F484) Path("/home/talitav/Documents/processinho/output_files/") File("processinho.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

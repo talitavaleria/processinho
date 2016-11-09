@@ -1,15 +1,11 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="processinho">
-		<CBX_INST_ENTRY INSTANCE_NAME="|processinho|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_1dm.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|processinho|lpm_divide:Div5" CBX_FILE_NAME="lpm_divide_dem.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|processinho|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_4dm.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|processinho|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_45m.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|processinho|ula:m_ula|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_27h.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|processinho|lpm_divide:Div2" CBX_FILE_NAME="lpm_divide_0dm.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|processinho|lpm_divide:Div4" CBX_FILE_NAME="lpm_divide_4dm.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|processinho|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_75m.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|processinho|ula:m_ula|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_scm.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|processinho|lpm_divide:Mod2" CBX_FILE_NAME="lpm_divide_h6m.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|processinho|ula:m_ula|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_17h.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|processinho|ula:m_ula|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_27h.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|processinho|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_1dm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|processinho|ula:m_ula|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_scm.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
