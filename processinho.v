@@ -5,7 +5,7 @@
  
 module processinho(
 	input clock,
-	input reset,
+	//input reset,
 	input latch_ula,
 	input[3:0] ula_operation,
 	input[3:0] operando,
@@ -18,10 +18,15 @@ module processinho(
 	output[7:0] HEX3
 );
 
-wire[7:0]  register_operand;
+reg reset;
+
+initial
+begin
+	reset = 0;
+end
+
+wire[7:0] register_operand;
 wire[7:0] ula_result;
-//wire setRegA;
-//wire setRegB;
 wire[3:0] regAValue;
 wire[3:0] regBValue;
 
@@ -41,7 +46,7 @@ BCDdecode display3(8, HEX3);
 
 //assign result = ula_result; // Armazena o valor da ula
 //assign result = regAValue;
-assign result = regBValue;
+assign result = ula_result;
 assign HEX3 = ~HEX3;
 
 endmodule

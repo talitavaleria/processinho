@@ -7,7 +7,7 @@
 module general_register(
 	input clock,
 	input reset,				 // Ativado em nivel baixo
-	input setValue, 			 // Quando em n´ivel baixo armazena valor no registrador	
+	input setValue, 			 // Quando em nivel alto armazena valor no registrador	
 	input[3:0] valueIn,		 // Valor a ser armazenado no registrador
 	output reg[3:0] valueOut // Valor armazenado no registrador
 );
@@ -18,7 +18,8 @@ begin
 	begin
 		valueOut = 0;
 	end
-	else if(setValue)
+	
+	if(setValue)
 	begin
 		valueOut = valueIn;
 	end
