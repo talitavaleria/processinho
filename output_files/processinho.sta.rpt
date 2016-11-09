@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for processinho
-Wed Nov  9 14:35:17 2016
+Wed Nov  9 15:58:31 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1.78 SJ Web Edition
 
 
@@ -16,38 +16,37 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1.78 SJ Web E
   8. Slow Model Recovery Summary
   9. Slow Model Removal Summary
  10. Slow Model Minimum Pulse Width Summary
- 11. Slow Model Setup: 'ula_operation[0]'
- 12. Slow Model Hold: 'ula_operation[0]'
- 13. Slow Model Minimum Pulse Width: 'clock'
- 14. Slow Model Minimum Pulse Width: 'ula_operation[0]'
- 15. Setup Times
- 16. Hold Times
- 17. Clock to Output Times
- 18. Minimum Clock to Output Times
- 19. Fast Model Setup Summary
- 20. Fast Model Hold Summary
- 21. Fast Model Recovery Summary
- 22. Fast Model Removal Summary
- 23. Fast Model Minimum Pulse Width Summary
- 24. Fast Model Setup: 'ula_operation[0]'
- 25. Fast Model Hold: 'ula_operation[0]'
- 26. Fast Model Minimum Pulse Width: 'clock'
- 27. Fast Model Minimum Pulse Width: 'ula_operation[0]'
- 28. Setup Times
- 29. Hold Times
- 30. Clock to Output Times
- 31. Minimum Clock to Output Times
- 32. Multicorner Timing Analysis Summary
- 33. Setup Times
- 34. Hold Times
- 35. Clock to Output Times
- 36. Minimum Clock to Output Times
- 37. Setup Transfers
- 38. Hold Transfers
- 39. Report TCCS
- 40. Report RSKM
- 41. Unconstrained Paths
- 42. TimeQuest Timing Analyzer Messages
+ 11. Slow Model Minimum Pulse Width: 'clock'
+ 12. Setup Times
+ 13. Hold Times
+ 14. Clock to Output Times
+ 15. Minimum Clock to Output Times
+ 16. Propagation Delay
+ 17. Minimum Propagation Delay
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Minimum Pulse Width: 'clock'
+ 24. Setup Times
+ 25. Hold Times
+ 26. Clock to Output Times
+ 27. Minimum Clock to Output Times
+ 28. Propagation Delay
+ 29. Minimum Propagation Delay
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Progagation Delay
+ 36. Minimum Progagation Delay
+ 37. Clock Transfers
+ 38. Report TCCS
+ 39. Report RSKM
+ 40. Unconstrained Paths
+ 41. TimeQuest Timing Analyzer Messages
 
 
 
@@ -94,42 +93,31 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clocks                                                                                                                                                                                             ;
-+------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
-; Clock Name       ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets              ;
-+------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
-; clock            ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock }            ;
-; ula_operation[0] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { ula_operation[0] } ;
-+------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Slow Model Fmax Summary                                                                                          ;
-+-------------+-----------------+------------------+---------------------------------------------------------------+
-; Fmax        ; Restricted Fmax ; Clock Name       ; Note                                                          ;
-+-------------+-----------------+------------------+---------------------------------------------------------------+
-; 1272.26 MHz ; 380.08 MHz      ; ula_operation[0] ; limit due to minimum period restriction (max I/O toggle rate) ;
-+-------------+-----------------+------------------+---------------------------------------------------------------+
-This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+---------------------------
+; Slow Model Fmax Summary ;
+---------------------------
+No paths to report.
 
 
-+-------------------------------------------+
-; Slow Model Setup Summary                  ;
-+------------------+--------+---------------+
-; Clock            ; Slack  ; End Point TNS ;
-+------------------+--------+---------------+
-; ula_operation[0] ; -5.382 ; -41.705       ;
-+------------------+--------+---------------+
+----------------------------
+; Slow Model Setup Summary ;
+----------------------------
+No paths to report.
 
 
-+-------------------------------------------+
-; Slow Model Hold Summary                   ;
-+------------------+--------+---------------+
-; Clock            ; Slack  ; End Point TNS ;
-+------------------+--------+---------------+
-; ula_operation[0] ; -1.156 ; -8.065        ;
-+------------------+--------+---------------+
+---------------------------
+; Slow Model Hold Summary ;
+---------------------------
+No paths to report.
 
 
 -------------------------------
@@ -144,190 +132,13 @@ No paths to report.
 No paths to report.
 
 
-+-------------------------------------------+
-; Slow Model Minimum Pulse Width Summary    ;
-+------------------+--------+---------------+
-; Clock            ; Slack  ; End Point TNS ;
-+------------------+--------+---------------+
-; clock            ; -1.631 ; -11.407       ;
-; ula_operation[0] ; -1.631 ; -1.631        ;
-+------------------+--------+---------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Setup: 'ula_operation[0]'                                                                                                            ;
-+--------+-----------------------------------+---------------------+------------------+------------------+--------------+------------+------------+
-; Slack  ; From Node                         ; To Node             ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------------------------------+---------------------+------------------+------------------+--------------+------------+------------+
-; -5.382 ; general_register:regB|valueOut[2] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; 0.500        ; 1.351      ; 6.048      ;
-; -5.292 ; general_register:regB|valueOut[1] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; 0.500        ; 1.351      ; 5.958      ;
-; -5.260 ; general_register:regB|valueOut[1] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; 0.500        ; 1.335      ; 5.915      ;
-; -5.251 ; general_register:regB|valueOut[1] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; 0.500        ; 1.334      ; 5.904      ;
-; -5.232 ; general_register:regB|valueOut[1] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; 0.500        ; 1.334      ; 5.921      ;
-; -5.222 ; general_register:regB|valueOut[1] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; 0.500        ; 1.332      ; 5.901      ;
-; -5.186 ; general_register:regB|valueOut[2] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; 0.500        ; 1.351      ; 5.887      ;
-; -5.115 ; general_register:regB|valueOut[2] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; 0.500        ; 1.350      ; 5.824      ;
-; -5.101 ; general_register:regB|valueOut[2] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; 0.500        ; 1.335      ; 5.756      ;
-; -5.057 ; general_register:regB|valueOut[2] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; 0.500        ; 1.164      ; 5.666      ;
-; -5.011 ; general_register:regB|valueOut[0] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; 0.500        ; 1.335      ; 5.666      ;
-; -5.002 ; general_register:regB|valueOut[0] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; 0.500        ; 1.334      ; 5.655      ;
-; -4.984 ; general_register:regB|valueOut[1] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; 0.500        ; 1.351      ; 5.685      ;
-; -4.983 ; general_register:regB|valueOut[0] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; 0.500        ; 1.334      ; 5.672      ;
-; -4.977 ; general_register:regB|valueOut[1] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; 0.500        ; 1.164      ; 5.586      ;
-; -4.973 ; general_register:regB|valueOut[0] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; 0.500        ; 1.332      ; 5.652      ;
-; -4.940 ; general_register:regB|valueOut[0] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; 0.500        ; 1.351      ; 5.641      ;
-; -4.928 ; general_register:regA|valueOut[2] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; 0.500        ; 1.351      ; 5.629      ;
-; -4.913 ; general_register:regB|valueOut[1] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; 0.500        ; 1.350      ; 5.622      ;
-; -4.874 ; general_register:regA|valueOut[3] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; 0.500        ; 1.351      ; 5.540      ;
-; -4.851 ; general_register:regB|valueOut[0] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; 0.500        ; 1.351      ; 5.517      ;
-; -4.843 ; general_register:regA|valueOut[2] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; 0.500        ; 1.335      ; 5.498      ;
-; -4.839 ; general_register:regA|valueOut[2] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; 0.500        ; 1.351      ; 5.505      ;
-; -4.817 ; general_register:regB|valueOut[3] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; 0.500        ; 1.351      ; 5.483      ;
-; -4.811 ; general_register:regB|valueOut[0] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; 0.500        ; 1.164      ; 5.420      ;
-; -4.799 ; general_register:regA|valueOut[2] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; 0.500        ; 1.164      ; 5.408      ;
-; -4.794 ; general_register:regA|valueOut[3] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; 0.500        ; 1.164      ; 5.403      ;
-; -4.660 ; general_register:regA|valueOut[1] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; 0.500        ; 1.351      ; 5.326      ;
-; -4.649 ; general_register:regA|valueOut[1] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; 0.500        ; 1.335      ; 5.304      ;
-; -4.640 ; general_register:regA|valueOut[1] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; 0.500        ; 1.334      ; 5.293      ;
-; -4.621 ; general_register:regA|valueOut[1] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; 0.500        ; 1.334      ; 5.310      ;
-; -4.612 ; general_register:regA|valueOut[3] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; 0.500        ; 1.351      ; 5.313      ;
-; -4.611 ; general_register:regA|valueOut[1] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; 0.500        ; 1.332      ; 5.290      ;
-; -4.607 ; general_register:regA|valueOut[3] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; 0.500        ; 1.350      ; 5.316      ;
-; -4.584 ; general_register:regB|valueOut[0] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; 0.500        ; 1.350      ; 5.293      ;
-; -4.572 ; general_register:regA|valueOut[2] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; 0.500        ; 1.350      ; 5.281      ;
-; -4.567 ; general_register:regA|valueOut[1] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; 0.500        ; 1.351      ; 5.268      ;
-; -4.565 ; general_register:regB|valueOut[3] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; 0.500        ; 1.351      ; 5.266      ;
-; -4.527 ; general_register:regA|valueOut[3] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; 0.500        ; 1.335      ; 5.182      ;
-; -4.517 ; general_register:regA|valueOut[0] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; 0.500        ; 1.335      ; 5.172      ;
-; -4.494 ; general_register:regB|valueOut[3] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; 0.500        ; 1.350      ; 5.203      ;
-; -4.480 ; general_register:regB|valueOut[3] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; 0.500        ; 1.335      ; 5.135      ;
-; -4.467 ; general_register:regA|valueOut[0] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; 0.500        ; 1.164      ; 5.076      ;
-; -4.438 ; general_register:regA|valueOut[1] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; 0.500        ; 1.164      ; 5.047      ;
-; -4.436 ; general_register:regB|valueOut[3] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; 0.500        ; 1.164      ; 5.045      ;
-; -4.407 ; general_register:regA|valueOut[0] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; 0.500        ; 1.334      ; 5.060      ;
-; -4.393 ; general_register:regA|valueOut[1] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; 0.500        ; 1.350      ; 5.102      ;
-; -4.388 ; general_register:regA|valueOut[0] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; 0.500        ; 1.334      ; 5.077      ;
-; -4.378 ; general_register:regA|valueOut[0] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; 0.500        ; 1.332      ; 5.057      ;
-; -4.338 ; general_register:regB|valueOut[2] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; 0.500        ; 1.332      ; 5.017      ;
-; -4.269 ; general_register:regA|valueOut[0] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; 0.500        ; 1.351      ; 4.935      ;
-; -4.249 ; general_register:regA|valueOut[0] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; 0.500        ; 1.351      ; 4.950      ;
-; -4.218 ; general_register:regA|valueOut[0] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; 0.500        ; 1.350      ; 4.927      ;
-; -4.151 ; general_register:regB|valueOut[2] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; 0.500        ; 1.334      ; 4.804      ;
-; -4.132 ; general_register:regB|valueOut[2] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; 0.500        ; 1.334      ; 4.821      ;
-; -4.079 ; general_register:regA|valueOut[2] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; 0.500        ; 1.332      ; 4.758      ;
-; -3.991 ; general_register:regA|valueOut[2] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; 0.500        ; 1.334      ; 4.644      ;
-; -3.978 ; general_register:regB|valueOut[3] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; 0.500        ; 1.334      ; 4.631      ;
-; -3.972 ; general_register:regA|valueOut[2] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; 0.500        ; 1.334      ; 4.661      ;
-; -3.959 ; general_register:regB|valueOut[3] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; 0.500        ; 1.334      ; 4.648      ;
-; -3.949 ; general_register:regB|valueOut[3] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; 0.500        ; 1.332      ; 4.628      ;
-; -3.891 ; general_register:regA|valueOut[3] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; 0.500        ; 1.334      ; 4.544      ;
-; -3.872 ; general_register:regA|valueOut[3] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; 0.500        ; 1.334      ; 4.561      ;
-; -3.862 ; general_register:regA|valueOut[3] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; 0.500        ; 1.332      ; 4.541      ;
-; 0.107  ; ula_operation[0]                  ; ula:m_ula|result[3] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 4.205      ; 3.418      ;
-; 0.116  ; ula_operation[0]                  ; ula:m_ula|result[0] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 4.204      ; 3.407      ;
-; 0.135  ; ula_operation[0]                  ; ula:m_ula|result[1] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 4.204      ; 3.424      ;
-; 0.145  ; ula_operation[0]                  ; ula:m_ula|result[2] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 4.202      ; 3.404      ;
-; 0.191  ; ula_operation[0]                  ; ula:m_ula|result[5] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 4.034      ; 3.288      ;
-; 0.300  ; ula_operation[0]                  ; ula:m_ula|result[4] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 4.221      ; 3.271      ;
-; 0.396  ; ula_operation[0]                  ; ula:m_ula|result[7] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 4.221      ; 3.140      ;
-; 0.439  ; ula_operation[0]                  ; ula:m_ula|result[6] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 4.220      ; 3.140      ;
-; 0.607  ; ula_operation[0]                  ; ula:m_ula|result[3] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 4.205      ; 3.418      ;
-; 0.616  ; ula_operation[0]                  ; ula:m_ula|result[0] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 4.204      ; 3.407      ;
-; 0.635  ; ula_operation[0]                  ; ula:m_ula|result[1] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 4.204      ; 3.424      ;
-; 0.645  ; ula_operation[0]                  ; ula:m_ula|result[2] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 4.202      ; 3.404      ;
-; 0.691  ; ula_operation[0]                  ; ula:m_ula|result[5] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 4.034      ; 3.288      ;
-; 0.800  ; ula_operation[0]                  ; ula:m_ula|result[4] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 4.221      ; 3.271      ;
-; 0.896  ; ula_operation[0]                  ; ula:m_ula|result[7] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 4.221      ; 3.140      ;
-; 0.939  ; ula_operation[0]                  ; ula:m_ula|result[6] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 4.220      ; 3.140      ;
-+--------+-----------------------------------+---------------------+------------------+------------------+--------------+------------+------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Hold: 'ula_operation[0]'                                                                                                             ;
-+--------+-----------------------------------+---------------------+------------------+------------------+--------------+------------+------------+
-; Slack  ; From Node                         ; To Node             ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------------------------------+---------------------+------------------+------------------+--------------+------------+------------+
-; -1.156 ; ula_operation[0]                  ; ula:m_ula|result[4] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 4.221      ; 3.065      ;
-; -1.112 ; ula_operation[0]                  ; ula:m_ula|result[7] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 4.221      ; 3.109      ;
-; -1.111 ; ula_operation[0]                  ; ula:m_ula|result[6] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 4.220      ; 3.109      ;
-; -0.984 ; ula_operation[0]                  ; ula:m_ula|result[2] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 4.202      ; 3.218      ;
-; -0.983 ; ula_operation[0]                  ; ula:m_ula|result[0] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 4.204      ; 3.221      ;
-; -0.975 ; ula_operation[0]                  ; ula:m_ula|result[3] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 4.205      ; 3.230      ;
-; -0.968 ; ula_operation[0]                  ; ula:m_ula|result[1] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 4.204      ; 3.236      ;
-; -0.776 ; ula_operation[0]                  ; ula:m_ula|result[5] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 4.034      ; 3.258      ;
-; -0.656 ; ula_operation[0]                  ; ula:m_ula|result[4] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 4.221      ; 3.065      ;
-; -0.612 ; ula_operation[0]                  ; ula:m_ula|result[7] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 4.221      ; 3.109      ;
-; -0.611 ; ula_operation[0]                  ; ula:m_ula|result[6] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 4.220      ; 3.109      ;
-; -0.484 ; ula_operation[0]                  ; ula:m_ula|result[2] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 4.202      ; 3.218      ;
-; -0.483 ; ula_operation[0]                  ; ula:m_ula|result[0] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 4.204      ; 3.221      ;
-; -0.475 ; ula_operation[0]                  ; ula:m_ula|result[3] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 4.205      ; 3.230      ;
-; -0.468 ; ula_operation[0]                  ; ula:m_ula|result[1] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 4.204      ; 3.236      ;
-; -0.276 ; ula_operation[0]                  ; ula:m_ula|result[5] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 4.034      ; 3.258      ;
-; 2.024  ; general_register:regB|valueOut[1] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; -0.500       ; 1.350      ; 2.874      ;
-; 2.076  ; general_register:regB|valueOut[1] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; -0.500       ; 1.351      ; 2.927      ;
-; 2.705  ; general_register:regA|valueOut[1] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; -0.500       ; 1.350      ; 3.555      ;
-; 2.751  ; general_register:regB|valueOut[2] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; -0.500       ; 1.332      ; 3.583      ;
-; 2.768  ; general_register:regA|valueOut[1] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; -0.500       ; 1.334      ; 3.602      ;
-; 2.773  ; general_register:regB|valueOut[0] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; -0.500       ; 1.334      ; 3.607      ;
-; 2.779  ; general_register:regB|valueOut[2] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; -0.500       ; 1.350      ; 3.629      ;
-; 2.823  ; general_register:regB|valueOut[3] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; -0.500       ; 1.332      ; 3.655      ;
-; 2.828  ; general_register:regB|valueOut[1] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; -0.500       ; 1.334      ; 3.662      ;
-; 2.912  ; general_register:regB|valueOut[2] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; -0.500       ; 1.351      ; 3.763      ;
-; 2.928  ; general_register:regA|valueOut[1] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; -0.500       ; 1.351      ; 3.779      ;
-; 2.935  ; general_register:regB|valueOut[3] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; -0.500       ; 1.351      ; 3.786      ;
-; 2.935  ; general_register:regB|valueOut[3] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; -0.500       ; 1.350      ; 3.785      ;
-; 2.944  ; general_register:regA|valueOut[1] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; -0.500       ; 1.332      ; 3.776      ;
-; 2.953  ; general_register:regB|valueOut[3] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; -0.500       ; 1.351      ; 3.804      ;
-; 2.954  ; general_register:regA|valueOut[3] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; -0.500       ; 1.351      ; 3.805      ;
-; 2.979  ; general_register:regB|valueOut[1] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; -0.500       ; 1.334      ; 3.813      ;
-; 3.011  ; general_register:regA|valueOut[0] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; -0.500       ; 1.334      ; 3.845      ;
-; 3.018  ; general_register:regA|valueOut[1] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; -0.500       ; 1.164      ; 3.682      ;
-; 3.018  ; general_register:regA|valueOut[2] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; -0.500       ; 1.351      ; 3.869      ;
-; 3.021  ; general_register:regB|valueOut[1] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; -0.500       ; 1.164      ; 3.685      ;
-; 3.022  ; general_register:regA|valueOut[3] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; -0.500       ; 1.335      ; 3.857      ;
-; 3.050  ; general_register:regA|valueOut[2] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; -0.500       ; 1.332      ; 3.882      ;
-; 3.052  ; general_register:regA|valueOut[1] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; -0.500       ; 1.351      ; 3.903      ;
-; 3.062  ; general_register:regA|valueOut[2] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; -0.500       ; 1.351      ; 3.913      ;
-; 3.063  ; general_register:regA|valueOut[2] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; -0.500       ; 1.350      ; 3.913      ;
-; 3.068  ; general_register:regB|valueOut[0] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; -0.500       ; 1.351      ; 3.919      ;
-; 3.068  ; general_register:regA|valueOut[3] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; -0.500       ; 1.351      ; 3.919      ;
-; 3.084  ; general_register:regB|valueOut[2] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; -0.500       ; 1.351      ; 3.935      ;
-; 3.091  ; general_register:regB|valueOut[1] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; -0.500       ; 1.332      ; 3.923      ;
-; 3.139  ; general_register:regB|valueOut[1] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; -0.500       ; 1.351      ; 3.990      ;
-; 3.140  ; general_register:regA|valueOut[0] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; -0.500       ; 1.350      ; 3.990      ;
-; 3.167  ; general_register:regB|valueOut[3] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; -0.500       ; 1.335      ; 4.002      ;
-; 3.197  ; general_register:regA|valueOut[0] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; -0.500       ; 1.351      ; 4.048      ;
-; 3.227  ; general_register:regA|valueOut[3] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; -0.500       ; 1.350      ; 4.077      ;
-; 3.232  ; general_register:regB|valueOut[0] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; -0.500       ; 1.351      ; 4.083      ;
-; 3.241  ; general_register:regA|valueOut[0] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; -0.500       ; 1.351      ; 4.092      ;
-; 3.248  ; general_register:regB|valueOut[3] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; -0.500       ; 1.164      ; 3.912      ;
-; 3.277  ; general_register:regB|valueOut[0] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; -0.500       ; 1.350      ; 4.127      ;
-; 3.282  ; general_register:regB|valueOut[0] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; -0.500       ; 1.332      ; 4.114      ;
-; 3.290  ; general_register:regA|valueOut[1] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; -0.500       ; 1.335      ; 4.125      ;
-; 3.368  ; general_register:regA|valueOut[0] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; -0.500       ; 1.335      ; 4.203      ;
-; 3.370  ; general_register:regB|valueOut[0] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; -0.500       ; 1.334      ; 4.204      ;
-; 3.398  ; general_register:regA|valueOut[2] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; -0.500       ; 1.164      ; 4.062      ;
-; 3.411  ; general_register:regA|valueOut[0] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; -0.500       ; 1.332      ; 4.243      ;
-; 3.437  ; general_register:regB|valueOut[1] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; -0.500       ; 1.335      ; 4.272      ;
-; 3.446  ; general_register:regB|valueOut[2] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; -0.500       ; 1.164      ; 4.110      ;
-; 3.453  ; general_register:regA|valueOut[0] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; -0.500       ; 1.164      ; 4.117      ;
-; 3.476  ; general_register:regA|valueOut[0] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; -0.500       ; 1.334      ; 4.310      ;
-; 3.478  ; general_register:regB|valueOut[2] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; -0.500       ; 1.335      ; 4.313      ;
-; 3.562  ; general_register:regA|valueOut[3] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; -0.500       ; 1.164      ; 4.226      ;
-; 3.597  ; general_register:regB|valueOut[0] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; -0.500       ; 1.164      ; 4.261      ;
-; 3.602  ; general_register:regA|valueOut[2] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; -0.500       ; 1.335      ; 4.437      ;
-; 3.644  ; general_register:regA|valueOut[3] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; -0.500       ; 1.332      ; 4.476      ;
-; 3.646  ; general_register:regA|valueOut[3] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; -0.500       ; 1.334      ; 4.480      ;
-; 3.662  ; general_register:regB|valueOut[0] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; -0.500       ; 1.335      ; 4.497      ;
-; 3.727  ; general_register:regA|valueOut[3] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; -0.500       ; 1.334      ; 4.561      ;
-; 3.733  ; general_register:regB|valueOut[3] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; -0.500       ; 1.334      ; 4.567      ;
-; 3.746  ; general_register:regA|valueOut[2] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; -0.500       ; 1.334      ; 4.580      ;
-; 3.814  ; general_register:regB|valueOut[3] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; -0.500       ; 1.334      ; 4.648      ;
-; 3.827  ; general_register:regA|valueOut[2] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; -0.500       ; 1.334      ; 4.661      ;
-; 3.906  ; general_register:regB|valueOut[2] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; -0.500       ; 1.334      ; 4.740      ;
-; 3.987  ; general_register:regB|valueOut[2] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; -0.500       ; 1.334      ; 4.821      ;
-; 4.395  ; general_register:regA|valueOut[1] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; -0.500       ; 1.334      ; 5.229      ;
-+--------+-----------------------------------+---------------------+------------------+------------------+--------------+------------+------------+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -1.631 ; -10.185               ;
++-------+--------+-----------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -350,8 +161,6 @@ No paths to report.
 ; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; general_register:regB|valueOut[1] ;
 ; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; general_register:regB|valueOut[2] ;
 ; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; general_register:regB|valueOut[2] ;
-; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; general_register:regB|valueOut[3] ;
-; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; general_register:regB|valueOut[3] ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout                     ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout                     ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|inclk[0]            ;
@@ -372,194 +181,339 @@ No paths to report.
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regB|valueOut[1]|clk              ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regB|valueOut[2]|clk              ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regB|valueOut[2]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regB|valueOut[3]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regB|valueOut[3]|clk              ;
 +--------+--------------+----------------+------------------+-------+------------+-----------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Minimum Pulse Width: 'ula_operation[0]'                                                                       ;
-+--------+--------------+----------------+------------------+------------------+------------+------------------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock            ; Clock Edge ; Target                       ;
-+--------+--------------+----------------+------------------+------------------+------------+------------------------------+
-; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; ula_operation[0] ; Rise       ; ula_operation[0]             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Mux8~0clkctrl|inclk[0] ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Mux8~0clkctrl|inclk[0] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Mux8~0clkctrl|outclk   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Mux8~0clkctrl|outclk   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Mux8~0|combout         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Mux8~0|combout         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Mux8~0|datac           ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Mux8~0|datac           ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[0]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[0]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[1]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[1]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[2]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[2]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[3]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[3]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[4]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[4]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[5]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[5]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[6]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[6]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[7]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[7]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[0]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[0]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[1]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[1]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[2]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[2]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[3]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[3]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[4]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[4]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[5]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[5]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[6]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[6]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[7]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[7]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; ula_operation[0]|combout     ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; ula_operation[0]|combout     ;
-+--------+--------------+----------------+------------------+------------------+------------+------------------------------+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; operando[*]  ; clock      ; 0.456  ; 0.456  ; Rise       ; clock           ;
+;  operando[0] ; clock      ; -0.249 ; -0.249 ; Rise       ; clock           ;
+;  operando[1] ; clock      ; -0.313 ; -0.313 ; Rise       ; clock           ;
+;  operando[2] ; clock      ; -0.311 ; -0.311 ; Rise       ; clock           ;
+;  operando[3] ; clock      ; 0.456  ; 0.456  ; Rise       ; clock           ;
+; setRegA      ; clock      ; 1.244  ; 1.244  ; Rise       ; clock           ;
+; setRegB      ; clock      ; 1.253  ; 1.253  ; Rise       ; clock           ;
++--------------+------------+--------+--------+------------+-----------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Setup Times                                                                          ;
-+-------------------+------------------+-------+-------+------------+------------------+
-; Data Port         ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
-+-------------------+------------------+-------+-------+------------+------------------+
-; operando[*]       ; clock            ; 0.838 ; 0.838 ; Rise       ; clock            ;
-;  operando[0]      ; clock            ; 0.673 ; 0.673 ; Rise       ; clock            ;
-;  operando[1]      ; clock            ; 0.838 ; 0.838 ; Rise       ; clock            ;
-;  operando[2]      ; clock            ; 0.376 ; 0.376 ; Rise       ; clock            ;
-;  operando[3]      ; clock            ; 0.558 ; 0.558 ; Rise       ; clock            ;
-; setRegA           ; clock            ; 0.635 ; 0.635 ; Rise       ; clock            ;
-; setRegB           ; clock            ; 0.849 ; 0.849 ; Rise       ; clock            ;
-; ula_operation[*]  ; ula_operation[0] ; 0.696 ; 0.696 ; Fall       ; ula_operation[0] ;
-;  ula_operation[0] ; ula_operation[0] ; 0.393 ; 0.393 ; Fall       ; ula_operation[0] ;
-;  ula_operation[1] ; ula_operation[0] ; 0.696 ; 0.696 ; Fall       ; ula_operation[0] ;
-+-------------------+------------------+-------+-------+------------+------------------+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; operando[*]  ; clock      ; 0.564  ; 0.564  ; Rise       ; clock           ;
+;  operando[0] ; clock      ; 0.501  ; 0.501  ; Rise       ; clock           ;
+;  operando[1] ; clock      ; 0.564  ; 0.564  ; Rise       ; clock           ;
+;  operando[2] ; clock      ; 0.564  ; 0.564  ; Rise       ; clock           ;
+;  operando[3] ; clock      ; -0.208 ; -0.208 ; Rise       ; clock           ;
+; setRegA      ; clock      ; -0.682 ; -0.682 ; Rise       ; clock           ;
+; setRegB      ; clock      ; -0.623 ; -0.623 ; Rise       ; clock           ;
++--------------+------------+--------+--------+------------+-----------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Hold Times                                                                             ;
-+-------------------+------------------+--------+--------+------------+------------------+
-; Data Port         ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
-+-------------------+------------------+--------+--------+------------+------------------+
-; operando[*]       ; clock            ; -0.127 ; -0.127 ; Rise       ; clock            ;
-;  operando[0]      ; clock            ; -0.424 ; -0.424 ; Rise       ; clock            ;
-;  operando[1]      ; clock            ; -0.588 ; -0.588 ; Rise       ; clock            ;
-;  operando[2]      ; clock            ; -0.127 ; -0.127 ; Rise       ; clock            ;
-;  operando[3]      ; clock            ; -0.310 ; -0.310 ; Rise       ; clock            ;
-; setRegA           ; clock            ; -0.387 ; -0.387 ; Rise       ; clock            ;
-; setRegB           ; clock            ; -0.601 ; -0.601 ; Rise       ; clock            ;
-; ula_operation[*]  ; ula_operation[0] ; 1.156  ; 1.156  ; Fall       ; ula_operation[0] ;
-;  ula_operation[0] ; ula_operation[0] ; 1.156  ; 1.156  ; Fall       ; ula_operation[0] ;
-;  ula_operation[1] ; ula_operation[0] ; 1.084  ; 1.084  ; Fall       ; ula_operation[0] ;
-+-------------------+------------------+--------+--------+------------+------------------+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; HEX0[*]    ; clock      ; 28.557 ; 28.557 ; Rise       ; clock           ;
+;  HEX0[0]   ; clock      ; 28.282 ; 28.282 ; Rise       ; clock           ;
+;  HEX0[1]   ; clock      ; 28.345 ; 28.345 ; Rise       ; clock           ;
+;  HEX0[2]   ; clock      ; 28.543 ; 28.543 ; Rise       ; clock           ;
+;  HEX0[3]   ; clock      ; 28.557 ; 28.557 ; Rise       ; clock           ;
+;  HEX0[4]   ; clock      ; 28.489 ; 28.489 ; Rise       ; clock           ;
+;  HEX0[5]   ; clock      ; 28.521 ; 28.521 ; Rise       ; clock           ;
+;  HEX0[6]   ; clock      ; 28.476 ; 28.476 ; Rise       ; clock           ;
+; HEX1[*]    ; clock      ; 37.655 ; 37.655 ; Rise       ; clock           ;
+;  HEX1[0]   ; clock      ; 37.655 ; 37.655 ; Rise       ; clock           ;
+;  HEX1[1]   ; clock      ; 36.585 ; 36.585 ; Rise       ; clock           ;
+;  HEX1[2]   ; clock      ; 36.237 ; 36.237 ; Rise       ; clock           ;
+;  HEX1[3]   ; clock      ; 36.557 ; 36.557 ; Rise       ; clock           ;
+;  HEX1[4]   ; clock      ; 36.332 ; 36.332 ; Rise       ; clock           ;
+;  HEX1[5]   ; clock      ; 36.931 ; 36.931 ; Rise       ; clock           ;
+;  HEX1[6]   ; clock      ; 37.235 ; 37.235 ; Rise       ; clock           ;
+; HEX2[*]    ; clock      ; 22.806 ; 22.806 ; Rise       ; clock           ;
+;  HEX2[0]   ; clock      ; 22.780 ; 22.780 ; Rise       ; clock           ;
+;  HEX2[3]   ; clock      ; 22.806 ; 22.806 ; Rise       ; clock           ;
+;  HEX2[4]   ; clock      ; 22.207 ; 22.207 ; Rise       ; clock           ;
+;  HEX2[5]   ; clock      ; 22.197 ; 22.197 ; Rise       ; clock           ;
+; result[*]  ; clock      ; 18.223 ; 18.223 ; Rise       ; clock           ;
+;  result[0] ; clock      ; 17.670 ; 17.670 ; Rise       ; clock           ;
+;  result[1] ; clock      ; 16.773 ; 16.773 ; Rise       ; clock           ;
+;  result[2] ; clock      ; 18.223 ; 18.223 ; Rise       ; clock           ;
+;  result[3] ; clock      ; 16.706 ; 16.706 ; Rise       ; clock           ;
+;  result[4] ; clock      ; 15.191 ; 15.191 ; Rise       ; clock           ;
+;  result[5] ; clock      ; 14.986 ; 14.986 ; Rise       ; clock           ;
+;  result[6] ; clock      ; 14.211 ; 14.211 ; Rise       ; clock           ;
++------------+------------+--------+--------+------------+-----------------+
 
 
-+---------------------------------------------------------------------------------+
-; Clock to Output Times                                                           ;
-+------------+------------------+--------+--------+------------+------------------+
-; Data Port  ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
-+------------+------------------+--------+--------+------------+------------------+
-; HEX0[*]    ; ula_operation[0] ; 28.341 ; 28.341 ; Fall       ; ula_operation[0] ;
-;  HEX0[0]   ; ula_operation[0] ; 27.954 ; 27.954 ; Fall       ; ula_operation[0] ;
-;  HEX0[1]   ; ula_operation[0] ; 28.208 ; 28.208 ; Fall       ; ula_operation[0] ;
-;  HEX0[2]   ; ula_operation[0] ; 27.358 ; 27.358 ; Fall       ; ula_operation[0] ;
-;  HEX0[3]   ; ula_operation[0] ; 27.097 ; 27.097 ; Fall       ; ula_operation[0] ;
-;  HEX0[4]   ; ula_operation[0] ; 27.856 ; 27.856 ; Fall       ; ula_operation[0] ;
-;  HEX0[5]   ; ula_operation[0] ; 28.341 ; 28.341 ; Fall       ; ula_operation[0] ;
-;  HEX0[6]   ; ula_operation[0] ; 27.351 ; 27.351 ; Fall       ; ula_operation[0] ;
-; HEX1[*]    ; ula_operation[0] ; 32.062 ; 32.062 ; Fall       ; ula_operation[0] ;
-;  HEX1[0]   ; ula_operation[0] ; 32.016 ; 32.016 ; Fall       ; ula_operation[0] ;
-;  HEX1[1]   ; ula_operation[0] ; 32.062 ; 32.062 ; Fall       ; ula_operation[0] ;
-;  HEX1[2]   ; ula_operation[0] ; 31.081 ; 31.081 ; Fall       ; ula_operation[0] ;
-;  HEX1[3]   ; ula_operation[0] ; 32.054 ; 32.054 ; Fall       ; ula_operation[0] ;
-;  HEX1[4]   ; ula_operation[0] ; 31.478 ; 31.478 ; Fall       ; ula_operation[0] ;
-;  HEX1[5]   ; ula_operation[0] ; 32.030 ; 32.030 ; Fall       ; ula_operation[0] ;
-;  HEX1[6]   ; ula_operation[0] ; 32.016 ; 32.016 ; Fall       ; ula_operation[0] ;
-; HEX2[*]    ; ula_operation[0] ; 18.522 ; 18.522 ; Fall       ; ula_operation[0] ;
-;  HEX2[0]   ; ula_operation[0] ; 18.522 ; 18.522 ; Fall       ; ula_operation[0] ;
-;  HEX2[2]   ; ula_operation[0] ; 18.332 ; 18.332 ; Fall       ; ula_operation[0] ;
-;  HEX2[3]   ; ula_operation[0] ; 18.342 ; 18.342 ; Fall       ; ula_operation[0] ;
-;  HEX2[4]   ; ula_operation[0] ; 17.260 ; 17.260 ; Fall       ; ula_operation[0] ;
-;  HEX2[5]   ; ula_operation[0] ; 18.520 ; 18.520 ; Fall       ; ula_operation[0] ;
-;  HEX2[6]   ; ula_operation[0] ; 14.174 ; 14.174 ; Fall       ; ula_operation[0] ;
-; result[*]  ; ula_operation[0] ; 10.961 ; 10.961 ; Fall       ; ula_operation[0] ;
-;  result[0] ; ula_operation[0] ; 8.416  ; 8.416  ; Fall       ; ula_operation[0] ;
-;  result[1] ; ula_operation[0] ; 10.961 ; 10.961 ; Fall       ; ula_operation[0] ;
-;  result[2] ; ula_operation[0] ; 8.621  ; 8.621  ; Fall       ; ula_operation[0] ;
-;  result[3] ; ula_operation[0] ; 8.889  ; 8.889  ; Fall       ; ula_operation[0] ;
-;  result[4] ; ula_operation[0] ; 8.812  ; 8.812  ; Fall       ; ula_operation[0] ;
-;  result[5] ; ula_operation[0] ; 8.474  ; 8.474  ; Fall       ; ula_operation[0] ;
-;  result[6] ; ula_operation[0] ; 9.705  ; 9.705  ; Fall       ; ula_operation[0] ;
-;  result[7] ; ula_operation[0] ; 9.078  ; 9.078  ; Fall       ; ula_operation[0] ;
-+------------+------------------+--------+--------+------------+------------------+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; HEX0[*]    ; clock      ; 12.407 ; 12.407 ; Rise       ; clock           ;
+;  HEX0[0]   ; clock      ; 12.407 ; 12.407 ; Rise       ; clock           ;
+;  HEX0[1]   ; clock      ; 12.464 ; 12.464 ; Rise       ; clock           ;
+;  HEX0[2]   ; clock      ; 12.675 ; 12.675 ; Rise       ; clock           ;
+;  HEX0[3]   ; clock      ; 12.683 ; 12.683 ; Rise       ; clock           ;
+;  HEX0[4]   ; clock      ; 12.612 ; 12.612 ; Rise       ; clock           ;
+;  HEX0[5]   ; clock      ; 12.679 ; 12.679 ; Rise       ; clock           ;
+;  HEX0[6]   ; clock      ; 12.599 ; 12.599 ; Rise       ; clock           ;
+; HEX1[*]    ; clock      ; 15.464 ; 15.464 ; Rise       ; clock           ;
+;  HEX1[0]   ; clock      ; 16.882 ; 16.882 ; Rise       ; clock           ;
+;  HEX1[1]   ; clock      ; 15.812 ; 15.812 ; Rise       ; clock           ;
+;  HEX1[2]   ; clock      ; 15.464 ; 15.464 ; Rise       ; clock           ;
+;  HEX1[3]   ; clock      ; 15.784 ; 15.784 ; Rise       ; clock           ;
+;  HEX1[4]   ; clock      ; 15.559 ; 15.559 ; Rise       ; clock           ;
+;  HEX1[5]   ; clock      ; 16.158 ; 16.158 ; Rise       ; clock           ;
+;  HEX1[6]   ; clock      ; 16.462 ; 16.462 ; Rise       ; clock           ;
+; HEX2[*]    ; clock      ; 13.964 ; 13.964 ; Rise       ; clock           ;
+;  HEX2[0]   ; clock      ; 14.547 ; 14.547 ; Rise       ; clock           ;
+;  HEX2[3]   ; clock      ; 14.573 ; 14.573 ; Rise       ; clock           ;
+;  HEX2[4]   ; clock      ; 13.974 ; 13.974 ; Rise       ; clock           ;
+;  HEX2[5]   ; clock      ; 13.964 ; 13.964 ; Rise       ; clock           ;
+; result[*]  ; clock      ; 9.727  ; 9.727  ; Rise       ; clock           ;
+;  result[0] ; clock      ; 9.727  ; 9.727  ; Rise       ; clock           ;
+;  result[1] ; clock      ; 10.959 ; 10.959 ; Rise       ; clock           ;
+;  result[2] ; clock      ; 11.024 ; 11.024 ; Rise       ; clock           ;
+;  result[3] ; clock      ; 11.119 ; 11.119 ; Rise       ; clock           ;
+;  result[4] ; clock      ; 12.334 ; 12.334 ; Rise       ; clock           ;
+;  result[5] ; clock      ; 11.531 ; 11.531 ; Rise       ; clock           ;
+;  result[6] ; clock      ; 10.870 ; 10.870 ; Rise       ; clock           ;
++------------+------------+--------+--------+------------+-----------------+
 
 
-+---------------------------------------------------------------------------------+
-; Minimum Clock to Output Times                                                   ;
-+------------+------------------+--------+--------+------------+------------------+
-; Data Port  ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
-+------------+------------------+--------+--------+------------+------------------+
-; HEX0[*]    ; ula_operation[0] ; 12.331 ; 12.331 ; Fall       ; ula_operation[0] ;
-;  HEX0[0]   ; ula_operation[0] ; 13.195 ; 13.195 ; Fall       ; ula_operation[0] ;
-;  HEX0[1]   ; ula_operation[0] ; 13.445 ; 13.445 ; Fall       ; ula_operation[0] ;
-;  HEX0[2]   ; ula_operation[0] ; 12.657 ; 12.657 ; Fall       ; ula_operation[0] ;
-;  HEX0[3]   ; ula_operation[0] ; 12.331 ; 12.331 ; Fall       ; ula_operation[0] ;
-;  HEX0[4]   ; ula_operation[0] ; 13.091 ; 13.091 ; Fall       ; ula_operation[0] ;
-;  HEX0[5]   ; ula_operation[0] ; 13.577 ; 13.577 ; Fall       ; ula_operation[0] ;
-;  HEX0[6]   ; ula_operation[0] ; 12.583 ; 12.583 ; Fall       ; ula_operation[0] ;
-; HEX1[*]    ; ula_operation[0] ; 14.466 ; 14.466 ; Fall       ; ula_operation[0] ;
-;  HEX1[0]   ; ula_operation[0] ; 15.005 ; 15.005 ; Fall       ; ula_operation[0] ;
-;  HEX1[1]   ; ula_operation[0] ; 15.331 ; 15.331 ; Fall       ; ula_operation[0] ;
-;  HEX1[2]   ; ula_operation[0] ; 14.954 ; 14.954 ; Fall       ; ula_operation[0] ;
-;  HEX1[3]   ; ula_operation[0] ; 15.322 ; 15.322 ; Fall       ; ula_operation[0] ;
-;  HEX1[4]   ; ula_operation[0] ; 14.466 ; 14.466 ; Fall       ; ula_operation[0] ;
-;  HEX1[5]   ; ula_operation[0] ; 15.018 ; 15.018 ; Fall       ; ula_operation[0] ;
-;  HEX1[6]   ; ula_operation[0] ; 15.008 ; 15.008 ; Fall       ; ula_operation[0] ;
-; HEX2[*]    ; ula_operation[0] ; 13.061 ; 13.061 ; Fall       ; ula_operation[0] ;
-;  HEX2[0]   ; ula_operation[0] ; 14.725 ; 14.725 ; Fall       ; ula_operation[0] ;
-;  HEX2[2]   ; ula_operation[0] ; 14.534 ; 14.534 ; Fall       ; ula_operation[0] ;
-;  HEX2[3]   ; ula_operation[0] ; 14.545 ; 14.545 ; Fall       ; ula_operation[0] ;
-;  HEX2[4]   ; ula_operation[0] ; 14.647 ; 14.647 ; Fall       ; ula_operation[0] ;
-;  HEX2[5]   ; ula_operation[0] ; 14.721 ; 14.721 ; Fall       ; ula_operation[0] ;
-;  HEX2[6]   ; ula_operation[0] ; 13.061 ; 13.061 ; Fall       ; ula_operation[0] ;
-; result[*]  ; ula_operation[0] ; 8.416  ; 8.416  ; Fall       ; ula_operation[0] ;
-;  result[0] ; ula_operation[0] ; 8.416  ; 8.416  ; Fall       ; ula_operation[0] ;
-;  result[1] ; ula_operation[0] ; 10.961 ; 10.961 ; Fall       ; ula_operation[0] ;
-;  result[2] ; ula_operation[0] ; 8.621  ; 8.621  ; Fall       ; ula_operation[0] ;
-;  result[3] ; ula_operation[0] ; 8.889  ; 8.889  ; Fall       ; ula_operation[0] ;
-;  result[4] ; ula_operation[0] ; 8.812  ; 8.812  ; Fall       ; ula_operation[0] ;
-;  result[5] ; ula_operation[0] ; 8.474  ; 8.474  ; Fall       ; ula_operation[0] ;
-;  result[6] ; ula_operation[0] ; 9.705  ; 9.705  ; Fall       ; ula_operation[0] ;
-;  result[7] ; ula_operation[0] ; 9.078  ; 9.078  ; Fall       ; ula_operation[0] ;
-+------------+------------------+--------+--------+------------+------------------+
++--------------------------------------------------------------------+
+; Propagation Delay                                                  ;
++------------------+-------------+--------+--------+--------+--------+
+; Input Port       ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------------+-------------+--------+--------+--------+--------+
+; ula_operation[0] ; HEX0[0]     ; 23.911 ; 23.911 ; 23.911 ; 23.911 ;
+; ula_operation[0] ; HEX0[1]     ; 23.974 ; 23.974 ; 23.974 ; 23.974 ;
+; ula_operation[0] ; HEX0[2]     ; 24.172 ; 24.172 ; 24.172 ; 24.172 ;
+; ula_operation[0] ; HEX0[3]     ; 24.186 ; 24.186 ; 24.186 ; 24.186 ;
+; ula_operation[0] ; HEX0[4]     ; 24.118 ; 24.118 ; 24.118 ; 24.118 ;
+; ula_operation[0] ; HEX0[5]     ; 24.150 ; 24.150 ; 24.150 ; 24.150 ;
+; ula_operation[0] ; HEX0[6]     ; 24.105 ; 24.105 ; 24.105 ; 24.105 ;
+; ula_operation[0] ; HEX1[0]     ; 32.706 ; 32.706 ; 32.706 ; 32.706 ;
+; ula_operation[0] ; HEX1[1]     ; 31.636 ; 31.636 ; 31.636 ; 31.636 ;
+; ula_operation[0] ; HEX1[2]     ; 31.288 ; 31.288 ; 31.288 ; 31.288 ;
+; ula_operation[0] ; HEX1[3]     ; 31.608 ; 31.608 ; 31.608 ; 31.608 ;
+; ula_operation[0] ; HEX1[4]     ; 31.383 ; 31.383 ; 31.383 ; 31.383 ;
+; ula_operation[0] ; HEX1[5]     ; 31.982 ; 31.982 ; 31.982 ; 31.982 ;
+; ula_operation[0] ; HEX1[6]     ; 32.286 ; 32.286 ; 32.286 ; 32.286 ;
+; ula_operation[0] ; HEX2[0]     ; 17.831 ; 17.831 ; 17.831 ; 17.831 ;
+; ula_operation[0] ; HEX2[3]     ; 17.857 ; 17.857 ; 17.857 ; 17.857 ;
+; ula_operation[0] ; HEX2[4]     ; 17.258 ; 17.258 ; 17.258 ; 17.258 ;
+; ula_operation[0] ; HEX2[5]     ; 17.248 ; 17.248 ; 17.248 ; 17.248 ;
+; ula_operation[0] ; result[0]   ; 10.112 ; 10.070 ; 10.070 ; 10.112 ;
+; ula_operation[0] ; result[1]   ; 13.172 ; 13.172 ; 13.172 ; 13.172 ;
+; ula_operation[0] ; result[2]   ; 13.274 ; 13.274 ; 13.274 ; 13.274 ;
+; ula_operation[0] ; result[3]   ; 11.931 ; 11.262 ; 11.262 ; 11.931 ;
+; ula_operation[0] ; result[4]   ; 11.134 ;        ;        ; 11.134 ;
+; ula_operation[0] ; result[5]   ; 11.034 ;        ;        ; 11.034 ;
+; ula_operation[0] ; result[6]   ; 9.961  ;        ;        ; 9.961  ;
+; ula_operation[1] ; HEX0[0]     ; 22.901 ; 22.901 ; 22.901 ; 22.901 ;
+; ula_operation[1] ; HEX0[1]     ; 22.964 ; 22.964 ; 22.964 ; 22.964 ;
+; ula_operation[1] ; HEX0[2]     ; 23.162 ; 23.162 ; 23.162 ; 23.162 ;
+; ula_operation[1] ; HEX0[3]     ; 23.176 ; 23.176 ; 23.176 ; 23.176 ;
+; ula_operation[1] ; HEX0[4]     ; 23.108 ; 23.108 ; 23.108 ; 23.108 ;
+; ula_operation[1] ; HEX0[5]     ; 23.140 ; 23.140 ; 23.140 ; 23.140 ;
+; ula_operation[1] ; HEX0[6]     ; 23.095 ; 23.095 ; 23.095 ; 23.095 ;
+; ula_operation[1] ; HEX1[0]     ; 32.651 ; 32.651 ; 32.651 ; 32.651 ;
+; ula_operation[1] ; HEX1[1]     ; 31.581 ; 31.581 ; 31.581 ; 31.581 ;
+; ula_operation[1] ; HEX1[2]     ; 31.233 ; 31.233 ; 31.233 ; 31.233 ;
+; ula_operation[1] ; HEX1[3]     ; 31.553 ; 31.553 ; 31.553 ; 31.553 ;
+; ula_operation[1] ; HEX1[4]     ; 31.328 ; 31.328 ; 31.328 ; 31.328 ;
+; ula_operation[1] ; HEX1[5]     ; 31.927 ; 31.927 ; 31.927 ; 31.927 ;
+; ula_operation[1] ; HEX1[6]     ; 32.231 ; 32.231 ; 32.231 ; 32.231 ;
+; ula_operation[1] ; HEX2[0]     ; 17.776 ; 17.776 ; 17.776 ; 17.776 ;
+; ula_operation[1] ; HEX2[3]     ; 17.802 ; 17.802 ; 17.802 ; 17.802 ;
+; ula_operation[1] ; HEX2[4]     ; 17.203 ; 17.203 ; 17.203 ; 17.203 ;
+; ula_operation[1] ; HEX2[5]     ; 17.193 ; 17.193 ; 17.193 ; 17.193 ;
+; ula_operation[1] ; result[0]   ; 9.733  ; 10.949 ; 10.949 ; 9.733  ;
+; ula_operation[1] ; result[1]   ; 13.172 ; 13.172 ; 13.172 ; 13.172 ;
+; ula_operation[1] ; result[2]   ; 13.219 ; 13.219 ; 13.219 ; 13.219 ;
+; ula_operation[1] ; result[3]   ; 11.325 ; 11.181 ; 11.181 ; 11.325 ;
+; ula_operation[1] ; result[4]   ; 9.480  ;        ;        ; 9.480  ;
+; ula_operation[1] ; result[5]   ; 9.383  ;        ;        ; 9.383  ;
+; ula_operation[1] ; result[6]   ; 7.922  ;        ;        ; 7.922  ;
+; ula_operation[2] ; HEX0[0]     ; 23.175 ; 23.175 ; 23.175 ; 23.175 ;
+; ula_operation[2] ; HEX0[1]     ; 23.238 ; 23.238 ; 23.238 ; 23.238 ;
+; ula_operation[2] ; HEX0[2]     ; 23.436 ; 23.436 ; 23.436 ; 23.436 ;
+; ula_operation[2] ; HEX0[3]     ; 23.450 ; 23.450 ; 23.450 ; 23.450 ;
+; ula_operation[2] ; HEX0[4]     ; 23.382 ; 23.382 ; 23.382 ; 23.382 ;
+; ula_operation[2] ; HEX0[5]     ; 23.414 ; 23.414 ; 23.414 ; 23.414 ;
+; ula_operation[2] ; HEX0[6]     ; 23.369 ; 23.369 ; 23.369 ; 23.369 ;
+; ula_operation[2] ; HEX1[0]     ; 31.489 ; 31.489 ; 31.489 ; 31.489 ;
+; ula_operation[2] ; HEX1[1]     ; 30.419 ; 30.419 ; 30.419 ; 30.419 ;
+; ula_operation[2] ; HEX1[2]     ; 30.071 ; 30.071 ; 30.071 ; 30.071 ;
+; ula_operation[2] ; HEX1[3]     ; 30.391 ; 30.391 ; 30.391 ; 30.391 ;
+; ula_operation[2] ; HEX1[4]     ; 30.166 ; 30.166 ; 30.166 ; 30.166 ;
+; ula_operation[2] ; HEX1[5]     ; 30.765 ; 30.765 ; 30.765 ; 30.765 ;
+; ula_operation[2] ; HEX1[6]     ; 31.069 ; 31.069 ; 31.069 ; 31.069 ;
+; ula_operation[2] ; HEX2[0]     ; 16.614 ; 16.614 ; 16.614 ; 16.614 ;
+; ula_operation[2] ; HEX2[3]     ; 16.640 ; 16.640 ; 16.640 ; 16.640 ;
+; ula_operation[2] ; HEX2[4]     ; 16.041 ; 16.041 ; 16.041 ; 16.041 ;
+; ula_operation[2] ; HEX2[5]     ; 16.031 ; 16.031 ; 16.031 ; 16.031 ;
+; ula_operation[2] ; result[0]   ; 10.853 ; 10.963 ; 10.963 ; 10.853 ;
+; ula_operation[2] ; result[1]   ; 11.454 ; 11.454 ; 11.454 ; 11.454 ;
+; ula_operation[2] ; result[2]   ; 12.057 ; 12.057 ; 12.057 ; 12.057 ;
+; ula_operation[2] ; result[3]   ; 11.258 ; 11.599 ; 11.599 ; 11.258 ;
+; ula_operation[2] ; result[4]   ;        ; 9.287  ; 9.287  ;        ;
+; ula_operation[2] ; result[5]   ;        ; 9.191  ; 9.191  ;        ;
+; ula_operation[2] ; result[6]   ;        ; 8.370  ; 8.370  ;        ;
+; ula_operation[3] ; HEX0[0]     ; 22.386 ; 22.386 ; 22.386 ; 22.386 ;
+; ula_operation[3] ; HEX0[1]     ; 22.449 ; 22.449 ; 22.449 ; 22.449 ;
+; ula_operation[3] ; HEX0[2]     ; 22.647 ; 22.647 ; 22.647 ; 22.647 ;
+; ula_operation[3] ; HEX0[3]     ; 22.661 ; 22.661 ; 22.661 ; 22.661 ;
+; ula_operation[3] ; HEX0[4]     ; 22.593 ; 22.593 ; 22.593 ; 22.593 ;
+; ula_operation[3] ; HEX0[5]     ; 22.625 ; 22.625 ; 22.625 ; 22.625 ;
+; ula_operation[3] ; HEX0[6]     ; 22.580 ; 22.580 ; 22.580 ; 22.580 ;
+; ula_operation[3] ; HEX1[0]     ; 29.318 ; 29.318 ; 29.318 ; 29.318 ;
+; ula_operation[3] ; HEX1[1]     ; 28.248 ; 28.248 ; 28.248 ; 28.248 ;
+; ula_operation[3] ; HEX1[2]     ; 27.900 ; 27.883 ; 27.883 ; 27.900 ;
+; ula_operation[3] ; HEX1[3]     ; 28.220 ; 28.220 ; 28.220 ; 28.220 ;
+; ula_operation[3] ; HEX1[4]     ; 27.978 ; 27.995 ; 27.995 ; 27.978 ;
+; ula_operation[3] ; HEX1[5]     ; 28.577 ; 28.594 ; 28.594 ; 28.577 ;
+; ula_operation[3] ; HEX1[6]     ; 28.881 ; 28.898 ; 28.898 ; 28.881 ;
+; ula_operation[3] ; HEX2[0]     ; 14.459 ; 15.066 ; 15.066 ; 14.459 ;
+; ula_operation[3] ; HEX2[3]     ; 14.485 ; 15.092 ; 15.092 ; 14.485 ;
+; ula_operation[3] ; HEX2[4]     ; 13.886 ; 14.493 ; 14.493 ; 13.886 ;
+; ula_operation[3] ; HEX2[5]     ; 13.876 ; 14.483 ; 14.483 ; 13.876 ;
+; ula_operation[3] ; result[0]   ; 8.890  ; 7.849  ; 7.849  ; 8.890  ;
+; ula_operation[3] ; result[1]   ; 8.720  ; 7.736  ; 7.736  ; 8.720  ;
+; ula_operation[3] ; result[2]   ; 8.640  ; 7.666  ; 7.666  ; 8.640  ;
+; ula_operation[3] ; result[3]   ; 9.799  ; 10.406 ; 10.406 ; 9.799  ;
+; ula_operation[3] ; result[4]   ;        ; 9.609  ; 9.609  ;        ;
+; ula_operation[3] ; result[5]   ;        ; 9.509  ; 9.509  ;        ;
+; ula_operation[3] ; result[6]   ;        ; 8.436  ; 8.436  ;        ;
++------------------+-------------+--------+--------+--------+--------+
 
 
-+-------------------------------------------+
-; Fast Model Setup Summary                  ;
-+------------------+--------+---------------+
-; Clock            ; Slack  ; End Point TNS ;
-+------------------+--------+---------------+
-; ula_operation[0] ; -1.621 ; -12.505       ;
-+------------------+--------+---------------+
++--------------------------------------------------------------------+
+; Minimum Propagation Delay                                          ;
++------------------+-------------+--------+--------+--------+--------+
+; Input Port       ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------------+-------------+--------+--------+--------+--------+
+; ula_operation[0] ; HEX0[0]     ; 12.635 ; 12.635 ; 12.635 ; 12.635 ;
+; ula_operation[0] ; HEX0[1]     ; 12.692 ; 12.692 ; 12.692 ; 12.692 ;
+; ula_operation[0] ; HEX0[2]     ; 12.903 ; 12.903 ; 12.903 ; 12.903 ;
+; ula_operation[0] ; HEX0[3]     ; 12.911 ; 12.911 ; 12.911 ; 12.911 ;
+; ula_operation[0] ; HEX0[4]     ; 12.840 ; 12.840 ; 12.840 ; 12.840 ;
+; ula_operation[0] ; HEX0[5]     ; 12.907 ; 12.907 ; 12.907 ; 12.907 ;
+; ula_operation[0] ; HEX0[6]     ; 12.827 ; 12.827 ; 12.827 ; 12.827 ;
+; ula_operation[0] ; HEX1[0]     ; 16.204 ; 16.052 ; 16.052 ; 16.204 ;
+; ula_operation[0] ; HEX1[1]     ; 15.161 ; 15.007 ; 15.007 ; 15.161 ;
+; ula_operation[0] ; HEX1[2]     ; 14.905 ; 14.905 ; 14.905 ; 14.905 ;
+; ula_operation[0] ; HEX1[3]     ; 15.127 ; 14.976 ; 14.976 ; 15.127 ;
+; ula_operation[0] ; HEX1[4]     ; 14.882 ; 14.728 ; 14.728 ; 14.882 ;
+; ula_operation[0] ; HEX1[5]     ; 15.599 ; 15.330 ; 15.330 ; 15.599 ;
+; ula_operation[0] ; HEX1[6]     ; 15.747 ; 15.595 ; 15.595 ; 15.747 ;
+; ula_operation[0] ; HEX2[0]     ; 14.030 ; 14.245 ; 14.245 ; 14.030 ;
+; ula_operation[0] ; HEX2[3]     ; 14.056 ; 14.271 ; 14.271 ; 14.056 ;
+; ula_operation[0] ; HEX2[4]     ; 13.457 ; 13.672 ; 13.672 ; 13.457 ;
+; ula_operation[0] ; HEX2[5]     ; 13.447 ; 13.662 ; 13.662 ; 13.447 ;
+; ula_operation[0] ; result[0]   ; 9.955  ; 9.955  ; 9.955  ; 9.955  ;
+; ula_operation[0] ; result[1]   ; 10.400 ; 10.400 ; 10.400 ; 10.400 ;
+; ula_operation[0] ; result[2]   ; 10.298 ; 10.298 ; 10.298 ; 10.298 ;
+; ula_operation[0] ; result[3]   ; 11.262 ; 9.585  ; 9.585  ; 11.262 ;
+; ula_operation[0] ; result[4]   ; 11.134 ;        ;        ; 11.134 ;
+; ula_operation[0] ; result[5]   ; 11.034 ;        ;        ; 11.034 ;
+; ula_operation[0] ; result[6]   ; 9.961  ;        ;        ; 9.961  ;
+; ula_operation[1] ; HEX0[0]     ; 11.919 ; 12.144 ; 12.144 ; 11.919 ;
+; ula_operation[1] ; HEX0[1]     ; 11.978 ; 11.978 ; 11.978 ; 11.978 ;
+; ula_operation[1] ; HEX0[2]     ; 12.412 ; 12.283 ; 12.283 ; 12.412 ;
+; ula_operation[1] ; HEX0[3]     ; 12.201 ; 12.201 ; 12.201 ; 12.201 ;
+; ula_operation[1] ; HEX0[4]     ; 12.115 ; 12.349 ; 12.349 ; 12.115 ;
+; ula_operation[1] ; HEX0[5]     ; 12.574 ; 12.189 ; 12.189 ; 12.574 ;
+; ula_operation[1] ; HEX0[6]     ; 12.106 ; 12.106 ; 12.106 ; 12.106 ;
+; ula_operation[1] ; HEX1[0]     ; 14.422 ; 14.228 ; 14.228 ; 14.422 ;
+; ula_operation[1] ; HEX1[1]     ; 13.379 ; 13.183 ; 13.183 ; 13.379 ;
+; ula_operation[1] ; HEX1[2]     ; 13.799 ; 13.911 ; 13.911 ; 13.799 ;
+; ula_operation[1] ; HEX1[3]     ; 13.345 ; 13.152 ; 13.152 ; 13.345 ;
+; ula_operation[1] ; HEX1[4]     ; 13.100 ; 12.904 ; 12.904 ; 13.100 ;
+; ula_operation[1] ; HEX1[5]     ; 13.700 ; 13.506 ; 13.506 ; 13.700 ;
+; ula_operation[1] ; HEX1[6]     ; 13.965 ; 13.771 ; 13.771 ; 13.965 ;
+; ula_operation[1] ; HEX2[0]     ; 11.991 ; 13.771 ; 13.771 ; 11.991 ;
+; ula_operation[1] ; HEX2[3]     ; 12.017 ; 13.797 ; 13.797 ; 12.017 ;
+; ula_operation[1] ; HEX2[4]     ; 11.418 ; 13.198 ; 13.198 ; 11.418 ;
+; ula_operation[1] ; HEX2[5]     ; 11.408 ; 13.188 ; 13.188 ; 11.408 ;
+; ula_operation[1] ; result[0]   ; 9.622  ; 9.464  ; 9.464  ; 9.622  ;
+; ula_operation[1] ; result[1]   ; 11.132 ; 9.294  ; 9.294  ; 11.132 ;
+; ula_operation[1] ; result[2]   ; 11.669 ; 9.214  ; 9.214  ; 11.669 ;
+; ula_operation[1] ; result[3]   ; 10.117 ; 10.079 ; 10.079 ; 10.117 ;
+; ula_operation[1] ; result[4]   ; 9.480  ;        ;        ; 9.480  ;
+; ula_operation[1] ; result[5]   ; 9.383  ;        ;        ; 9.383  ;
+; ula_operation[1] ; result[6]   ; 7.922  ;        ;        ; 7.922  ;
+; ula_operation[2] ; HEX0[0]     ; 12.617 ; 12.842 ; 12.842 ; 12.617 ;
+; ula_operation[2] ; HEX0[1]     ; 12.676 ; 12.676 ; 12.676 ; 12.676 ;
+; ula_operation[2] ; HEX0[2]     ; 13.110 ; 12.981 ; 12.981 ; 13.110 ;
+; ula_operation[2] ; HEX0[3]     ; 12.899 ; 12.899 ; 12.899 ; 12.899 ;
+; ula_operation[2] ; HEX0[4]     ; 12.813 ; 13.047 ; 13.047 ; 12.813 ;
+; ula_operation[2] ; HEX0[5]     ; 13.749 ; 12.887 ; 12.887 ; 13.749 ;
+; ula_operation[2] ; HEX0[6]     ; 12.804 ; 12.804 ; 12.804 ; 12.804 ;
+; ula_operation[2] ; HEX1[0]     ; 14.641 ; 14.835 ; 14.835 ; 14.641 ;
+; ula_operation[2] ; HEX1[1]     ; 13.596 ; 13.792 ; 13.792 ; 13.596 ;
+; ula_operation[2] ; HEX1[2]     ; 14.324 ; 14.324 ; 14.324 ; 14.324 ;
+; ula_operation[2] ; HEX1[3]     ; 13.565 ; 13.758 ; 13.758 ; 13.565 ;
+; ula_operation[2] ; HEX1[4]     ; 13.317 ; 13.513 ; 13.513 ; 13.317 ;
+; ula_operation[2] ; HEX1[5]     ; 13.919 ; 14.113 ; 14.113 ; 13.919 ;
+; ula_operation[2] ; HEX1[6]     ; 14.184 ; 14.378 ; 14.378 ; 14.184 ;
+; ula_operation[2] ; HEX2[0]     ; 15.740 ; 12.207 ; 12.207 ; 15.740 ;
+; ula_operation[2] ; HEX2[3]     ; 15.766 ; 12.233 ; 12.233 ; 15.766 ;
+; ula_operation[2] ; HEX2[4]     ; 15.167 ; 11.634 ; 11.634 ; 15.167 ;
+; ula_operation[2] ; HEX2[5]     ; 15.157 ; 11.624 ; 11.624 ; 15.157 ;
+; ula_operation[2] ; result[0]   ; 10.797 ; 10.162 ; 10.162 ; 10.797 ;
+; ula_operation[2] ; result[1]   ; 11.116 ; 9.992  ; 9.992  ; 11.116 ;
+; ula_operation[2] ; result[2]   ; 11.573 ; 9.912  ; 9.912  ; 11.573 ;
+; ula_operation[2] ; result[3]   ; 11.080 ; 10.251 ; 10.251 ; 11.080 ;
+; ula_operation[2] ; result[4]   ;        ; 9.287  ; 9.287  ;        ;
+; ula_operation[2] ; result[5]   ;        ; 9.191  ; 9.191  ;        ;
+; ula_operation[2] ; result[6]   ;        ; 8.370  ; 8.370  ;        ;
+; ula_operation[3] ; HEX0[0]     ; 10.361 ; 10.529 ; 10.529 ; 10.361 ;
+; ula_operation[3] ; HEX0[1]     ; 10.420 ; 10.420 ; 10.420 ; 10.420 ;
+; ula_operation[3] ; HEX0[2]     ; 10.797 ; 10.725 ; 10.725 ; 10.797 ;
+; ula_operation[3] ; HEX0[3]     ; 10.643 ; 10.643 ; 10.643 ; 10.643 ;
+; ula_operation[3] ; HEX0[4]     ; 10.557 ; 10.734 ; 10.734 ; 10.557 ;
+; ula_operation[3] ; HEX0[5]     ; 11.615 ; 10.631 ; 10.631 ; 11.615 ;
+; ula_operation[3] ; HEX0[6]     ; 10.548 ; 10.548 ; 10.548 ; 10.548 ;
+; ula_operation[3] ; HEX1[0]     ; 13.659 ; 13.659 ; 13.659 ; 13.659 ;
+; ula_operation[3] ; HEX1[1]     ; 12.589 ; 12.589 ; 12.589 ; 12.589 ;
+; ula_operation[3] ; HEX1[2]     ; 12.241 ; 13.225 ; 13.225 ; 12.241 ;
+; ula_operation[3] ; HEX1[3]     ; 12.561 ; 12.561 ; 12.561 ; 12.561 ;
+; ula_operation[3] ; HEX1[4]     ; 13.320 ; 12.336 ; 12.336 ; 13.320 ;
+; ula_operation[3] ; HEX1[5]     ; 13.919 ; 12.935 ; 12.935 ; 13.919 ;
+; ula_operation[3] ; HEX1[6]     ; 14.223 ; 13.239 ; 13.239 ; 14.223 ;
+; ula_operation[3] ; HEX2[0]     ; 13.197 ; 12.223 ; 12.223 ; 13.197 ;
+; ula_operation[3] ; HEX2[3]     ; 13.223 ; 12.249 ; 12.249 ; 13.223 ;
+; ula_operation[3] ; HEX2[4]     ; 12.624 ; 11.650 ; 11.650 ; 12.624 ;
+; ula_operation[3] ; HEX2[5]     ; 12.614 ; 11.640 ; 11.640 ; 12.614 ;
+; ula_operation[3] ; result[0]   ; 8.890  ; 7.849  ; 7.849  ; 8.890  ;
+; ula_operation[3] ; result[1]   ; 8.720  ; 7.736  ; 7.736  ; 8.720  ;
+; ula_operation[3] ; result[2]   ; 8.640  ; 7.666  ; 7.666  ; 8.640  ;
+; ula_operation[3] ; result[3]   ; 9.799  ; 8.121  ; 8.121  ; 9.799  ;
+; ula_operation[3] ; result[4]   ;        ; 9.609  ; 9.609  ;        ;
+; ula_operation[3] ; result[5]   ;        ; 9.509  ; 9.509  ;        ;
+; ula_operation[3] ; result[6]   ;        ; 8.436  ; 8.436  ;        ;
++------------------+-------------+--------+--------+--------+--------+
 
 
-+-------------------------------------------+
-; Fast Model Hold Summary                   ;
-+------------------+--------+---------------+
-; Clock            ; Slack  ; End Point TNS ;
-+------------------+--------+---------------+
-; ula_operation[0] ; -0.968 ; -7.345        ;
-+------------------+--------+---------------+
+----------------------------
+; Fast Model Setup Summary ;
+----------------------------
+No paths to report.
+
+
+---------------------------
+; Fast Model Hold Summary ;
+---------------------------
+No paths to report.
 
 
 -------------------------------
@@ -574,190 +528,13 @@ No paths to report.
 No paths to report.
 
 
-+-------------------------------------------+
-; Fast Model Minimum Pulse Width Summary    ;
-+------------------+--------+---------------+
-; Clock            ; Slack  ; End Point TNS ;
-+------------------+--------+---------------+
-; clock            ; -1.380 ; -9.380        ;
-; ula_operation[0] ; -1.380 ; -1.380        ;
-+------------------+--------+---------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Setup: 'ula_operation[0]'                                                                                                            ;
-+--------+-----------------------------------+---------------------+------------------+------------------+--------------+------------+------------+
-; Slack  ; From Node                         ; To Node             ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------------------------------+---------------------+------------------+------------------+--------------+------------+------------+
-; -1.621 ; general_register:regB|valueOut[2] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 2.193      ;
-; -1.600 ; general_register:regB|valueOut[1] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 2.165      ;
-; -1.596 ; general_register:regB|valueOut[1] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 2.170      ;
-; -1.590 ; general_register:regB|valueOut[1] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 2.155      ;
-; -1.588 ; general_register:regB|valueOut[1] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; 0.500        ; 0.462      ; 2.154      ;
-; -1.588 ; general_register:regB|valueOut[1] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 2.160      ;
-; -1.517 ; general_register:regB|valueOut[0] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 2.082      ;
-; -1.513 ; general_register:regB|valueOut[0] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 2.087      ;
-; -1.509 ; general_register:regB|valueOut[2] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 2.074      ;
-; -1.507 ; general_register:regB|valueOut[2] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 2.092      ;
-; -1.507 ; general_register:regB|valueOut[0] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 2.072      ;
-; -1.505 ; general_register:regB|valueOut[2] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 2.087      ;
-; -1.505 ; general_register:regB|valueOut[0] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; 0.500        ; 0.462      ; 2.071      ;
-; -1.498 ; general_register:regB|valueOut[1] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; 0.500        ; 0.398      ; 2.039      ;
-; -1.481 ; general_register:regB|valueOut[2] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; 0.500        ; 0.398      ; 2.022      ;
-; -1.457 ; general_register:regB|valueOut[0] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 2.029      ;
-; -1.456 ; general_register:regB|valueOut[1] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 2.041      ;
-; -1.451 ; general_register:regA|valueOut[3] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 2.023      ;
-; -1.451 ; general_register:regB|valueOut[1] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 2.033      ;
-; -1.442 ; general_register:regB|valueOut[0] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 2.024      ;
-; -1.432 ; general_register:regA|valueOut[2] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 2.004      ;
-; -1.421 ; general_register:regA|valueOut[2] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 1.986      ;
-; -1.418 ; general_register:regB|valueOut[0] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; 0.500        ; 0.398      ; 1.959      ;
-; -1.417 ; general_register:regA|valueOut[2] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 1.999      ;
-; -1.407 ; general_register:regB|valueOut[3] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 1.979      ;
-; -1.399 ; general_register:regA|valueOut[3] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; 0.500        ; 0.398      ; 1.940      ;
-; -1.393 ; general_register:regA|valueOut[2] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; 0.500        ; 0.398      ; 1.934      ;
-; -1.388 ; general_register:regA|valueOut[1] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 1.953      ;
-; -1.384 ; general_register:regA|valueOut[1] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 1.958      ;
-; -1.378 ; general_register:regA|valueOut[1] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 1.943      ;
-; -1.376 ; general_register:regA|valueOut[1] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; 0.500        ; 0.462      ; 1.942      ;
-; -1.374 ; general_register:regA|valueOut[1] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 1.946      ;
-; -1.356 ; general_register:regA|valueOut[0] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; 0.500        ; 0.398      ; 1.897      ;
-; -1.343 ; general_register:regB|valueOut[0] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 1.928      ;
-; -1.338 ; general_register:regA|valueOut[3] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 1.903      ;
-; -1.338 ; general_register:regA|valueOut[0] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 1.903      ;
-; -1.337 ; general_register:regA|valueOut[3] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 1.922      ;
-; -1.334 ; general_register:regA|valueOut[3] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 1.916      ;
-; -1.328 ; general_register:regA|valueOut[0] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 1.902      ;
-; -1.326 ; general_register:regA|valueOut[1] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; 0.500        ; 0.398      ; 1.867      ;
-; -1.322 ; general_register:regA|valueOut[0] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 1.887      ;
-; -1.320 ; general_register:regA|valueOut[0] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; 0.500        ; 0.462      ; 1.886      ;
-; -1.318 ; general_register:regA|valueOut[2] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 1.903      ;
-; -1.302 ; general_register:regA|valueOut[1] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 1.884      ;
-; -1.295 ; general_register:regB|valueOut[3] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 1.860      ;
-; -1.293 ; general_register:regB|valueOut[3] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 1.878      ;
-; -1.291 ; general_register:regB|valueOut[3] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 1.873      ;
-; -1.271 ; general_register:regA|valueOut[0] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 1.843      ;
-; -1.267 ; general_register:regB|valueOut[3] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; 0.500        ; 0.398      ; 1.808      ;
-; -1.260 ; general_register:regA|valueOut[1] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 1.845      ;
-; -1.260 ; general_register:regA|valueOut[0] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 1.842      ;
-; -1.257 ; general_register:regA|valueOut[0] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; 0.500        ; 0.474      ; 1.842      ;
-; -1.254 ; general_register:regB|valueOut[2] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; 0.500        ; 0.462      ; 1.820      ;
-; -1.214 ; general_register:regB|valueOut[2] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 1.788      ;
-; -1.208 ; general_register:regB|valueOut[2] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 1.773      ;
-; -1.171 ; general_register:regA|valueOut[2] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; 0.500        ; 0.462      ; 1.737      ;
-; -1.152 ; general_register:regB|valueOut[3] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 1.726      ;
-; -1.148 ; general_register:regA|valueOut[2] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 1.722      ;
-; -1.146 ; general_register:regB|valueOut[3] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 1.711      ;
-; -1.144 ; general_register:regB|valueOut[3] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; 0.500        ; 0.462      ; 1.710      ;
-; -1.142 ; general_register:regA|valueOut[2] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 1.707      ;
-; -1.131 ; general_register:regA|valueOut[3] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 1.705      ;
-; -1.125 ; general_register:regA|valueOut[3] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; 0.500        ; 0.465      ; 1.690      ;
-; -1.123 ; general_register:regA|valueOut[3] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; 0.500        ; 0.462      ; 1.689      ;
-; 0.952  ; ula_operation[0]                  ; ula:m_ula|result[3] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 2.269      ; 1.417      ;
-; 0.956  ; ula_operation[0]                  ; ula:m_ula|result[1] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 2.269      ; 1.422      ;
-; 0.962  ; ula_operation[0]                  ; ula:m_ula|result[0] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 2.269      ; 1.407      ;
-; 0.964  ; ula_operation[0]                  ; ula:m_ula|result[2] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 2.266      ; 1.406      ;
-; 0.968  ; ula_operation[0]                  ; ula:m_ula|result[5] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 2.202      ; 1.377      ;
-; 1.019  ; ula_operation[0]                  ; ula:m_ula|result[4] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 2.278      ; 1.367      ;
-; 1.051  ; ula_operation[0]                  ; ula:m_ula|result[7] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 2.278      ; 1.325      ;
-; 1.065  ; ula_operation[0]                  ; ula:m_ula|result[6] ; ula_operation[0] ; ula_operation[0] ; 0.500        ; 2.278      ; 1.324      ;
-; 1.452  ; ula_operation[0]                  ; ula:m_ula|result[3] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 2.269      ; 1.417      ;
-; 1.456  ; ula_operation[0]                  ; ula:m_ula|result[1] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 2.269      ; 1.422      ;
-; 1.462  ; ula_operation[0]                  ; ula:m_ula|result[0] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 2.269      ; 1.407      ;
-; 1.464  ; ula_operation[0]                  ; ula:m_ula|result[2] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 2.266      ; 1.406      ;
-; 1.468  ; ula_operation[0]                  ; ula:m_ula|result[5] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 2.202      ; 1.377      ;
-; 1.519  ; ula_operation[0]                  ; ula:m_ula|result[4] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 2.278      ; 1.367      ;
-; 1.551  ; ula_operation[0]                  ; ula:m_ula|result[7] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 2.278      ; 1.325      ;
-; 1.565  ; ula_operation[0]                  ; ula:m_ula|result[6] ; ula_operation[0] ; ula_operation[0] ; 1.000        ; 2.278      ; 1.324      ;
-+--------+-----------------------------------+---------------------+------------------+------------------+--------------+------------+------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Hold: 'ula_operation[0]'                                                                                                             ;
-+--------+-----------------------------------+---------------------+------------------+------------------+--------------+------------+------------+
-; Slack  ; From Node                         ; To Node             ; Launch Clock     ; Latch Clock      ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------------------------------+---------------------+------------------+------------------+--------------+------------+------------+
-; -0.968 ; ula_operation[0]                  ; ula:m_ula|result[6] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 2.278      ; 1.310      ;
-; -0.968 ; ula_operation[0]                  ; ula:m_ula|result[4] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 2.278      ; 1.310      ;
-; -0.967 ; ula_operation[0]                  ; ula:m_ula|result[7] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 2.278      ; 1.311      ;
-; -0.905 ; ula_operation[0]                  ; ula:m_ula|result[0] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 2.269      ; 1.364      ;
-; -0.903 ; ula_operation[0]                  ; ula:m_ula|result[2] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 2.266      ; 1.363      ;
-; -0.901 ; ula_operation[0]                  ; ula:m_ula|result[3] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 2.269      ; 1.368      ;
-; -0.896 ; ula_operation[0]                  ; ula:m_ula|result[1] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 2.269      ; 1.373      ;
-; -0.837 ; ula_operation[0]                  ; ula:m_ula|result[5] ; ula_operation[0] ; ula_operation[0] ; 0.000        ; 2.202      ; 1.365      ;
-; -0.468 ; ula_operation[0]                  ; ula:m_ula|result[6] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 2.278      ; 1.310      ;
-; -0.468 ; ula_operation[0]                  ; ula:m_ula|result[4] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 2.278      ; 1.310      ;
-; -0.467 ; ula_operation[0]                  ; ula:m_ula|result[7] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 2.278      ; 1.311      ;
-; -0.405 ; ula_operation[0]                  ; ula:m_ula|result[0] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 2.269      ; 1.364      ;
-; -0.403 ; ula_operation[0]                  ; ula:m_ula|result[2] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 2.266      ; 1.363      ;
-; -0.401 ; ula_operation[0]                  ; ula:m_ula|result[3] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 2.269      ; 1.368      ;
-; -0.396 ; ula_operation[0]                  ; ula:m_ula|result[1] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 2.269      ; 1.373      ;
-; -0.337 ; ula_operation[0]                  ; ula:m_ula|result[5] ; ula_operation[0] ; ula_operation[0] ; -0.500       ; 2.202      ; 1.365      ;
-; 1.117  ; general_register:regB|valueOut[1] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.091      ;
-; 1.126  ; general_register:regB|valueOut[1] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.100      ;
-; 1.381  ; general_register:regB|valueOut[0] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.346      ;
-; 1.382  ; general_register:regB|valueOut[2] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; -0.500       ; 0.462      ; 1.344      ;
-; 1.396  ; general_register:regA|valueOut[1] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.370      ;
-; 1.404  ; general_register:regB|valueOut[1] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.369      ;
-; 1.405  ; general_register:regB|valueOut[2] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.379      ;
-; 1.415  ; general_register:regA|valueOut[1] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.380      ;
-; 1.425  ; general_register:regB|valueOut[3] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.399      ;
-; 1.425  ; general_register:regB|valueOut[3] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.399      ;
-; 1.426  ; general_register:regB|valueOut[3] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.400      ;
-; 1.432  ; general_register:regB|valueOut[2] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.406      ;
-; 1.432  ; general_register:regB|valueOut[3] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; -0.500       ; 0.462      ; 1.394      ;
-; 1.440  ; general_register:regA|valueOut[3] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.414      ;
-; 1.458  ; general_register:regA|valueOut[1] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; -0.500       ; 0.462      ; 1.420      ;
-; 1.460  ; general_register:regB|valueOut[1] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.425      ;
-; 1.462  ; general_register:regA|valueOut[3] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.436      ;
-; 1.462  ; general_register:regA|valueOut[2] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.436      ;
-; 1.462  ; general_register:regA|valueOut[2] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.436      ;
-; 1.463  ; general_register:regA|valueOut[2] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.437      ;
-; 1.479  ; general_register:regA|valueOut[0] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.444      ;
-; 1.487  ; general_register:regA|valueOut[3] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.452      ;
-; 1.488  ; general_register:regA|valueOut[2] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; -0.500       ; 0.462      ; 1.450      ;
-; 1.488  ; general_register:regB|valueOut[2] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.462      ;
-; 1.489  ; general_register:regB|valueOut[1] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; -0.500       ; 0.462      ; 1.451      ;
-; 1.492  ; general_register:regA|valueOut[1] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.466      ;
-; 1.495  ; general_register:regB|valueOut[1] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; -0.500       ; 0.398      ; 1.393      ;
-; 1.496  ; general_register:regA|valueOut[0] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.470      ;
-; 1.497  ; general_register:regA|valueOut[1] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.471      ;
-; 1.500  ; general_register:regB|valueOut[0] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.474      ;
-; 1.503  ; general_register:regA|valueOut[1] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; -0.500       ; 0.398      ; 1.401      ;
-; 1.513  ; general_register:regB|valueOut[3] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.478      ;
-; 1.518  ; general_register:regB|valueOut[1] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.492      ;
-; 1.542  ; general_register:regA|valueOut[0] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.516      ;
-; 1.543  ; general_register:regA|valueOut[0] ; ula:m_ula|result[7] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.517      ;
-; 1.545  ; general_register:regA|valueOut[3] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.519      ;
-; 1.551  ; general_register:regB|valueOut[0] ; ula:m_ula|result[4] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.525      ;
-; 1.551  ; general_register:regB|valueOut[0] ; ula:m_ula|result[6] ; clock            ; ula_operation[0] ; -0.500       ; 0.474      ; 1.525      ;
-; 1.556  ; general_register:regB|valueOut[3] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; -0.500       ; 0.398      ; 1.454      ;
-; 1.556  ; general_register:regB|valueOut[0] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; -0.500       ; 0.462      ; 1.518      ;
-; 1.590  ; general_register:regA|valueOut[0] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.555      ;
-; 1.591  ; general_register:regA|valueOut[1] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.556      ;
-; 1.593  ; general_register:regA|valueOut[2] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; -0.500       ; 0.398      ; 1.491      ;
-; 1.598  ; general_register:regA|valueOut[0] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; -0.500       ; 0.462      ; 1.560      ;
-; 1.598  ; general_register:regB|valueOut[0] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.563      ;
-; 1.603  ; general_register:regA|valueOut[0] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; -0.500       ; 0.398      ; 1.501      ;
-; 1.619  ; general_register:regB|valueOut[2] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; -0.500       ; 0.398      ; 1.517      ;
-; 1.624  ; general_register:regB|valueOut[1] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.589      ;
-; 1.634  ; general_register:regA|valueOut[0] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.599      ;
-; 1.634  ; general_register:regB|valueOut[2] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.599      ;
-; 1.653  ; general_register:regA|valueOut[2] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.618      ;
-; 1.676  ; general_register:regA|valueOut[3] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; -0.500       ; 0.398      ; 1.574      ;
-; 1.681  ; general_register:regB|valueOut[0] ; ula:m_ula|result[5] ; clock            ; ula_operation[0] ; -0.500       ; 0.398      ; 1.579      ;
-; 1.705  ; general_register:regA|valueOut[3] ; ula:m_ula|result[2] ; clock            ; ula_operation[0] ; -0.500       ; 0.462      ; 1.667      ;
-; 1.707  ; general_register:regA|valueOut[3] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.672      ;
-; 1.709  ; general_register:regB|valueOut[0] ; ula:m_ula|result[3] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.674      ;
-; 1.724  ; general_register:regA|valueOut[2] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.689      ;
-; 1.728  ; general_register:regB|valueOut[3] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.693      ;
-; 1.740  ; general_register:regA|valueOut[3] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.705      ;
-; 1.757  ; general_register:regA|valueOut[2] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.722      ;
-; 1.761  ; general_register:regB|valueOut[3] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.726      ;
-; 1.790  ; general_register:regB|valueOut[2] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.755      ;
-; 1.823  ; general_register:regB|valueOut[2] ; ula:m_ula|result[1] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.788      ;
-; 1.960  ; general_register:regA|valueOut[1] ; ula:m_ula|result[0] ; clock            ; ula_operation[0] ; -0.500       ; 0.465      ; 1.925      ;
-+--------+-----------------------------------+---------------------+------------------+------------------+--------------+------------+------------+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -1.380 ; -8.380                ;
++-------+--------+-----------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -780,8 +557,6 @@ No paths to report.
 ; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; general_register:regB|valueOut[1] ;
 ; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; general_register:regB|valueOut[2] ;
 ; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; general_register:regB|valueOut[2] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; general_register:regB|valueOut[3] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; general_register:regB|valueOut[3] ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout                     ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout                     ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|inclk[0]            ;
@@ -802,328 +577,665 @@ No paths to report.
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regB|valueOut[1]|clk              ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regB|valueOut[2]|clk              ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regB|valueOut[2]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; regB|valueOut[3]|clk              ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; regB|valueOut[3]|clk              ;
 +--------+--------------+----------------+------------------+-------+------------+-----------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Minimum Pulse Width: 'ula_operation[0]'                                                                       ;
-+--------+--------------+----------------+------------------+------------------+------------+------------------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock            ; Clock Edge ; Target                       ;
-+--------+--------------+----------------+------------------+------------------+------------+------------------------------+
-; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; ula_operation[0] ; Rise       ; ula_operation[0]             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Mux8~0clkctrl|inclk[0] ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Mux8~0clkctrl|inclk[0] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Mux8~0clkctrl|outclk   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Mux8~0clkctrl|outclk   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Mux8~0|combout         ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Mux8~0|combout         ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|Mux8~0|datac           ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|Mux8~0|datac           ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[0]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[0]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[1]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[1]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[2]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[2]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[3]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[3]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[4]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[4]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[5]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[5]|datad        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[6]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[6]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; m_ula|result[7]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; m_ula|result[7]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[0]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[0]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[1]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[1]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[2]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[2]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[3]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[3]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[4]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[4]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[5]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[5]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[6]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[6]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Fall       ; ula:m_ula|result[7]          ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Fall       ; ula:m_ula|result[7]          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ula_operation[0] ; Rise       ; ula_operation[0]|combout     ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ula_operation[0] ; Rise       ; ula_operation[0]|combout     ;
-+--------+--------------+----------------+------------------+------------------+------------+------------------------------+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; operando[*]  ; clock      ; -0.295 ; -0.295 ; Rise       ; clock           ;
+;  operando[0] ; clock      ; -0.587 ; -0.587 ; Rise       ; clock           ;
+;  operando[1] ; clock      ; -0.639 ; -0.639 ; Rise       ; clock           ;
+;  operando[2] ; clock      ; -0.639 ; -0.639 ; Rise       ; clock           ;
+;  operando[3] ; clock      ; -0.295 ; -0.295 ; Rise       ; clock           ;
+; setRegA      ; clock      ; 0.165  ; 0.165  ; Rise       ; clock           ;
+; setRegB      ; clock      ; 0.098  ; 0.098  ; Rise       ; clock           ;
++--------------+------------+--------+--------+------------+-----------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Setup Times                                                                            ;
-+-------------------+------------------+--------+--------+------------+------------------+
-; Data Port         ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
-+-------------------+------------------+--------+--------+------------+------------------+
-; operando[*]       ; clock            ; -0.078 ; -0.078 ; Rise       ; clock            ;
-;  operando[0]      ; clock            ; -0.176 ; -0.176 ; Rise       ; clock            ;
-;  operando[1]      ; clock            ; -0.078 ; -0.078 ; Rise       ; clock            ;
-;  operando[2]      ; clock            ; -0.297 ; -0.297 ; Rise       ; clock            ;
-;  operando[3]      ; clock            ; -0.238 ; -0.238 ; Rise       ; clock            ;
-; setRegA           ; clock            ; -0.136 ; -0.136 ; Rise       ; clock            ;
-; setRegB           ; clock            ; -0.073 ; -0.073 ; Rise       ; clock            ;
-; ula_operation[*]  ; ula_operation[0] ; -0.343 ; -0.343 ; Fall       ; ula_operation[0] ;
-;  ula_operation[0] ; ula_operation[0] ; -0.452 ; -0.452 ; Fall       ; ula_operation[0] ;
-;  ula_operation[1] ; ula_operation[0] ; -0.343 ; -0.343 ; Fall       ; ula_operation[0] ;
-+-------------------+------------------+--------+--------+------------+------------------+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; operando[*]  ; clock      ; 0.761 ; 0.761 ; Rise       ; clock           ;
+;  operando[0] ; clock      ; 0.711 ; 0.711 ; Rise       ; clock           ;
+;  operando[1] ; clock      ; 0.761 ; 0.761 ; Rise       ; clock           ;
+;  operando[2] ; clock      ; 0.759 ; 0.759 ; Rise       ; clock           ;
+;  operando[3] ; clock      ; 0.415 ; 0.415 ; Rise       ; clock           ;
+; setRegA      ; clock      ; 0.156 ; 0.156 ; Rise       ; clock           ;
+; setRegB      ; clock      ; 0.150 ; 0.150 ; Rise       ; clock           ;
++--------------+------------+-------+-------+------------+-----------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Hold Times                                                                           ;
-+-------------------+------------------+-------+-------+------------+------------------+
-; Data Port         ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
-+-------------------+------------------+-------+-------+------------+------------------+
-; operando[*]       ; clock            ; 0.417 ; 0.417 ; Rise       ; clock            ;
-;  operando[0]      ; clock            ; 0.297 ; 0.297 ; Rise       ; clock            ;
-;  operando[1]      ; clock            ; 0.200 ; 0.200 ; Rise       ; clock            ;
-;  operando[2]      ; clock            ; 0.417 ; 0.417 ; Rise       ; clock            ;
-;  operando[3]      ; clock            ; 0.359 ; 0.359 ; Rise       ; clock            ;
-; setRegA           ; clock            ; 0.256 ; 0.256 ; Rise       ; clock            ;
-; setRegB           ; clock            ; 0.193 ; 0.193 ; Rise       ; clock            ;
-; ula_operation[*]  ; ula_operation[0] ; 0.968 ; 0.968 ; Fall       ; ula_operation[0] ;
-;  ula_operation[0] ; ula_operation[0] ; 0.968 ; 0.968 ; Fall       ; ula_operation[0] ;
-;  ula_operation[1] ; ula_operation[0] ; 0.936 ; 0.936 ; Fall       ; ula_operation[0] ;
-+-------------------+------------------+-------+-------+------------+------------------+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; HEX0[*]    ; clock      ; 11.736 ; 11.736 ; Rise       ; clock           ;
+;  HEX0[0]   ; clock      ; 11.581 ; 11.581 ; Rise       ; clock           ;
+;  HEX0[1]   ; clock      ; 11.623 ; 11.623 ; Rise       ; clock           ;
+;  HEX0[2]   ; clock      ; 11.736 ; 11.736 ; Rise       ; clock           ;
+;  HEX0[3]   ; clock      ; 11.689 ; 11.689 ; Rise       ; clock           ;
+;  HEX0[4]   ; clock      ; 11.654 ; 11.654 ; Rise       ; clock           ;
+;  HEX0[5]   ; clock      ; 11.692 ; 11.692 ; Rise       ; clock           ;
+;  HEX0[6]   ; clock      ; 11.646 ; 11.646 ; Rise       ; clock           ;
+; HEX1[*]    ; clock      ; 15.192 ; 15.192 ; Rise       ; clock           ;
+;  HEX1[0]   ; clock      ; 15.192 ; 15.192 ; Rise       ; clock           ;
+;  HEX1[1]   ; clock      ; 14.679 ; 14.679 ; Rise       ; clock           ;
+;  HEX1[2]   ; clock      ; 14.539 ; 14.539 ; Rise       ; clock           ;
+;  HEX1[3]   ; clock      ; 14.666 ; 14.666 ; Rise       ; clock           ;
+;  HEX1[4]   ; clock      ; 14.599 ; 14.599 ; Rise       ; clock           ;
+;  HEX1[5]   ; clock      ; 14.875 ; 14.875 ; Rise       ; clock           ;
+;  HEX1[6]   ; clock      ; 14.926 ; 14.926 ; Rise       ; clock           ;
+; HEX2[*]    ; clock      ; 9.610  ; 9.610  ; Rise       ; clock           ;
+;  HEX2[0]   ; clock      ; 9.583  ; 9.583  ; Rise       ; clock           ;
+;  HEX2[3]   ; clock      ; 9.610  ; 9.610  ; Rise       ; clock           ;
+;  HEX2[4]   ; clock      ; 9.377  ; 9.377  ; Rise       ; clock           ;
+;  HEX2[5]   ; clock      ; 9.367  ; 9.367  ; Rise       ; clock           ;
+; result[*]  ; clock      ; 7.854  ; 7.854  ; Rise       ; clock           ;
+;  result[0] ; clock      ; 7.677  ; 7.677  ; Rise       ; clock           ;
+;  result[1] ; clock      ; 7.284  ; 7.284  ; Rise       ; clock           ;
+;  result[2] ; clock      ; 7.854  ; 7.854  ; Rise       ; clock           ;
+;  result[3] ; clock      ; 7.301  ; 7.301  ; Rise       ; clock           ;
+;  result[4] ; clock      ; 6.790  ; 6.790  ; Rise       ; clock           ;
+;  result[5] ; clock      ; 6.694  ; 6.694  ; Rise       ; clock           ;
+;  result[6] ; clock      ; 6.469  ; 6.469  ; Rise       ; clock           ;
++------------+------------+--------+--------+------------+-----------------+
 
 
-+---------------------------------------------------------------------------------+
-; Clock to Output Times                                                           ;
-+------------+------------------+--------+--------+------------+------------------+
-; Data Port  ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
-+------------+------------------+--------+--------+------------+------------------+
-; HEX0[*]    ; ula_operation[0] ; 11.721 ; 11.721 ; Fall       ; ula_operation[0] ;
-;  HEX0[0]   ; ula_operation[0] ; 11.570 ; 11.570 ; Fall       ; ula_operation[0] ;
-;  HEX0[1]   ; ula_operation[0] ; 11.651 ; 11.651 ; Fall       ; ula_operation[0] ;
-;  HEX0[2]   ; ula_operation[0] ; 11.297 ; 11.297 ; Fall       ; ula_operation[0] ;
-;  HEX0[3]   ; ula_operation[0] ; 11.145 ; 11.145 ; Fall       ; ula_operation[0] ;
-;  HEX0[4]   ; ula_operation[0] ; 11.402 ; 11.402 ; Fall       ; ula_operation[0] ;
-;  HEX0[5]   ; ula_operation[0] ; 11.721 ; 11.721 ; Fall       ; ula_operation[0] ;
-;  HEX0[6]   ; ula_operation[0] ; 11.232 ; 11.232 ; Fall       ; ula_operation[0] ;
-; HEX1[*]    ; ula_operation[0] ; 13.091 ; 13.091 ; Fall       ; ula_operation[0] ;
-;  HEX1[0]   ; ula_operation[0] ; 13.050 ; 13.050 ; Fall       ; ula_operation[0] ;
-;  HEX1[1]   ; ula_operation[0] ; 13.044 ; 13.044 ; Fall       ; ula_operation[0] ;
-;  HEX1[2]   ; ula_operation[0] ; 12.719 ; 12.719 ; Fall       ; ula_operation[0] ;
-;  HEX1[3]   ; ula_operation[0] ; 13.044 ; 13.044 ; Fall       ; ula_operation[0] ;
-;  HEX1[4]   ; ula_operation[0] ; 12.883 ; 12.883 ; Fall       ; ula_operation[0] ;
-;  HEX1[5]   ; ula_operation[0] ; 13.091 ; 13.091 ; Fall       ; ula_operation[0] ;
-;  HEX1[6]   ; ula_operation[0] ; 13.086 ; 13.086 ; Fall       ; ula_operation[0] ;
-; HEX2[*]    ; ula_operation[0] ; 8.120  ; 8.120  ; Fall       ; ula_operation[0] ;
-;  HEX2[0]   ; ula_operation[0] ; 8.100  ; 8.100  ; Fall       ; ula_operation[0] ;
-;  HEX2[2]   ; ula_operation[0] ; 8.060  ; 8.060  ; Fall       ; ula_operation[0] ;
-;  HEX2[3]   ; ula_operation[0] ; 8.066  ; 8.066  ; Fall       ; ula_operation[0] ;
-;  HEX2[4]   ; ula_operation[0] ; 7.660  ; 7.660  ; Fall       ; ula_operation[0] ;
-;  HEX2[5]   ; ula_operation[0] ; 8.120  ; 8.120  ; Fall       ; ula_operation[0] ;
-;  HEX2[6]   ; ula_operation[0] ; 6.559  ; 6.559  ; Fall       ; ula_operation[0] ;
-; result[*]  ; ula_operation[0] ; 5.372  ; 5.372  ; Fall       ; ula_operation[0] ;
-;  result[0] ; ula_operation[0] ; 4.206  ; 4.206  ; Fall       ; ula_operation[0] ;
-;  result[1] ; ula_operation[0] ; 5.372  ; 5.372  ; Fall       ; ula_operation[0] ;
-;  result[2] ; ula_operation[0] ; 4.319  ; 4.319  ; Fall       ; ula_operation[0] ;
-;  result[3] ; ula_operation[0] ; 4.428  ; 4.428  ; Fall       ; ula_operation[0] ;
-;  result[4] ; ula_operation[0] ; 4.448  ; 4.448  ; Fall       ; ula_operation[0] ;
-;  result[5] ; ula_operation[0] ; 4.265  ; 4.265  ; Fall       ; ula_operation[0] ;
-;  result[6] ; ula_operation[0] ; 4.791  ; 4.791  ; Fall       ; ula_operation[0] ;
-;  result[7] ; ula_operation[0] ; 4.549  ; 4.549  ; Fall       ; ula_operation[0] ;
-+------------+------------------+--------+--------+------------+------------------+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; HEX0[*]    ; clock      ; 5.820 ; 5.820 ; Rise       ; clock           ;
+;  HEX0[0]   ; clock      ; 5.820 ; 5.820 ; Rise       ; clock           ;
+;  HEX0[1]   ; clock      ; 5.855 ; 5.855 ; Rise       ; clock           ;
+;  HEX0[2]   ; clock      ; 5.975 ; 5.975 ; Rise       ; clock           ;
+;  HEX0[3]   ; clock      ; 5.930 ; 5.930 ; Rise       ; clock           ;
+;  HEX0[4]   ; clock      ; 5.896 ; 5.896 ; Rise       ; clock           ;
+;  HEX0[5]   ; clock      ; 5.930 ; 5.930 ; Rise       ; clock           ;
+;  HEX0[6]   ; clock      ; 5.883 ; 5.883 ; Rise       ; clock           ;
+; HEX1[*]    ; clock      ; 6.982 ; 6.982 ; Rise       ; clock           ;
+;  HEX1[0]   ; clock      ; 7.635 ; 7.635 ; Rise       ; clock           ;
+;  HEX1[1]   ; clock      ; 7.122 ; 7.122 ; Rise       ; clock           ;
+;  HEX1[2]   ; clock      ; 6.982 ; 6.982 ; Rise       ; clock           ;
+;  HEX1[3]   ; clock      ; 7.109 ; 7.109 ; Rise       ; clock           ;
+;  HEX1[4]   ; clock      ; 7.042 ; 7.042 ; Rise       ; clock           ;
+;  HEX1[5]   ; clock      ; 7.318 ; 7.318 ; Rise       ; clock           ;
+;  HEX1[6]   ; clock      ; 7.369 ; 7.369 ; Rise       ; clock           ;
+; HEX2[*]    ; clock      ; 6.375 ; 6.375 ; Rise       ; clock           ;
+;  HEX2[0]   ; clock      ; 6.591 ; 6.591 ; Rise       ; clock           ;
+;  HEX2[3]   ; clock      ; 6.618 ; 6.618 ; Rise       ; clock           ;
+;  HEX2[4]   ; clock      ; 6.385 ; 6.385 ; Rise       ; clock           ;
+;  HEX2[5]   ; clock      ; 6.375 ; 6.375 ; Rise       ; clock           ;
+; result[*]  ; clock      ; 4.806 ; 4.806 ; Rise       ; clock           ;
+;  result[0] ; clock      ; 4.806 ; 4.806 ; Rise       ; clock           ;
+;  result[1] ; clock      ; 5.237 ; 5.237 ; Rise       ; clock           ;
+;  result[2] ; clock      ; 5.277 ; 5.277 ; Rise       ; clock           ;
+;  result[3] ; clock      ; 5.298 ; 5.298 ; Rise       ; clock           ;
+;  result[4] ; clock      ; 5.730 ; 5.730 ; Rise       ; clock           ;
+;  result[5] ; clock      ; 5.434 ; 5.434 ; Rise       ; clock           ;
+;  result[6] ; clock      ; 5.222 ; 5.222 ; Rise       ; clock           ;
++------------+------------+-------+-------+------------+-----------------+
 
 
-+-------------------------------------------------------------------------------+
-; Minimum Clock to Output Times                                                 ;
-+------------+------------------+-------+-------+------------+------------------+
-; Data Port  ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
-+------------+------------------+-------+-------+------------+------------------+
-; HEX0[*]    ; ula_operation[0] ; 5.806 ; 5.806 ; Fall       ; ula_operation[0] ;
-;  HEX0[0]   ; ula_operation[0] ; 6.232 ; 6.232 ; Fall       ; ula_operation[0] ;
-;  HEX0[1]   ; ula_operation[0] ; 6.312 ; 6.312 ; Fall       ; ula_operation[0] ;
-;  HEX0[2]   ; ula_operation[0] ; 5.959 ; 5.959 ; Fall       ; ula_operation[0] ;
-;  HEX0[3]   ; ula_operation[0] ; 5.806 ; 5.806 ; Fall       ; ula_operation[0] ;
-;  HEX0[4]   ; ula_operation[0] ; 6.069 ; 6.069 ; Fall       ; ula_operation[0] ;
-;  HEX0[5]   ; ula_operation[0] ; 6.379 ; 6.379 ; Fall       ; ula_operation[0] ;
-;  HEX0[6]   ; ula_operation[0] ; 5.896 ; 5.896 ; Fall       ; ula_operation[0] ;
-; HEX1[*]    ; ula_operation[0] ; 6.551 ; 6.551 ; Fall       ; ula_operation[0] ;
-;  HEX1[0]   ; ula_operation[0] ; 6.725 ; 6.725 ; Fall       ; ula_operation[0] ;
-;  HEX1[1]   ; ula_operation[0] ; 6.830 ; 6.830 ; Fall       ; ula_operation[0] ;
-;  HEX1[2]   ; ula_operation[0] ; 6.737 ; 6.737 ; Fall       ; ula_operation[0] ;
-;  HEX1[3]   ; ula_operation[0] ; 6.832 ; 6.832 ; Fall       ; ula_operation[0] ;
-;  HEX1[4]   ; ula_operation[0] ; 6.551 ; 6.551 ; Fall       ; ula_operation[0] ;
-;  HEX1[5]   ; ula_operation[0] ; 6.766 ; 6.766 ; Fall       ; ula_operation[0] ;
-;  HEX1[6]   ; ula_operation[0] ; 6.758 ; 6.758 ; Fall       ; ula_operation[0] ;
-; HEX2[*]    ; ula_operation[0] ; 6.113 ; 6.113 ; Fall       ; ula_operation[0] ;
-;  HEX2[0]   ; ula_operation[0] ; 6.731 ; 6.731 ; Fall       ; ula_operation[0] ;
-;  HEX2[2]   ; ula_operation[0] ; 6.665 ; 6.665 ; Fall       ; ula_operation[0] ;
-;  HEX2[3]   ; ula_operation[0] ; 6.697 ; 6.697 ; Fall       ; ula_operation[0] ;
-;  HEX2[4]   ; ula_operation[0] ; 6.642 ; 6.642 ; Fall       ; ula_operation[0] ;
-;  HEX2[5]   ; ula_operation[0] ; 6.702 ; 6.702 ; Fall       ; ula_operation[0] ;
-;  HEX2[6]   ; ula_operation[0] ; 6.113 ; 6.113 ; Fall       ; ula_operation[0] ;
-; result[*]  ; ula_operation[0] ; 4.206 ; 4.206 ; Fall       ; ula_operation[0] ;
-;  result[0] ; ula_operation[0] ; 4.206 ; 4.206 ; Fall       ; ula_operation[0] ;
-;  result[1] ; ula_operation[0] ; 5.372 ; 5.372 ; Fall       ; ula_operation[0] ;
-;  result[2] ; ula_operation[0] ; 4.319 ; 4.319 ; Fall       ; ula_operation[0] ;
-;  result[3] ; ula_operation[0] ; 4.428 ; 4.428 ; Fall       ; ula_operation[0] ;
-;  result[4] ; ula_operation[0] ; 4.448 ; 4.448 ; Fall       ; ula_operation[0] ;
-;  result[5] ; ula_operation[0] ; 4.265 ; 4.265 ; Fall       ; ula_operation[0] ;
-;  result[6] ; ula_operation[0] ; 4.791 ; 4.791 ; Fall       ; ula_operation[0] ;
-;  result[7] ; ula_operation[0] ; 4.549 ; 4.549 ; Fall       ; ula_operation[0] ;
-+------------+------------------+-------+-------+------------+------------------+
++--------------------------------------------------------------------+
+; Propagation Delay                                                  ;
++------------------+-------------+--------+--------+--------+--------+
+; Input Port       ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------------+-------------+--------+--------+--------+--------+
+; ula_operation[0] ; HEX0[0]     ; 9.548  ; 9.548  ; 9.548  ; 9.548  ;
+; ula_operation[0] ; HEX0[1]     ; 9.590  ; 9.590  ; 9.590  ; 9.590  ;
+; ula_operation[0] ; HEX0[2]     ; 9.703  ; 9.703  ; 9.703  ; 9.703  ;
+; ula_operation[0] ; HEX0[3]     ; 9.656  ; 9.656  ; 9.656  ; 9.656  ;
+; ula_operation[0] ; HEX0[4]     ; 9.621  ; 9.621  ; 9.621  ; 9.621  ;
+; ula_operation[0] ; HEX0[5]     ; 9.659  ; 9.659  ; 9.659  ; 9.659  ;
+; ula_operation[0] ; HEX0[6]     ; 9.613  ; 9.613  ; 9.613  ; 9.613  ;
+; ula_operation[0] ; HEX1[0]     ; 12.905 ; 12.905 ; 12.905 ; 12.905 ;
+; ula_operation[0] ; HEX1[1]     ; 12.392 ; 12.392 ; 12.392 ; 12.392 ;
+; ula_operation[0] ; HEX1[2]     ; 12.252 ; 12.252 ; 12.252 ; 12.252 ;
+; ula_operation[0] ; HEX1[3]     ; 12.379 ; 12.379 ; 12.379 ; 12.379 ;
+; ula_operation[0] ; HEX1[4]     ; 12.312 ; 12.312 ; 12.312 ; 12.312 ;
+; ula_operation[0] ; HEX1[5]     ; 12.588 ; 12.588 ; 12.588 ; 12.588 ;
+; ula_operation[0] ; HEX1[6]     ; 12.639 ; 12.639 ; 12.639 ; 12.639 ;
+; ula_operation[0] ; HEX2[0]     ; 7.296  ; 7.296  ; 7.296  ; 7.296  ;
+; ula_operation[0] ; HEX2[3]     ; 7.323  ; 7.323  ; 7.323  ; 7.323  ;
+; ula_operation[0] ; HEX2[4]     ; 7.090  ; 7.090  ; 7.090  ; 7.090  ;
+; ula_operation[0] ; HEX2[5]     ; 7.080  ; 7.080  ; 7.080  ; 7.080  ;
+; ula_operation[0] ; result[0]   ; 4.483  ; 4.446  ; 4.446  ; 4.483  ;
+; ula_operation[0] ; result[1]   ; 5.476  ; 5.476  ; 5.476  ; 5.476  ;
+; ula_operation[0] ; result[2]   ; 5.567  ; 5.567  ; 5.567  ; 5.567  ;
+; ula_operation[0] ; result[3]   ; 5.111  ; 4.840  ; 4.840  ; 5.111  ;
+; ula_operation[0] ; result[4]   ; 4.907  ;        ;        ; 4.907  ;
+; ula_operation[0] ; result[5]   ; 4.835  ;        ;        ; 4.835  ;
+; ula_operation[0] ; result[6]   ; 4.489  ;        ;        ; 4.489  ;
+; ula_operation[1] ; HEX0[0]     ; 9.168  ; 9.168  ; 9.168  ; 9.168  ;
+; ula_operation[1] ; HEX0[1]     ; 9.210  ; 9.210  ; 9.210  ; 9.210  ;
+; ula_operation[1] ; HEX0[2]     ; 9.323  ; 9.323  ; 9.323  ; 9.323  ;
+; ula_operation[1] ; HEX0[3]     ; 9.276  ; 9.276  ; 9.276  ; 9.276  ;
+; ula_operation[1] ; HEX0[4]     ; 9.241  ; 9.241  ; 9.241  ; 9.241  ;
+; ula_operation[1] ; HEX0[5]     ; 9.279  ; 9.279  ; 9.279  ; 9.279  ;
+; ula_operation[1] ; HEX0[6]     ; 9.233  ; 9.233  ; 9.233  ; 9.233  ;
+; ula_operation[1] ; HEX1[0]     ; 12.850 ; 12.850 ; 12.850 ; 12.850 ;
+; ula_operation[1] ; HEX1[1]     ; 12.337 ; 12.337 ; 12.337 ; 12.337 ;
+; ula_operation[1] ; HEX1[2]     ; 12.197 ; 12.197 ; 12.197 ; 12.197 ;
+; ula_operation[1] ; HEX1[3]     ; 12.324 ; 12.324 ; 12.324 ; 12.324 ;
+; ula_operation[1] ; HEX1[4]     ; 12.257 ; 12.257 ; 12.257 ; 12.257 ;
+; ula_operation[1] ; HEX1[5]     ; 12.533 ; 12.533 ; 12.533 ; 12.533 ;
+; ula_operation[1] ; HEX1[6]     ; 12.584 ; 12.584 ; 12.584 ; 12.584 ;
+; ula_operation[1] ; HEX2[0]     ; 7.241  ; 7.241  ; 7.241  ; 7.241  ;
+; ula_operation[1] ; HEX2[3]     ; 7.268  ; 7.268  ; 7.268  ; 7.268  ;
+; ula_operation[1] ; HEX2[4]     ; 7.035  ; 7.035  ; 7.035  ; 7.035  ;
+; ula_operation[1] ; HEX2[5]     ; 7.025  ; 7.025  ; 7.025  ; 7.025  ;
+; ula_operation[1] ; result[0]   ; 4.273  ; 4.786  ; 4.786  ; 4.273  ;
+; ula_operation[1] ; result[1]   ; 5.455  ; 5.455  ; 5.455  ; 5.455  ;
+; ula_operation[1] ; result[2]   ; 5.512  ; 5.512  ; 5.512  ; 5.512  ;
+; ula_operation[1] ; result[3]   ; 4.888  ; 4.862  ; 4.862  ; 4.888  ;
+; ula_operation[1] ; result[4]   ; 4.259  ;        ;        ; 4.259  ;
+; ula_operation[1] ; result[5]   ; 4.189  ;        ;        ; 4.189  ;
+; ula_operation[1] ; result[6]   ; 3.709  ;        ;        ; 3.709  ;
+; ula_operation[2] ; HEX0[0]     ; 9.261  ; 9.261  ; 9.261  ; 9.261  ;
+; ula_operation[2] ; HEX0[1]     ; 9.303  ; 9.303  ; 9.303  ; 9.303  ;
+; ula_operation[2] ; HEX0[2]     ; 9.416  ; 9.416  ; 9.416  ; 9.416  ;
+; ula_operation[2] ; HEX0[3]     ; 9.369  ; 9.369  ; 9.369  ; 9.369  ;
+; ula_operation[2] ; HEX0[4]     ; 9.334  ; 9.334  ; 9.334  ; 9.334  ;
+; ula_operation[2] ; HEX0[5]     ; 9.372  ; 9.372  ; 9.372  ; 9.372  ;
+; ula_operation[2] ; HEX0[6]     ; 9.326  ; 9.326  ; 9.326  ; 9.326  ;
+; ula_operation[2] ; HEX1[0]     ; 12.514 ; 12.514 ; 12.514 ; 12.514 ;
+; ula_operation[2] ; HEX1[1]     ; 12.001 ; 12.001 ; 12.001 ; 12.001 ;
+; ula_operation[2] ; HEX1[2]     ; 11.861 ; 11.861 ; 11.861 ; 11.861 ;
+; ula_operation[2] ; HEX1[3]     ; 11.988 ; 11.988 ; 11.988 ; 11.988 ;
+; ula_operation[2] ; HEX1[4]     ; 11.921 ; 11.921 ; 11.921 ; 11.921 ;
+; ula_operation[2] ; HEX1[5]     ; 12.197 ; 12.197 ; 12.197 ; 12.197 ;
+; ula_operation[2] ; HEX1[6]     ; 12.248 ; 12.248 ; 12.248 ; 12.248 ;
+; ula_operation[2] ; HEX2[0]     ; 6.905  ; 6.905  ; 6.905  ; 6.905  ;
+; ula_operation[2] ; HEX2[3]     ; 6.932  ; 6.932  ; 6.932  ; 6.932  ;
+; ula_operation[2] ; HEX2[4]     ; 6.699  ; 6.699  ; 6.699  ; 6.699  ;
+; ula_operation[2] ; HEX2[5]     ; 6.689  ; 6.689  ; 6.689  ; 6.689  ;
+; ula_operation[2] ; result[0]   ; 4.723  ; 4.785  ; 4.785  ; 4.723  ;
+; ula_operation[2] ; result[1]   ; 4.917  ; 4.917  ; 4.917  ; 4.917  ;
+; ula_operation[2] ; result[2]   ; 5.176  ; 5.176  ; 5.176  ; 5.176  ;
+; ula_operation[2] ; result[3]   ; 4.864  ; 4.981  ; 4.981  ; 4.864  ;
+; ula_operation[2] ; result[4]   ;        ; 4.188  ; 4.188  ;        ;
+; ula_operation[2] ; result[5]   ;        ; 4.118  ; 4.118  ;        ;
+; ula_operation[2] ; result[6]   ;        ; 3.895  ; 3.895  ;        ;
+; ula_operation[3] ; HEX0[0]     ; 8.855  ; 8.855  ; 8.855  ; 8.855  ;
+; ula_operation[3] ; HEX0[1]     ; 8.897  ; 8.897  ; 8.897  ; 8.897  ;
+; ula_operation[3] ; HEX0[2]     ; 9.010  ; 9.010  ; 9.010  ; 9.010  ;
+; ula_operation[3] ; HEX0[3]     ; 8.963  ; 8.963  ; 8.963  ; 8.963  ;
+; ula_operation[3] ; HEX0[4]     ; 8.928  ; 8.928  ; 8.928  ; 8.928  ;
+; ula_operation[3] ; HEX0[5]     ; 8.966  ; 8.966  ; 8.966  ; 8.966  ;
+; ula_operation[3] ; HEX0[6]     ; 8.920  ; 8.920  ; 8.920  ; 8.920  ;
+; ula_operation[3] ; HEX1[0]     ; 11.579 ; 11.579 ; 11.579 ; 11.579 ;
+; ula_operation[3] ; HEX1[1]     ; 11.066 ; 11.066 ; 11.066 ; 11.066 ;
+; ula_operation[3] ; HEX1[2]     ; 10.913 ; 10.926 ; 10.926 ; 10.913 ;
+; ula_operation[3] ; HEX1[3]     ; 11.053 ; 11.053 ; 11.053 ; 11.053 ;
+; ula_operation[3] ; HEX1[4]     ; 10.986 ; 10.973 ; 10.973 ; 10.986 ;
+; ula_operation[3] ; HEX1[5]     ; 11.262 ; 11.249 ; 11.249 ; 11.262 ;
+; ula_operation[3] ; HEX1[6]     ; 11.313 ; 11.300 ; 11.300 ; 11.313 ;
+; ula_operation[3] ; HEX2[0]     ; 5.969  ; 6.211  ; 6.211  ; 5.969  ;
+; ula_operation[3] ; HEX2[3]     ; 5.996  ; 6.238  ; 6.238  ; 5.996  ;
+; ula_operation[3] ; HEX2[4]     ; 5.763  ; 6.005  ; 6.005  ; 5.763  ;
+; ula_operation[3] ; HEX2[5]     ; 5.753  ; 5.995  ; 5.995  ; 5.753  ;
+; ula_operation[3] ; result[0]   ; 3.917  ; 3.513  ; 3.513  ; 3.917  ;
+; ula_operation[3] ; result[1]   ; 3.795  ; 3.440  ; 3.440  ; 3.795  ;
+; ula_operation[3] ; result[2]   ; 3.798  ; 3.452  ; 3.452  ; 3.798  ;
+; ula_operation[3] ; result[3]   ; 4.176  ; 4.418  ; 4.418  ; 4.176  ;
+; ula_operation[3] ; result[4]   ;        ; 4.214  ; 4.214  ;        ;
+; ula_operation[3] ; result[5]   ;        ; 4.142  ; 4.142  ;        ;
+; ula_operation[3] ; result[6]   ;        ; 3.796  ; 3.796  ;        ;
++------------------+-------------+--------+--------+--------+--------+
 
 
-+---------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                             ;
-+-------------------+---------+--------+----------+---------+---------------------+
-; Clock             ; Setup   ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
-+-------------------+---------+--------+----------+---------+---------------------+
-; Worst-case Slack  ; -5.382  ; -1.156 ; N/A      ; N/A     ; -1.631              ;
-;  clock            ; N/A     ; N/A    ; N/A      ; N/A     ; -1.631              ;
-;  ula_operation[0] ; -5.382  ; -1.156 ; N/A      ; N/A     ; -1.631              ;
-; Design-wide TNS   ; -41.705 ; -8.065 ; 0.0      ; 0.0     ; -13.038             ;
-;  clock            ; N/A     ; N/A    ; N/A      ; N/A     ; -11.407             ;
-;  ula_operation[0] ; -41.705 ; -8.065 ; N/A      ; N/A     ; -1.631              ;
-+-------------------+---------+--------+----------+---------+---------------------+
++----------------------------------------------------------------+
+; Minimum Propagation Delay                                      ;
++------------------+-------------+-------+-------+-------+-------+
+; Input Port       ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------------+-------------+-------+-------+-------+-------+
+; ula_operation[0] ; HEX0[0]     ; 5.413 ; 5.413 ; 5.413 ; 5.413 ;
+; ula_operation[0] ; HEX0[1]     ; 5.448 ; 5.448 ; 5.448 ; 5.448 ;
+; ula_operation[0] ; HEX0[2]     ; 5.568 ; 5.568 ; 5.568 ; 5.568 ;
+; ula_operation[0] ; HEX0[3]     ; 5.523 ; 5.523 ; 5.523 ; 5.523 ;
+; ula_operation[0] ; HEX0[4]     ; 5.489 ; 5.489 ; 5.489 ; 5.489 ;
+; ula_operation[0] ; HEX0[5]     ; 5.523 ; 5.523 ; 5.523 ; 5.523 ;
+; ula_operation[0] ; HEX0[6]     ; 5.476 ; 5.476 ; 5.476 ; 5.476 ;
+; ula_operation[0] ; HEX1[0]     ; 6.917 ; 6.872 ; 6.872 ; 6.917 ;
+; ula_operation[0] ; HEX1[1]     ; 6.404 ; 6.368 ; 6.368 ; 6.404 ;
+; ula_operation[0] ; HEX1[2]     ; 6.264 ; 6.264 ; 6.264 ; 6.264 ;
+; ula_operation[0] ; HEX1[3]     ; 6.391 ; 6.362 ; 6.362 ; 6.391 ;
+; ula_operation[0] ; HEX1[4]     ; 6.324 ; 6.281 ; 6.281 ; 6.324 ;
+; ula_operation[0] ; HEX1[5]     ; 6.600 ; 6.558 ; 6.558 ; 6.600 ;
+; ula_operation[0] ; HEX1[6]     ; 6.651 ; 6.627 ; 6.627 ; 6.651 ;
+; ula_operation[0] ; HEX2[0]     ; 5.977 ; 6.050 ; 6.050 ; 5.977 ;
+; ula_operation[0] ; HEX2[3]     ; 6.004 ; 6.077 ; 6.077 ; 6.004 ;
+; ula_operation[0] ; HEX2[4]     ; 5.771 ; 5.844 ; 5.844 ; 5.771 ;
+; ula_operation[0] ; HEX2[5]     ; 5.761 ; 5.834 ; 5.834 ; 5.761 ;
+; ula_operation[0] ; result[0]   ; 4.399 ; 4.399 ; 4.399 ; 4.399 ;
+; ula_operation[0] ; result[1]   ; 4.519 ; 4.519 ; 4.519 ; 4.519 ;
+; ula_operation[0] ; result[2]   ; 4.525 ; 4.525 ; 4.525 ; 4.525 ;
+; ula_operation[0] ; result[3]   ; 4.840 ; 4.257 ; 4.257 ; 4.840 ;
+; ula_operation[0] ; result[4]   ; 4.907 ;       ;       ; 4.907 ;
+; ula_operation[0] ; result[5]   ; 4.835 ;       ;       ; 4.835 ;
+; ula_operation[0] ; result[6]   ; 4.489 ;       ;       ; 4.489 ;
+; ula_operation[1] ; HEX0[0]     ; 5.156 ; 5.252 ; 5.252 ; 5.156 ;
+; ula_operation[1] ; HEX0[1]     ; 5.198 ; 5.198 ; 5.198 ; 5.198 ;
+; ula_operation[1] ; HEX0[2]     ; 5.407 ; 5.320 ; 5.320 ; 5.407 ;
+; ula_operation[1] ; HEX0[3]     ; 5.271 ; 5.271 ; 5.271 ; 5.271 ;
+; ula_operation[1] ; HEX0[4]     ; 5.225 ; 5.328 ; 5.328 ; 5.225 ;
+; ula_operation[1] ; HEX0[5]     ; 5.373 ; 5.270 ; 5.270 ; 5.373 ;
+; ula_operation[1] ; HEX0[6]     ; 5.224 ; 5.224 ; 5.224 ; 5.224 ;
+; ula_operation[1] ; HEX1[0]     ; 6.279 ; 6.201 ; 6.201 ; 6.279 ;
+; ula_operation[1] ; HEX1[1]     ; 5.752 ; 5.697 ; 5.697 ; 5.752 ;
+; ula_operation[1] ; HEX1[2]     ; 5.861 ; 5.966 ; 5.966 ; 5.861 ;
+; ula_operation[1] ; HEX1[3]     ; 5.743 ; 5.691 ; 5.691 ; 5.743 ;
+; ula_operation[1] ; HEX1[4]     ; 5.664 ; 5.610 ; 5.610 ; 5.664 ;
+; ula_operation[1] ; HEX1[5]     ; 5.938 ; 5.887 ; 5.887 ; 5.938 ;
+; ula_operation[1] ; HEX1[6]     ; 5.988 ; 5.956 ; 5.956 ; 5.988 ;
+; ula_operation[1] ; HEX2[0]     ; 5.197 ; 5.848 ; 5.848 ; 5.197 ;
+; ula_operation[1] ; HEX2[3]     ; 5.224 ; 5.875 ; 5.875 ; 5.224 ;
+; ula_operation[1] ; HEX2[4]     ; 4.991 ; 5.642 ; 5.642 ; 4.991 ;
+; ula_operation[1] ; HEX2[5]     ; 4.981 ; 5.632 ; 5.632 ; 4.981 ;
+; ula_operation[1] ; result[0]   ; 4.249 ; 4.238 ; 4.238 ; 4.249 ;
+; ula_operation[1] ; result[1]   ; 4.743 ; 4.116 ; 4.116 ; 4.743 ;
+; ula_operation[1] ; result[2]   ; 5.000 ; 4.119 ; 4.119 ; 5.000 ;
+; ula_operation[1] ; result[3]   ; 4.381 ; 4.377 ; 4.377 ; 4.381 ;
+; ula_operation[1] ; result[4]   ; 4.259 ;       ;       ; 4.259 ;
+; ula_operation[1] ; result[5]   ; 4.189 ;       ;       ; 4.189 ;
+; ula_operation[1] ; result[6]   ; 3.709 ;       ;       ; 3.709 ;
+; ula_operation[2] ; HEX0[0]     ; 5.473 ; 5.569 ; 5.569 ; 5.473 ;
+; ula_operation[2] ; HEX0[1]     ; 5.515 ; 5.515 ; 5.515 ; 5.515 ;
+; ula_operation[2] ; HEX0[2]     ; 5.724 ; 5.637 ; 5.637 ; 5.724 ;
+; ula_operation[2] ; HEX0[3]     ; 5.588 ; 5.588 ; 5.588 ; 5.588 ;
+; ula_operation[2] ; HEX0[4]     ; 5.542 ; 5.645 ; 5.645 ; 5.542 ;
+; ula_operation[2] ; HEX0[5]     ; 5.835 ; 5.587 ; 5.587 ; 5.835 ;
+; ula_operation[2] ; HEX0[6]     ; 5.541 ; 5.541 ; 5.541 ; 5.541 ;
+; ula_operation[2] ; HEX1[0]     ; 6.374 ; 6.452 ; 6.452 ; 6.374 ;
+; ula_operation[2] ; HEX1[1]     ; 5.870 ; 5.925 ; 5.925 ; 5.870 ;
+; ula_operation[2] ; HEX1[2]     ; 6.139 ; 6.139 ; 6.139 ; 6.139 ;
+; ula_operation[2] ; HEX1[3]     ; 5.864 ; 5.916 ; 5.916 ; 5.864 ;
+; ula_operation[2] ; HEX1[4]     ; 5.783 ; 5.837 ; 5.837 ; 5.783 ;
+; ula_operation[2] ; HEX1[5]     ; 6.060 ; 6.111 ; 6.111 ; 6.060 ;
+; ula_operation[2] ; HEX1[6]     ; 6.129 ; 6.161 ; 6.161 ; 6.129 ;
+; ula_operation[2] ; HEX2[0]     ; 6.588 ; 5.275 ; 5.275 ; 6.588 ;
+; ula_operation[2] ; HEX2[3]     ; 6.615 ; 5.302 ; 5.302 ; 6.615 ;
+; ula_operation[2] ; HEX2[4]     ; 6.382 ; 5.069 ; 5.069 ; 6.382 ;
+; ula_operation[2] ; HEX2[5]     ; 6.372 ; 5.059 ; 5.059 ; 6.372 ;
+; ula_operation[2] ; result[0]   ; 4.711 ; 4.555 ; 4.555 ; 4.711 ;
+; ula_operation[2] ; result[1]   ; 4.783 ; 4.433 ; 4.433 ; 4.783 ;
+; ula_operation[2] ; result[2]   ; 4.984 ; 4.436 ; 4.436 ; 4.984 ;
+; ula_operation[2] ; result[3]   ; 4.795 ; 4.530 ; 4.530 ; 4.795 ;
+; ula_operation[2] ; result[4]   ;       ; 4.188 ; 4.188 ;       ;
+; ula_operation[2] ; result[5]   ;       ; 4.118 ; 4.118 ;       ;
+; ula_operation[2] ; result[6]   ;       ; 3.895 ; 3.895 ;       ;
+; ula_operation[3] ; HEX0[0]     ; 4.480 ; 4.527 ; 4.527 ; 4.480 ;
+; ula_operation[3] ; HEX0[1]     ; 4.522 ; 4.522 ; 4.522 ; 4.522 ;
+; ula_operation[3] ; HEX0[2]     ; 4.682 ; 4.644 ; 4.644 ; 4.682 ;
+; ula_operation[3] ; HEX0[3]     ; 4.595 ; 4.595 ; 4.595 ; 4.595 ;
+; ula_operation[3] ; HEX0[4]     ; 4.549 ; 4.603 ; 4.603 ; 4.549 ;
+; ula_operation[3] ; HEX0[5]     ; 4.949 ; 4.594 ; 4.594 ; 4.949 ;
+; ula_operation[3] ; HEX0[6]     ; 4.548 ; 4.548 ; 4.548 ; 4.548 ;
+; ula_operation[3] ; HEX1[0]     ; 5.838 ; 5.838 ; 5.838 ; 5.838 ;
+; ula_operation[3] ; HEX1[1]     ; 5.325 ; 5.325 ; 5.325 ; 5.325 ;
+; ula_operation[3] ; HEX1[2]     ; 5.185 ; 5.540 ; 5.540 ; 5.185 ;
+; ula_operation[3] ; HEX1[3]     ; 5.312 ; 5.312 ; 5.312 ; 5.312 ;
+; ula_operation[3] ; HEX1[4]     ; 5.600 ; 5.245 ; 5.245 ; 5.600 ;
+; ula_operation[3] ; HEX1[5]     ; 5.876 ; 5.521 ; 5.521 ; 5.876 ;
+; ula_operation[3] ; HEX1[6]     ; 5.927 ; 5.572 ; 5.572 ; 5.927 ;
+; ula_operation[3] ; HEX2[0]     ; 5.527 ; 5.181 ; 5.181 ; 5.527 ;
+; ula_operation[3] ; HEX2[3]     ; 5.554 ; 5.208 ; 5.208 ; 5.554 ;
+; ula_operation[3] ; HEX2[4]     ; 5.321 ; 4.975 ; 4.975 ; 5.321 ;
+; ula_operation[3] ; HEX2[5]     ; 5.311 ; 4.965 ; 4.965 ; 5.311 ;
+; ula_operation[3] ; result[0]   ; 3.917 ; 3.513 ; 3.513 ; 3.917 ;
+; ula_operation[3] ; result[1]   ; 3.795 ; 3.440 ; 3.440 ; 3.795 ;
+; ula_operation[3] ; result[2]   ; 3.798 ; 3.452 ; 3.452 ; 3.798 ;
+; ula_operation[3] ; result[3]   ; 4.176 ; 3.591 ; 3.591 ; 4.176 ;
+; ula_operation[3] ; result[4]   ;       ; 4.214 ; 4.214 ;       ;
+; ula_operation[3] ; result[5]   ;       ; 4.142 ; 4.142 ;       ;
+; ula_operation[3] ; result[6]   ;       ; 3.796 ; 3.796 ;       ;
++------------------+-------------+-------+-------+-------+-------+
 
 
-+--------------------------------------------------------------------------------------+
-; Setup Times                                                                          ;
-+-------------------+------------------+-------+-------+------------+------------------+
-; Data Port         ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
-+-------------------+------------------+-------+-------+------------+------------------+
-; operando[*]       ; clock            ; 0.838 ; 0.838 ; Rise       ; clock            ;
-;  operando[0]      ; clock            ; 0.673 ; 0.673 ; Rise       ; clock            ;
-;  operando[1]      ; clock            ; 0.838 ; 0.838 ; Rise       ; clock            ;
-;  operando[2]      ; clock            ; 0.376 ; 0.376 ; Rise       ; clock            ;
-;  operando[3]      ; clock            ; 0.558 ; 0.558 ; Rise       ; clock            ;
-; setRegA           ; clock            ; 0.635 ; 0.635 ; Rise       ; clock            ;
-; setRegB           ; clock            ; 0.849 ; 0.849 ; Rise       ; clock            ;
-; ula_operation[*]  ; ula_operation[0] ; 0.696 ; 0.696 ; Fall       ; ula_operation[0] ;
-;  ula_operation[0] ; ula_operation[0] ; 0.393 ; 0.393 ; Fall       ; ula_operation[0] ;
-;  ula_operation[1] ; ula_operation[0] ; 0.696 ; 0.696 ; Fall       ; ula_operation[0] ;
-+-------------------+------------------+-------+-------+------------+------------------+
++----------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                        ;
++------------------+-------+------+----------+---------+---------------------+
+; Clock            ; Setup ; Hold ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-------+------+----------+---------+---------------------+
+; Worst-case Slack ; N/A   ; N/A  ; N/A      ; N/A     ; -1.631              ;
+;  clock           ; N/A   ; N/A  ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; -10.185             ;
+;  clock           ; N/A   ; N/A  ; N/A      ; N/A     ; -10.185             ;
++------------------+-------+------+----------+---------+---------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Hold Times                                                                           ;
-+-------------------+------------------+-------+-------+------------+------------------+
-; Data Port         ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
-+-------------------+------------------+-------+-------+------------+------------------+
-; operando[*]       ; clock            ; 0.417 ; 0.417 ; Rise       ; clock            ;
-;  operando[0]      ; clock            ; 0.297 ; 0.297 ; Rise       ; clock            ;
-;  operando[1]      ; clock            ; 0.200 ; 0.200 ; Rise       ; clock            ;
-;  operando[2]      ; clock            ; 0.417 ; 0.417 ; Rise       ; clock            ;
-;  operando[3]      ; clock            ; 0.359 ; 0.359 ; Rise       ; clock            ;
-; setRegA           ; clock            ; 0.256 ; 0.256 ; Rise       ; clock            ;
-; setRegB           ; clock            ; 0.193 ; 0.193 ; Rise       ; clock            ;
-; ula_operation[*]  ; ula_operation[0] ; 1.156 ; 1.156 ; Fall       ; ula_operation[0] ;
-;  ula_operation[0] ; ula_operation[0] ; 1.156 ; 1.156 ; Fall       ; ula_operation[0] ;
-;  ula_operation[1] ; ula_operation[0] ; 1.084 ; 1.084 ; Fall       ; ula_operation[0] ;
-+-------------------+------------------+-------+-------+------------+------------------+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; operando[*]  ; clock      ; 0.456  ; 0.456  ; Rise       ; clock           ;
+;  operando[0] ; clock      ; -0.249 ; -0.249 ; Rise       ; clock           ;
+;  operando[1] ; clock      ; -0.313 ; -0.313 ; Rise       ; clock           ;
+;  operando[2] ; clock      ; -0.311 ; -0.311 ; Rise       ; clock           ;
+;  operando[3] ; clock      ; 0.456  ; 0.456  ; Rise       ; clock           ;
+; setRegA      ; clock      ; 1.244  ; 1.244  ; Rise       ; clock           ;
+; setRegB      ; clock      ; 1.253  ; 1.253  ; Rise       ; clock           ;
++--------------+------------+--------+--------+------------+-----------------+
 
 
-+---------------------------------------------------------------------------------+
-; Clock to Output Times                                                           ;
-+------------+------------------+--------+--------+------------+------------------+
-; Data Port  ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
-+------------+------------------+--------+--------+------------+------------------+
-; HEX0[*]    ; ula_operation[0] ; 28.341 ; 28.341 ; Fall       ; ula_operation[0] ;
-;  HEX0[0]   ; ula_operation[0] ; 27.954 ; 27.954 ; Fall       ; ula_operation[0] ;
-;  HEX0[1]   ; ula_operation[0] ; 28.208 ; 28.208 ; Fall       ; ula_operation[0] ;
-;  HEX0[2]   ; ula_operation[0] ; 27.358 ; 27.358 ; Fall       ; ula_operation[0] ;
-;  HEX0[3]   ; ula_operation[0] ; 27.097 ; 27.097 ; Fall       ; ula_operation[0] ;
-;  HEX0[4]   ; ula_operation[0] ; 27.856 ; 27.856 ; Fall       ; ula_operation[0] ;
-;  HEX0[5]   ; ula_operation[0] ; 28.341 ; 28.341 ; Fall       ; ula_operation[0] ;
-;  HEX0[6]   ; ula_operation[0] ; 27.351 ; 27.351 ; Fall       ; ula_operation[0] ;
-; HEX1[*]    ; ula_operation[0] ; 32.062 ; 32.062 ; Fall       ; ula_operation[0] ;
-;  HEX1[0]   ; ula_operation[0] ; 32.016 ; 32.016 ; Fall       ; ula_operation[0] ;
-;  HEX1[1]   ; ula_operation[0] ; 32.062 ; 32.062 ; Fall       ; ula_operation[0] ;
-;  HEX1[2]   ; ula_operation[0] ; 31.081 ; 31.081 ; Fall       ; ula_operation[0] ;
-;  HEX1[3]   ; ula_operation[0] ; 32.054 ; 32.054 ; Fall       ; ula_operation[0] ;
-;  HEX1[4]   ; ula_operation[0] ; 31.478 ; 31.478 ; Fall       ; ula_operation[0] ;
-;  HEX1[5]   ; ula_operation[0] ; 32.030 ; 32.030 ; Fall       ; ula_operation[0] ;
-;  HEX1[6]   ; ula_operation[0] ; 32.016 ; 32.016 ; Fall       ; ula_operation[0] ;
-; HEX2[*]    ; ula_operation[0] ; 18.522 ; 18.522 ; Fall       ; ula_operation[0] ;
-;  HEX2[0]   ; ula_operation[0] ; 18.522 ; 18.522 ; Fall       ; ula_operation[0] ;
-;  HEX2[2]   ; ula_operation[0] ; 18.332 ; 18.332 ; Fall       ; ula_operation[0] ;
-;  HEX2[3]   ; ula_operation[0] ; 18.342 ; 18.342 ; Fall       ; ula_operation[0] ;
-;  HEX2[4]   ; ula_operation[0] ; 17.260 ; 17.260 ; Fall       ; ula_operation[0] ;
-;  HEX2[5]   ; ula_operation[0] ; 18.520 ; 18.520 ; Fall       ; ula_operation[0] ;
-;  HEX2[6]   ; ula_operation[0] ; 14.174 ; 14.174 ; Fall       ; ula_operation[0] ;
-; result[*]  ; ula_operation[0] ; 10.961 ; 10.961 ; Fall       ; ula_operation[0] ;
-;  result[0] ; ula_operation[0] ; 8.416  ; 8.416  ; Fall       ; ula_operation[0] ;
-;  result[1] ; ula_operation[0] ; 10.961 ; 10.961 ; Fall       ; ula_operation[0] ;
-;  result[2] ; ula_operation[0] ; 8.621  ; 8.621  ; Fall       ; ula_operation[0] ;
-;  result[3] ; ula_operation[0] ; 8.889  ; 8.889  ; Fall       ; ula_operation[0] ;
-;  result[4] ; ula_operation[0] ; 8.812  ; 8.812  ; Fall       ; ula_operation[0] ;
-;  result[5] ; ula_operation[0] ; 8.474  ; 8.474  ; Fall       ; ula_operation[0] ;
-;  result[6] ; ula_operation[0] ; 9.705  ; 9.705  ; Fall       ; ula_operation[0] ;
-;  result[7] ; ula_operation[0] ; 9.078  ; 9.078  ; Fall       ; ula_operation[0] ;
-+------------+------------------+--------+--------+------------+------------------+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; operando[*]  ; clock      ; 0.761 ; 0.761 ; Rise       ; clock           ;
+;  operando[0] ; clock      ; 0.711 ; 0.711 ; Rise       ; clock           ;
+;  operando[1] ; clock      ; 0.761 ; 0.761 ; Rise       ; clock           ;
+;  operando[2] ; clock      ; 0.759 ; 0.759 ; Rise       ; clock           ;
+;  operando[3] ; clock      ; 0.415 ; 0.415 ; Rise       ; clock           ;
+; setRegA      ; clock      ; 0.156 ; 0.156 ; Rise       ; clock           ;
+; setRegB      ; clock      ; 0.150 ; 0.150 ; Rise       ; clock           ;
++--------------+------------+-------+-------+------------+-----------------+
 
 
-+-------------------------------------------------------------------------------+
-; Minimum Clock to Output Times                                                 ;
-+------------+------------------+-------+-------+------------+------------------+
-; Data Port  ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
-+------------+------------------+-------+-------+------------+------------------+
-; HEX0[*]    ; ula_operation[0] ; 5.806 ; 5.806 ; Fall       ; ula_operation[0] ;
-;  HEX0[0]   ; ula_operation[0] ; 6.232 ; 6.232 ; Fall       ; ula_operation[0] ;
-;  HEX0[1]   ; ula_operation[0] ; 6.312 ; 6.312 ; Fall       ; ula_operation[0] ;
-;  HEX0[2]   ; ula_operation[0] ; 5.959 ; 5.959 ; Fall       ; ula_operation[0] ;
-;  HEX0[3]   ; ula_operation[0] ; 5.806 ; 5.806 ; Fall       ; ula_operation[0] ;
-;  HEX0[4]   ; ula_operation[0] ; 6.069 ; 6.069 ; Fall       ; ula_operation[0] ;
-;  HEX0[5]   ; ula_operation[0] ; 6.379 ; 6.379 ; Fall       ; ula_operation[0] ;
-;  HEX0[6]   ; ula_operation[0] ; 5.896 ; 5.896 ; Fall       ; ula_operation[0] ;
-; HEX1[*]    ; ula_operation[0] ; 6.551 ; 6.551 ; Fall       ; ula_operation[0] ;
-;  HEX1[0]   ; ula_operation[0] ; 6.725 ; 6.725 ; Fall       ; ula_operation[0] ;
-;  HEX1[1]   ; ula_operation[0] ; 6.830 ; 6.830 ; Fall       ; ula_operation[0] ;
-;  HEX1[2]   ; ula_operation[0] ; 6.737 ; 6.737 ; Fall       ; ula_operation[0] ;
-;  HEX1[3]   ; ula_operation[0] ; 6.832 ; 6.832 ; Fall       ; ula_operation[0] ;
-;  HEX1[4]   ; ula_operation[0] ; 6.551 ; 6.551 ; Fall       ; ula_operation[0] ;
-;  HEX1[5]   ; ula_operation[0] ; 6.766 ; 6.766 ; Fall       ; ula_operation[0] ;
-;  HEX1[6]   ; ula_operation[0] ; 6.758 ; 6.758 ; Fall       ; ula_operation[0] ;
-; HEX2[*]    ; ula_operation[0] ; 6.113 ; 6.113 ; Fall       ; ula_operation[0] ;
-;  HEX2[0]   ; ula_operation[0] ; 6.731 ; 6.731 ; Fall       ; ula_operation[0] ;
-;  HEX2[2]   ; ula_operation[0] ; 6.665 ; 6.665 ; Fall       ; ula_operation[0] ;
-;  HEX2[3]   ; ula_operation[0] ; 6.697 ; 6.697 ; Fall       ; ula_operation[0] ;
-;  HEX2[4]   ; ula_operation[0] ; 6.642 ; 6.642 ; Fall       ; ula_operation[0] ;
-;  HEX2[5]   ; ula_operation[0] ; 6.702 ; 6.702 ; Fall       ; ula_operation[0] ;
-;  HEX2[6]   ; ula_operation[0] ; 6.113 ; 6.113 ; Fall       ; ula_operation[0] ;
-; result[*]  ; ula_operation[0] ; 4.206 ; 4.206 ; Fall       ; ula_operation[0] ;
-;  result[0] ; ula_operation[0] ; 4.206 ; 4.206 ; Fall       ; ula_operation[0] ;
-;  result[1] ; ula_operation[0] ; 5.372 ; 5.372 ; Fall       ; ula_operation[0] ;
-;  result[2] ; ula_operation[0] ; 4.319 ; 4.319 ; Fall       ; ula_operation[0] ;
-;  result[3] ; ula_operation[0] ; 4.428 ; 4.428 ; Fall       ; ula_operation[0] ;
-;  result[4] ; ula_operation[0] ; 4.448 ; 4.448 ; Fall       ; ula_operation[0] ;
-;  result[5] ; ula_operation[0] ; 4.265 ; 4.265 ; Fall       ; ula_operation[0] ;
-;  result[6] ; ula_operation[0] ; 4.791 ; 4.791 ; Fall       ; ula_operation[0] ;
-;  result[7] ; ula_operation[0] ; 4.549 ; 4.549 ; Fall       ; ula_operation[0] ;
-+------------+------------------+-------+-------+------------+------------------+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; HEX0[*]    ; clock      ; 28.557 ; 28.557 ; Rise       ; clock           ;
+;  HEX0[0]   ; clock      ; 28.282 ; 28.282 ; Rise       ; clock           ;
+;  HEX0[1]   ; clock      ; 28.345 ; 28.345 ; Rise       ; clock           ;
+;  HEX0[2]   ; clock      ; 28.543 ; 28.543 ; Rise       ; clock           ;
+;  HEX0[3]   ; clock      ; 28.557 ; 28.557 ; Rise       ; clock           ;
+;  HEX0[4]   ; clock      ; 28.489 ; 28.489 ; Rise       ; clock           ;
+;  HEX0[5]   ; clock      ; 28.521 ; 28.521 ; Rise       ; clock           ;
+;  HEX0[6]   ; clock      ; 28.476 ; 28.476 ; Rise       ; clock           ;
+; HEX1[*]    ; clock      ; 37.655 ; 37.655 ; Rise       ; clock           ;
+;  HEX1[0]   ; clock      ; 37.655 ; 37.655 ; Rise       ; clock           ;
+;  HEX1[1]   ; clock      ; 36.585 ; 36.585 ; Rise       ; clock           ;
+;  HEX1[2]   ; clock      ; 36.237 ; 36.237 ; Rise       ; clock           ;
+;  HEX1[3]   ; clock      ; 36.557 ; 36.557 ; Rise       ; clock           ;
+;  HEX1[4]   ; clock      ; 36.332 ; 36.332 ; Rise       ; clock           ;
+;  HEX1[5]   ; clock      ; 36.931 ; 36.931 ; Rise       ; clock           ;
+;  HEX1[6]   ; clock      ; 37.235 ; 37.235 ; Rise       ; clock           ;
+; HEX2[*]    ; clock      ; 22.806 ; 22.806 ; Rise       ; clock           ;
+;  HEX2[0]   ; clock      ; 22.780 ; 22.780 ; Rise       ; clock           ;
+;  HEX2[3]   ; clock      ; 22.806 ; 22.806 ; Rise       ; clock           ;
+;  HEX2[4]   ; clock      ; 22.207 ; 22.207 ; Rise       ; clock           ;
+;  HEX2[5]   ; clock      ; 22.197 ; 22.197 ; Rise       ; clock           ;
+; result[*]  ; clock      ; 18.223 ; 18.223 ; Rise       ; clock           ;
+;  result[0] ; clock      ; 17.670 ; 17.670 ; Rise       ; clock           ;
+;  result[1] ; clock      ; 16.773 ; 16.773 ; Rise       ; clock           ;
+;  result[2] ; clock      ; 18.223 ; 18.223 ; Rise       ; clock           ;
+;  result[3] ; clock      ; 16.706 ; 16.706 ; Rise       ; clock           ;
+;  result[4] ; clock      ; 15.191 ; 15.191 ; Rise       ; clock           ;
+;  result[5] ; clock      ; 14.986 ; 14.986 ; Rise       ; clock           ;
+;  result[6] ; clock      ; 14.211 ; 14.211 ; Rise       ; clock           ;
++------------+------------+--------+--------+------------+-----------------+
 
 
-+---------------------------------------------------------------------------------+
-; Setup Transfers                                                                 ;
-+------------------+------------------+----------+----------+----------+----------+
-; From Clock       ; To Clock         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+------------------+------------------+----------+----------+----------+----------+
-; clock            ; ula_operation[0] ; 0        ; 0        ; 757      ; 0        ;
-; ula_operation[0] ; ula_operation[0] ; 0        ; 0        ; 20       ; 20       ;
-+------------------+------------------+----------+----------+----------+----------+
-Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; HEX0[*]    ; clock      ; 5.820 ; 5.820 ; Rise       ; clock           ;
+;  HEX0[0]   ; clock      ; 5.820 ; 5.820 ; Rise       ; clock           ;
+;  HEX0[1]   ; clock      ; 5.855 ; 5.855 ; Rise       ; clock           ;
+;  HEX0[2]   ; clock      ; 5.975 ; 5.975 ; Rise       ; clock           ;
+;  HEX0[3]   ; clock      ; 5.930 ; 5.930 ; Rise       ; clock           ;
+;  HEX0[4]   ; clock      ; 5.896 ; 5.896 ; Rise       ; clock           ;
+;  HEX0[5]   ; clock      ; 5.930 ; 5.930 ; Rise       ; clock           ;
+;  HEX0[6]   ; clock      ; 5.883 ; 5.883 ; Rise       ; clock           ;
+; HEX1[*]    ; clock      ; 6.982 ; 6.982 ; Rise       ; clock           ;
+;  HEX1[0]   ; clock      ; 7.635 ; 7.635 ; Rise       ; clock           ;
+;  HEX1[1]   ; clock      ; 7.122 ; 7.122 ; Rise       ; clock           ;
+;  HEX1[2]   ; clock      ; 6.982 ; 6.982 ; Rise       ; clock           ;
+;  HEX1[3]   ; clock      ; 7.109 ; 7.109 ; Rise       ; clock           ;
+;  HEX1[4]   ; clock      ; 7.042 ; 7.042 ; Rise       ; clock           ;
+;  HEX1[5]   ; clock      ; 7.318 ; 7.318 ; Rise       ; clock           ;
+;  HEX1[6]   ; clock      ; 7.369 ; 7.369 ; Rise       ; clock           ;
+; HEX2[*]    ; clock      ; 6.375 ; 6.375 ; Rise       ; clock           ;
+;  HEX2[0]   ; clock      ; 6.591 ; 6.591 ; Rise       ; clock           ;
+;  HEX2[3]   ; clock      ; 6.618 ; 6.618 ; Rise       ; clock           ;
+;  HEX2[4]   ; clock      ; 6.385 ; 6.385 ; Rise       ; clock           ;
+;  HEX2[5]   ; clock      ; 6.375 ; 6.375 ; Rise       ; clock           ;
+; result[*]  ; clock      ; 4.806 ; 4.806 ; Rise       ; clock           ;
+;  result[0] ; clock      ; 4.806 ; 4.806 ; Rise       ; clock           ;
+;  result[1] ; clock      ; 5.237 ; 5.237 ; Rise       ; clock           ;
+;  result[2] ; clock      ; 5.277 ; 5.277 ; Rise       ; clock           ;
+;  result[3] ; clock      ; 5.298 ; 5.298 ; Rise       ; clock           ;
+;  result[4] ; clock      ; 5.730 ; 5.730 ; Rise       ; clock           ;
+;  result[5] ; clock      ; 5.434 ; 5.434 ; Rise       ; clock           ;
+;  result[6] ; clock      ; 5.222 ; 5.222 ; Rise       ; clock           ;
++------------+------------+-------+-------+------------+-----------------+
 
 
-+---------------------------------------------------------------------------------+
-; Hold Transfers                                                                  ;
-+------------------+------------------+----------+----------+----------+----------+
-; From Clock       ; To Clock         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
-+------------------+------------------+----------+----------+----------+----------+
-; clock            ; ula_operation[0] ; 0        ; 0        ; 757      ; 0        ;
-; ula_operation[0] ; ula_operation[0] ; 0        ; 0        ; 20       ; 20       ;
-+------------------+------------------+----------+----------+----------+----------+
-Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
++--------------------------------------------------------------------+
+; Progagation Delay                                                  ;
++------------------+-------------+--------+--------+--------+--------+
+; Input Port       ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------------+-------------+--------+--------+--------+--------+
+; ula_operation[0] ; HEX0[0]     ; 23.911 ; 23.911 ; 23.911 ; 23.911 ;
+; ula_operation[0] ; HEX0[1]     ; 23.974 ; 23.974 ; 23.974 ; 23.974 ;
+; ula_operation[0] ; HEX0[2]     ; 24.172 ; 24.172 ; 24.172 ; 24.172 ;
+; ula_operation[0] ; HEX0[3]     ; 24.186 ; 24.186 ; 24.186 ; 24.186 ;
+; ula_operation[0] ; HEX0[4]     ; 24.118 ; 24.118 ; 24.118 ; 24.118 ;
+; ula_operation[0] ; HEX0[5]     ; 24.150 ; 24.150 ; 24.150 ; 24.150 ;
+; ula_operation[0] ; HEX0[6]     ; 24.105 ; 24.105 ; 24.105 ; 24.105 ;
+; ula_operation[0] ; HEX1[0]     ; 32.706 ; 32.706 ; 32.706 ; 32.706 ;
+; ula_operation[0] ; HEX1[1]     ; 31.636 ; 31.636 ; 31.636 ; 31.636 ;
+; ula_operation[0] ; HEX1[2]     ; 31.288 ; 31.288 ; 31.288 ; 31.288 ;
+; ula_operation[0] ; HEX1[3]     ; 31.608 ; 31.608 ; 31.608 ; 31.608 ;
+; ula_operation[0] ; HEX1[4]     ; 31.383 ; 31.383 ; 31.383 ; 31.383 ;
+; ula_operation[0] ; HEX1[5]     ; 31.982 ; 31.982 ; 31.982 ; 31.982 ;
+; ula_operation[0] ; HEX1[6]     ; 32.286 ; 32.286 ; 32.286 ; 32.286 ;
+; ula_operation[0] ; HEX2[0]     ; 17.831 ; 17.831 ; 17.831 ; 17.831 ;
+; ula_operation[0] ; HEX2[3]     ; 17.857 ; 17.857 ; 17.857 ; 17.857 ;
+; ula_operation[0] ; HEX2[4]     ; 17.258 ; 17.258 ; 17.258 ; 17.258 ;
+; ula_operation[0] ; HEX2[5]     ; 17.248 ; 17.248 ; 17.248 ; 17.248 ;
+; ula_operation[0] ; result[0]   ; 10.112 ; 10.070 ; 10.070 ; 10.112 ;
+; ula_operation[0] ; result[1]   ; 13.172 ; 13.172 ; 13.172 ; 13.172 ;
+; ula_operation[0] ; result[2]   ; 13.274 ; 13.274 ; 13.274 ; 13.274 ;
+; ula_operation[0] ; result[3]   ; 11.931 ; 11.262 ; 11.262 ; 11.931 ;
+; ula_operation[0] ; result[4]   ; 11.134 ;        ;        ; 11.134 ;
+; ula_operation[0] ; result[5]   ; 11.034 ;        ;        ; 11.034 ;
+; ula_operation[0] ; result[6]   ; 9.961  ;        ;        ; 9.961  ;
+; ula_operation[1] ; HEX0[0]     ; 22.901 ; 22.901 ; 22.901 ; 22.901 ;
+; ula_operation[1] ; HEX0[1]     ; 22.964 ; 22.964 ; 22.964 ; 22.964 ;
+; ula_operation[1] ; HEX0[2]     ; 23.162 ; 23.162 ; 23.162 ; 23.162 ;
+; ula_operation[1] ; HEX0[3]     ; 23.176 ; 23.176 ; 23.176 ; 23.176 ;
+; ula_operation[1] ; HEX0[4]     ; 23.108 ; 23.108 ; 23.108 ; 23.108 ;
+; ula_operation[1] ; HEX0[5]     ; 23.140 ; 23.140 ; 23.140 ; 23.140 ;
+; ula_operation[1] ; HEX0[6]     ; 23.095 ; 23.095 ; 23.095 ; 23.095 ;
+; ula_operation[1] ; HEX1[0]     ; 32.651 ; 32.651 ; 32.651 ; 32.651 ;
+; ula_operation[1] ; HEX1[1]     ; 31.581 ; 31.581 ; 31.581 ; 31.581 ;
+; ula_operation[1] ; HEX1[2]     ; 31.233 ; 31.233 ; 31.233 ; 31.233 ;
+; ula_operation[1] ; HEX1[3]     ; 31.553 ; 31.553 ; 31.553 ; 31.553 ;
+; ula_operation[1] ; HEX1[4]     ; 31.328 ; 31.328 ; 31.328 ; 31.328 ;
+; ula_operation[1] ; HEX1[5]     ; 31.927 ; 31.927 ; 31.927 ; 31.927 ;
+; ula_operation[1] ; HEX1[6]     ; 32.231 ; 32.231 ; 32.231 ; 32.231 ;
+; ula_operation[1] ; HEX2[0]     ; 17.776 ; 17.776 ; 17.776 ; 17.776 ;
+; ula_operation[1] ; HEX2[3]     ; 17.802 ; 17.802 ; 17.802 ; 17.802 ;
+; ula_operation[1] ; HEX2[4]     ; 17.203 ; 17.203 ; 17.203 ; 17.203 ;
+; ula_operation[1] ; HEX2[5]     ; 17.193 ; 17.193 ; 17.193 ; 17.193 ;
+; ula_operation[1] ; result[0]   ; 9.733  ; 10.949 ; 10.949 ; 9.733  ;
+; ula_operation[1] ; result[1]   ; 13.172 ; 13.172 ; 13.172 ; 13.172 ;
+; ula_operation[1] ; result[2]   ; 13.219 ; 13.219 ; 13.219 ; 13.219 ;
+; ula_operation[1] ; result[3]   ; 11.325 ; 11.181 ; 11.181 ; 11.325 ;
+; ula_operation[1] ; result[4]   ; 9.480  ;        ;        ; 9.480  ;
+; ula_operation[1] ; result[5]   ; 9.383  ;        ;        ; 9.383  ;
+; ula_operation[1] ; result[6]   ; 7.922  ;        ;        ; 7.922  ;
+; ula_operation[2] ; HEX0[0]     ; 23.175 ; 23.175 ; 23.175 ; 23.175 ;
+; ula_operation[2] ; HEX0[1]     ; 23.238 ; 23.238 ; 23.238 ; 23.238 ;
+; ula_operation[2] ; HEX0[2]     ; 23.436 ; 23.436 ; 23.436 ; 23.436 ;
+; ula_operation[2] ; HEX0[3]     ; 23.450 ; 23.450 ; 23.450 ; 23.450 ;
+; ula_operation[2] ; HEX0[4]     ; 23.382 ; 23.382 ; 23.382 ; 23.382 ;
+; ula_operation[2] ; HEX0[5]     ; 23.414 ; 23.414 ; 23.414 ; 23.414 ;
+; ula_operation[2] ; HEX0[6]     ; 23.369 ; 23.369 ; 23.369 ; 23.369 ;
+; ula_operation[2] ; HEX1[0]     ; 31.489 ; 31.489 ; 31.489 ; 31.489 ;
+; ula_operation[2] ; HEX1[1]     ; 30.419 ; 30.419 ; 30.419 ; 30.419 ;
+; ula_operation[2] ; HEX1[2]     ; 30.071 ; 30.071 ; 30.071 ; 30.071 ;
+; ula_operation[2] ; HEX1[3]     ; 30.391 ; 30.391 ; 30.391 ; 30.391 ;
+; ula_operation[2] ; HEX1[4]     ; 30.166 ; 30.166 ; 30.166 ; 30.166 ;
+; ula_operation[2] ; HEX1[5]     ; 30.765 ; 30.765 ; 30.765 ; 30.765 ;
+; ula_operation[2] ; HEX1[6]     ; 31.069 ; 31.069 ; 31.069 ; 31.069 ;
+; ula_operation[2] ; HEX2[0]     ; 16.614 ; 16.614 ; 16.614 ; 16.614 ;
+; ula_operation[2] ; HEX2[3]     ; 16.640 ; 16.640 ; 16.640 ; 16.640 ;
+; ula_operation[2] ; HEX2[4]     ; 16.041 ; 16.041 ; 16.041 ; 16.041 ;
+; ula_operation[2] ; HEX2[5]     ; 16.031 ; 16.031 ; 16.031 ; 16.031 ;
+; ula_operation[2] ; result[0]   ; 10.853 ; 10.963 ; 10.963 ; 10.853 ;
+; ula_operation[2] ; result[1]   ; 11.454 ; 11.454 ; 11.454 ; 11.454 ;
+; ula_operation[2] ; result[2]   ; 12.057 ; 12.057 ; 12.057 ; 12.057 ;
+; ula_operation[2] ; result[3]   ; 11.258 ; 11.599 ; 11.599 ; 11.258 ;
+; ula_operation[2] ; result[4]   ;        ; 9.287  ; 9.287  ;        ;
+; ula_operation[2] ; result[5]   ;        ; 9.191  ; 9.191  ;        ;
+; ula_operation[2] ; result[6]   ;        ; 8.370  ; 8.370  ;        ;
+; ula_operation[3] ; HEX0[0]     ; 22.386 ; 22.386 ; 22.386 ; 22.386 ;
+; ula_operation[3] ; HEX0[1]     ; 22.449 ; 22.449 ; 22.449 ; 22.449 ;
+; ula_operation[3] ; HEX0[2]     ; 22.647 ; 22.647 ; 22.647 ; 22.647 ;
+; ula_operation[3] ; HEX0[3]     ; 22.661 ; 22.661 ; 22.661 ; 22.661 ;
+; ula_operation[3] ; HEX0[4]     ; 22.593 ; 22.593 ; 22.593 ; 22.593 ;
+; ula_operation[3] ; HEX0[5]     ; 22.625 ; 22.625 ; 22.625 ; 22.625 ;
+; ula_operation[3] ; HEX0[6]     ; 22.580 ; 22.580 ; 22.580 ; 22.580 ;
+; ula_operation[3] ; HEX1[0]     ; 29.318 ; 29.318 ; 29.318 ; 29.318 ;
+; ula_operation[3] ; HEX1[1]     ; 28.248 ; 28.248 ; 28.248 ; 28.248 ;
+; ula_operation[3] ; HEX1[2]     ; 27.900 ; 27.883 ; 27.883 ; 27.900 ;
+; ula_operation[3] ; HEX1[3]     ; 28.220 ; 28.220 ; 28.220 ; 28.220 ;
+; ula_operation[3] ; HEX1[4]     ; 27.978 ; 27.995 ; 27.995 ; 27.978 ;
+; ula_operation[3] ; HEX1[5]     ; 28.577 ; 28.594 ; 28.594 ; 28.577 ;
+; ula_operation[3] ; HEX1[6]     ; 28.881 ; 28.898 ; 28.898 ; 28.881 ;
+; ula_operation[3] ; HEX2[0]     ; 14.459 ; 15.066 ; 15.066 ; 14.459 ;
+; ula_operation[3] ; HEX2[3]     ; 14.485 ; 15.092 ; 15.092 ; 14.485 ;
+; ula_operation[3] ; HEX2[4]     ; 13.886 ; 14.493 ; 14.493 ; 13.886 ;
+; ula_operation[3] ; HEX2[5]     ; 13.876 ; 14.483 ; 14.483 ; 13.876 ;
+; ula_operation[3] ; result[0]   ; 8.890  ; 7.849  ; 7.849  ; 8.890  ;
+; ula_operation[3] ; result[1]   ; 8.720  ; 7.736  ; 7.736  ; 8.720  ;
+; ula_operation[3] ; result[2]   ; 8.640  ; 7.666  ; 7.666  ; 8.640  ;
+; ula_operation[3] ; result[3]   ; 9.799  ; 10.406 ; 10.406 ; 9.799  ;
+; ula_operation[3] ; result[4]   ;        ; 9.609  ; 9.609  ;        ;
+; ula_operation[3] ; result[5]   ;        ; 9.509  ; 9.509  ;        ;
+; ula_operation[3] ; result[6]   ;        ; 8.436  ; 8.436  ;        ;
++------------------+-------------+--------+--------+--------+--------+
+
+
++----------------------------------------------------------------+
+; Minimum Progagation Delay                                      ;
++------------------+-------------+-------+-------+-------+-------+
+; Input Port       ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------------+-------------+-------+-------+-------+-------+
+; ula_operation[0] ; HEX0[0]     ; 5.413 ; 5.413 ; 5.413 ; 5.413 ;
+; ula_operation[0] ; HEX0[1]     ; 5.448 ; 5.448 ; 5.448 ; 5.448 ;
+; ula_operation[0] ; HEX0[2]     ; 5.568 ; 5.568 ; 5.568 ; 5.568 ;
+; ula_operation[0] ; HEX0[3]     ; 5.523 ; 5.523 ; 5.523 ; 5.523 ;
+; ula_operation[0] ; HEX0[4]     ; 5.489 ; 5.489 ; 5.489 ; 5.489 ;
+; ula_operation[0] ; HEX0[5]     ; 5.523 ; 5.523 ; 5.523 ; 5.523 ;
+; ula_operation[0] ; HEX0[6]     ; 5.476 ; 5.476 ; 5.476 ; 5.476 ;
+; ula_operation[0] ; HEX1[0]     ; 6.917 ; 6.872 ; 6.872 ; 6.917 ;
+; ula_operation[0] ; HEX1[1]     ; 6.404 ; 6.368 ; 6.368 ; 6.404 ;
+; ula_operation[0] ; HEX1[2]     ; 6.264 ; 6.264 ; 6.264 ; 6.264 ;
+; ula_operation[0] ; HEX1[3]     ; 6.391 ; 6.362 ; 6.362 ; 6.391 ;
+; ula_operation[0] ; HEX1[4]     ; 6.324 ; 6.281 ; 6.281 ; 6.324 ;
+; ula_operation[0] ; HEX1[5]     ; 6.600 ; 6.558 ; 6.558 ; 6.600 ;
+; ula_operation[0] ; HEX1[6]     ; 6.651 ; 6.627 ; 6.627 ; 6.651 ;
+; ula_operation[0] ; HEX2[0]     ; 5.977 ; 6.050 ; 6.050 ; 5.977 ;
+; ula_operation[0] ; HEX2[3]     ; 6.004 ; 6.077 ; 6.077 ; 6.004 ;
+; ula_operation[0] ; HEX2[4]     ; 5.771 ; 5.844 ; 5.844 ; 5.771 ;
+; ula_operation[0] ; HEX2[5]     ; 5.761 ; 5.834 ; 5.834 ; 5.761 ;
+; ula_operation[0] ; result[0]   ; 4.399 ; 4.399 ; 4.399 ; 4.399 ;
+; ula_operation[0] ; result[1]   ; 4.519 ; 4.519 ; 4.519 ; 4.519 ;
+; ula_operation[0] ; result[2]   ; 4.525 ; 4.525 ; 4.525 ; 4.525 ;
+; ula_operation[0] ; result[3]   ; 4.840 ; 4.257 ; 4.257 ; 4.840 ;
+; ula_operation[0] ; result[4]   ; 4.907 ;       ;       ; 4.907 ;
+; ula_operation[0] ; result[5]   ; 4.835 ;       ;       ; 4.835 ;
+; ula_operation[0] ; result[6]   ; 4.489 ;       ;       ; 4.489 ;
+; ula_operation[1] ; HEX0[0]     ; 5.156 ; 5.252 ; 5.252 ; 5.156 ;
+; ula_operation[1] ; HEX0[1]     ; 5.198 ; 5.198 ; 5.198 ; 5.198 ;
+; ula_operation[1] ; HEX0[2]     ; 5.407 ; 5.320 ; 5.320 ; 5.407 ;
+; ula_operation[1] ; HEX0[3]     ; 5.271 ; 5.271 ; 5.271 ; 5.271 ;
+; ula_operation[1] ; HEX0[4]     ; 5.225 ; 5.328 ; 5.328 ; 5.225 ;
+; ula_operation[1] ; HEX0[5]     ; 5.373 ; 5.270 ; 5.270 ; 5.373 ;
+; ula_operation[1] ; HEX0[6]     ; 5.224 ; 5.224 ; 5.224 ; 5.224 ;
+; ula_operation[1] ; HEX1[0]     ; 6.279 ; 6.201 ; 6.201 ; 6.279 ;
+; ula_operation[1] ; HEX1[1]     ; 5.752 ; 5.697 ; 5.697 ; 5.752 ;
+; ula_operation[1] ; HEX1[2]     ; 5.861 ; 5.966 ; 5.966 ; 5.861 ;
+; ula_operation[1] ; HEX1[3]     ; 5.743 ; 5.691 ; 5.691 ; 5.743 ;
+; ula_operation[1] ; HEX1[4]     ; 5.664 ; 5.610 ; 5.610 ; 5.664 ;
+; ula_operation[1] ; HEX1[5]     ; 5.938 ; 5.887 ; 5.887 ; 5.938 ;
+; ula_operation[1] ; HEX1[6]     ; 5.988 ; 5.956 ; 5.956 ; 5.988 ;
+; ula_operation[1] ; HEX2[0]     ; 5.197 ; 5.848 ; 5.848 ; 5.197 ;
+; ula_operation[1] ; HEX2[3]     ; 5.224 ; 5.875 ; 5.875 ; 5.224 ;
+; ula_operation[1] ; HEX2[4]     ; 4.991 ; 5.642 ; 5.642 ; 4.991 ;
+; ula_operation[1] ; HEX2[5]     ; 4.981 ; 5.632 ; 5.632 ; 4.981 ;
+; ula_operation[1] ; result[0]   ; 4.249 ; 4.238 ; 4.238 ; 4.249 ;
+; ula_operation[1] ; result[1]   ; 4.743 ; 4.116 ; 4.116 ; 4.743 ;
+; ula_operation[1] ; result[2]   ; 5.000 ; 4.119 ; 4.119 ; 5.000 ;
+; ula_operation[1] ; result[3]   ; 4.381 ; 4.377 ; 4.377 ; 4.381 ;
+; ula_operation[1] ; result[4]   ; 4.259 ;       ;       ; 4.259 ;
+; ula_operation[1] ; result[5]   ; 4.189 ;       ;       ; 4.189 ;
+; ula_operation[1] ; result[6]   ; 3.709 ;       ;       ; 3.709 ;
+; ula_operation[2] ; HEX0[0]     ; 5.473 ; 5.569 ; 5.569 ; 5.473 ;
+; ula_operation[2] ; HEX0[1]     ; 5.515 ; 5.515 ; 5.515 ; 5.515 ;
+; ula_operation[2] ; HEX0[2]     ; 5.724 ; 5.637 ; 5.637 ; 5.724 ;
+; ula_operation[2] ; HEX0[3]     ; 5.588 ; 5.588 ; 5.588 ; 5.588 ;
+; ula_operation[2] ; HEX0[4]     ; 5.542 ; 5.645 ; 5.645 ; 5.542 ;
+; ula_operation[2] ; HEX0[5]     ; 5.835 ; 5.587 ; 5.587 ; 5.835 ;
+; ula_operation[2] ; HEX0[6]     ; 5.541 ; 5.541 ; 5.541 ; 5.541 ;
+; ula_operation[2] ; HEX1[0]     ; 6.374 ; 6.452 ; 6.452 ; 6.374 ;
+; ula_operation[2] ; HEX1[1]     ; 5.870 ; 5.925 ; 5.925 ; 5.870 ;
+; ula_operation[2] ; HEX1[2]     ; 6.139 ; 6.139 ; 6.139 ; 6.139 ;
+; ula_operation[2] ; HEX1[3]     ; 5.864 ; 5.916 ; 5.916 ; 5.864 ;
+; ula_operation[2] ; HEX1[4]     ; 5.783 ; 5.837 ; 5.837 ; 5.783 ;
+; ula_operation[2] ; HEX1[5]     ; 6.060 ; 6.111 ; 6.111 ; 6.060 ;
+; ula_operation[2] ; HEX1[6]     ; 6.129 ; 6.161 ; 6.161 ; 6.129 ;
+; ula_operation[2] ; HEX2[0]     ; 6.588 ; 5.275 ; 5.275 ; 6.588 ;
+; ula_operation[2] ; HEX2[3]     ; 6.615 ; 5.302 ; 5.302 ; 6.615 ;
+; ula_operation[2] ; HEX2[4]     ; 6.382 ; 5.069 ; 5.069 ; 6.382 ;
+; ula_operation[2] ; HEX2[5]     ; 6.372 ; 5.059 ; 5.059 ; 6.372 ;
+; ula_operation[2] ; result[0]   ; 4.711 ; 4.555 ; 4.555 ; 4.711 ;
+; ula_operation[2] ; result[1]   ; 4.783 ; 4.433 ; 4.433 ; 4.783 ;
+; ula_operation[2] ; result[2]   ; 4.984 ; 4.436 ; 4.436 ; 4.984 ;
+; ula_operation[2] ; result[3]   ; 4.795 ; 4.530 ; 4.530 ; 4.795 ;
+; ula_operation[2] ; result[4]   ;       ; 4.188 ; 4.188 ;       ;
+; ula_operation[2] ; result[5]   ;       ; 4.118 ; 4.118 ;       ;
+; ula_operation[2] ; result[6]   ;       ; 3.895 ; 3.895 ;       ;
+; ula_operation[3] ; HEX0[0]     ; 4.480 ; 4.527 ; 4.527 ; 4.480 ;
+; ula_operation[3] ; HEX0[1]     ; 4.522 ; 4.522 ; 4.522 ; 4.522 ;
+; ula_operation[3] ; HEX0[2]     ; 4.682 ; 4.644 ; 4.644 ; 4.682 ;
+; ula_operation[3] ; HEX0[3]     ; 4.595 ; 4.595 ; 4.595 ; 4.595 ;
+; ula_operation[3] ; HEX0[4]     ; 4.549 ; 4.603 ; 4.603 ; 4.549 ;
+; ula_operation[3] ; HEX0[5]     ; 4.949 ; 4.594 ; 4.594 ; 4.949 ;
+; ula_operation[3] ; HEX0[6]     ; 4.548 ; 4.548 ; 4.548 ; 4.548 ;
+; ula_operation[3] ; HEX1[0]     ; 5.838 ; 5.838 ; 5.838 ; 5.838 ;
+; ula_operation[3] ; HEX1[1]     ; 5.325 ; 5.325 ; 5.325 ; 5.325 ;
+; ula_operation[3] ; HEX1[2]     ; 5.185 ; 5.540 ; 5.540 ; 5.185 ;
+; ula_operation[3] ; HEX1[3]     ; 5.312 ; 5.312 ; 5.312 ; 5.312 ;
+; ula_operation[3] ; HEX1[4]     ; 5.600 ; 5.245 ; 5.245 ; 5.600 ;
+; ula_operation[3] ; HEX1[5]     ; 5.876 ; 5.521 ; 5.521 ; 5.876 ;
+; ula_operation[3] ; HEX1[6]     ; 5.927 ; 5.572 ; 5.572 ; 5.927 ;
+; ula_operation[3] ; HEX2[0]     ; 5.527 ; 5.181 ; 5.181 ; 5.527 ;
+; ula_operation[3] ; HEX2[3]     ; 5.554 ; 5.208 ; 5.208 ; 5.554 ;
+; ula_operation[3] ; HEX2[4]     ; 5.321 ; 4.975 ; 4.975 ; 5.321 ;
+; ula_operation[3] ; HEX2[5]     ; 5.311 ; 4.965 ; 4.965 ; 5.311 ;
+; ula_operation[3] ; result[0]   ; 3.917 ; 3.513 ; 3.513 ; 3.917 ;
+; ula_operation[3] ; result[1]   ; 3.795 ; 3.440 ; 3.440 ; 3.795 ;
+; ula_operation[3] ; result[2]   ; 3.798 ; 3.452 ; 3.452 ; 3.798 ;
+; ula_operation[3] ; result[3]   ; 4.176 ; 3.591 ; 3.591 ; 4.176 ;
+; ula_operation[3] ; result[4]   ;       ; 4.214 ; 4.214 ;       ;
+; ula_operation[3] ; result[5]   ;       ; 4.142 ; 4.142 ;       ;
+; ula_operation[3] ; result[6]   ;       ; 3.796 ; 3.796 ;       ;
++------------------+-------------+-------+-------+-------+-------+
+
+
+-------------------
+; Clock Transfers ;
+-------------------
+Nothing to report.
 
 
 ---------------
@@ -1145,10 +1257,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 7     ; 7    ;
-; Unconstrained Input Port Paths  ; 24    ; 24   ;
-; Unconstrained Output Ports      ; 28    ; 28   ;
-; Unconstrained Output Port Paths ; 148   ; 148  ;
+; Unconstrained Input Ports       ; 10    ; 10   ;
+; Unconstrained Input Port Paths  ; 114   ; 114  ;
+; Unconstrained Output Ports      ; 25    ; 25   ;
+; Unconstrained Output Port Paths ; 275   ; 275  ;
 +---------------------------------+-------+------+
 
 
@@ -1158,61 +1270,46 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1.78 SJ Web Edition
-    Info: Processing started: Wed Nov  9 14:35:16 2016
+    Info: Processing started: Wed Nov  9 15:58:31 2016
 Info: Command: quartus_sta processinho -c processinho
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (335093): TimeQuest Timing Analyzer is analyzing 8 combinational loops as latches.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'processinho.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
-    Info (332105): create_clock -period 1.000 -name ula_operation[0] ula_operation[0]
     Info (332105): create_clock -period 1.000 -name clock clock
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
-Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -5.382
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):    -5.382       -41.705 ula_operation[0] 
-Info (332146): Worst-case hold slack is -1.156
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):    -1.156        -8.065 ula_operation[0] 
+Info (332140): No fmax paths to report
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
+Critical Warning (332148): Timing requirements not met
 Info (332146): Worst-case minimum pulse width slack is -1.631
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.631       -11.407 clock 
-    Info (332119):    -1.631        -1.631 ula_operation[0] 
+    Info (332119):    -1.631       -10.185 clock 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
-Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -1.621
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):    -1.621       -12.505 ula_operation[0] 
-Info (332146): Worst-case hold slack is -0.968
-    Info (332119):     Slack End Point TNS Clock 
-    Info (332119): ========= ============= =====================
-    Info (332119):    -0.968        -7.345 ula_operation[0] 
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
+Critical Warning (332148): Timing requirements not met
 Info (332146): Worst-case minimum pulse width slack is -1.380
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.380        -9.380 clock 
-    Info (332119):    -1.380        -1.380 ula_operation[0] 
+    Info (332119):    -1.380        -8.380 clock 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 611 megabytes
-    Info: Processing ended: Wed Nov  9 14:35:17 2016
-    Info: Elapsed time: 00:00:01
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 600 megabytes
+    Info: Processing ended: Wed Nov  9 15:58:31 2016
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
 

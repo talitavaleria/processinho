@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processinho
-Wed Nov  9 14:35:06 2016
+Wed Nov  9 15:58:21 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1.78 SJ Web Edition
 
 
@@ -13,24 +13,26 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1.78 SJ Web E
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
- 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
- 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
- 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
- 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Div4
- 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
- 17. Parameter Settings for Inferred Entity Instance: lpm_divide:Div5
- 18. Parameter Settings for Inferred Entity Instance: ula:m_ula|lpm_mult:Mult0
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for Inferred Entity Instance: ula:m_ula|lpm_mult:Mult0
+ 11. Parameter Settings for Inferred Entity Instance: ula:m_ula|lpm_divide:Div0
+ 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
+ 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Div4
+ 17. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
+ 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Div5
  19. lpm_mult Parameter Settings by Entity Instance
  20. Port Connectivity Checks: "BCDdecode:display3"
  21. Port Connectivity Checks: "BCDdecode:display2"
  22. Port Connectivity Checks: "BCDdecode:display1"
  23. Port Connectivity Checks: "BCDdecode:display0"
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
+ 24. Port Connectivity Checks: "ula:m_ula"
+ 25. Port Connectivity Checks: "general_register:regB"
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
 
 
 
@@ -56,15 +58,15 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                            ;
 +------------------------------------+----------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov  9 14:35:06 2016              ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov  9 15:58:21 2016              ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1.78 SJ Web Edition ;
 ; Revision Name                      ; processinho                                        ;
 ; Top-level Entity Name              ; processinho                                        ;
 ; Family                             ; Cyclone II                                         ;
-; Total logic elements               ; 323                                                ;
-;     Total combinational functions  ; 315                                                ;
-;     Dedicated logic registers      ; 8                                                  ;
-; Total registers                    ; 8                                                  ;
+; Total logic elements               ; 276                                                ;
+;     Total combinational functions  ; 269                                                ;
+;     Dedicated logic registers      ; 7                                                  ;
+; Total registers                    ; 7                                                  ;
 ; Total pins                         ; 54                                                 ;
 ; Total virtual pins                 ; 0                                                  ;
 ; Total memory bits                  ; 0                                                  ;
@@ -169,46 +171,65 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                             ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                         ; Library ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
-; constants.vh                     ; yes             ; User Unspecified File        ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/constants.vh               ;         ;
-; ula.v                            ; yes             ; User Verilog HDL File        ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/ula.v                      ;         ;
-; processinho.v                    ; yes             ; User Verilog HDL File        ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/processinho.v              ;         ;
-; general_register.v               ; yes             ; User Verilog HDL File        ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/general_register.v         ;         ;
-; BCDdecode.v                      ; yes             ; User Verilog HDL File        ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/BCDdecode.v                ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/lpm_divide.tdf                    ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/abs_divider.inc                   ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/sign_div_unsign.inc               ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                    ;         ;
-; db/lpm_divide_45m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/lpm_divide_45m.tdf      ;         ;
-; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/sign_div_unsign_bkh.tdf ;         ;
-; db/alt_u_div_ove.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/alt_u_div_ove.tdf       ;         ;
-; db/add_sub_lkc.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/add_sub_lkc.tdf         ;         ;
-; db/add_sub_mkc.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/add_sub_mkc.tdf         ;         ;
-; db/lpm_divide_1dm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/lpm_divide_1dm.tdf      ;         ;
-; db/lpm_divide_75m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/lpm_divide_75m.tdf      ;         ;
-; db/sign_div_unsign_ekh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/sign_div_unsign_ekh.tdf ;         ;
-; db/alt_u_div_uve.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/alt_u_div_uve.tdf       ;         ;
-; db/lpm_divide_0dm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/lpm_divide_0dm.tdf      ;         ;
-; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/sign_div_unsign_akh.tdf ;         ;
-; db/alt_u_div_mve.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/alt_u_div_mve.tdf       ;         ;
-; db/lpm_divide_4dm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/lpm_divide_4dm.tdf      ;         ;
-; db/lpm_divide_h6m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/lpm_divide_h6m.tdf      ;         ;
-; db/sign_div_unsign_1nh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/sign_div_unsign_1nh.tdf ;         ;
-; db/alt_u_div_45f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/alt_u_div_45f.tdf       ;         ;
-; db/lpm_divide_dem.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/lpm_divide_dem.tdf      ;         ;
-; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/sign_div_unsign_nlh.tdf ;         ;
-; db/alt_u_div_g2f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/alt_u_div_g2f.tdf       ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/lpm_mult.tdf                      ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc                   ;         ;
-; multcore.inc                     ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/multcore.inc                      ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/bypassff.inc                      ;         ;
-; altshift.inc                     ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/altshift.inc                      ;         ;
-; db/mult_14t.tdf                  ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/PEM/Sistemas digitais/processinho/db/mult_14t.tdf            ;         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; constants.vh                     ; yes             ; User Unspecified File        ; /home/talitav/Documents/processinho/constants.vh                           ;         ;
+; ula.v                            ; yes             ; User Verilog HDL File        ; /home/talitav/Documents/processinho/ula.v                                  ;         ;
+; processinho.v                    ; yes             ; User Verilog HDL File        ; /home/talitav/Documents/processinho/processinho.v                          ;         ;
+; general_register.v               ; yes             ; User Verilog HDL File        ; /home/talitav/Documents/processinho/general_register.v                     ;         ;
+; BCDdecode.v                      ; yes             ; User Verilog HDL File        ; /home/talitav/Documents/processinho/BCDdecode.v                            ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/aglobal130.inc          ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; multcore.tdf                     ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/multcore.tdf            ;         ;
+; csa_add.inc                      ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/csa_add.inc             ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
+; muleabz.inc                      ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/muleabz.inc             ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; db/add_sub_17h.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/add_sub_17h.tdf                     ;         ;
+; db/add_sub_27h.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/add_sub_27h.tdf                     ;         ;
+; altshift.tdf                     ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/altshift.tdf            ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/lpm_divide.tdf          ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/abs_divider.inc         ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /opt/altera13.0sp1/quartus/libraries/megafunctions/sign_div_unsign.inc     ;         ;
+; db/lpm_divide_scm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/lpm_divide_scm.tdf                  ;         ;
+; db/sign_div_unsign_6kh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/sign_div_unsign_6kh.tdf             ;         ;
+; db/alt_u_div_eve.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/alt_u_div_eve.tdf                   ;         ;
+; db/add_sub_lkc.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/add_sub_lkc.tdf                     ;         ;
+; db/add_sub_mkc.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/add_sub_mkc.tdf                     ;         ;
+; db/lpm_divide_45m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/lpm_divide_45m.tdf                  ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/sign_div_unsign_bkh.tdf             ;         ;
+; db/alt_u_div_ove.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/alt_u_div_ove.tdf                   ;         ;
+; db/lpm_divide_1dm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/lpm_divide_1dm.tdf                  ;         ;
+; db/lpm_divide_75m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/lpm_divide_75m.tdf                  ;         ;
+; db/sign_div_unsign_ekh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/sign_div_unsign_ekh.tdf             ;         ;
+; db/alt_u_div_uve.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/alt_u_div_uve.tdf                   ;         ;
+; db/lpm_divide_0dm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/lpm_divide_0dm.tdf                  ;         ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/sign_div_unsign_akh.tdf             ;         ;
+; db/alt_u_div_mve.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/alt_u_div_mve.tdf                   ;         ;
+; db/lpm_divide_4dm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/lpm_divide_4dm.tdf                  ;         ;
+; db/lpm_divide_h6m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/lpm_divide_h6m.tdf                  ;         ;
+; db/sign_div_unsign_1nh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/sign_div_unsign_1nh.tdf             ;         ;
+; db/alt_u_div_45f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/alt_u_div_45f.tdf                   ;         ;
+; db/lpm_divide_dem.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/lpm_divide_dem.tdf                  ;         ;
+; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/sign_div_unsign_nlh.tdf             ;         ;
+; db/alt_u_div_g2f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/talitav/Documents/processinho/db/alt_u_div_g2f.tdf                   ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------------------------------+
@@ -216,85 +237,76 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------------------------------+
 ; Resource                                    ; Usage                             ;
 +---------------------------------------------+-----------------------------------+
-; Estimated Total logic elements              ; 323                               ;
+; Estimated Total logic elements              ; 276                               ;
 ;                                             ;                                   ;
-; Total combinational functions               ; 315                               ;
+; Total combinational functions               ; 269                               ;
 ; Logic element usage by number of LUT inputs ;                                   ;
-;     -- 4 input functions                    ; 75                                ;
-;     -- 3 input functions                    ; 102                               ;
-;     -- <=2 input functions                  ; 138                               ;
+;     -- 4 input functions                    ; 68                                ;
+;     -- 3 input functions                    ; 83                                ;
+;     -- <=2 input functions                  ; 118                               ;
 ;                                             ;                                   ;
 ; Logic elements by mode                      ;                                   ;
-;     -- normal mode                          ; 216                               ;
-;     -- arithmetic mode                      ; 99                                ;
+;     -- normal mode                          ; 186                               ;
+;     -- arithmetic mode                      ; 83                                ;
 ;                                             ;                                   ;
-; Total registers                             ; 8                                 ;
-;     -- Dedicated logic registers            ; 8                                 ;
+; Total registers                             ; 7                                 ;
+;     -- Dedicated logic registers            ; 7                                 ;
 ;     -- I/O registers                        ; 0                                 ;
 ;                                             ;                                   ;
 ; I/O pins                                    ; 54                                ;
 ; Embedded Multiplier 9-bit elements          ; 0                                 ;
-; Maximum fan-out node                        ; general_register:regB|valueOut[1] ;
-; Maximum fan-out                             ; 21                                ;
-; Total fan-out                               ; 892                               ;
-; Average fan-out                             ; 2.37                              ;
+; Maximum fan-out node                        ; general_register:regB|valueOut[0] ;
+; Maximum fan-out                             ; 15                                ;
+; Total fan-out                               ; 760                               ;
+; Average fan-out                             ; 2.30                              ;
 +---------------------------------------------+-----------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                              ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                          ; Library Name ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+--------------+
-; |processinho                           ; 315 (5)           ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 54   ; 0            ; |processinho                                                                                                 ; work         ;
-;    |BCDdecode:display0|                ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|BCDdecode:display0                                                                              ; work         ;
-;    |BCDdecode:display1|                ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|BCDdecode:display1                                                                              ; work         ;
-;    |BCDdecode:display2|                ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|BCDdecode:display2                                                                              ; work         ;
-;    |general_register:regA|             ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|general_register:regA                                                                           ; work         ;
-;    |general_register:regB|             ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|general_register:regB                                                                           ; work         ;
-;    |lpm_divide:Div1|                   ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div1                                                                                 ; work         ;
-;       |lpm_divide_1dm:auto_generated|  ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div1|lpm_divide_1dm:auto_generated                                                   ; work         ;
-;          |sign_div_unsign_bkh:divider| ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div1|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider                       ; work         ;
-;             |alt_u_div_ove:divider|    ; 56 (56)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div1|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider ; work         ;
-;    |lpm_divide:Div2|                   ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div2                                                                                 ; work         ;
-;       |lpm_divide_0dm:auto_generated|  ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div2|lpm_divide_0dm:auto_generated                                                   ; work         ;
-;          |sign_div_unsign_akh:divider| ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div2|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider                       ; work         ;
-;             |alt_u_div_mve:divider|    ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div2|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider ; work         ;
-;    |lpm_divide:Div4|                   ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div4                                                                                 ; work         ;
-;       |lpm_divide_4dm:auto_generated|  ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div4|lpm_divide_4dm:auto_generated                                                   ; work         ;
-;          |sign_div_unsign_ekh:divider| ; 25 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div4|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider                       ; work         ;
-;             |alt_u_div_uve:divider|    ; 25 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div4|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider ; work         ;
-;    |lpm_divide:Mod0|                   ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Mod0                                                                                 ; work         ;
-;       |lpm_divide_45m:auto_generated|  ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Mod0|lpm_divide_45m:auto_generated                                                   ; work         ;
-;          |sign_div_unsign_bkh:divider| ; 59 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider                       ; work         ;
-;             |alt_u_div_ove:divider|    ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider ; work         ;
-;    |lpm_divide:Mod1|                   ; 35 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Mod1                                                                                 ; work         ;
-;       |lpm_divide_75m:auto_generated|  ; 35 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Mod1|lpm_divide_75m:auto_generated                                                   ; work         ;
-;          |sign_div_unsign_ekh:divider| ; 35 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Mod1|lpm_divide_75m:auto_generated|sign_div_unsign_ekh:divider                       ; work         ;
-;             |alt_u_div_uve:divider|    ; 35 (35)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Mod1|lpm_divide_75m:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider ; work         ;
-;    |ula:m_ula|                         ; 73 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|ula:m_ula                                                                                       ; work         ;
-;       |lpm_mult:Mult0|                 ; 30 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|ula:m_ula|lpm_mult:Mult0                                                                        ; work         ;
-;          |mult_14t:auto_generated|     ; 30 (30)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated                                                ; work         ;
-+----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                          ;
++---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                           ; Library Name ;
++---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |processinho                                      ; 269 (5)           ; 7 (0)        ; 0           ; 0            ; 0       ; 0         ; 54   ; 0            ; |processinho                                                                                                                                  ; work         ;
+;    |BCDdecode:display0|                           ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|BCDdecode:display0                                                                                                               ; work         ;
+;    |BCDdecode:display1|                           ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|BCDdecode:display1                                                                                                               ; work         ;
+;    |general_register:regA|                        ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|general_register:regA                                                                                                            ; work         ;
+;    |general_register:regB|                        ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|general_register:regB                                                                                                            ; work         ;
+;    |lpm_divide:Div1|                              ; 44 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div1                                                                                                                  ; work         ;
+;       |lpm_divide_1dm:auto_generated|             ; 44 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div1|lpm_divide_1dm:auto_generated                                                                                    ; work         ;
+;          |sign_div_unsign_bkh:divider|            ; 44 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div1|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider                                                        ; work         ;
+;             |alt_u_div_ove:divider|               ; 44 (44)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div1|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider                                  ; work         ;
+;    |lpm_divide:Div2|                              ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div2                                                                                                                  ; work         ;
+;       |lpm_divide_0dm:auto_generated|             ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div2|lpm_divide_0dm:auto_generated                                                                                    ; work         ;
+;          |sign_div_unsign_akh:divider|            ; 43 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div2|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider                                                        ; work         ;
+;             |alt_u_div_mve:divider|               ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div2|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider                                  ; work         ;
+;    |lpm_divide:Div4|                              ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div4                                                                                                                  ; work         ;
+;       |lpm_divide_4dm:auto_generated|             ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div4|lpm_divide_4dm:auto_generated                                                                                    ; work         ;
+;          |sign_div_unsign_ekh:divider|            ; 7 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div4|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider                                                        ; work         ;
+;             |alt_u_div_uve:divider|               ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Div4|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider                                  ; work         ;
+;    |lpm_divide:Mod0|                              ; 47 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Mod0                                                                                                                  ; work         ;
+;       |lpm_divide_45m:auto_generated|             ; 47 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Mod0|lpm_divide_45m:auto_generated                                                                                    ; work         ;
+;          |sign_div_unsign_bkh:divider|            ; 47 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider                                                        ; work         ;
+;             |alt_u_div_ove:divider|               ; 47 (47)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider                                  ; work         ;
+;    |lpm_divide:Mod1|                              ; 13 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Mod1                                                                                                                  ; work         ;
+;       |lpm_divide_75m:auto_generated|             ; 13 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Mod1|lpm_divide_75m:auto_generated                                                                                    ; work         ;
+;          |sign_div_unsign_ekh:divider|            ; 13 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Mod1|lpm_divide_75m:auto_generated|sign_div_unsign_ekh:divider                                                        ; work         ;
+;             |alt_u_div_uve:divider|               ; 13 (13)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|lpm_divide:Mod1|lpm_divide_75m:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider                                  ; work         ;
+;    |ula:m_ula|                                    ; 94 (54)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|ula:m_ula                                                                                                                        ; work         ;
+;       |lpm_divide:Div0|                           ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|ula:m_ula|lpm_divide:Div0                                                                                                        ; work         ;
+;          |lpm_divide_scm:auto_generated|          ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|ula:m_ula|lpm_divide:Div0|lpm_divide_scm:auto_generated                                                                          ; work         ;
+;             |sign_div_unsign_6kh:divider|         ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|ula:m_ula|lpm_divide:Div0|lpm_divide_scm:auto_generated|sign_div_unsign_6kh:divider                                              ; work         ;
+;                |alt_u_div_eve:divider|            ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|ula:m_ula|lpm_divide:Div0|lpm_divide_scm:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eve:divider                        ; work         ;
+;       |lpm_mult:Mult0|                            ; 22 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|ula:m_ula|lpm_mult:Mult0                                                                                                         ; work         ;
+;          |multcore:mult_core|                     ; 22 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|ula:m_ula|lpm_mult:Mult0|multcore:mult_core                                                                                      ; work         ;
+;             |mpar_add:padder|                     ; 10 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|ula:m_ula|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                      ; work         ;
+;                |lpm_add_sub:adder[0]|             ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|ula:m_ula|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                 ; work         ;
+;                   |add_sub_17h:auto_generated|    ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|ula:m_ula|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_17h:auto_generated                      ; work         ;
+;                |mpar_add:sub_par_add|             ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|ula:m_ula|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|ula:m_ula|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ; work         ;
+;                      |add_sub_27h:auto_generated| ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processinho|ula:m_ula|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_27h:auto_generated ; work         ;
++---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; ula:m_ula|result[0]                                ; ula:m_ula|Mux8      ; yes                    ;
-; ula:m_ula|result[1]                                ; ula:m_ula|Mux8      ; yes                    ;
-; ula:m_ula|result[2]                                ; ula:m_ula|Mux8      ; yes                    ;
-; ula:m_ula|result[3]                                ; ula:m_ula|Mux8      ; yes                    ;
-; ula:m_ula|result[4]                                ; ula:m_ula|Mux8      ; yes                    ;
-; ula:m_ula|result[5]                                ; ula:m_ula|Mux8      ; yes                    ;
-; ula:m_ula|result[6]                                ; ula:m_ula|Mux8      ; yes                    ;
-; ula:m_ula|result[7]                                ; ula:m_ula|Mux8      ; yes                    ;
-; Number of user-specified and inferred latches = 8  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -302,12 +314,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 8     ;
+; Total registers                              ; 7     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Clock Enable       ; 7     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -317,9 +329,66 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |processinho|ula:m_ula|Mux5 ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |processinho|ula:m_ula|Mux0 ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 12 LEs               ; 10 LEs                 ; No         ; |processinho|ula:m_ula|Mux2 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ula:m_ula|lpm_mult:Mult0         ;
++------------------------------------------------+------------+---------------------+
+; Parameter Name                                 ; Value      ; Type                ;
++------------------------------------------------+------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 4          ; Untyped             ;
+; LPM_WIDTHB                                     ; 3          ; Untyped             ;
+; LPM_WIDTHP                                     ; 7          ; Untyped             ;
+; LPM_WIDTHR                                     ; 7          ; Untyped             ;
+; LPM_WIDTHS                                     ; 1          ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped             ;
+; LPM_PIPELINE                                   ; 0          ; Untyped             ;
+; LATENCY                                        ; 0          ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped             ;
+; USE_EAB                                        ; OFF        ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5          ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone II ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL     ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped             ;
+; CBXI_PARAMETER                                 ; NOTHING    ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped             ;
++------------------------------------------------+------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ula:m_ula|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------+
+; Parameter Name         ; Value          ; Type                             ;
++------------------------+----------------+----------------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                          ;
+; LPM_WIDTHD             ; 3              ; Untyped                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                          ;
+; CBXI_PARAMETER         ; lpm_divide_scm ; Untyped                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                   ;
++------------------------+----------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------------+
@@ -483,41 +552,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: ula:m_ula|lpm_mult:Mult0         ;
-+------------------------------------------------+------------+---------------------+
-; Parameter Name                                 ; Value      ; Type                ;
-+------------------------------------------------+------------+---------------------+
-; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY          ;
-; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY        ;
-; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE        ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE      ;
-; LPM_WIDTHA                                     ; 4          ; Untyped             ;
-; LPM_WIDTHB                                     ; 4          ; Untyped             ;
-; LPM_WIDTHP                                     ; 8          ; Untyped             ;
-; LPM_WIDTHR                                     ; 8          ; Untyped             ;
-; LPM_WIDTHS                                     ; 1          ; Untyped             ;
-; LPM_REPRESENTATION                             ; UNSIGNED   ; Untyped             ;
-; LPM_PIPELINE                                   ; 0          ; Untyped             ;
-; LATENCY                                        ; 0          ; Untyped             ;
-; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped             ;
-; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped             ;
-; USE_EAB                                        ; OFF        ; Untyped             ;
-; MAXIMIZE_SPEED                                 ; 5          ; Untyped             ;
-; DEVICE_FAMILY                                  ; Cyclone II ; Untyped             ;
-; CARRY_CHAIN                                    ; MANUAL     ; Untyped             ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped             ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped             ;
-; CBXI_PARAMETER                                 ; mult_14t   ; Untyped             ;
-; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped             ;
-; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped             ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped             ;
-+------------------------------------------------+------------+---------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +------------------------------------------------------------------+
 ; lpm_mult Parameter Settings by Entity Instance                   ;
 +---------------------------------------+--------------------------+
@@ -526,8 +560,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Number of entity instances            ; 1                        ;
 ; Entity Instance                       ; ula:m_ula|lpm_mult:Mult0 ;
 ;     -- LPM_WIDTHA                     ; 4                        ;
-;     -- LPM_WIDTHB                     ; 4                        ;
-;     -- LPM_WIDTHP                     ; 8                        ;
+;     -- LPM_WIDTHB                     ; 3                        ;
+;     -- LPM_WIDTHP                     ; 7                        ;
 ;     -- LPM_REPRESENTATION             ; UNSIGNED                 ;
 ;     -- INPUT_A_IS_CONSTANT            ; NO                       ;
 ;     -- INPUT_B_IS_CONSTANT            ; NO                       ;
@@ -578,12 +612,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ula:m_ula"                                                                                                                                                                           ;
++-----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                                                                                                                          ;
++-----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; operando2 ; Input ; Warning  ; Input port expression (4 bits) is wider than the input port (3 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++-----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "general_register:regB"                                                                     ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; valueOut[3] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -593,7 +645,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1.78 SJ Web Edition
-    Info: Processing started: Wed Nov  9 14:35:05 2016
+    Info: Processing started: Wed Nov  9 15:58:19 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processinho -c processinho
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (12019): Can't analyze file -- file constants.v is missing
@@ -619,16 +671,7 @@ Warning (10755): Verilog HDL warning at processinho.v(50): assignments to HEX3[1
 Warning (10755): Verilog HDL warning at processinho.v(50): assignments to HEX3[0] create a combinational loop
 Info (12128): Elaborating entity "general_register" for hierarchy "general_register:regA"
 Info (12128): Elaborating entity "ula" for hierarchy "ula:m_ula"
-Warning (10270): Verilog HDL Case Statement warning at ula.v(19): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at ula.v(19): inferring latch(es) for variable "result", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "result[0]" at ula.v(19)
-Info (10041): Inferred latch for "result[1]" at ula.v(19)
-Info (10041): Inferred latch for "result[2]" at ula.v(19)
-Info (10041): Inferred latch for "result[3]" at ula.v(19)
-Info (10041): Inferred latch for "result[4]" at ula.v(19)
-Info (10041): Inferred latch for "result[5]" at ula.v(19)
-Info (10041): Inferred latch for "result[6]" at ula.v(19)
-Info (10041): Inferred latch for "result[7]" at ula.v(19)
+Warning (10270): Verilog HDL Case Statement warning at ula.v(20): incomplete case statement has no default case item
 Info (12128): Elaborating entity "BCDdecode" for hierarchy "BCDdecode:display0"
 Warning (10030): Net "decode.data_a" at BCDdecode.v(12) has no driver or initial value, using a default initial value '0'
 Warning (10030): Net "decode.waddr_a" at BCDdecode.v(12) has no driver or initial value, using a default initial value '0'
@@ -640,8 +683,10 @@ Info (276014): Found 4 instances of uninferred RAM logic
     Info (276004): RAM logic "BCDdecode:display1|decode" is uninferred due to inappropriate RAM size
     Info (276004): RAM logic "BCDdecode:display2|decode" is uninferred due to inappropriate RAM size
     Info (276004): RAM logic "BCDdecode:display3|decode" is uninferred due to inappropriate RAM size
-Critical Warning (127005): Memory depth (16) in the design file differs from memory depth (10) in the Memory Initialization File "/home/talitav/Documents/PEM/Sistemas digitais/processinho/db/processinho.ram0_BCDdecode_9b9754c7.hdl.mif" -- setting initial value for remaining addresses to 0
-Info (278001): Inferred 8 megafunctions from design logic
+Critical Warning (127005): Memory depth (16) in the design file differs from memory depth (10) in the Memory Initialization File "/home/talitav/Documents/processinho/db/processinho.ram0_BCDdecode_9b9754c7.hdl.mif" -- setting initial value for remaining addresses to 0
+Info (278001): Inferred 9 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "ula:m_ula|Mult0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ula:m_ula|Div0"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1"
@@ -649,7 +694,43 @@ Info (278001): Inferred 8 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div4"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2"
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div5"
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "ula:m_ula|Mult0"
+Info (12130): Elaborated megafunction instantiation "ula:m_ula|lpm_mult:Mult0"
+Info (12133): Instantiated megafunction "ula:m_ula|lpm_mult:Mult0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "4"
+    Info (12134): Parameter "LPM_WIDTHB" = "3"
+    Info (12134): Parameter "LPM_WIDTHP" = "7"
+    Info (12134): Parameter "LPM_WIDTHR" = "7"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "ula:m_ula|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "ula:m_ula|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ula:m_ula|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "ula:m_ula|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ula:m_ula|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "ula:m_ula|lpm_mult:Mult0"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_17h.tdf
+    Info (12023): Found entity 1: add_sub_17h
+Info (12131): Elaborated megafunction instantiation "ula:m_ula|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "ula:m_ula|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "ula:m_ula|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "ula:m_ula|lpm_mult:Mult0"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_27h.tdf
+    Info (12023): Found entity 1: add_sub_27h
+Info (12131): Elaborated megafunction instantiation "ula:m_ula|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "ula:m_ula|lpm_mult:Mult0"
+Info (12130): Elaborated megafunction instantiation "ula:m_ula|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "ula:m_ula|lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "4"
+    Info (12134): Parameter "LPM_WIDTHD" = "3"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_scm.tdf
+    Info (12023): Found entity 1: lpm_divide_scm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_6kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_6kh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_eve.tdf
+    Info (12023): Found entity 1: alt_u_div_eve
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
+    Info (12023): Found entity 1: add_sub_lkc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
+    Info (12023): Found entity 1: add_sub_mkc
 Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0"
 Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHN" = "8"
@@ -662,10 +743,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_bkh
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ove.tdf
     Info (12023): Found entity 1: alt_u_div_ove
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
-    Info (12023): Found entity 1: add_sub_lkc
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
-    Info (12023): Found entity 1: add_sub_mkc
 Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1"
 Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHN" = "8"
@@ -730,48 +807,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_nlh
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_g2f.tdf
     Info (12023): Found entity 1: alt_u_div_g2f
-Info (12130): Elaborated megafunction instantiation "ula:m_ula|lpm_mult:Mult0"
-Info (12133): Instantiated megafunction "ula:m_ula|lpm_mult:Mult0" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTHA" = "4"
-    Info (12134): Parameter "LPM_WIDTHB" = "4"
-    Info (12134): Parameter "LPM_WIDTHP" = "8"
-    Info (12134): Parameter "LPM_WIDTHR" = "8"
-    Info (12134): Parameter "LPM_WIDTHS" = "1"
-    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
-    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mult_14t.tdf
-    Info (12023): Found entity 1: mult_14t
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following LCELL buffer node(s):
-        Warning (14320): Synthesized away node "ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|le5a[4]"
-Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13014): Ignored 48 buffer(s)
-    Info (13016): Ignored 4 CARRY_SUM buffer(s)
-    Info (13019): Ignored 44 SOFT buffer(s)
-Warning (13012): Latch ula:m_ula|result[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ula_operation[1]
-Warning (13012): Latch ula:m_ula|result[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ula_operation[0]
-Warning (13012): Latch ula:m_ula|result[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ula_operation[1]
-Warning (13012): Latch ula:m_ula|result[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ula_operation[0]
-Warning (13012): Latch ula:m_ula|result[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ula_operation[0]
-Warning (13012): Latch ula:m_ula|result[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ula_operation[1]
-Warning (13012): Latch ula:m_ula|result[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ula_operation[1]
-Warning (13012): Latch ula:m_ula|result[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ula_operation[1]
+Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "result[7]" is stuck at GND
     Warning (13410): Pin "result[8]" is stuck at GND
     Warning (13410): Pin "result[9]" is stuck at GND
     Warning (13410): Pin "HEX0[7]" is stuck at GND
     Warning (13410): Pin "HEX1[7]" is stuck at GND
     Warning (13410): Pin "HEX2[1]" is stuck at GND
+    Warning (13410): Pin "HEX2[2]" is stuck at GND
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC
     Warning (13410): Pin "HEX2[7]" is stuck at GND
     Warning (13410): Pin "HEX3[0]" is stuck at GND
     Warning (13410): Pin "HEX3[1]" is stuck at GND
@@ -785,14 +830,14 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "latch_ula"
-Info (21057): Implemented 377 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 330 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 42 output pins
-    Info (21061): Implemented 323 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 55 warnings
-    Info: Peak virtual memory: 740 megabytes
-    Info: Processing ended: Wed Nov  9 14:35:06 2016
-    Info: Elapsed time: 00:00:01
+    Info (21061): Implemented 276 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 38 warnings
+    Info: Peak virtual memory: 741 megabytes
+    Info: Processing ended: Wed Nov  9 15:58:21 2016
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 
