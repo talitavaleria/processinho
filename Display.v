@@ -32,9 +32,9 @@ end
 
 always @(*) begin
  
-	if ( (value[3:0] + (value[7:4]*10) + (value[11:8]*100)) >= 8'b10000000)
+	if ( value >= 296)
 		begin
-			val = 4096 - value;  // 4096 - 12 bits
+			val = 918-value;  // 4096 - 12 bits -> subtrair a quantidade de bits +1 pelo value
 			mil = mem[10];
 		end
 	else

@@ -52,6 +52,6 @@ Display disp(BCDCODE, HEX3, HEX2, HEX1, HEX0);
 //assign result = regAValue;
 //assign HEX3 = ~HEX3;
 assign result = ula_result;
-assign BCDCODE =((ula_result%10)+(ula_result/10)+(ula_result/100));
+assign BCDCODE =((ula_result%10)+(ula_result/10)*16+(ula_result/100)*256);
 
 endmodule
