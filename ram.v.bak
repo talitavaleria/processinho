@@ -1,0 +1,36 @@
+module ram(SW, LEDR);
+
+   input [7:0]SW;
+	output reg [7:0]LEDR;
+	
+	reg [2:0]q; //saida
+	reg [2:0] mem [9:0]; // ram 9x3 bits
+   wire [2:0]d; //dado
+   wire [2:0]a; //endereço
+	
+   wire we, enable; //
+	//wire clock; FALTA SINCRONIZAR COM O CLOCK DO PROCESSINHO
+   
+	
+	assign d = SW[2:0];
+	assign a = SW[5:3];
+	assign we = SW[6];
+	assign enable = SW[7];
+	
+    always @(1) begin
+        if (we) begin // nivel alto, seta pra funçao escrever
+		    if (enable) begin // nivel alto, escreve na posiçao a da memoria o dado d. 
+			 /* Serve para que primeiro seja escolhido o dado e posiçao e so salve na memoria depois de habilitar o enable, evitando reescrever
+			 em outras posiçoes. */
+            mem[a] = d;
+				end
+				LEDR[2:0] = 3'b000; //serve spra deixar os leds apagados enquanto ta na funçao escrever
+			end	
+        else begin //nivel baixo, atribui a q o valor da memoria que ta na posiçao a
+		   	q = mem[a];
+				LEDR[2:0] = q; //mostra o que ta em q
+		  end
+		 	  
+   end
+	
+endmodule
