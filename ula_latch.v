@@ -11,8 +11,7 @@ reg[7:0] value;
 
 always @(posedge clock) begin
 	if(reset == 1'b0)
-		value <= 8'b0;
-	end
+		value = 8'b0;
 	
 	if(grab == 1'b1) begin
 		value = ula_result;

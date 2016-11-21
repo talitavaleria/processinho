@@ -14,11 +14,9 @@ input[3:0] opcode,
 output reg[7:0] result
 );
 
-reg [7:0] value;
 wire[11:0] BCDCODE;
 
 initial begin
-	value = 8'b0;
 	result = 8'b0;
 end
 
@@ -28,48 +26,46 @@ always @(*) begin
 	//result[7:0] = 8'b0;
 	
 	if(!reset) begin
-		value = 8'b0;
 		result = 8'b0;
 	end
 
 	case(opcode)
 		`ULA_ADD: begin
-			value[7:0] = operando1 + operando2;
+			result[7:0] = operando1 + operando2;
 		end
 	
 		`ULA_SUB: begin
-			value[7:0] = operando1 - operando2;
+			result[7:0] = operando1 - operando2;
 		end
 		
 		`ULA_MULT: begin
-			value[7:0] = operando1 * operando2;
+			result[7:0] = operando1 * operando2;
 		end
 		
 		`ULA_DIV: begin
-			value[7:0] = operando1 / operando2;
+			result[7:0] = operando1 / operando2;
 		end
 		
 		`ULA_AND: begin
-			value[7:0] = operando1 & operando2;
+			result[7:0] = operando1 & operando2;
 		end
 		
 		`ULA_OR: begin
-			value[7:0] = operando1 | operando2;
+			result[7:0] = operando1 | operando2;
 		end
 		
 		`ULA_XOR: begin
-			value[7:0] = operando1 ^ operando2;
+			result[7:0] = operando1 ^ operando2;
 		end
 		
 		`ULA_NOT: begin
-			value[7:0] = ~operando1;
+			result[7:0] = ~operando1;
 		end
 	
 	endcase 
 	
 end
 
-assign result = grab ? value : result;
-assign BCDCODE =((ula_result%10)+(ula_result/10)*16+(ula_result/100)*256);
+assign BCDCODE =((result%10)+(result/10)*16+(result/100)*256);
 
 endmodule

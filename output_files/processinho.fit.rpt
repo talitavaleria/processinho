@@ -1,6 +1,6 @@
 Fitter report for processinho
-Mon Nov 14 12:01:15 2016
-Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1.78 SJ Web Edition
+Mon Nov 21 16:28:30 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1.78 SJ Web Edition
 
 
 ---------------------
@@ -19,25 +19,19 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1.78 SJ Web E
  11. Fitter Partition Statistics
  12. Input Pins
  13. Output Pins
- 14. I/O Bank Usage
- 15. All Package Pins
- 16. Output Pin Default Load For Reported TCO
- 17. Fitter Resource Utilization by Entity
- 18. Delay Chain Summary
- 19. Pad To Core Delay Chain Fanout
- 20. Control Signals
- 21. Global & Other Fast Signals
- 22. Non-Global High Fan-Out Signals
- 23. Other Routing Usage Summary
- 24. LAB Logic Elements
- 25. LAB-wide Signals
- 26. LAB Signals Sourced
- 27. LAB Signals Sourced Out
- 28. LAB Distinct Inputs
- 29. Fitter Device Options
- 30. Operating Settings and Conditions
- 31. Fitter Messages
- 32. Fitter Suppressed Messages
+ 14. Bidir Pins
+ 15. I/O Bank Usage
+ 16. All Package Pins
+ 17. Output Pin Default Load For Reported TCO
+ 18. Fitter Resource Utilization by Entity
+ 19. Delay Chain Summary
+ 20. Pad To Core Delay Chain Fanout
+ 21. Non-Global High Fan-Out Signals
+ 22. Other Routing Usage Summary
+ 23. Fitter Device Options
+ 24. Operating Settings and Conditions
+ 25. Fitter Messages
+ 26. Fitter Suppressed Messages
 
 
 
@@ -63,18 +57,18 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                          ;
 +------------------------------------+----------------------------------------------------+
-; Fitter Status                      ; Successful - Mon Nov 14 12:01:15 2016              ;
-; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1.78 SJ Web Edition ;
+; Fitter Status                      ; Successful - Mon Nov 21 16:28:30 2016              ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1.78 SJ Web Edition ;
 ; Revision Name                      ; processinho                                        ;
 ; Top-level Entity Name              ; processinho                                        ;
 ; Family                             ; Cyclone II                                         ;
 ; Device                             ; EP2C20F484C7                                       ;
 ; Timing Models                      ; Final                                              ;
-; Total logic elements               ; 295 / 18,752 ( 2 % )                               ;
-;     Total combinational functions  ; 295 / 18,752 ( 2 % )                               ;
-;     Dedicated logic registers      ; 8 / 18,752 ( < 1 % )                               ;
-; Total registers                    ; 8                                                  ;
-; Total pins                         ; 54 / 315 ( 17 % )                                  ;
+; Total logic elements               ; 0 / 18,752 ( 0 % )                                 ;
+;     Total combinational functions  ; 0 / 18,752 ( 0 % )                                 ;
+;     Dedicated logic registers      ; 0 / 18,752 ( 0 % )                                 ;
+; Total registers                    ; 0                                                  ;
+; Total pins                         ; 55 / 315 ( 17 % )                                  ;
 ; Total virtual pins                 ; 0                                                  ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                                ;
 ; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                                     ;
@@ -399,6 +393,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Location     ;                ;              ; VGA_R[2]      ; PIN_A7        ; QSF Assignment ;
 ; Location     ;                ;              ; VGA_R[3]      ; PIN_B7        ; QSF Assignment ;
 ; Location     ;                ;              ; VGA_VS        ; PIN_B11       ; QSF Assignment ;
+; Location     ;                ;              ; operando[0]   ; PIN_W12       ; QSF Assignment ;
+; Location     ;                ;              ; operando[1]   ; PIN_U12       ; QSF Assignment ;
+; Location     ;                ;              ; operando[2]   ; PIN_U11       ; QSF Assignment ;
+; Location     ;                ;              ; operando[3]   ; PIN_M2        ; QSF Assignment ;
+; Location     ;                ;              ; result[8]     ; PIN_R18       ; QSF Assignment ;
+; Location     ;                ;              ; result[9]     ; PIN_R17       ; QSF Assignment ;
+; Location     ;                ;              ; setRegA       ; PIN_M1        ; QSF Assignment ;
+; Location     ;                ;              ; setRegB       ; PIN_L2        ; QSF Assignment ;
 ; I/O Standard ;                ;              ; AUD_ADCDAT    ; LVTTL         ; QSF Assignment ;
 ; I/O Standard ;                ;              ; AUD_ADCLRCK   ; LVTTL         ; QSF Assignment ;
 ; I/O Standard ;                ;              ; AUD_BCLK      ; LVTTL         ; QSF Assignment ;
@@ -547,8 +549,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 362 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 362 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 59 ( 0.00 % )      ;
+;     -- Achieved     ; 0 / 59 ( 0.00 % )      ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -571,7 +573,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 359     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 56      ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -579,126 +581,125 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/processinho.pin.
+The pin-out file can be found in /home/talitav/Documents/nivelamento/sistemas digitais/processinho/output_files/processinho.pin.
 
 
-+--------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                      ;
-+---------------------------------------------+----------------------+
-; Resource                                    ; Usage                ;
-+---------------------------------------------+----------------------+
-; Total logic elements                        ; 295 / 18,752 ( 2 % ) ;
-;     -- Combinational with no register       ; 287                  ;
-;     -- Register only                        ; 0                    ;
-;     -- Combinational with a register        ; 8                    ;
-;                                             ;                      ;
-; Logic element usage by number of LUT inputs ;                      ;
-;     -- 4 input functions                    ; 87                   ;
-;     -- 3 input functions                    ; 109                  ;
-;     -- <=2 input functions                  ; 99                   ;
-;     -- Register only                        ; 0                    ;
-;                                             ;                      ;
-; Logic elements by mode                      ;                      ;
-;     -- normal mode                          ; 206                  ;
-;     -- arithmetic mode                      ; 89                   ;
-;                                             ;                      ;
-; Total registers*                            ; 8 / 19,649 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 8 / 18,752 ( < 1 % ) ;
-;     -- I/O registers                        ; 0 / 897 ( 0 % )      ;
-;                                             ;                      ;
-; Total LABs:  partially or completely used   ; 21 / 1,172 ( 2 % )   ;
-; Virtual pins                                ; 0                    ;
-; I/O pins                                    ; 54 / 315 ( 17 % )    ;
-;     -- Clock pins                           ; 6 / 8 ( 75 % )       ;
-;                                             ;                      ;
-; Global signals                              ; 1                    ;
-; M4Ks                                        ; 0 / 52 ( 0 % )       ;
-; Total block memory bits                     ; 0 / 239,616 ( 0 % )  ;
-; Total block memory implementation bits      ; 0 / 239,616 ( 0 % )  ;
-; Embedded Multiplier 9-bit elements          ; 0 / 52 ( 0 % )       ;
-; PLLs                                        ; 0 / 4 ( 0 % )        ;
-; Global clocks                               ; 1 / 16 ( 6 % )       ;
-; JTAGs                                       ; 0 / 1 ( 0 % )        ;
-; ASMI blocks                                 ; 0 / 1 ( 0 % )        ;
-; CRC blocks                                  ; 0 / 1 ( 0 % )        ;
-; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%         ;
-; Peak interconnect usage (total/H/V)         ; 1% / 1% / 1%         ;
-; Maximum fan-out                             ; 27                   ;
-; Highest non-global fan-out                  ; 27                   ;
-; Total fan-out                               ; 893                  ;
-; Average fan-out                             ; 2.47                 ;
-+---------------------------------------------+----------------------+
++-------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                     ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Total logic elements                        ; 0 / 18,752 ( 0 % )  ;
+;     -- Combinational with no register       ; 0                   ;
+;     -- Register only                        ; 0                   ;
+;     -- Combinational with a register        ; 0                   ;
+;                                             ;                     ;
+; Logic element usage by number of LUT inputs ;                     ;
+;     -- 4 input functions                    ; 0                   ;
+;     -- 3 input functions                    ; 0                   ;
+;     -- <=2 input functions                  ; 0                   ;
+;     -- Register only                        ; 0                   ;
+;                                             ;                     ;
+; Logic elements by mode                      ;                     ;
+;     -- normal mode                          ; 0                   ;
+;     -- arithmetic mode                      ; 0                   ;
+;                                             ;                     ;
+; Total registers*                            ; 0 / 19,649 ( 0 % )  ;
+;     -- Dedicated logic registers            ; 0 / 18,752 ( 0 % )  ;
+;     -- I/O registers                        ; 0 / 897 ( 0 % )     ;
+;                                             ;                     ;
+; Total LABs:  partially or completely used   ; 0 / 1,172 ( 0 % )   ;
+; Virtual pins                                ; 0                   ;
+; I/O pins                                    ; 55 / 315 ( 17 % )   ;
+;     -- Clock pins                           ; 4 / 8 ( 50 % )      ;
+;                                             ;                     ;
+; Global signals                              ; 0                   ;
+; M4Ks                                        ; 0 / 52 ( 0 % )      ;
+; Total block memory bits                     ; 0 / 239,616 ( 0 % ) ;
+; Total block memory implementation bits      ; 0 / 239,616 ( 0 % ) ;
+; Embedded Multiplier 9-bit elements          ; 0 / 52 ( 0 % )      ;
+; PLLs                                        ; 0 / 4 ( 0 % )       ;
+; Global clocks                               ; 0 / 16 ( 0 % )      ;
+; JTAGs                                       ; 0 / 1 ( 0 % )       ;
+; ASMI blocks                                 ; 0 / 1 ( 0 % )       ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )       ;
+; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%        ;
+; Peak interconnect usage (total/H/V)         ; 0% / 0% / 0%        ;
+; Maximum fan-out                             ; 1                   ;
+; Highest non-global fan-out                  ; 1                   ;
+; Total fan-out                               ; 7                   ;
+; Average fan-out                             ; 0.12                ;
++---------------------------------------------+---------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
 
-+----------------------------------------------------------------------------------------------------+
-; Fitter Partition Statistics                                                                        ;
-+---------------------------------------------+---------------------+--------------------------------+
-; Statistic                                   ; Top                 ; hard_block:auto_generated_inst ;
-+---------------------------------------------+---------------------+--------------------------------+
-; Difficulty Clustering Region                ; Low                 ; Low                            ;
-;                                             ;                     ;                                ;
-; Total logic elements                        ; 295 / 18752 ( 2 % ) ; 0 / 18752 ( 0 % )              ;
-;     -- Combinational with no register       ; 287                 ; 0                              ;
-;     -- Register only                        ; 0                   ; 0                              ;
-;     -- Combinational with a register        ; 8                   ; 0                              ;
-;                                             ;                     ;                                ;
-; Logic element usage by number of LUT inputs ;                     ;                                ;
-;     -- 4 input functions                    ; 87                  ; 0                              ;
-;     -- 3 input functions                    ; 109                 ; 0                              ;
-;     -- <=2 input functions                  ; 99                  ; 0                              ;
-;     -- Register only                        ; 0                   ; 0                              ;
-;                                             ;                     ;                                ;
-; Logic elements by mode                      ;                     ;                                ;
-;     -- normal mode                          ; 206                 ; 0                              ;
-;     -- arithmetic mode                      ; 89                  ; 0                              ;
-;                                             ;                     ;                                ;
-; Total registers                             ; 8                   ; 0                              ;
-;     -- Dedicated logic registers            ; 8 / 18752 ( < 1 % ) ; 0 / 18752 ( 0 % )              ;
-;                                             ;                     ;                                ;
-; Total LABs:  partially or completely used   ; 21 / 1172 ( 2 % )   ; 0 / 1172 ( 0 % )               ;
-;                                             ;                     ;                                ;
-; Virtual pins                                ; 0                   ; 0                              ;
-; I/O pins                                    ; 54                  ; 0                              ;
-; Embedded Multiplier 9-bit elements          ; 0 / 52 ( 0 % )      ; 0 / 52 ( 0 % )                 ;
-; Total memory bits                           ; 0                   ; 0                              ;
-; Total RAM block bits                        ; 0                   ; 0                              ;
-; Clock control block                         ; 1 / 20 ( 5 % )      ; 0 / 20 ( 0 % )                 ;
-;                                             ;                     ;                                ;
-; Connections                                 ;                     ;                                ;
-;     -- Input Connections                    ; 0                   ; 0                              ;
-;     -- Registered Input Connections         ; 0                   ; 0                              ;
-;     -- Output Connections                   ; 0                   ; 0                              ;
-;     -- Registered Output Connections        ; 0                   ; 0                              ;
-;                                             ;                     ;                                ;
-; Internal Connections                        ;                     ;                                ;
-;     -- Total Connections                    ; 893                 ; 0                              ;
-;     -- Registered Connections               ; 126                 ; 0                              ;
-;                                             ;                     ;                                ;
-; External Connections                        ;                     ;                                ;
-;     -- Top                                  ; 0                   ; 0                              ;
-;     -- hard_block:auto_generated_inst       ; 0                   ; 0                              ;
-;                                             ;                     ;                                ;
-; Partition Interface                         ;                     ;                                ;
-;     -- Input Ports                          ; 12                  ; 0                              ;
-;     -- Output Ports                         ; 42                  ; 0                              ;
-;     -- Bidir Ports                          ; 0                   ; 0                              ;
-;                                             ;                     ;                                ;
-; Registered Ports                            ;                     ;                                ;
-;     -- Registered Input Ports               ; 0                   ; 0                              ;
-;     -- Registered Output Ports              ; 0                   ; 0                              ;
-;                                             ;                     ;                                ;
-; Port Connectivity                           ;                     ;                                ;
-;     -- Input Ports driven by GND            ; 0                   ; 0                              ;
-;     -- Output Ports driven by GND           ; 0                   ; 0                              ;
-;     -- Input Ports driven by VCC            ; 0                   ; 0                              ;
-;     -- Output Ports driven by VCC           ; 0                   ; 0                              ;
-;     -- Input Ports with no Source           ; 0                   ; 0                              ;
-;     -- Output Ports with no Source          ; 0                   ; 0                              ;
-;     -- Input Ports with no Fanout           ; 0                   ; 0                              ;
-;     -- Output Ports with no Fanout          ; 0                   ; 0                              ;
-+---------------------------------------------+---------------------+--------------------------------+
++--------------------------------------------------------------------------------------------------+
+; Fitter Partition Statistics                                                                      ;
++---------------------------------------------+-------------------+--------------------------------+
+; Statistic                                   ; Top               ; hard_block:auto_generated_inst ;
++---------------------------------------------+-------------------+--------------------------------+
+; Difficulty Clustering Region                ; Low               ; Low                            ;
+;                                             ;                   ;                                ;
+; Total logic elements                        ; 0 / 18752 ( 0 % ) ; 0 / 18752 ( 0 % )              ;
+;     -- Combinational with no register       ; 0                 ; 0                              ;
+;     -- Register only                        ; 0                 ; 0                              ;
+;     -- Combinational with a register        ; 0                 ; 0                              ;
+;                                             ;                   ;                                ;
+; Logic element usage by number of LUT inputs ;                   ;                                ;
+;     -- 4 input functions                    ; 0                 ; 0                              ;
+;     -- 3 input functions                    ; 0                 ; 0                              ;
+;     -- <=2 input functions                  ; 0                 ; 0                              ;
+;     -- Register only                        ; 0                 ; 0                              ;
+;                                             ;                   ;                                ;
+; Logic elements by mode                      ;                   ;                                ;
+;     -- normal mode                          ; 0                 ; 0                              ;
+;     -- arithmetic mode                      ; 0                 ; 0                              ;
+;                                             ;                   ;                                ;
+; Total registers                             ; 0                 ; 0                              ;
+;     -- Dedicated logic registers            ; 0 / 18752 ( 0 % ) ; 0 / 18752 ( 0 % )              ;
+;                                             ;                   ;                                ;
+; Total LABs:  partially or completely used   ; 0 / 1172 ( 0 % )  ; 0 / 1172 ( 0 % )               ;
+;                                             ;                   ;                                ;
+; Virtual pins                                ; 0                 ; 0                              ;
+; I/O pins                                    ; 55                ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0 / 52 ( 0 % )    ; 0 / 52 ( 0 % )                 ;
+; Total memory bits                           ; 0                 ; 0                              ;
+; Total RAM block bits                        ; 0                 ; 0                              ;
+;                                             ;                   ;                                ;
+; Connections                                 ;                   ;                                ;
+;     -- Input Connections                    ; 0                 ; 0                              ;
+;     -- Registered Input Connections         ; 0                 ; 0                              ;
+;     -- Output Connections                   ; 0                 ; 0                              ;
+;     -- Registered Output Connections        ; 0                 ; 0                              ;
+;                                             ;                   ;                                ;
+; Internal Connections                        ;                   ;                                ;
+;     -- Total Connections                    ; 7                 ; 0                              ;
+;     -- Registered Connections               ; 0                 ; 0                              ;
+;                                             ;                   ;                                ;
+; External Connections                        ;                   ;                                ;
+;     -- Top                                  ; 0                 ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 0                 ; 0                              ;
+;                                             ;                   ;                                ;
+; Partition Interface                         ;                   ;                                ;
+;     -- Input Ports                          ; 7                 ; 0                              ;
+;     -- Output Ports                         ; 40                ; 0                              ;
+;     -- Bidir Ports                          ; 8                 ; 0                              ;
+;                                             ;                   ;                                ;
+; Registered Ports                            ;                   ;                                ;
+;     -- Registered Input Ports               ; 0                 ; 0                              ;
+;     -- Registered Output Ports              ; 0                 ; 0                              ;
+;                                             ;                   ;                                ;
+; Port Connectivity                           ;                   ;                                ;
+;     -- Input Ports driven by GND            ; 0                 ; 0                              ;
+;     -- Output Ports driven by GND           ; 0                 ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0                 ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0                 ; 0                              ;
+;     -- Input Ports with no Source           ; 0                 ; 0                              ;
+;     -- Output Ports with no Source          ; 0                 ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0                 ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0                 ; 0                              ;
++---------------------------------------------+-------------------+--------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -706,18 +707,13 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 +------------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; Name             ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +------------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; clock            ; L1    ; 2        ; 0            ; 13           ; 0           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; latch_ula        ; T12   ; 7        ; 31           ; 0            ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; operando[0]      ; W12   ; 7        ; 26           ; 0            ; 1           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; operando[1]      ; U12   ; 8        ; 26           ; 0            ; 2           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; operando[2]      ; U11   ; 8        ; 26           ; 0            ; 3           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; operando[3]      ; M2    ; 1        ; 0            ; 13           ; 3           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; setRegA          ; M1    ; 1        ; 0            ; 13           ; 2           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; setRegB          ; L2    ; 2        ; 0            ; 13           ; 1           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; ula_operation[0] ; L22   ; 5        ; 50           ; 14           ; 0           ; 17                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; ula_operation[1] ; L21   ; 5        ; 50           ; 14           ; 1           ; 9                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; ula_operation[2] ; M22   ; 6        ; 50           ; 14           ; 2           ; 13                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; ula_operation[3] ; V12   ; 7        ; 26           ; 0            ; 0           ; 16                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; clock            ; L1    ; 2        ; 0            ; 13           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; grab_ula         ; W11   ; 8        ; 20           ; 0            ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; latch_ula        ; J17   ; 5        ; 50           ; 18           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; ula_operation[0] ; L22   ; 5        ; 50           ; 14           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; ula_operation[1] ; L21   ; 5        ; 50           ; 14           ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; ula_operation[2] ; M22   ; 6        ; 50           ; 14           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; ula_operation[3] ; V12   ; 7        ; 26           ; 0            ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 +------------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
 
@@ -733,7 +729,7 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; HEX0[4]   ; F2    ; 2        ; 0            ; 20           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; HEX0[5]   ; F1    ; 2        ; 0            ; 20           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; HEX0[6]   ; E2    ; 2        ; 0            ; 20           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
-; HEX0[7]   ; B11   ; 3        ; 22           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; HEX0[7]   ; AA18  ; 7        ; 44           ; 0            ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 ; HEX1[0]   ; E1    ; 2        ; 0            ; 20           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; HEX1[1]   ; H6    ; 2        ; 0            ; 21           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; HEX1[2]   ; H5    ; 2        ; 0            ; 21           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
@@ -741,7 +737,7 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; HEX1[4]   ; G3    ; 2        ; 0            ; 21           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; HEX1[5]   ; D2    ; 2        ; 0            ; 22           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; HEX1[6]   ; D1    ; 2        ; 0            ; 22           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
-; HEX1[7]   ; B6    ; 3        ; 3            ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; HEX1[7]   ; B19   ; 4        ; 46           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 ; HEX2[0]   ; G5    ; 2        ; 0            ; 22           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; HEX2[1]   ; G6    ; 2        ; 0            ; 23           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; HEX2[2]   ; C2    ; 2        ; 0            ; 23           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
@@ -749,7 +745,7 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; HEX2[4]   ; E3    ; 2        ; 0            ; 24           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; HEX2[5]   ; E4    ; 2        ; 0            ; 24           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; HEX2[6]   ; D3    ; 2        ; 0            ; 25           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
-; HEX2[7]   ; G21   ; 5        ; 50           ; 19           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; HEX2[7]   ; AA7   ; 8        ; 11           ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 ; HEX3[0]   ; F4    ; 2        ; 0            ; 23           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; HEX3[1]   ; D5    ; 2        ; 0            ; 24           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; HEX3[2]   ; D6    ; 2        ; 0            ; 24           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
@@ -757,7 +753,7 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; HEX3[4]   ; L8    ; 2        ; 0            ; 19           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; HEX3[5]   ; F3    ; 2        ; 0            ; 22           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; HEX3[6]   ; D4    ; 2        ; 0            ; 25           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
-; HEX3[7]   ; H3    ; 2        ; 0            ; 19           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; HEX3[7]   ; AA8   ; 8        ; 15           ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 ; result[0] ; R20   ; 6        ; 50           ; 10           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; result[1] ; R19   ; 6        ; 50           ; 8            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; result[2] ; U19   ; 6        ; 50           ; 4            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
@@ -766,25 +762,39 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; result[5] ; V19   ; 6        ; 50           ; 2            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; result[6] ; Y18   ; 6        ; 50           ; 2            ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; result[7] ; U18   ; 6        ; 50           ; 3            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
-; result[8] ; R18   ; 6        ; 50           ; 8            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
-; result[9] ; R17   ; 6        ; 50           ; 5            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 +-----------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 
 
-+-------------------------------------------------------------+
-; I/O Bank Usage                                              ;
-+----------+-------------------+---------------+--------------+
-; I/O Bank ; Usage             ; VCCIO Voltage ; VREF Voltage ;
-+----------+-------------------+---------------+--------------+
-; 1        ; 2 / 41 ( 5 % )    ; 3.3V          ; --           ;
-; 2        ; 33 / 33 ( 100 % ) ; 3.3V          ; --           ;
-; 3        ; 2 / 43 ( 5 % )    ; 3.3V          ; --           ;
-; 4        ; 0 / 40 ( 0 % )    ; 3.3V          ; --           ;
-; 5        ; 3 / 39 ( 8 % )    ; 3.3V          ; --           ;
-; 6        ; 12 / 36 ( 33 % )  ; 3.3V          ; --           ;
-; 7        ; 3 / 40 ( 8 % )    ; 3.3V          ; --           ;
-; 8        ; 2 / 43 ( 5 % )    ; 3.3V          ; --           ;
-+----------+-------------------+---------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Bidir Pins                                                                                                                                                                                                                                                                                                                                                                                       ;
++-------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------------+------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
+; Name        ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Output Register ; Output Enable Register ; Power Up High ; PCI I/O Enabled ; Open Drain ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
++-------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------------+------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
+; data_bus[0] ; H10   ; 3        ; 15           ; 27           ; 2           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data_bus[1] ; P17   ; 6        ; 50           ; 8            ; 0           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data_bus[2] ; P18   ; 6        ; 50           ; 9            ; 2           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data_bus[3] ; AA19  ; 7        ; 48           ; 0            ; 2           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data_bus[4] ; Y20   ; 6        ; 50           ; 3            ; 2           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data_bus[5] ; AA20  ; 7        ; 48           ; 0            ; 0           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data_bus[6] ; AB20  ; 7        ; 48           ; 0            ; 1           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data_bus[7] ; U15   ; 7        ; 46           ; 0            ; 3           ; 1                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
++-------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------------+------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
+
+
++------------------------------------------------------------+
+; I/O Bank Usage                                             ;
++----------+------------------+---------------+--------------+
+; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
++----------+------------------+---------------+--------------+
+; 1        ; 0 / 41 ( 0 % )   ; 3.3V          ; --           ;
+; 2        ; 31 / 33 ( 94 % ) ; 3.3V          ; --           ;
+; 3        ; 1 / 43 ( 2 % )   ; 3.3V          ; --           ;
+; 4        ; 1 / 40 ( 3 % )   ; 3.3V          ; --           ;
+; 5        ; 3 / 39 ( 8 % )   ; 3.3V          ; --           ;
+; 6        ; 13 / 36 ( 36 % ) ; 3.3V          ; --           ;
+; 7        ; 6 / 40 ( 15 % )  ; 3.3V          ; --           ;
+; 8        ; 3 / 43 ( 7 % )   ; 3.3V          ; --           ;
++----------+------------------+---------------+--------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -820,8 +830,8 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; AA4      ; 85         ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA5      ; 89         ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA6      ; 97         ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AA7      ; 103        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AA8      ; 111        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AA7      ; 103        ; 8        ; HEX2[7]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AA8      ; 111        ; 8        ; HEX3[7]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AA9      ; 114        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA10     ; 120        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA11     ; 122        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -831,9 +841,9 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; AA15     ; 138        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA16     ; 140        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AA17     ; 144        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AA18     ; 153        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AA19     ; 162        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AA20     ; 164        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AA18     ; 153        ; 7        ; HEX0[7]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AA19     ; 162        ; 7        ; data_bus[3]                              ; bidir  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; AA20     ; 164        ; 7        ; data_bus[5]                              ; bidir  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AA21     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AA22     ;            ; 6        ; VCCIO6                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AB1      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -855,7 +865,7 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; AB17     ; 143        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB18     ; 152        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AB19     ; 161        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AB20     ; 163        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; AB20     ; 163        ; 7        ; data_bus[6]                              ; bidir  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; AB21     ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AB22     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B1       ;            ; 2        ; VCCIO2                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -863,12 +873,12 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; B3       ; 326        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B4       ; 323        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B5       ; 321        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B6       ; 319        ; 3        ; HEX1[7]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B6       ; 319        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B7       ; 305        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B8       ; 303        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B9       ; 297        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B10      ; 292        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B11      ; 286        ; 3        ; HEX0[7]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B11      ; 286        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B12      ; 282        ; 4        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; B13      ; 280        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B14      ; 278        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -876,7 +886,7 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; B16      ; 270        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B17      ; 264        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B18      ; 250        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B19      ; 248        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B19      ; 248        ; 4        ; HEX1[7]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B20      ; 246        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B21      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B22      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -988,18 +998,18 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; G18      ; 232        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G19      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; G20      ; 233        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
-; G21      ; 221        ; 5        ; HEX2[7]                                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G21      ; 221        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G22      ; 222        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H1       ; 24         ; 2        ; HEX0[3]                                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; H2       ; 25         ; 2        ; HEX0[2]                                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; H3       ; 27         ; 2        ; HEX3[7]                                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H3       ; 27         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; H4       ; 17         ; 2        ; HEX1[3]                                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; H5       ; 18         ; 2        ; HEX1[2]                                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; H6       ; 19         ; 2        ; HEX1[1]                                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; H7       ; 318        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H8       ; 314        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H9       ; 300        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; H10      ; 299        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; H10      ; 299        ; 3        ; data_bus[0]                              ; bidir  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; H11      ; 290        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H12      ; 274        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H13      ; 263        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -1028,7 +1038,7 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; J14      ; 258        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; J15      ; 220        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J16      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; J17      ; 218        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; J17      ; 218        ; 5        ; latch_ula                                ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; J18      ; 217        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J19      ; 216        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J20      ; 213        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -1057,7 +1067,7 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; K21      ; 209        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; K22      ; 210        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; L1       ; 38         ; 2        ; clock                                    ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; L2       ; 39         ; 2        ; setRegB                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; L2       ; 39         ; 2        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; L3       ;            ; 2        ; VCCIO2                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; L4       ; 40         ; 2        ; ^nCONFIG                                 ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; L5       ; 34         ; 2        ; #TDO                                     ; output ;              ;         ; --         ;                 ; --       ; --           ;
@@ -1078,8 +1088,8 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; L20      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; L21      ; 205        ; 5        ; ula_operation[1]                         ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; L22      ; 206        ; 5        ; ula_operation[0]                         ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; M1       ; 41         ; 1        ; setRegA                                  ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; M2       ; 42         ; 1        ; operando[3]                              ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; M1       ; 41         ; 1        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; M2       ; 42         ; 1        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; M3       ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; M4       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; M5       ; 43         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -1138,8 +1148,8 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; P14      ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; P15      ; 193        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; P16      ;            ; 6        ; VCCIO6                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; P17      ; 186        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; P18      ; 187        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; P17      ; 186        ; 6        ; data_bus[1]                              ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; P18      ; 187        ; 6        ; data_bus[2]                              ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; P19      ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; P20      ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; P21      ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
@@ -1160,8 +1170,8 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; R14      ; 150        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; R15      ; 151        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; R16      ; 155        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; R17      ; 177        ; 6        ; result[9]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; R18      ; 184        ; 6        ; result[8]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; R17      ; 177        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; R18      ; 184        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R19      ; 185        ; 6        ; result[1]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; R20      ; 192        ; 6        ; result[0]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; R21      ; 190        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -1177,7 +1187,7 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; T9       ;            ; 8        ; VCCIO8                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; T10      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T11      ; 115        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; T12      ; 131        ; 7        ; latch_ula                                ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; T12      ; 131        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; T13      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T14      ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; T15      ; 147        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -1198,11 +1208,11 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; U8       ; 92         ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; U9       ; 106        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; U10      ; 107        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; U11      ; 123        ; 8        ; operando[2]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
-; U12      ; 124        ; 8        ; operando[1]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; U11      ; 123        ; 8        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; U12      ; 124        ; 8        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; U13      ; 132        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; U14      ; 146        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; U15      ; 157        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; U15      ; 157        ; 7        ; data_bus[7]                              ; bidir  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; U16      ;            ;          ; VCCA_PLL4                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; U17      ;            ;          ; VCCD_PLL4                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; U18      ; 170        ; 6        ; result[7]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
@@ -1242,8 +1252,8 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; W8       ; 100        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; W9       ; 105        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; W10      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; W11      ; 117        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; W12      ; 125        ; 7        ; operando[0]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; W11      ; 117        ; 8        ; grab_ula                                 ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; W12      ; 125        ; 7        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; W13      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; W14      ; 141        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; W15      ; 149        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -1273,7 +1283,7 @@ The pin-out file can be found in /home/lucasf/Desktop/processinho/output_files/p
 ; Y17      ; 159        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; Y18      ; 165        ; 6        ; result[6]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; Y19      ; 168        ; 6        ; result[3]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; Y20      ; 169        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; Y20      ; 169        ; 6        ; data_bus[4]                              ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; Y21      ; 178        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; Y22      ; 179        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 +----------+------------+----------+------------------------------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
@@ -1317,35 +1327,13 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                             ;
-+-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                    ; Library Name ;
-+-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------------------------------------------+--------------+
-; |processinho                              ; 295 (3)     ; 8 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 54   ; 0            ; 287 (3)      ; 0 (0)             ; 8 (0)            ; |processinho                                                                                                           ; work         ;
-;    |Display:disp|                         ; 47 (47)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 47 (47)      ; 0 (0)             ; 0 (0)            ; |processinho|Display:disp                                                                                              ; work         ;
-;    |general_register:regA|                ; 4 (4)       ; 4 (4)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; |processinho|general_register:regA                                                                                     ; work         ;
-;    |general_register:regB|                ; 4 (4)       ; 4 (4)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; |processinho|general_register:regB                                                                                     ; work         ;
-;    |lpm_divide:Div0|                      ; 56 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 56 (0)       ; 0 (0)             ; 0 (0)            ; |processinho|lpm_divide:Div0                                                                                           ; work         ;
-;       |lpm_divide_1dm:auto_generated|     ; 56 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 56 (0)       ; 0 (0)             ; 0 (0)            ; |processinho|lpm_divide:Div0|lpm_divide_1dm:auto_generated                                                             ; work         ;
-;          |sign_div_unsign_bkh:divider|    ; 56 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 56 (0)       ; 0 (0)             ; 0 (0)            ; |processinho|lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider                                 ; work         ;
-;             |alt_u_div_ove:divider|       ; 56 (56)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 56 (56)      ; 0 (0)             ; 0 (0)            ; |processinho|lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider           ; work         ;
-;    |lpm_divide:Div1|                      ; 25 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 25 (0)       ; 0 (0)             ; 0 (0)            ; |processinho|lpm_divide:Div1                                                                                           ; work         ;
-;       |lpm_divide_4dm:auto_generated|     ; 25 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 25 (0)       ; 0 (0)             ; 0 (0)            ; |processinho|lpm_divide:Div1|lpm_divide_4dm:auto_generated                                                             ; work         ;
-;          |sign_div_unsign_ekh:divider|    ; 25 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 25 (0)       ; 0 (0)             ; 0 (0)            ; |processinho|lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider                                 ; work         ;
-;             |alt_u_div_uve:divider|       ; 25 (25)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 25 (25)      ; 0 (0)             ; 0 (0)            ; |processinho|lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider           ; work         ;
-;    |lpm_divide:Mod0|                      ; 59 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 59 (0)       ; 0 (0)             ; 0 (0)            ; |processinho|lpm_divide:Mod0                                                                                           ; work         ;
-;       |lpm_divide_45m:auto_generated|     ; 59 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 59 (0)       ; 0 (0)             ; 0 (0)            ; |processinho|lpm_divide:Mod0|lpm_divide_45m:auto_generated                                                             ; work         ;
-;          |sign_div_unsign_bkh:divider|    ; 59 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 59 (0)       ; 0 (0)             ; 0 (0)            ; |processinho|lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider                                 ; work         ;
-;             |alt_u_div_ove:divider|       ; 59 (59)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 59 (59)      ; 0 (0)             ; 0 (0)            ; |processinho|lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider           ; work         ;
-;    |ula:m_ula|                            ; 105 (57)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 97 (54)      ; 0 (0)             ; 8 (3)            ; |processinho|ula:m_ula                                                                                                 ; work         ;
-;       |lpm_divide:Div0|                   ; 18 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (0)       ; 0 (0)             ; 5 (0)            ; |processinho|ula:m_ula|lpm_divide:Div0                                                                                 ; work         ;
-;          |lpm_divide_tcm:auto_generated|  ; 18 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (0)       ; 0 (0)             ; 5 (0)            ; |processinho|ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated                                                   ; work         ;
-;             |sign_div_unsign_7kh:divider| ; 18 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (0)       ; 0 (0)             ; 5 (0)            ; |processinho|ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider                       ; work         ;
-;                |alt_u_div_gve:divider|    ; 18 (18)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (13)      ; 0 (0)             ; 5 (5)            ; |processinho|ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider ; work         ;
-;       |lpm_mult:Mult0|                    ; 30 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 30 (0)       ; 0 (0)             ; 0 (0)            ; |processinho|ula:m_ula|lpm_mult:Mult0                                                                                  ; work         ;
-;          |mult_14t:auto_generated|        ; 30 (30)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 30 (30)      ; 0 (0)             ; 0 (0)            ; |processinho|ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated                                                          ; work         ;
-+-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------------------------------------------------------------------------------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                           ;
++----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
+; |processinho               ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 55   ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |processinho        ; work         ;
++----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1354,7 +1342,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------+----------+---------------+---------------+-----------------------+-----+
 ; Name             ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO ;
 +------------------+----------+---------------+---------------+-----------------------+-----+
-; latch_ula        ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
+; data_bus[0]      ; Bidir    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
+; data_bus[1]      ; Bidir    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
+; data_bus[2]      ; Bidir    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
+; data_bus[3]      ; Bidir    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
+; data_bus[4]      ; Bidir    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
+; data_bus[5]      ; Bidir    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
+; data_bus[6]      ; Bidir    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
+; data_bus[7]      ; Bidir    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
+; clock            ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; latch_ula        ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; grab_ula         ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
+; ula_operation[0] ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; ula_operation[1] ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; ula_operation[2] ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; ula_operation[3] ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
 ; result[0]        ; Output   ; --            ; --            ; --                    ; --  ;
 ; result[1]        ; Output   ; --            ; --            ; --                    ; --  ;
 ; result[2]        ; Output   ; --            ; --            ; --                    ; --  ;
@@ -1363,8 +1365,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; result[5]        ; Output   ; --            ; --            ; --                    ; --  ;
 ; result[6]        ; Output   ; --            ; --            ; --                    ; --  ;
 ; result[7]        ; Output   ; --            ; --            ; --                    ; --  ;
-; result[8]        ; Output   ; --            ; --            ; --                    ; --  ;
-; result[9]        ; Output   ; --            ; --            ; --                    ; --  ;
 ; HEX0[0]          ; Output   ; --            ; --            ; --                    ; --  ;
 ; HEX0[1]          ; Output   ; --            ; --            ; --                    ; --  ;
 ; HEX0[2]          ; Output   ; --            ; --            ; --                    ; --  ;
@@ -1397,17 +1397,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HEX3[5]          ; Output   ; --            ; --            ; --                    ; --  ;
 ; HEX3[6]          ; Output   ; --            ; --            ; --                    ; --  ;
 ; HEX3[7]          ; Output   ; --            ; --            ; --                    ; --  ;
-; ula_operation[3] ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; ula_operation[2] ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; ula_operation[0] ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; ula_operation[1] ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; operando[0]      ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; clock            ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; setRegB          ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; setRegA          ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; operando[3]      ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; operando[1]      ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
-; operando[2]      ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
 +------------------+----------+---------------+---------------+-----------------------+-----+
 
 
@@ -1416,560 +1405,59 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 ; Source Pin / Fanout ; Pad To Core Index ; Setting ;
 +---------------------+-------------------+---------+
+; data_bus[0]         ;                   ;         ;
+; data_bus[1]         ;                   ;         ;
+;      - result[1]    ; 1                 ; 6       ;
+; data_bus[2]         ;                   ;         ;
+;      - result[2]    ; 0                 ; 6       ;
+; data_bus[3]         ;                   ;         ;
+;      - result[3]    ; 0                 ; 6       ;
+; data_bus[4]         ;                   ;         ;
+;      - result[4]    ; 1                 ; 6       ;
+; data_bus[5]         ;                   ;         ;
+;      - result[5]    ; 0                 ; 6       ;
+; data_bus[6]         ;                   ;         ;
+;      - result[6]    ; 0                 ; 6       ;
+; data_bus[7]         ;                   ;         ;
+;      - result[7]    ; 0                 ; 6       ;
+; clock               ;                   ;         ;
 ; latch_ula           ;                   ;         ;
-; ula_operation[3]    ;                   ;         ;
-; ula_operation[2]    ;                   ;         ;
+; grab_ula            ;                   ;         ;
 ; ula_operation[0]    ;                   ;         ;
 ; ula_operation[1]    ;                   ;         ;
-; operando[0]         ;                   ;         ;
-; clock               ;                   ;         ;
-; setRegB             ;                   ;         ;
-; setRegA             ;                   ;         ;
-; operando[3]         ;                   ;         ;
-; operando[1]         ;                   ;         ;
-; operando[2]         ;                   ;         ;
+; ula_operation[2]    ;                   ;         ;
+; ula_operation[3]    ;                   ;         ;
 +---------------------+-------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                            ;
-+---------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name    ; Location ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+---------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; clock   ; PIN_L1   ; 8       ; Clock        ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; setRegA ; PIN_M1   ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; setRegB ; PIN_L2   ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-+---------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
++---------------------------------+
+; Non-Global High Fan-Out Signals ;
++---------------+-----------------+
+; Name          ; Fan-Out         ;
++---------------+-----------------+
+; data_bus[7]~6 ; 1               ;
+; data_bus[6]~5 ; 1               ;
+; data_bus[5]~4 ; 1               ;
+; data_bus[4]~3 ; 1               ;
+; data_bus[3]~2 ; 1               ;
+; data_bus[2]~1 ; 1               ;
+; data_bus[1]~0 ; 1               ;
++---------------+-----------------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                      ;
-+-------+----------+---------+----------------------+------------------+---------------------------+
-; Name  ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-------+----------+---------+----------------------+------------------+---------------------------+
-; clock ; PIN_L1   ; 8       ; Global Clock         ; GCLK2            ; --                        ;
-+-------+----------+---------+----------------------+------------------+---------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Non-Global High Fan-Out Signals                                                                                                               ;
-+-------------------------------------------------------------------------------------------------------------------------------------+---------+
-; Name                                                                                                                                ; Fan-Out ;
-+-------------------------------------------------------------------------------------------------------------------------------------+---------+
-; general_register:regB|valueOut[1]                                                                                                   ; 27      ;
-; ula:m_ula|Mux2~1                                                                                                                    ; 21      ;
-; general_register:regB|valueOut[3]                                                                                                   ; 18      ;
-; ula_operation[0]                                                                                                                    ; 17      ;
-; ula_operation[3]                                                                                                                    ; 16      ;
-; general_register:regB|valueOut[2]                                                                                                   ; 16      ;
-; general_register:regB|valueOut[0]                                                                                                   ; 15      ;
-; Display:disp|LessThan0~2                                                                                                            ; 14      ;
-; ula_operation[2]                                                                                                                    ; 13      ;
-; general_register:regA|valueOut[1]                                                                                                   ; 13      ;
-; general_register:regA|valueOut[2]                                                                                                   ; 13      ;
-; general_register:regA|valueOut[3]                                                                                                   ; 13      ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_5_result_int[5]~8           ; 13      ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_4_result_int[5]~8           ; 13      ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_6_result_int[7]~10          ; 13      ;
-; ula:m_ula|Mux3~1                                                                                                                    ; 11      ;
-; ula:m_ula|Mux4~7                                                                                                                    ; 11      ;
-; general_register:regA|valueOut[0]                                                                                                   ; 11      ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_6_result_int[5]~8           ; 11      ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_3_result_int[4]~6           ; 11      ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_5_result_int[5]~8           ; 10      ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_4_result_int[5]~8           ; 10      ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_3_result_int[4]~6           ; 10      ;
-; ula_operation[1]                                                                                                                    ; 9       ;
-; ula:m_ula|Mux5~6                                                                                                                    ; 9       ;
-; ula:m_ula|Mux7~6                                                                                                                    ; 9       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_6_result_int[5]~8           ; 8       ;
-; Display:disp|Add0~25                                                                                                                ; 7       ;
-; Display:disp|Add0~19                                                                                                                ; 7       ;
-; Display:disp|Add0~16                                                                                                                ; 7       ;
-; Display:disp|Add0~13                                                                                                                ; 7       ;
-; Display:disp|Add0~7                                                                                                                 ; 7       ;
-; Display:disp|Add0~4                                                                                                                 ; 7       ;
-; Display:disp|Add0~34                                                                                                                ; 6       ;
-; Display:disp|Add0~31                                                                                                                ; 6       ;
-; Display:disp|Add0~28                                                                                                                ; 6       ;
-; Display:disp|Add0~22                                                                                                                ; 6       ;
-; Display:disp|Add0~10                                                                                                                ; 6       ;
-; ula:m_ula|Mux2~3                                                                                                                    ; 6       ;
-; ula:m_ula|Mux1~1                                                                                                                    ; 6       ;
-; ula:m_ula|Mux0~1                                                                                                                    ; 6       ;
-; ula:m_ula|Mux6~13                                                                                                                   ; 6       ;
-; ula:m_ula|Mux6~3                                                                                                                    ; 6       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|le4a[5]                                                                            ; 5       ;
-; ula:m_ula|Mux6~9                                                                                                                    ; 5       ;
-; ula:m_ula|Add1~8                                                                                                                    ; 5       ;
-; setRegA                                                                                                                             ; 4       ;
-; setRegB                                                                                                                             ; 4       ;
-; ula:m_ula|Mux6~12                                                                                                                   ; 4       ;
-; ula:m_ula|Mux6~0                                                                                                                    ; 4       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|add_sub_2_result_int[3]~6 ; 4       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|cs2a[1]~0                                                                          ; 3       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[38]~51                     ; 3       ;
-; ula:m_ula|Mux2~0                                                                                                                    ; 3       ;
-; ula:m_ula|Mux6~8                                                                                                                    ; 3       ;
-; ula:m_ula|Mux6~2                                                                                                                    ; 3       ;
-; ula:m_ula|Mux6~1                                                                                                                    ; 3       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_7_result_int[5]~8           ; 3       ;
-; Add0~0                                                                                                                              ; 3       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_7_result_int[5]~8           ; 3       ;
-; operando[2]                                                                                                                         ; 2       ;
-; operando[1]                                                                                                                         ; 2       ;
-; operando[3]                                                                                                                         ; 2       ;
-; operando[0]                                                                                                                         ; 2       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[27]~54                     ; 2       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[32]~58                     ; 2       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[27]~57                     ; 2       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[22]~51                     ; 2       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[22]~54                     ; 2       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|StageOut[5]~7             ; 2       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[37]~52                     ; 2       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[16]~28                     ; 2       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[17]~26                     ; 2       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[36]~50                     ; 2       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[31]~49                     ; 2       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[31]~48                     ; 2       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[32]~47                     ; 2       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[16]~28                     ; 2       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[17]~26                     ; 2       ;
-; ula:m_ula|Mux4~0                                                                                                                    ; 2       ;
-; ula:m_ula|Mux5~0                                                                                                                    ; 2       ;
-; ula:m_ula|Mux6~5                                                                                                                    ; 2       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|StageOut[4]~3             ; 2       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|selnose[5]~2              ; 2       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|selnose[0]~0              ; 2       ;
-; Display:disp|Add0~29                                                                                                                ; 2       ;
-; Display:disp|Add0~26                                                                                                                ; 2       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_5_result_int[2]~2           ; 2       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_5_result_int[1]~0           ; 2       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_4_result_int[2]~2           ; 2       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_4_result_int[1]~0           ; 2       ;
-; Add0~4                                                                                                                              ; 2       ;
-; Add0~2                                                                                                                              ; 2       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_3_result_int[2]~2           ; 2       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_3_result_int[1]~0           ; 2       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_5_result_int[2]~2           ; 2       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_5_result_int[1]~0           ; 2       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_4_result_int[2]~2           ; 2       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_4_result_int[1]~0           ; 2       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_3_result_int[2]~2           ; 2       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_3_result_int[1]~0           ; 2       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_3~14                                                                            ; 2       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_3~12                                                                            ; 2       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_3~10                                                                            ; 2       ;
-; ula:m_ula|Add0~0                                                                                                                    ; 2       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[32]~55                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[33]~53                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[28]~52                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[23]~50                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[33]~56                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[28]~55                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[23]~53                     ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|le5a[3]                                                                            ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|le5a[2]                                                                            ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|le4a[4]                                                                            ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|le5a[1]                                                                            ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|le4a[3]                                                                            ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|le5a[0]                                                                            ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|le4a[2]                                                                            ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|le3a[4]                                                                            ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|le4a[1]                                                                            ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|le3a[3]                                                                            ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|le4a[0]                                                                            ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|le3a[2]                                                                            ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|le3a[1]                                                                            ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|le3a[0]                                                                            ; 1       ;
-; Display:disp|Mux14~0                                                                                                                ; 1       ;
-; Display:disp|Mux15~0                                                                                                                ; 1       ;
-; Display:disp|Mux16~0                                                                                                                ; 1       ;
-; Display:disp|Mux17~0                                                                                                                ; 1       ;
-; Display:disp|Mux18~0                                                                                                                ; 1       ;
-; Display:disp|Mux19~0                                                                                                                ; 1       ;
-; Display:disp|Mux20~0                                                                                                                ; 1       ;
-; Display:disp|Mux7~0                                                                                                                 ; 1       ;
-; Display:disp|Mux8~0                                                                                                                 ; 1       ;
-; Display:disp|Mux9~0                                                                                                                 ; 1       ;
-; Display:disp|Mux10~0                                                                                                                ; 1       ;
-; Display:disp|Mux11~0                                                                                                                ; 1       ;
-; Display:disp|Mux12~0                                                                                                                ; 1       ;
-; Display:disp|Mux13~0                                                                                                                ; 1       ;
-; Display:disp|Mux0~0                                                                                                                 ; 1       ;
-; Display:disp|Mux1~0                                                                                                                 ; 1       ;
-; Display:disp|Mux2~0                                                                                                                 ; 1       ;
-; Display:disp|Mux3~0                                                                                                                 ; 1       ;
-; Display:disp|Mux4~0                                                                                                                 ; 1       ;
-; Display:disp|Mux5~0                                                                                                                 ; 1       ;
-; Display:disp|Mux6~0                                                                                                                 ; 1       ;
-; Display:disp|LessThan0~1                                                                                                            ; 1       ;
-; Display:disp|LessThan0~0                                                                                                            ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[30]~49                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[30]~48                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[31]~47                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[31]~46                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[32]~45                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[33]~44                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[25]~43                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[25]~42                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[26]~41                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[26]~40                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[27]~39                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[28]~38                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[20]~37                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[20]~36                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[21]~35                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[21]~34                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[22]~33                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[23]~32                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[15]~31                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[15]~30                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[16]~29                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[17]~27                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[18]~25                     ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[18]~24                     ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|StageOut[49]~11                     ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|StageOut[49]~10                     ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|StageOut[50]~9                      ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|StageOut[50]~8                      ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|StageOut[51]~7                      ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|StageOut[51]~6                      ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|StageOut[52]~5                      ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|StageOut[52]~4                      ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|StageOut[53]~3                      ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|StageOut[53]~2                      ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|StageOut[54]~1                      ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|StageOut[54]~0                      ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[33]~46                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[30]~45                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[30]~44                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[25]~43                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[25]~42                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[26]~41                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[26]~40                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[27]~39                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[28]~38                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[20]~37                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[20]~36                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[21]~35                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[21]~34                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[22]~33                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[23]~32                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[15]~31                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[15]~30                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[16]~29                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[17]~27                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[18]~25                     ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|StageOut[18]~24                     ; 1       ;
-; ula:m_ula|Mux0~0                                                                                                                    ; 1       ;
-; ula:m_ula|Mux1~0                                                                                                                    ; 1       ;
-; ula:m_ula|Mux2~2                                                                                                                    ; 1       ;
-; ula:m_ula|Mux3~0                                                                                                                    ; 1       ;
-; ula:m_ula|Mux4~6                                                                                                                    ; 1       ;
-; ula:m_ula|Mux4~5                                                                                                                    ; 1       ;
-; ula:m_ula|Mux4~4                                                                                                                    ; 1       ;
-; ula:m_ula|Mux4~3                                                                                                                    ; 1       ;
-; ula:m_ula|Mux4~2                                                                                                                    ; 1       ;
-; ula:m_ula|Mux4~1                                                                                                                    ; 1       ;
-; ula:m_ula|Mux5~5                                                                                                                    ; 1       ;
-; ula:m_ula|Mux5~4                                                                                                                    ; 1       ;
-; ula:m_ula|Mux5~3                                                                                                                    ; 1       ;
-; ula:m_ula|Mux5~2                                                                                                                    ; 1       ;
-; ula:m_ula|Mux5~1                                                                                                                    ; 1       ;
-; ula:m_ula|Mux6~11                                                                                                                   ; 1       ;
-; ula:m_ula|Mux6~10                                                                                                                   ; 1       ;
-; ula:m_ula|Mux6~7                                                                                                                    ; 1       ;
-; ula:m_ula|Mux6~6                                                                                                                    ; 1       ;
-; ula:m_ula|Mux6~4                                                                                                                    ; 1       ;
-; ula:m_ula|result~0                                                                                                                  ; 1       ;
-; ula:m_ula|Mux7~5                                                                                                                    ; 1       ;
-; ula:m_ula|Mux7~4                                                                                                                    ; 1       ;
-; ula:m_ula|Mux7~3                                                                                                                    ; 1       ;
-; ula:m_ula|Mux7~2                                                                                                                    ; 1       ;
-; ula:m_ula|Mux7~1                                                                                                                    ; 1       ;
-; ula:m_ula|Mux7~0                                                                                                                    ; 1       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|StageOut[8]~6             ; 1       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|StageOut[9]~5             ; 1       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|StageOut[10]~4            ; 1       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|selnose[5]~1              ; 1       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|StageOut[5]~2             ; 1       ;
-; Display:disp|Add0~32                                                                                                                ; 1       ;
-; Display:disp|Add0~30                                                                                                                ; 1       ;
-; Display:disp|Add0~27                                                                                                                ; 1       ;
-; Display:disp|Add0~24                                                                                                                ; 1       ;
-; Display:disp|Add0~23                                                                                                                ; 1       ;
-; Display:disp|Add0~21                                                                                                                ; 1       ;
-; Display:disp|Add0~20                                                                                                                ; 1       ;
-; Display:disp|Add0~18                                                                                                                ; 1       ;
-; Display:disp|Add0~17                                                                                                                ; 1       ;
-; Display:disp|Add0~15                                                                                                                ; 1       ;
-; Display:disp|Add0~14                                                                                                                ; 1       ;
-; Display:disp|Add0~12                                                                                                                ; 1       ;
-; Display:disp|Add0~11                                                                                                                ; 1       ;
-; Display:disp|Add0~9                                                                                                                 ; 1       ;
-; Display:disp|Add0~8                                                                                                                 ; 1       ;
-; Display:disp|Add0~6                                                                                                                 ; 1       ;
-; Display:disp|Add0~5                                                                                                                 ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_7_result_int[4]~7           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_7_result_int[3]~5           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_7_result_int[2]~3           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_7_result_int[1]~1           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_6_result_int[4]~7           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_6_result_int[3]~5           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_6_result_int[3]~4           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_6_result_int[2]~3           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_6_result_int[2]~2           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_6_result_int[1]~1           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_6_result_int[1]~0           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_5_result_int[4]~7           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_5_result_int[3]~5           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_5_result_int[3]~4           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_5_result_int[2]~3           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_5_result_int[1]~1           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_4_result_int[4]~7           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_4_result_int[3]~5           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_4_result_int[3]~4           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_4_result_int[2]~3           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_4_result_int[1]~1           ; 1       ;
-; Add0~3                                                                                                                              ; 1       ;
-; Add0~1                                                                                                                              ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_3_result_int[3]~5           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_3_result_int[3]~4           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_3_result_int[2]~3           ; 1       ;
-; lpm_divide:Div0|lpm_divide_1dm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_3_result_int[1]~1           ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_7_result_int[8]~12          ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_7_result_int[7]~11          ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_7_result_int[6]~9           ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_7_result_int[5]~7           ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_7_result_int[4]~5           ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_7_result_int[3]~3           ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_7_result_int[2]~1           ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_6_result_int[6]~9           ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_6_result_int[6]~8           ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_6_result_int[5]~7           ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_6_result_int[5]~6           ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_6_result_int[4]~5           ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_6_result_int[4]~4           ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_6_result_int[3]~3           ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_6_result_int[3]~2           ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_6_result_int[2]~1           ; 1       ;
-; lpm_divide:Div1|lpm_divide_4dm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_uve:divider|add_sub_6_result_int[2]~0           ; 1       ;
-; Display:disp|Add0~3                                                                                                                 ; 1       ;
-; Display:disp|Add0~2                                                                                                                 ; 1       ;
-; Display:disp|Add0~1                                                                                                                 ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_7_result_int[4]~7           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_7_result_int[3]~5           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_7_result_int[3]~4           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_7_result_int[2]~3           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_7_result_int[2]~2           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_7_result_int[1]~1           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_7_result_int[1]~0           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_6_result_int[4]~7           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_6_result_int[3]~5           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_6_result_int[3]~4           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_6_result_int[2]~3           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_6_result_int[2]~2           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_6_result_int[1]~1           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_6_result_int[1]~0           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_5_result_int[4]~7           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_5_result_int[3]~5           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_5_result_int[3]~4           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_5_result_int[2]~3           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_5_result_int[1]~1           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_4_result_int[4]~7           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_4_result_int[3]~5           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_4_result_int[3]~4           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_4_result_int[2]~3           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_4_result_int[1]~1           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_3_result_int[3]~5           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_3_result_int[3]~4           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_3_result_int[2]~3           ; 1       ;
-; lpm_divide:Mod0|lpm_divide_45m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_ove:divider|add_sub_3_result_int[1]~1           ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_1~10                                                                            ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_3~13                                                                            ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_1~9                                                                             ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_1~8                                                                             ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_3~11                                                                            ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_1~7                                                                             ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_1~6                                                                             ; 1       ;
-; ula:m_ula|Add0~8                                                                                                                    ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_3~9                                                                             ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_3~8                                                                             ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_1~5                                                                             ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_1~4                                                                             ; 1       ;
-; ula:m_ula|Add0~7                                                                                                                    ; 1       ;
-; ula:m_ula|Add0~6                                                                                                                    ; 1       ;
-; ula:m_ula|Add1~7                                                                                                                    ; 1       ;
-; ula:m_ula|Add1~6                                                                                                                    ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_3~7                                                                             ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_3~6                                                                             ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_1~3                                                                             ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_1~2                                                                             ; 1       ;
-; ula:m_ula|Add0~5                                                                                                                    ; 1       ;
-; ula:m_ula|Add0~4                                                                                                                    ; 1       ;
-; ula:m_ula|Add1~5                                                                                                                    ; 1       ;
-; ula:m_ula|Add1~4                                                                                                                    ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_3~5                                                                             ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_3~4                                                                             ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_1~1                                                                             ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_1~0                                                                             ; 1       ;
-; ula:m_ula|Add0~3                                                                                                                    ; 1       ;
-; ula:m_ula|Add0~2                                                                                                                    ; 1       ;
-; ula:m_ula|Add1~3                                                                                                                    ; 1       ;
-; ula:m_ula|Add1~2                                                                                                                    ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_3~3                                                                             ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_3~2                                                                             ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_3~1                                                                             ; 1       ;
-; ula:m_ula|lpm_mult:Mult0|mult_14t:auto_generated|op_3~0                                                                             ; 1       ;
-; ula:m_ula|Add1~1                                                                                                                    ; 1       ;
-; ula:m_ula|Add1~0                                                                                                                    ; 1       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|add_sub_3_result_int[4]~8 ; 1       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|add_sub_3_result_int[3]~7 ; 1       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|add_sub_3_result_int[2]~5 ; 1       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|add_sub_3_result_int[1]~3 ; 1       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|add_sub_3_result_int[0]~1 ; 1       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|add_sub_2_result_int[2]~5 ; 1       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|add_sub_2_result_int[2]~4 ; 1       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|add_sub_2_result_int[1]~3 ; 1       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|add_sub_2_result_int[1]~2 ; 1       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|add_sub_2_result_int[0]~1 ; 1       ;
-; ula:m_ula|lpm_divide:Div0|lpm_divide_tcm:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_gve:divider|add_sub_2_result_int[0]~0 ; 1       ;
-; ula:m_ula|Add0~1                                                                                                                    ; 1       ;
-+-------------------------------------------------------------------------------------------------------------------------------------+---------+
-
-
-+------------------------------------------------------+
-; Other Routing Usage Summary                          ;
-+-----------------------------+------------------------+
-; Other Routing Resource Type ; Usage                  ;
-+-----------------------------+------------------------+
-; Block interconnects         ; 291 / 54,004 ( < 1 % ) ;
-; C16 interconnects           ; 12 / 2,100 ( < 1 % )   ;
-; C4 interconnects            ; 129 / 36,000 ( < 1 % ) ;
-; Direct links                ; 85 / 54,004 ( < 1 % )  ;
-; Global clocks               ; 1 / 16 ( 6 % )         ;
-; Local interconnects         ; 128 / 18,752 ( < 1 % ) ;
-; R24 interconnects           ; 32 / 1,900 ( 2 % )     ;
-; R4 interconnects            ; 162 / 46,920 ( < 1 % ) ;
-+-----------------------------+------------------------+
-
-
-+----------------------------------------------------------------------------+
-; LAB Logic Elements                                                         ;
-+---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 14.05) ; Number of LABs  (Total = 21) ;
-+---------------------------------------------+------------------------------+
-; 1                                           ; 0                            ;
-; 2                                           ; 0                            ;
-; 3                                           ; 0                            ;
-; 4                                           ; 0                            ;
-; 5                                           ; 0                            ;
-; 6                                           ; 0                            ;
-; 7                                           ; 0                            ;
-; 8                                           ; 1                            ;
-; 9                                           ; 0                            ;
-; 10                                          ; 1                            ;
-; 11                                          ; 2                            ;
-; 12                                          ; 1                            ;
-; 13                                          ; 2                            ;
-; 14                                          ; 2                            ;
-; 15                                          ; 3                            ;
-; 16                                          ; 9                            ;
-+---------------------------------------------+------------------------------+
-
-
-+-------------------------------------------------------------------+
-; LAB-wide Signals                                                  ;
-+------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 0.19) ; Number of LABs  (Total = 21) ;
-+------------------------------------+------------------------------+
-; 1 Clock                            ; 2                            ;
-; 2 Clock enables                    ; 2                            ;
-+------------------------------------+------------------------------+
-
-
-+-----------------------------------------------------------------------------+
-; LAB Signals Sourced                                                         ;
-+----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 13.38) ; Number of LABs  (Total = 21) ;
-+----------------------------------------------+------------------------------+
-; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
-; 2                                            ; 0                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 0                            ;
-; 5                                            ; 0                            ;
-; 6                                            ; 0                            ;
-; 7                                            ; 0                            ;
-; 8                                            ; 1                            ;
-; 9                                            ; 2                            ;
-; 10                                           ; 1                            ;
-; 11                                           ; 2                            ;
-; 12                                           ; 1                            ;
-; 13                                           ; 2                            ;
-; 14                                           ; 3                            ;
-; 15                                           ; 4                            ;
-; 16                                           ; 3                            ;
-; 17                                           ; 1                            ;
-; 18                                           ; 1                            ;
-+----------------------------------------------+------------------------------+
-
-
-+--------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                        ;
-+-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.29) ; Number of LABs  (Total = 21) ;
-+-------------------------------------------------+------------------------------+
-; 0                                               ; 0                            ;
-; 1                                               ; 1                            ;
-; 2                                               ; 0                            ;
-; 3                                               ; 3                            ;
-; 4                                               ; 1                            ;
-; 5                                               ; 0                            ;
-; 6                                               ; 2                            ;
-; 7                                               ; 5                            ;
-; 8                                               ; 3                            ;
-; 9                                               ; 3                            ;
-; 10                                              ; 0                            ;
-; 11                                              ; 0                            ;
-; 12                                              ; 2                            ;
-; 13                                              ; 0                            ;
-; 14                                              ; 0                            ;
-; 15                                              ; 0                            ;
-; 16                                              ; 0                            ;
-; 17                                              ; 1                            ;
-+-------------------------------------------------+------------------------------+
-
-
-+-----------------------------------------------------------------------------+
-; LAB Distinct Inputs                                                         ;
-+----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 10.90) ; Number of LABs  (Total = 21) ;
-+----------------------------------------------+------------------------------+
-; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
-; 2                                            ; 0                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 0                            ;
-; 5                                            ; 0                            ;
-; 6                                            ; 4                            ;
-; 7                                            ; 0                            ;
-; 8                                            ; 2                            ;
-; 9                                            ; 1                            ;
-; 10                                           ; 3                            ;
-; 11                                           ; 3                            ;
-; 12                                           ; 3                            ;
-; 13                                           ; 1                            ;
-; 14                                           ; 1                            ;
-; 15                                           ; 1                            ;
-; 16                                           ; 0                            ;
-; 17                                           ; 0                            ;
-; 18                                           ; 1                            ;
-; 19                                           ; 0                            ;
-; 20                                           ; 0                            ;
-; 21                                           ; 1                            ;
-+----------------------------------------------+------------------------------+
++----------------------------------------------------+
+; Other Routing Usage Summary                        ;
++-----------------------------+----------------------+
+; Other Routing Resource Type ; Usage                ;
++-----------------------------+----------------------+
+; Block interconnects         ; 7 / 54,004 ( < 1 % ) ;
+; C16 interconnects           ; 0 / 2,100 ( 0 % )    ;
+; C4 interconnects            ; 6 / 36,000 ( < 1 % ) ;
+; Global clocks               ; 0 / 16 ( 0 % )       ;
+; Local interconnects         ; 0 / 18,752 ( 0 % )   ;
+; R24 interconnects           ; 0 / 1,900 ( 0 % )    ;
+; R4 interconnects            ; 1 / 46,920 ( < 1 % ) ;
++-----------------------------+----------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -2018,33 +1506,42 @@ Info (169124): Fitter converted 3 user pins into dedicated programming pins
     Info (169125): Pin ~ASDO~ is reserved at location C4
     Info (169125): Pin ~nCSO~ is reserved at location C3
     Info (169125): Pin ~LVDS91p/nCEO~ is reserved at location W20
-Critical Warning (169085): No exact pin location assignment(s) for 5 pins of 54 total pins
+Critical Warning (169085): No exact pin location assignment(s) for 14 pins of 55 total pins
+    Info (169086): Pin data_bus[0] not assigned to an exact location on the device
+    Info (169086): Pin data_bus[1] not assigned to an exact location on the device
+    Info (169086): Pin data_bus[2] not assigned to an exact location on the device
+    Info (169086): Pin data_bus[3] not assigned to an exact location on the device
+    Info (169086): Pin data_bus[4] not assigned to an exact location on the device
+    Info (169086): Pin data_bus[5] not assigned to an exact location on the device
+    Info (169086): Pin data_bus[6] not assigned to an exact location on the device
+    Info (169086): Pin data_bus[7] not assigned to an exact location on the device
     Info (169086): Pin latch_ula not assigned to an exact location on the device
+    Info (169086): Pin grab_ula not assigned to an exact location on the device
     Info (169086): Pin HEX0[7] not assigned to an exact location on the device
     Info (169086): Pin HEX1[7] not assigned to an exact location on the device
     Info (169086): Pin HEX2[7] not assigned to an exact location on the device
     Info (169086): Pin HEX3[7] not assigned to an exact location on the device
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'processinho.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
+Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
+Warning (332068): No clocks defined in design.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
-Info (176353): Automatically promoted node clock (placed in PIN L1 (CLK0, LVDSCLK0p, Input))
-    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
 Info (176214): Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
-    Info (176211): Number of I/O pins in group: 5 (unused VREF, 3.3V VCCIO, 1 input, 4 output, 0 bidirectional)
+    Info (176211): Number of I/O pins in group: 14 (unused VREF, 3.3V VCCIO, 2 input, 4 output, 8 bidirectional)
         Info (176212): I/O standards used: 3.3-V LVTTL.
 Info (176215): I/O bank details before I/O pin placement
     Info (176214): Statistics of I/O banks
-        Info (176213): I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 2 total pin(s) used --  39 pins available
-        Info (176213): I/O bank number 2 does not use VREF pins and has 3.3V VCCIO pins. 32 total pin(s) used --  1 pins available
+        Info (176213): I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  41 pins available
+        Info (176213): I/O bank number 2 does not use VREF pins and has 3.3V VCCIO pins. 31 total pin(s) used --  2 pins available
         Info (176213): I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  43 pins available
         Info (176213): I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  40 pins available
         Info (176213): I/O bank number 5 does not use VREF pins and has undetermined VCCIO pins. 2 total pin(s) used --  37 pins available
-        Info (176213): I/O bank number 6 does not use VREF pins and has 3.3V VCCIO pins. 12 total pin(s) used --  24 pins available
-        Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 2 total pin(s) used --  38 pins available
-        Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 2 total pin(s) used --  41 pins available
+        Info (176213): I/O bank number 6 does not use VREF pins and has 3.3V VCCIO pins. 10 total pin(s) used --  26 pins available
+        Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  39 pins available
+        Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  43 pins available
 Warning (15709): Ignored I/O standard assignments to the following nodes
     Warning (15710): Ignored I/O standard assignment to node "AUD_ADCDAT"
     Warning (15710): Ignored I/O standard assignment to node "AUD_ADCLRCK"
@@ -2436,6 +1933,14 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "VGA_R[2]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_R[3]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_VS" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "operando[0]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "operando[1]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "operando[2]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "operando[3]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "result[8]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "result[9]" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "setRegA" is assigned to location or region, but does not exist in design
+    Warning (15706): Node "setRegB" is assigned to location or region, but does not exist in design
 Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -2444,14 +1949,22 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X12_Y0 to location X24_Y13
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X38_Y0 to location X50_Y13
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.13 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.08 seconds.
 Info (306004): Started post-fitting delay annotation
-Warning (306006): Found 42 output pins without output pin load capacitance assignment
+Warning (306006): Found 48 output pins without output pin load capacitance assignment
+    Info (306007): Pin "data_bus[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "data_bus[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "data_bus[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "data_bus[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "data_bus[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "data_bus[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "data_bus[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "data_bus[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "result[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "result[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "result[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -2460,8 +1973,6 @@ Warning (306006): Found 42 output pins without output pin load capacitance assig
     Info (306007): Pin "result[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "result[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "result[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "result[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
-    Info (306007): Pin "result[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "HEX0[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "HEX0[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "HEX0[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -2499,11 +2010,20 @@ Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
+Warning (169064): Following 8 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
+    Info (169065): Pin data_bus[0] has a permanently enabled output enable
+    Info (169065): Pin data_bus[1] has a permanently disabled output enable
+    Info (169065): Pin data_bus[2] has a permanently disabled output enable
+    Info (169065): Pin data_bus[3] has a permanently disabled output enable
+    Info (169065): Pin data_bus[4] has a permanently disabled output enable
+    Info (169065): Pin data_bus[5] has a permanently disabled output enable
+    Info (169065): Pin data_bus[6] has a permanently disabled output enable
+    Info (169065): Pin data_bus[7] has a permanently disabled output enable
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info (144001): Generated suppressed messages file /home/lucasf/Desktop/processinho/output_files/processinho.fit.smsg
-Info: Quartus II 32-bit Fitter was successful. 0 errors, 398 warnings
-    Info: Peak virtual memory: 431 megabytes
-    Info: Processing ended: Mon Nov 14 12:01:15 2016
+Info (144001): Generated suppressed messages file /home/talitav/Documents/nivelamento/sistemas digitais/processinho/output_files/processinho.fit.smsg
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 408 warnings
+    Info: Peak virtual memory: 773 megabytes
+    Info: Processing ended: Mon Nov 21 16:28:30 2016
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
@@ -2511,6 +2031,6 @@ Info: Quartus II 32-bit Fitter was successful. 0 errors, 398 warnings
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in /home/lucasf/Desktop/processinho/output_files/processinho.fit.smsg.
+The suppressed messages can be found in /home/talitav/Documents/nivelamento/sistemas digitais/processinho/output_files/processinho.fit.smsg.
 
 

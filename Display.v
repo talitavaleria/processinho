@@ -32,7 +32,7 @@ end
 
 always @(*) begin
  
-	if ( value >= 296)
+	if (value >= 296)
 		begin
 			val = 918-value;  // 4096 - 12 bits -> subtrair a quantidade de bits +1 pelo value
 			mil = mem[10];

@@ -1,6 +1,6 @@
 module rom (
-	wire enable, 
-	wire[2:0] addr,
+	input enable, 
+	input[2:0] addr,
 	output reg[2:0] data_out
 );
 
