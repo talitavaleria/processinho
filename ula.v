@@ -7,7 +7,6 @@
 module ula(
 input clock,
 input reset, 
-input grab,
 input[3:0] operando1, 
 input[3:0] operando2, 
 input[3:0] opcode, 
@@ -22,10 +21,10 @@ end
 
 Display disp(BCDCODE, HEX3, HEX2, HEX1, HEX0);
 
-always @(*) begin
+always @(posedge clock) begin
 	//result[7:0] = 8'b0;
 	
-	if(!reset) begin
+	if(reset) begin
 		result = 8'b0;
 	end
 

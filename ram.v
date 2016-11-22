@@ -7,7 +7,13 @@ module ram(
 	output reg[2:0]data_out // dados de saida
 );
 
-reg [2:0] mem [9:0]; // ram 10x3 bits
+reg [3:0] mem [9:0]; // ram 10x3 bits
+
+initial begin
+	mem[0] = 4'd5;
+	mem[1] = 4'd1;
+	mem[2] = 4'd2;
+end
 
 always @(posedge clock) begin
 	if (we) begin // nivel alto, seta pra funçao escrever

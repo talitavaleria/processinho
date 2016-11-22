@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for processinho
-Mon Nov 21 16:28:34 2016
+Tue Nov 22 14:11:48 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1.78 SJ Web Edition
 
 
@@ -16,23 +16,36 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1.78 SJ Web E
   8. Slow Model Recovery Summary
   9. Slow Model Removal Summary
  10. Slow Model Minimum Pulse Width Summary
- 11. Propagation Delay
- 12. Minimum Propagation Delay
- 13. Fast Model Setup Summary
- 14. Fast Model Hold Summary
- 15. Fast Model Recovery Summary
- 16. Fast Model Removal Summary
- 17. Fast Model Minimum Pulse Width Summary
- 18. Propagation Delay
- 19. Minimum Propagation Delay
- 20. Multicorner Timing Analysis Summary
- 21. Progagation Delay
- 22. Minimum Progagation Delay
- 23. Clock Transfers
- 24. Report TCCS
- 25. Report RSKM
- 26. Unconstrained Paths
- 27. TimeQuest Timing Analyzer Messages
+ 11. Slow Model Setup: 'clock'
+ 12. Slow Model Hold: 'clock'
+ 13. Slow Model Minimum Pulse Width: 'clock'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clock'
+ 24. Fast Model Hold: 'clock'
+ 25. Fast Model Minimum Pulse Width: 'clock'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
 
 
 
@@ -79,28 +92,41 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-----------
-; Clocks ;
-----------
-No clocks to report.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
 
 
----------------------------
-; Slow Model Fmax Summary ;
----------------------------
-No paths to report.
++-----------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                   ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 529.94 MHz ; 380.08 MHz      ; clock      ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-----------------------------
-; Slow Model Setup Summary ;
-----------------------------
-No paths to report.
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clock ; -0.887 ; -9.542        ;
++-------+--------+---------------+
 
 
----------------------------
-; Slow Model Hold Summary ;
----------------------------
-No paths to report.
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.445 ; 0.000         ;
++-------+-------+---------------+
 
 
 -------------------------------
@@ -115,52 +141,373 @@ No paths to report.
 No paths to report.
 
 
-------------------------------------------
++----------------------------------------+
 ; Slow Model Minimum Pulse Width Summary ;
-------------------------------------------
-No paths to report.
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -1.631 ; -41.957               ;
++-------+--------+-----------------------+
 
 
-+-----------------------------------------------------+
-; Propagation Delay                                   ;
-+-------------+-------------+-------+----+----+-------+
-; Input Port  ; Output Port ; RR    ; RF ; FR ; FF    ;
-+-------------+-------------+-------+----+----+-------+
-; data_bus[1] ; result[1]   ; 8.473 ;    ;    ; 8.473 ;
-; data_bus[2] ; result[2]   ; 9.195 ;    ;    ; 9.195 ;
-; data_bus[3] ; result[3]   ; 8.953 ;    ;    ; 8.953 ;
-; data_bus[4] ; result[4]   ; 8.644 ;    ;    ; 8.644 ;
-; data_bus[5] ; result[5]   ; 8.949 ;    ;    ; 8.949 ;
-; data_bus[6] ; result[6]   ; 8.910 ;    ;    ; 8.910 ;
-; data_bus[7] ; result[7]   ; 9.291 ;    ;    ; 9.291 ;
-+-------------+-------------+-------+----+----+-------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clock'                                                                                                                                                                        ;
++--------+---------------------------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                               ; To Node                                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.887 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[4]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 1.925      ;
+; -0.852 ; datapath:dp|general_register:regA|valueOut[1]           ; datapath:dp|ula:m_ula|result[4]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 1.890      ;
+; -0.807 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[3]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 1.845      ;
+; -0.772 ; datapath:dp|general_register:regA|valueOut[1]           ; datapath:dp|ula:m_ula|result[3]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 1.810      ;
+; -0.727 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[2]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 1.765      ;
+; -0.726 ; datapath:dp|general_register:regA|valueOut[2]           ; datapath:dp|ula:m_ula|result[4]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 1.764      ;
+; -0.692 ; datapath:dp|general_register:regA|valueOut[1]           ; datapath:dp|ula:m_ula|result[2]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 1.730      ;
+; -0.681 ; datapath:dp|general_register:regA|valueOut[3]           ; datapath:dp|ula:m_ula|result[4]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 1.719      ;
+; -0.647 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[1]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 1.685      ;
+; -0.646 ; datapath:dp|general_register:regA|valueOut[2]           ; datapath:dp|ula:m_ula|result[3]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 1.684      ;
+; -0.579 ; datapath:dp|general_register:ula_result_reg|valueOut[3] ; datapath:dp|ula_latch:m_ula_latch|out[3]                ; clock        ; clock       ; 1.000        ; 0.000      ; 1.617      ;
+; -0.577 ; datapath:dp|general_register:ula_result_reg|valueOut[4] ; datapath:dp|ula_latch:m_ula_latch|out[4]                ; clock        ; clock       ; 1.000        ; 0.000      ; 1.615      ;
+; -0.571 ; datapath:dp|general_register:ula_result_reg|valueOut[2] ; datapath:dp|ula_latch:m_ula_latch|out[2]                ; clock        ; clock       ; 1.000        ; 0.000      ; 1.609      ;
+; -0.559 ; datapath:dp|general_register:ula_result_reg|valueOut[1] ; datapath:dp|ula_latch:m_ula_latch|out[1]                ; clock        ; clock       ; 1.000        ; 0.000      ; 1.597      ;
+; -0.514 ; datapath:dp|general_register:ula_result_reg|valueOut[0] ; datapath:dp|ula_latch:m_ula_latch|out[0]                ; clock        ; clock       ; 1.000        ; 0.000      ; 1.552      ;
+; -0.490 ; datapath:dp|ula:m_ula|result[1]                         ; datapath:dp|general_register:ula_result_reg|value[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 1.528      ;
+; -0.473 ; datapath:dp|ula:m_ula|result[4]                         ; datapath:dp|general_register:ula_result_reg|valueOut[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.511      ;
+; -0.457 ; datapath:dp|ula:m_ula|result[1]                         ; datapath:dp|general_register:ula_result_reg|valueOut[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.495      ;
+; -0.443 ; datapath:dp|ula:m_ula|result[3]                         ; datapath:dp|general_register:ula_result_reg|valueOut[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.481      ;
+; -0.427 ; datapath:dp|ula:m_ula|result[2]                         ; datapath:dp|general_register:ula_result_reg|valueOut[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.465      ;
+; -0.394 ; datapath:dp|ula_latch:m_ula_latch|value[3]              ; datapath:dp|ula_latch:m_ula_latch|out[3]                ; clock        ; clock       ; 1.000        ; 0.000      ; 1.432      ;
+; -0.392 ; datapath:dp|ula_latch:m_ula_latch|value[4]              ; datapath:dp|ula_latch:m_ula_latch|out[4]                ; clock        ; clock       ; 1.000        ; 0.000      ; 1.430      ;
+; -0.386 ; datapath:dp|ula_latch:m_ula_latch|value[2]              ; datapath:dp|ula_latch:m_ula_latch|out[2]                ; clock        ; clock       ; 1.000        ; 0.000      ; 1.424      ;
+; -0.384 ; datapath:dp|ula_latch:m_ula_latch|value[1]              ; datapath:dp|ula_latch:m_ula_latch|out[1]                ; clock        ; clock       ; 1.000        ; 0.000      ; 1.422      ;
+; -0.328 ; datapath:dp|ula_latch:m_ula_latch|value[0]              ; datapath:dp|ula_latch:m_ula_latch|out[0]                ; clock        ; clock       ; 1.000        ; 0.000      ; 1.366      ;
+; -0.259 ; datapath:dp|general_register:regA|valueOut[1]           ; datapath:dp|ula:m_ula|result[1]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 1.297      ;
+; -0.258 ; datapath:dp|general_register:regA|value[2]              ; datapath:dp|general_register:regA|valueOut[2]           ; clock        ; clock       ; 1.000        ; 0.000      ; 1.296      ;
+; -0.248 ; datapath:dp|general_register:regA|valueOut[3]           ; datapath:dp|ula:m_ula|result[3]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 1.286      ;
+; -0.227 ; datapath:dp|general_register:ula_result_reg|value[2]    ; datapath:dp|general_register:ula_result_reg|valueOut[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.265      ;
+; -0.219 ; datapath:dp|general_register:ula_result_reg|value[3]    ; datapath:dp|general_register:ula_result_reg|valueOut[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.257      ;
+; -0.215 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[0]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 1.253      ;
+; -0.214 ; datapath:dp|general_register:regA|valueOut[2]           ; datapath:dp|ula:m_ula|result[2]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 1.252      ;
+; -0.212 ; datapath:dp|general_register:ula_result_reg|value[0]    ; datapath:dp|general_register:ula_result_reg|valueOut[0] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.250      ;
+; -0.204 ; datapath:dp|general_register:regA|value[1]              ; datapath:dp|general_register:regA|valueOut[1]           ; clock        ; clock       ; 1.000        ; 0.000      ; 1.242      ;
+; -0.184 ; datapath:dp|general_register:ula_result_reg|value[1]    ; datapath:dp|general_register:ula_result_reg|valueOut[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.222      ;
+; -0.130 ; datapath:dp|ula:m_ula|result[0]                         ; datapath:dp|general_register:ula_result_reg|valueOut[0] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.168      ;
+; -0.129 ; datapath:dp|ula:m_ula|result[0]                         ; datapath:dp|general_register:ula_result_reg|value[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 1.167      ;
+; -0.128 ; datapath:dp|ula:m_ula|result[4]                         ; datapath:dp|general_register:ula_result_reg|value[4]    ; clock        ; clock       ; 1.000        ; 0.000      ; 1.166      ;
+; -0.127 ; datapath:dp|ula:m_ula|result[3]                         ; datapath:dp|general_register:ula_result_reg|value[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 1.165      ;
+; -0.111 ; datapath:dp|ula:m_ula|result[2]                         ; datapath:dp|general_register:ula_result_reg|value[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 1.149      ;
+; 0.121  ; datapath:dp|general_register:ula_result_reg|valueOut[0] ; datapath:dp|ula_latch:m_ula_latch|value[0]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.917      ;
+; 0.122  ; datapath:dp|general_register:ula_result_reg|valueOut[2] ; datapath:dp|ula_latch:m_ula_latch|value[2]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.916      ;
+; 0.122  ; datapath:dp|general_register:ula_result_reg|valueOut[3] ; datapath:dp|ula_latch:m_ula_latch|value[3]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.916      ;
+; 0.122  ; datapath:dp|general_register:ula_result_reg|valueOut[4] ; datapath:dp|ula_latch:m_ula_latch|value[4]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.916      ;
+; 0.131  ; datapath:dp|general_register:ula_result_reg|value[4]    ; datapath:dp|general_register:ula_result_reg|valueOut[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.907      ;
+; 0.132  ; datapath:dp|general_register:ula_result_reg|valueOut[1] ; datapath:dp|ula_latch:m_ula_latch|value[1]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.906      ;
+; 0.136  ; datapath:dp|general_register:regA|value[3]              ; datapath:dp|general_register:regA|valueOut[3]           ; clock        ; clock       ; 1.000        ; 0.000      ; 0.902      ;
+; 0.139  ; datapath:dp|general_register:regA|value[0]              ; datapath:dp|general_register:regA|valueOut[0]           ; clock        ; clock       ; 1.000        ; 0.000      ; 0.899      ;
+; 0.307  ; datapath:dp|general_register:regA|value[0]              ; datapath:dp|general_register:regA|value[0]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; datapath:dp|general_register:regA|value[1]              ; datapath:dp|general_register:regA|value[1]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; datapath:dp|general_register:regA|value[2]              ; datapath:dp|general_register:regA|value[2]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; datapath:dp|general_register:regA|value[3]              ; datapath:dp|general_register:regA|value[3]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; datapath:dp|general_register:ula_result_reg|value[1]    ; datapath:dp|general_register:ula_result_reg|value[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; datapath:dp|general_register:ula_result_reg|value[0]    ; datapath:dp|general_register:ula_result_reg|value[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; datapath:dp|general_register:ula_result_reg|value[4]    ; datapath:dp|general_register:ula_result_reg|value[4]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; datapath:dp|general_register:ula_result_reg|value[3]    ; datapath:dp|general_register:ula_result_reg|value[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; datapath:dp|general_register:ula_result_reg|value[2]    ; datapath:dp|general_register:ula_result_reg|value[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; datapath:dp|ula_latch:m_ula_latch|value[0]              ; datapath:dp|ula_latch:m_ula_latch|value[0]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; datapath:dp|ula_latch:m_ula_latch|value[2]              ; datapath:dp|ula_latch:m_ula_latch|value[2]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; datapath:dp|ula_latch:m_ula_latch|value[3]              ; datapath:dp|ula_latch:m_ula_latch|value[3]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; datapath:dp|ula_latch:m_ula_latch|value[4]              ; datapath:dp|ula_latch:m_ula_latch|value[4]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.731      ;
+; 0.307  ; datapath:dp|ula_latch:m_ula_latch|value[1]              ; datapath:dp|ula_latch:m_ula_latch|value[1]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.731      ;
++--------+---------------------------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-----------------------------------------------------+
-; Minimum Propagation Delay                           ;
-+-------------+-------------+-------+----+----+-------+
-; Input Port  ; Output Port ; RR    ; RF ; FR ; FF    ;
-+-------------+-------------+-------+----+----+-------+
-; data_bus[1] ; result[1]   ; 8.473 ;    ;    ; 8.473 ;
-; data_bus[2] ; result[2]   ; 9.195 ;    ;    ; 9.195 ;
-; data_bus[3] ; result[3]   ; 8.953 ;    ;    ; 8.953 ;
-; data_bus[4] ; result[4]   ; 8.644 ;    ;    ; 8.644 ;
-; data_bus[5] ; result[5]   ; 8.949 ;    ;    ; 8.949 ;
-; data_bus[6] ; result[6]   ; 8.910 ;    ;    ; 8.910 ;
-; data_bus[7] ; result[7]   ; 9.291 ;    ;    ; 9.291 ;
-+-------------+-------------+-------+----+----+-------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clock'                                                                                                                                                                        ;
++-------+---------------------------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                               ; To Node                                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.445 ; datapath:dp|general_register:regA|value[0]              ; datapath:dp|general_register:regA|value[0]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; datapath:dp|general_register:regA|value[1]              ; datapath:dp|general_register:regA|value[1]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; datapath:dp|general_register:regA|value[2]              ; datapath:dp|general_register:regA|value[2]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; datapath:dp|general_register:ula_result_reg|value[2]    ; datapath:dp|general_register:ula_result_reg|value[2]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; datapath:dp|general_register:regA|value[3]              ; datapath:dp|general_register:regA|value[3]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; datapath:dp|general_register:ula_result_reg|value[3]    ; datapath:dp|general_register:ula_result_reg|value[3]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; datapath:dp|general_register:ula_result_reg|value[4]    ; datapath:dp|general_register:ula_result_reg|value[4]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; datapath:dp|general_register:ula_result_reg|value[1]    ; datapath:dp|general_register:ula_result_reg|value[1]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; datapath:dp|general_register:ula_result_reg|value[0]    ; datapath:dp|general_register:ula_result_reg|value[0]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; datapath:dp|ula_latch:m_ula_latch|value[0]              ; datapath:dp|ula_latch:m_ula_latch|value[0]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; datapath:dp|ula_latch:m_ula_latch|value[1]              ; datapath:dp|ula_latch:m_ula_latch|value[1]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; datapath:dp|ula_latch:m_ula_latch|value[2]              ; datapath:dp|ula_latch:m_ula_latch|value[2]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; datapath:dp|ula_latch:m_ula_latch|value[3]              ; datapath:dp|ula_latch:m_ula_latch|value[3]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.731      ;
+; 0.445 ; datapath:dp|ula_latch:m_ula_latch|value[4]              ; datapath:dp|ula_latch:m_ula_latch|value[4]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.731      ;
+; 0.613 ; datapath:dp|general_register:regA|value[0]              ; datapath:dp|general_register:regA|valueOut[0]           ; clock        ; clock       ; 0.000        ; 0.000      ; 0.899      ;
+; 0.616 ; datapath:dp|general_register:regA|value[3]              ; datapath:dp|general_register:regA|valueOut[3]           ; clock        ; clock       ; 0.000        ; 0.000      ; 0.902      ;
+; 0.620 ; datapath:dp|general_register:ula_result_reg|valueOut[1] ; datapath:dp|ula_latch:m_ula_latch|value[1]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.906      ;
+; 0.621 ; datapath:dp|general_register:ula_result_reg|value[4]    ; datapath:dp|general_register:ula_result_reg|valueOut[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.907      ;
+; 0.630 ; datapath:dp|general_register:ula_result_reg|valueOut[2] ; datapath:dp|ula_latch:m_ula_latch|value[2]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.916      ;
+; 0.630 ; datapath:dp|general_register:ula_result_reg|valueOut[3] ; datapath:dp|ula_latch:m_ula_latch|value[3]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.916      ;
+; 0.630 ; datapath:dp|general_register:ula_result_reg|valueOut[4] ; datapath:dp|ula_latch:m_ula_latch|value[4]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.916      ;
+; 0.631 ; datapath:dp|general_register:ula_result_reg|valueOut[0] ; datapath:dp|ula_latch:m_ula_latch|value[0]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.917      ;
+; 0.863 ; datapath:dp|ula:m_ula|result[2]                         ; datapath:dp|general_register:ula_result_reg|value[2]    ; clock        ; clock       ; 0.000        ; 0.000      ; 1.149      ;
+; 0.879 ; datapath:dp|ula:m_ula|result[3]                         ; datapath:dp|general_register:ula_result_reg|value[3]    ; clock        ; clock       ; 0.000        ; 0.000      ; 1.165      ;
+; 0.880 ; datapath:dp|ula:m_ula|result[4]                         ; datapath:dp|general_register:ula_result_reg|value[4]    ; clock        ; clock       ; 0.000        ; 0.000      ; 1.166      ;
+; 0.881 ; datapath:dp|ula:m_ula|result[0]                         ; datapath:dp|general_register:ula_result_reg|value[0]    ; clock        ; clock       ; 0.000        ; 0.000      ; 1.167      ;
+; 0.882 ; datapath:dp|ula:m_ula|result[0]                         ; datapath:dp|general_register:ula_result_reg|valueOut[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.168      ;
+; 0.936 ; datapath:dp|general_register:ula_result_reg|value[1]    ; datapath:dp|general_register:ula_result_reg|valueOut[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.222      ;
+; 0.956 ; datapath:dp|general_register:regA|value[1]              ; datapath:dp|general_register:regA|valueOut[1]           ; clock        ; clock       ; 0.000        ; 0.000      ; 1.242      ;
+; 0.964 ; datapath:dp|general_register:ula_result_reg|value[0]    ; datapath:dp|general_register:ula_result_reg|valueOut[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.250      ;
+; 0.966 ; datapath:dp|general_register:regA|valueOut[2]           ; datapath:dp|ula:m_ula|result[2]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.252      ;
+; 0.967 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[0]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.253      ;
+; 0.971 ; datapath:dp|general_register:ula_result_reg|value[3]    ; datapath:dp|general_register:ula_result_reg|valueOut[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.257      ;
+; 0.979 ; datapath:dp|general_register:ula_result_reg|value[2]    ; datapath:dp|general_register:ula_result_reg|valueOut[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.265      ;
+; 1.000 ; datapath:dp|general_register:regA|valueOut[3]           ; datapath:dp|ula:m_ula|result[3]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.286      ;
+; 1.010 ; datapath:dp|general_register:regA|value[2]              ; datapath:dp|general_register:regA|valueOut[2]           ; clock        ; clock       ; 0.000        ; 0.000      ; 1.296      ;
+; 1.011 ; datapath:dp|general_register:regA|valueOut[1]           ; datapath:dp|ula:m_ula|result[1]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.297      ;
+; 1.080 ; datapath:dp|ula_latch:m_ula_latch|value[0]              ; datapath:dp|ula_latch:m_ula_latch|out[0]                ; clock        ; clock       ; 0.000        ; 0.000      ; 1.366      ;
+; 1.136 ; datapath:dp|ula_latch:m_ula_latch|value[1]              ; datapath:dp|ula_latch:m_ula_latch|out[1]                ; clock        ; clock       ; 0.000        ; 0.000      ; 1.422      ;
+; 1.138 ; datapath:dp|ula_latch:m_ula_latch|value[2]              ; datapath:dp|ula_latch:m_ula_latch|out[2]                ; clock        ; clock       ; 0.000        ; 0.000      ; 1.424      ;
+; 1.144 ; datapath:dp|ula_latch:m_ula_latch|value[4]              ; datapath:dp|ula_latch:m_ula_latch|out[4]                ; clock        ; clock       ; 0.000        ; 0.000      ; 1.430      ;
+; 1.146 ; datapath:dp|ula_latch:m_ula_latch|value[3]              ; datapath:dp|ula_latch:m_ula_latch|out[3]                ; clock        ; clock       ; 0.000        ; 0.000      ; 1.432      ;
+; 1.179 ; datapath:dp|ula:m_ula|result[2]                         ; datapath:dp|general_register:ula_result_reg|valueOut[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.465      ;
+; 1.195 ; datapath:dp|ula:m_ula|result[3]                         ; datapath:dp|general_register:ula_result_reg|valueOut[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.481      ;
+; 1.209 ; datapath:dp|ula:m_ula|result[1]                         ; datapath:dp|general_register:ula_result_reg|valueOut[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.495      ;
+; 1.225 ; datapath:dp|ula:m_ula|result[4]                         ; datapath:dp|general_register:ula_result_reg|valueOut[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.511      ;
+; 1.242 ; datapath:dp|ula:m_ula|result[1]                         ; datapath:dp|general_register:ula_result_reg|value[1]    ; clock        ; clock       ; 0.000        ; 0.000      ; 1.528      ;
+; 1.266 ; datapath:dp|general_register:ula_result_reg|valueOut[0] ; datapath:dp|ula_latch:m_ula_latch|out[0]                ; clock        ; clock       ; 0.000        ; 0.000      ; 1.552      ;
+; 1.311 ; datapath:dp|general_register:ula_result_reg|valueOut[1] ; datapath:dp|ula_latch:m_ula_latch|out[1]                ; clock        ; clock       ; 0.000        ; 0.000      ; 1.597      ;
+; 1.323 ; datapath:dp|general_register:ula_result_reg|valueOut[2] ; datapath:dp|ula_latch:m_ula_latch|out[2]                ; clock        ; clock       ; 0.000        ; 0.000      ; 1.609      ;
+; 1.329 ; datapath:dp|general_register:ula_result_reg|valueOut[4] ; datapath:dp|ula_latch:m_ula_latch|out[4]                ; clock        ; clock       ; 0.000        ; 0.000      ; 1.615      ;
+; 1.331 ; datapath:dp|general_register:ula_result_reg|valueOut[3] ; datapath:dp|ula_latch:m_ula_latch|out[3]                ; clock        ; clock       ; 0.000        ; 0.000      ; 1.617      ;
+; 1.398 ; datapath:dp|general_register:regA|valueOut[2]           ; datapath:dp|ula:m_ula|result[3]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.684      ;
+; 1.399 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[1]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.685      ;
+; 1.433 ; datapath:dp|general_register:regA|valueOut[3]           ; datapath:dp|ula:m_ula|result[4]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.719      ;
+; 1.444 ; datapath:dp|general_register:regA|valueOut[1]           ; datapath:dp|ula:m_ula|result[2]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.730      ;
+; 1.478 ; datapath:dp|general_register:regA|valueOut[2]           ; datapath:dp|ula:m_ula|result[4]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.764      ;
+; 1.479 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[2]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.765      ;
+; 1.524 ; datapath:dp|general_register:regA|valueOut[1]           ; datapath:dp|ula:m_ula|result[3]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.810      ;
+; 1.559 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[3]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.845      ;
+; 1.604 ; datapath:dp|general_register:regA|valueOut[1]           ; datapath:dp|ula:m_ula|result[4]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.890      ;
+; 1.639 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[4]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 1.925      ;
++-------+---------------------------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-----------------------------
-; Fast Model Setup Summary ;
-----------------------------
-No paths to report.
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clock'                                                                                                  ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                  ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clock ; Rise       ; clock                                                   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:regA|valueOut[0]           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:regA|valueOut[0]           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:regA|valueOut[1]           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:regA|valueOut[1]           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:regA|valueOut[2]           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:regA|valueOut[2]           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:regA|valueOut[3]           ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:regA|valueOut[3]           ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:regA|value[0]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:regA|value[0]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:regA|value[1]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:regA|value[1]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:regA|value[2]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:regA|value[2]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:regA|value[3]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:regA|value[3]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[0] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[0] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[1] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[1] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[2] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[2] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[3] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[3] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[4] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[4] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[0]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[0]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[1]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[1]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[2]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[2]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[3]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[3]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[4]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[4]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula:m_ula|result[0]                         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula:m_ula|result[0]                         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula:m_ula|result[1]                         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula:m_ula|result[1]                         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula:m_ula|result[2]                         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula:m_ula|result[2]                         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula:m_ula|result[3]                         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula:m_ula|result[3]                         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula:m_ula|result[4]                         ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula:m_ula|result[4]                         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[0]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[0]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[1]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[1]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[2]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[2]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[3]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[3]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[4]                ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[4]                ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[0]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[0]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[1]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[1]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[2]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[2]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[3]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[3]              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[4]              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[4]              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout                                           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout                                           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|inclk[0]                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|inclk[0]                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|outclk                                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|outclk                                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|out[0]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|out[0]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|out[1]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|out[1]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|out[2]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|out[2]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|out[3]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|out[3]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|out[4]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|out[4]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|value[0]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|value[0]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|value[1]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|value[1]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|value[2]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|value[2]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|value[3]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|value[3]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|value[4]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|value[4]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula|result[0]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula|result[0]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula|result[1]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula|result[1]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula|result[2]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula|result[2]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula|result[3]|clk                                  ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------------+
 
 
----------------------------
-; Fast Model Hold Summary ;
----------------------------
-No paths to report.
++-----------------------------------------------------------------------------+
+; Setup Times                                                                 ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; data_bus_in[*]  ; clock      ; 1.801 ; 1.801 ; Rise       ; clock           ;
+;  data_bus_in[0] ; clock      ; 1.801 ; 1.801 ; Rise       ; clock           ;
+;  data_bus_in[1] ; clock      ; 1.675 ; 1.675 ; Rise       ; clock           ;
+;  data_bus_in[2] ; clock      ; 1.634 ; 1.634 ; Rise       ; clock           ;
+;  data_bus_in[3] ; clock      ; 0.838 ; 0.838 ; Rise       ; clock           ;
+; gp_read         ; clock      ; 1.644 ; 1.644 ; Rise       ; clock           ;
+; gp_write        ; clock      ; 0.443 ; 0.443 ; Rise       ; clock           ;
+; grab_ula        ; clock      ; 1.480 ; 1.480 ; Rise       ; clock           ;
+; latch_ula       ; clock      ; 1.419 ; 1.419 ; Rise       ; clock           ;
+; reset           ; clock      ; 1.403 ; 1.403 ; Rise       ; clock           ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Hold Times                                                                    ;
++-----------------+------------+--------+--------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------------+------------+--------+--------+------------+-----------------+
+; data_bus_in[*]  ; clock      ; 0.036  ; 0.036  ; Rise       ; clock           ;
+;  data_bus_in[0] ; clock      ; -0.645 ; -0.645 ; Rise       ; clock           ;
+;  data_bus_in[1] ; clock      ; -0.493 ; -0.493 ; Rise       ; clock           ;
+;  data_bus_in[2] ; clock      ; -0.638 ; -0.638 ; Rise       ; clock           ;
+;  data_bus_in[3] ; clock      ; 0.036  ; 0.036  ; Rise       ; clock           ;
+; gp_read         ; clock      ; -0.270 ; -0.270 ; Rise       ; clock           ;
+; gp_write        ; clock      ; 0.203  ; 0.203  ; Rise       ; clock           ;
+; grab_ula        ; clock      ; -0.173 ; -0.173 ; Rise       ; clock           ;
+; latch_ula       ; clock      ; -0.238 ; -0.238 ; Rise       ; clock           ;
+; reset           ; clock      ; -0.324 ; -0.324 ; Rise       ; clock           ;
++-----------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; HEX0[*]    ; clock      ; 14.967 ; 14.967 ; Rise       ; clock           ;
+;  HEX0[0]   ; clock      ; 14.916 ; 14.916 ; Rise       ; clock           ;
+;  HEX0[1]   ; clock      ; 14.947 ; 14.947 ; Rise       ; clock           ;
+;  HEX0[2]   ; clock      ; 14.695 ; 14.695 ; Rise       ; clock           ;
+;  HEX0[3]   ; clock      ; 14.955 ; 14.955 ; Rise       ; clock           ;
+;  HEX0[4]   ; clock      ; 14.967 ; 14.967 ; Rise       ; clock           ;
+;  HEX0[5]   ; clock      ; 14.465 ; 14.465 ; Rise       ; clock           ;
+;  HEX0[6]   ; clock      ; 14.209 ; 14.209 ; Rise       ; clock           ;
+; HEX1[*]    ; clock      ; 14.802 ; 14.802 ; Rise       ; clock           ;
+;  HEX1[0]   ; clock      ; 14.802 ; 14.802 ; Rise       ; clock           ;
+;  HEX1[2]   ; clock      ; 14.417 ; 14.417 ; Rise       ; clock           ;
+;  HEX1[3]   ; clock      ; 14.438 ; 14.438 ; Rise       ; clock           ;
+;  HEX1[4]   ; clock      ; 13.574 ; 13.574 ; Rise       ; clock           ;
+;  HEX1[5]   ; clock      ; 14.682 ; 14.682 ; Rise       ; clock           ;
+;  HEX1[6]   ; clock      ; 11.164 ; 11.164 ; Rise       ; clock           ;
+; result[*]  ; clock      ; 9.149  ; 9.149  ; Rise       ; clock           ;
+;  result[0] ; clock      ; 8.643  ; 8.643  ; Rise       ; clock           ;
+;  result[1] ; clock      ; 8.345  ; 8.345  ; Rise       ; clock           ;
+;  result[2] ; clock      ; 9.149  ; 9.149  ; Rise       ; clock           ;
+;  result[3] ; clock      ; 8.373  ; 8.373  ; Rise       ; clock           ;
+;  result[4] ; clock      ; 8.032  ; 8.032  ; Rise       ; clock           ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; HEX0[*]    ; clock      ; 9.422  ; 9.422  ; Rise       ; clock           ;
+;  HEX0[0]   ; clock      ; 9.422  ; 9.422  ; Rise       ; clock           ;
+;  HEX0[1]   ; clock      ; 9.454  ; 9.454  ; Rise       ; clock           ;
+;  HEX0[2]   ; clock      ; 9.465  ; 9.465  ; Rise       ; clock           ;
+;  HEX0[3]   ; clock      ; 9.463  ; 9.463  ; Rise       ; clock           ;
+;  HEX0[4]   ; clock      ; 9.476  ; 9.476  ; Rise       ; clock           ;
+;  HEX0[5]   ; clock      ; 10.613 ; 10.613 ; Rise       ; clock           ;
+;  HEX0[6]   ; clock      ; 10.558 ; 10.558 ; Rise       ; clock           ;
+; HEX1[*]    ; clock      ; 11.017 ; 11.017 ; Rise       ; clock           ;
+;  HEX1[0]   ; clock      ; 12.413 ; 12.413 ; Rise       ; clock           ;
+;  HEX1[2]   ; clock      ; 12.028 ; 12.028 ; Rise       ; clock           ;
+;  HEX1[3]   ; clock      ; 12.049 ; 12.049 ; Rise       ; clock           ;
+;  HEX1[4]   ; clock      ; 11.667 ; 11.667 ; Rise       ; clock           ;
+;  HEX1[5]   ; clock      ; 12.294 ; 12.294 ; Rise       ; clock           ;
+;  HEX1[6]   ; clock      ; 11.017 ; 11.017 ; Rise       ; clock           ;
+; result[*]  ; clock      ; 8.032  ; 8.032  ; Rise       ; clock           ;
+;  result[0] ; clock      ; 8.643  ; 8.643  ; Rise       ; clock           ;
+;  result[1] ; clock      ; 8.345  ; 8.345  ; Rise       ; clock           ;
+;  result[2] ; clock      ; 9.149  ; 9.149  ; Rise       ; clock           ;
+;  result[3] ; clock      ; 8.373  ; 8.373  ; Rise       ; clock           ;
+;  result[4] ; clock      ; 8.032  ; 8.032  ; Rise       ; clock           ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------+
+; Fast Model Setup Summary      ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.278 ; 0.000         ;
++-------+-------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.215 ; 0.000         ;
++-------+-------+---------------+
 
 
 -------------------------------
@@ -175,86 +522,481 @@ No paths to report.
 No paths to report.
 
 
-------------------------------------------
++----------------------------------------+
 ; Fast Model Minimum Pulse Width Summary ;
-------------------------------------------
-No paths to report.
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -1.380 ; -34.380               ;
++-------+--------+-----------------------+
 
 
-+-----------------------------------------------------+
-; Propagation Delay                                   ;
-+-------------+-------------+-------+----+----+-------+
-; Input Port  ; Output Port ; RR    ; RF ; FR ; FF    ;
-+-------------+-------------+-------+----+----+-------+
-; data_bus[1] ; result[1]   ; 4.552 ;    ;    ; 4.552 ;
-; data_bus[2] ; result[2]   ; 4.851 ;    ;    ; 4.851 ;
-; data_bus[3] ; result[3]   ; 4.752 ;    ;    ; 4.752 ;
-; data_bus[4] ; result[4]   ; 4.670 ;    ;    ; 4.670 ;
-; data_bus[5] ; result[5]   ; 4.750 ;    ;    ; 4.750 ;
-; data_bus[6] ; result[6]   ; 4.726 ;    ;    ; 4.726 ;
-; data_bus[7] ; result[7]   ; 4.902 ;    ;    ; 4.902 ;
-+-------------+-------------+-------+----+----+-------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clock'                                                                                                                                                                       ;
++-------+---------------------------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                               ; To Node                                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.278 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[4]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 0.754      ;
+; 0.297 ; datapath:dp|general_register:regA|valueOut[1]           ; datapath:dp|ula:m_ula|result[4]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 0.735      ;
+; 0.313 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[3]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 0.719      ;
+; 0.332 ; datapath:dp|general_register:regA|valueOut[1]           ; datapath:dp|ula:m_ula|result[3]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 0.700      ;
+; 0.348 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[2]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 0.684      ;
+; 0.349 ; datapath:dp|general_register:regA|valueOut[2]           ; datapath:dp|ula:m_ula|result[4]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 0.683      ;
+; 0.367 ; datapath:dp|general_register:regA|valueOut[1]           ; datapath:dp|ula:m_ula|result[2]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 0.665      ;
+; 0.374 ; datapath:dp|general_register:regA|valueOut[3]           ; datapath:dp|ula:m_ula|result[4]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 0.658      ;
+; 0.383 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[1]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 0.649      ;
+; 0.384 ; datapath:dp|general_register:regA|valueOut[2]           ; datapath:dp|ula:m_ula|result[3]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 0.648      ;
+; 0.390 ; datapath:dp|general_register:ula_result_reg|valueOut[3] ; datapath:dp|ula_latch:m_ula_latch|out[3]                ; clock        ; clock       ; 1.000        ; 0.000      ; 0.642      ;
+; 0.392 ; datapath:dp|general_register:ula_result_reg|valueOut[4] ; datapath:dp|ula_latch:m_ula_latch|out[4]                ; clock        ; clock       ; 1.000        ; 0.000      ; 0.640      ;
+; 0.395 ; datapath:dp|general_register:ula_result_reg|valueOut[2] ; datapath:dp|ula_latch:m_ula_latch|out[2]                ; clock        ; clock       ; 1.000        ; 0.000      ; 0.637      ;
+; 0.402 ; datapath:dp|general_register:ula_result_reg|valueOut[1] ; datapath:dp|ula_latch:m_ula_latch|out[1]                ; clock        ; clock       ; 1.000        ; 0.000      ; 0.630      ;
+; 0.404 ; datapath:dp|general_register:ula_result_reg|valueOut[0] ; datapath:dp|ula_latch:m_ula_latch|out[0]                ; clock        ; clock       ; 1.000        ; 0.000      ; 0.628      ;
+; 0.419 ; datapath:dp|ula:m_ula|result[1]                         ; datapath:dp|general_register:ula_result_reg|value[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.613      ;
+; 0.419 ; datapath:dp|ula_latch:m_ula_latch|value[3]              ; datapath:dp|ula_latch:m_ula_latch|out[3]                ; clock        ; clock       ; 1.000        ; 0.000      ; 0.613      ;
+; 0.421 ; datapath:dp|ula:m_ula|result[3]                         ; datapath:dp|general_register:ula_result_reg|valueOut[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.611      ;
+; 0.421 ; datapath:dp|ula:m_ula|result[4]                         ; datapath:dp|general_register:ula_result_reg|valueOut[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.611      ;
+; 0.421 ; datapath:dp|ula_latch:m_ula_latch|value[4]              ; datapath:dp|ula_latch:m_ula_latch|out[4]                ; clock        ; clock       ; 1.000        ; 0.000      ; 0.611      ;
+; 0.424 ; datapath:dp|ula_latch:m_ula_latch|value[2]              ; datapath:dp|ula_latch:m_ula_latch|out[2]                ; clock        ; clock       ; 1.000        ; 0.000      ; 0.608      ;
+; 0.426 ; datapath:dp|ula_latch:m_ula_latch|value[1]              ; datapath:dp|ula_latch:m_ula_latch|out[1]                ; clock        ; clock       ; 1.000        ; 0.000      ; 0.606      ;
+; 0.428 ; datapath:dp|ula:m_ula|result[1]                         ; datapath:dp|general_register:ula_result_reg|valueOut[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.604      ;
+; 0.430 ; datapath:dp|ula:m_ula|result[2]                         ; datapath:dp|general_register:ula_result_reg|valueOut[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.602      ;
+; 0.434 ; datapath:dp|ula_latch:m_ula_latch|value[0]              ; datapath:dp|ula_latch:m_ula_latch|out[0]                ; clock        ; clock       ; 1.000        ; 0.000      ; 0.598      ;
+; 0.507 ; datapath:dp|general_register:regA|valueOut[1]           ; datapath:dp|ula:m_ula|result[1]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 0.525      ;
+; 0.510 ; datapath:dp|general_register:regA|value[2]              ; datapath:dp|general_register:regA|valueOut[2]           ; clock        ; clock       ; 1.000        ; 0.000      ; 0.522      ;
+; 0.510 ; datapath:dp|general_register:ula_result_reg|value[2]    ; datapath:dp|general_register:ula_result_reg|valueOut[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.522      ;
+; 0.513 ; datapath:dp|general_register:ula_result_reg|value[3]    ; datapath:dp|general_register:ula_result_reg|valueOut[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.519      ;
+; 0.514 ; datapath:dp|general_register:regA|valueOut[3]           ; datapath:dp|ula:m_ula|result[3]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 0.518      ;
+; 0.518 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[0]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 0.514      ;
+; 0.519 ; datapath:dp|general_register:ula_result_reg|value[1]    ; datapath:dp|general_register:ula_result_reg|valueOut[1] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.513      ;
+; 0.521 ; datapath:dp|general_register:regA|value[1]              ; datapath:dp|general_register:regA|valueOut[1]           ; clock        ; clock       ; 1.000        ; 0.000      ; 0.511      ;
+; 0.521 ; datapath:dp|general_register:ula_result_reg|value[0]    ; datapath:dp|general_register:ula_result_reg|valueOut[0] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.511      ;
+; 0.522 ; datapath:dp|general_register:regA|valueOut[2]           ; datapath:dp|ula:m_ula|result[2]                         ; clock        ; clock       ; 1.000        ; 0.000      ; 0.510      ;
+; 0.539 ; datapath:dp|ula:m_ula|result[0]                         ; datapath:dp|general_register:ula_result_reg|value[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.493      ;
+; 0.539 ; datapath:dp|ula:m_ula|result[0]                         ; datapath:dp|general_register:ula_result_reg|valueOut[0] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.493      ;
+; 0.542 ; datapath:dp|ula:m_ula|result[4]                         ; datapath:dp|general_register:ula_result_reg|value[4]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.490      ;
+; 0.544 ; datapath:dp|ula:m_ula|result[3]                         ; datapath:dp|general_register:ula_result_reg|value[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.488      ;
+; 0.551 ; datapath:dp|ula:m_ula|result[2]                         ; datapath:dp|general_register:ula_result_reg|value[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.481      ;
+; 0.635 ; datapath:dp|general_register:ula_result_reg|valueOut[0] ; datapath:dp|ula_latch:m_ula_latch|value[0]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.397      ;
+; 0.636 ; datapath:dp|general_register:ula_result_reg|valueOut[2] ; datapath:dp|ula_latch:m_ula_latch|value[2]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.396      ;
+; 0.636 ; datapath:dp|general_register:ula_result_reg|valueOut[3] ; datapath:dp|ula_latch:m_ula_latch|value[3]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.396      ;
+; 0.636 ; datapath:dp|general_register:ula_result_reg|valueOut[4] ; datapath:dp|ula_latch:m_ula_latch|value[4]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.396      ;
+; 0.639 ; datapath:dp|general_register:ula_result_reg|value[4]    ; datapath:dp|general_register:ula_result_reg|valueOut[4] ; clock        ; clock       ; 1.000        ; 0.000      ; 0.393      ;
+; 0.641 ; datapath:dp|general_register:regA|value[3]              ; datapath:dp|general_register:regA|valueOut[3]           ; clock        ; clock       ; 1.000        ; 0.000      ; 0.391      ;
+; 0.641 ; datapath:dp|general_register:ula_result_reg|valueOut[1] ; datapath:dp|ula_latch:m_ula_latch|value[1]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.391      ;
+; 0.643 ; datapath:dp|general_register:regA|value[0]              ; datapath:dp|general_register:regA|valueOut[0]           ; clock        ; clock       ; 1.000        ; 0.000      ; 0.389      ;
+; 0.665 ; datapath:dp|general_register:regA|value[0]              ; datapath:dp|general_register:regA|value[0]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; datapath:dp|general_register:regA|value[1]              ; datapath:dp|general_register:regA|value[1]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; datapath:dp|general_register:regA|value[2]              ; datapath:dp|general_register:regA|value[2]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; datapath:dp|general_register:regA|value[3]              ; datapath:dp|general_register:regA|value[3]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; datapath:dp|general_register:ula_result_reg|value[1]    ; datapath:dp|general_register:ula_result_reg|value[1]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; datapath:dp|general_register:ula_result_reg|value[0]    ; datapath:dp|general_register:ula_result_reg|value[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; datapath:dp|general_register:ula_result_reg|value[4]    ; datapath:dp|general_register:ula_result_reg|value[4]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; datapath:dp|general_register:ula_result_reg|value[3]    ; datapath:dp|general_register:ula_result_reg|value[3]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; datapath:dp|general_register:ula_result_reg|value[2]    ; datapath:dp|general_register:ula_result_reg|value[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; datapath:dp|ula_latch:m_ula_latch|value[0]              ; datapath:dp|ula_latch:m_ula_latch|value[0]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; datapath:dp|ula_latch:m_ula_latch|value[2]              ; datapath:dp|ula_latch:m_ula_latch|value[2]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; datapath:dp|ula_latch:m_ula_latch|value[3]              ; datapath:dp|ula_latch:m_ula_latch|value[3]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; datapath:dp|ula_latch:m_ula_latch|value[4]              ; datapath:dp|ula_latch:m_ula_latch|value[4]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; datapath:dp|ula_latch:m_ula_latch|value[1]              ; datapath:dp|ula_latch:m_ula_latch|value[1]              ; clock        ; clock       ; 1.000        ; 0.000      ; 0.367      ;
++-------+---------------------------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-----------------------------------------------------+
-; Minimum Propagation Delay                           ;
-+-------------+-------------+-------+----+----+-------+
-; Input Port  ; Output Port ; RR    ; RF ; FR ; FF    ;
-+-------------+-------------+-------+----+----+-------+
-; data_bus[1] ; result[1]   ; 4.552 ;    ;    ; 4.552 ;
-; data_bus[2] ; result[2]   ; 4.851 ;    ;    ; 4.851 ;
-; data_bus[3] ; result[3]   ; 4.752 ;    ;    ; 4.752 ;
-; data_bus[4] ; result[4]   ; 4.670 ;    ;    ; 4.670 ;
-; data_bus[5] ; result[5]   ; 4.750 ;    ;    ; 4.750 ;
-; data_bus[6] ; result[6]   ; 4.726 ;    ;    ; 4.726 ;
-; data_bus[7] ; result[7]   ; 4.902 ;    ;    ; 4.902 ;
-+-------------+-------------+-------+----+----+-------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clock'                                                                                                                                                                        ;
++-------+---------------------------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                               ; To Node                                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; datapath:dp|general_register:regA|value[0]              ; datapath:dp|general_register:regA|value[0]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; datapath:dp|general_register:regA|value[1]              ; datapath:dp|general_register:regA|value[1]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; datapath:dp|general_register:regA|value[2]              ; datapath:dp|general_register:regA|value[2]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; datapath:dp|general_register:ula_result_reg|value[2]    ; datapath:dp|general_register:ula_result_reg|value[2]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; datapath:dp|general_register:regA|value[3]              ; datapath:dp|general_register:regA|value[3]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; datapath:dp|general_register:ula_result_reg|value[3]    ; datapath:dp|general_register:ula_result_reg|value[3]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; datapath:dp|general_register:ula_result_reg|value[4]    ; datapath:dp|general_register:ula_result_reg|value[4]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; datapath:dp|general_register:ula_result_reg|value[1]    ; datapath:dp|general_register:ula_result_reg|value[1]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; datapath:dp|general_register:ula_result_reg|value[0]    ; datapath:dp|general_register:ula_result_reg|value[0]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; datapath:dp|ula_latch:m_ula_latch|value[0]              ; datapath:dp|ula_latch:m_ula_latch|value[0]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; datapath:dp|ula_latch:m_ula_latch|value[1]              ; datapath:dp|ula_latch:m_ula_latch|value[1]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; datapath:dp|ula_latch:m_ula_latch|value[2]              ; datapath:dp|ula_latch:m_ula_latch|value[2]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; datapath:dp|ula_latch:m_ula_latch|value[3]              ; datapath:dp|ula_latch:m_ula_latch|value[3]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; datapath:dp|ula_latch:m_ula_latch|value[4]              ; datapath:dp|ula_latch:m_ula_latch|value[4]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.237 ; datapath:dp|general_register:regA|value[0]              ; datapath:dp|general_register:regA|valueOut[0]           ; clock        ; clock       ; 0.000        ; 0.000      ; 0.389      ;
+; 0.239 ; datapath:dp|general_register:regA|value[3]              ; datapath:dp|general_register:regA|valueOut[3]           ; clock        ; clock       ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; datapath:dp|general_register:ula_result_reg|valueOut[1] ; datapath:dp|ula_latch:m_ula_latch|value[1]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.391      ;
+; 0.241 ; datapath:dp|general_register:ula_result_reg|value[4]    ; datapath:dp|general_register:ula_result_reg|valueOut[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.393      ;
+; 0.244 ; datapath:dp|general_register:ula_result_reg|valueOut[2] ; datapath:dp|ula_latch:m_ula_latch|value[2]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.396      ;
+; 0.244 ; datapath:dp|general_register:ula_result_reg|valueOut[3] ; datapath:dp|ula_latch:m_ula_latch|value[3]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.396      ;
+; 0.244 ; datapath:dp|general_register:ula_result_reg|valueOut[4] ; datapath:dp|ula_latch:m_ula_latch|value[4]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.396      ;
+; 0.245 ; datapath:dp|general_register:ula_result_reg|valueOut[0] ; datapath:dp|ula_latch:m_ula_latch|value[0]              ; clock        ; clock       ; 0.000        ; 0.000      ; 0.397      ;
+; 0.329 ; datapath:dp|ula:m_ula|result[2]                         ; datapath:dp|general_register:ula_result_reg|value[2]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.481      ;
+; 0.336 ; datapath:dp|ula:m_ula|result[3]                         ; datapath:dp|general_register:ula_result_reg|value[3]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.488      ;
+; 0.338 ; datapath:dp|ula:m_ula|result[4]                         ; datapath:dp|general_register:ula_result_reg|value[4]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.490      ;
+; 0.341 ; datapath:dp|ula:m_ula|result[0]                         ; datapath:dp|general_register:ula_result_reg|valueOut[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.493      ;
+; 0.341 ; datapath:dp|ula:m_ula|result[0]                         ; datapath:dp|general_register:ula_result_reg|value[0]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.493      ;
+; 0.358 ; datapath:dp|general_register:regA|valueOut[2]           ; datapath:dp|ula:m_ula|result[2]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359 ; datapath:dp|general_register:regA|value[1]              ; datapath:dp|general_register:regA|valueOut[1]           ; clock        ; clock       ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; datapath:dp|general_register:ula_result_reg|value[0]    ; datapath:dp|general_register:ula_result_reg|valueOut[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.511      ;
+; 0.361 ; datapath:dp|general_register:ula_result_reg|value[1]    ; datapath:dp|general_register:ula_result_reg|valueOut[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.362 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[0]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.514      ;
+; 0.366 ; datapath:dp|general_register:regA|valueOut[3]           ; datapath:dp|ula:m_ula|result[3]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.518      ;
+; 0.367 ; datapath:dp|general_register:ula_result_reg|value[3]    ; datapath:dp|general_register:ula_result_reg|valueOut[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.519      ;
+; 0.370 ; datapath:dp|general_register:regA|value[2]              ; datapath:dp|general_register:regA|valueOut[2]           ; clock        ; clock       ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; datapath:dp|general_register:ula_result_reg|value[2]    ; datapath:dp|general_register:ula_result_reg|valueOut[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.522      ;
+; 0.373 ; datapath:dp|general_register:regA|valueOut[1]           ; datapath:dp|ula:m_ula|result[1]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.525      ;
+; 0.446 ; datapath:dp|ula_latch:m_ula_latch|value[0]              ; datapath:dp|ula_latch:m_ula_latch|out[0]                ; clock        ; clock       ; 0.000        ; 0.000      ; 0.598      ;
+; 0.450 ; datapath:dp|ula:m_ula|result[2]                         ; datapath:dp|general_register:ula_result_reg|valueOut[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.602      ;
+; 0.452 ; datapath:dp|ula:m_ula|result[1]                         ; datapath:dp|general_register:ula_result_reg|valueOut[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.604      ;
+; 0.454 ; datapath:dp|ula_latch:m_ula_latch|value[1]              ; datapath:dp|ula_latch:m_ula_latch|out[1]                ; clock        ; clock       ; 0.000        ; 0.000      ; 0.606      ;
+; 0.456 ; datapath:dp|ula_latch:m_ula_latch|value[2]              ; datapath:dp|ula_latch:m_ula_latch|out[2]                ; clock        ; clock       ; 0.000        ; 0.000      ; 0.608      ;
+; 0.459 ; datapath:dp|ula_latch:m_ula_latch|value[4]              ; datapath:dp|ula_latch:m_ula_latch|out[4]                ; clock        ; clock       ; 0.000        ; 0.000      ; 0.611      ;
+; 0.459 ; datapath:dp|ula:m_ula|result[4]                         ; datapath:dp|general_register:ula_result_reg|valueOut[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.611      ;
+; 0.459 ; datapath:dp|ula:m_ula|result[3]                         ; datapath:dp|general_register:ula_result_reg|valueOut[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.611      ;
+; 0.461 ; datapath:dp|ula_latch:m_ula_latch|value[3]              ; datapath:dp|ula_latch:m_ula_latch|out[3]                ; clock        ; clock       ; 0.000        ; 0.000      ; 0.613      ;
+; 0.461 ; datapath:dp|ula:m_ula|result[1]                         ; datapath:dp|general_register:ula_result_reg|value[1]    ; clock        ; clock       ; 0.000        ; 0.000      ; 0.613      ;
+; 0.476 ; datapath:dp|general_register:ula_result_reg|valueOut[0] ; datapath:dp|ula_latch:m_ula_latch|out[0]                ; clock        ; clock       ; 0.000        ; 0.000      ; 0.628      ;
+; 0.478 ; datapath:dp|general_register:ula_result_reg|valueOut[1] ; datapath:dp|ula_latch:m_ula_latch|out[1]                ; clock        ; clock       ; 0.000        ; 0.000      ; 0.630      ;
+; 0.485 ; datapath:dp|general_register:ula_result_reg|valueOut[2] ; datapath:dp|ula_latch:m_ula_latch|out[2]                ; clock        ; clock       ; 0.000        ; 0.000      ; 0.637      ;
+; 0.488 ; datapath:dp|general_register:ula_result_reg|valueOut[4] ; datapath:dp|ula_latch:m_ula_latch|out[4]                ; clock        ; clock       ; 0.000        ; 0.000      ; 0.640      ;
+; 0.490 ; datapath:dp|general_register:ula_result_reg|valueOut[3] ; datapath:dp|ula_latch:m_ula_latch|out[3]                ; clock        ; clock       ; 0.000        ; 0.000      ; 0.642      ;
+; 0.496 ; datapath:dp|general_register:regA|valueOut[2]           ; datapath:dp|ula:m_ula|result[3]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.648      ;
+; 0.497 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[1]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.649      ;
+; 0.506 ; datapath:dp|general_register:regA|valueOut[3]           ; datapath:dp|ula:m_ula|result[4]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.658      ;
+; 0.513 ; datapath:dp|general_register:regA|valueOut[1]           ; datapath:dp|ula:m_ula|result[2]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.665      ;
+; 0.531 ; datapath:dp|general_register:regA|valueOut[2]           ; datapath:dp|ula:m_ula|result[4]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.683      ;
+; 0.532 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[2]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.684      ;
+; 0.548 ; datapath:dp|general_register:regA|valueOut[1]           ; datapath:dp|ula:m_ula|result[3]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.700      ;
+; 0.567 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[3]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.719      ;
+; 0.583 ; datapath:dp|general_register:regA|valueOut[1]           ; datapath:dp|ula:m_ula|result[4]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.735      ;
+; 0.602 ; datapath:dp|general_register:regA|valueOut[0]           ; datapath:dp|ula:m_ula|result[4]                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.754      ;
++-------+---------------------------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+----------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                        ;
-+------------------+-------+------+----------+---------+---------------------+
-; Clock            ; Setup ; Hold ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------+-------+------+----------+---------+---------------------+
-; Worst-case Slack ; N/A   ; N/A  ; N/A      ; N/A     ; N/A                 ;
-; Design-wide TNS  ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; 0.0                 ;
-+------------------+-------+------+----------+---------+---------------------+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clock'                                                                                                  ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                  ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                                                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:regA|valueOut[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:regA|valueOut[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:regA|valueOut[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:regA|valueOut[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:regA|valueOut[2]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:regA|valueOut[2]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:regA|valueOut[3]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:regA|valueOut[3]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:regA|value[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:regA|value[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:regA|value[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:regA|value[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:regA|value[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:regA|value[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:regA|value[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:regA|value[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|valueOut[4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|general_register:ula_result_reg|value[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula:m_ula|result[0]                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula:m_ula|result[0]                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula:m_ula|result[1]                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula:m_ula|result[1]                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula:m_ula|result[2]                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula:m_ula|result[2]                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula:m_ula|result[3]                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula:m_ula|result[3]                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula:m_ula|result[4]                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula:m_ula|result[4]                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[1]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[1]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[2]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[2]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[3]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[3]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[4]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|out[4]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[0]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[1]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[2]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[3]              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[4]              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; datapath:dp|ula_latch:m_ula_latch|value[4]              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout                                           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout                                           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|inclk[0]                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|inclk[0]                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|outclk                                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|outclk                                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|out[0]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|out[0]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|out[1]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|out[1]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|out[2]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|out[2]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|out[3]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|out[3]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|out[4]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|out[4]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|value[0]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|value[0]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|value[1]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|value[1]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|value[2]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|value[2]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|value[3]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|value[3]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula_latch|value[4]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula_latch|value[4]|clk                             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula|result[0]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula|result[0]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula|result[1]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula|result[1]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula|result[2]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; dp|m_ula|result[2]|clk                                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; dp|m_ula|result[3]|clk                                  ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------------------+
 
 
-+-----------------------------------------------------+
-; Progagation Delay                                   ;
-+-------------+-------------+-------+----+----+-------+
-; Input Port  ; Output Port ; RR    ; RF ; FR ; FF    ;
-+-------------+-------------+-------+----+----+-------+
-; data_bus[1] ; result[1]   ; 8.473 ;    ;    ; 8.473 ;
-; data_bus[2] ; result[2]   ; 9.195 ;    ;    ; 9.195 ;
-; data_bus[3] ; result[3]   ; 8.953 ;    ;    ; 8.953 ;
-; data_bus[4] ; result[4]   ; 8.644 ;    ;    ; 8.644 ;
-; data_bus[5] ; result[5]   ; 8.949 ;    ;    ; 8.949 ;
-; data_bus[6] ; result[6]   ; 8.910 ;    ;    ; 8.910 ;
-; data_bus[7] ; result[7]   ; 9.291 ;    ;    ; 9.291 ;
-+-------------+-------------+-------+----+----+-------+
++-------------------------------------------------------------------------------+
+; Setup Times                                                                   ;
++-----------------+------------+--------+--------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------------+------------+--------+--------+------------+-----------------+
+; data_bus_in[*]  ; clock      ; 0.228  ; 0.228  ; Rise       ; clock           ;
+;  data_bus_in[0] ; clock      ; 0.228  ; 0.228  ; Rise       ; clock           ;
+;  data_bus_in[1] ; clock      ; 0.177  ; 0.177  ; Rise       ; clock           ;
+;  data_bus_in[2] ; clock      ; 0.158  ; 0.158  ; Rise       ; clock           ;
+;  data_bus_in[3] ; clock      ; -0.217 ; -0.217 ; Rise       ; clock           ;
+; gp_read         ; clock      ; 0.189  ; 0.189  ; Rise       ; clock           ;
+; gp_write        ; clock      ; -0.365 ; -0.365 ; Rise       ; clock           ;
+; grab_ula        ; clock      ; -0.016 ; -0.016 ; Rise       ; clock           ;
+; latch_ula       ; clock      ; 0.141  ; 0.141  ; Rise       ; clock           ;
+; reset           ; clock      ; 0.153  ; 0.153  ; Rise       ; clock           ;
++-----------------+------------+--------+--------+------------+-----------------+
 
 
-+-----------------------------------------------------+
-; Minimum Progagation Delay                           ;
-+-------------+-------------+-------+----+----+-------+
-; Input Port  ; Output Port ; RR    ; RF ; FR ; FF    ;
-+-------------+-------------+-------+----+----+-------+
-; data_bus[1] ; result[1]   ; 4.552 ;    ;    ; 4.552 ;
-; data_bus[2] ; result[2]   ; 4.851 ;    ;    ; 4.851 ;
-; data_bus[3] ; result[3]   ; 4.752 ;    ;    ; 4.752 ;
-; data_bus[4] ; result[4]   ; 4.670 ;    ;    ; 4.670 ;
-; data_bus[5] ; result[5]   ; 4.750 ;    ;    ; 4.750 ;
-; data_bus[6] ; result[6]   ; 4.726 ;    ;    ; 4.726 ;
-; data_bus[7] ; result[7]   ; 4.902 ;    ;    ; 4.902 ;
-+-------------+-------------+-------+----+----+-------+
++-----------------------------------------------------------------------------+
+; Hold Times                                                                  ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; data_bus_in[*]  ; clock      ; 0.543 ; 0.543 ; Rise       ; clock           ;
+;  data_bus_in[0] ; clock      ; 0.215 ; 0.215 ; Rise       ; clock           ;
+;  data_bus_in[1] ; clock      ; 0.268 ; 0.268 ; Rise       ; clock           ;
+;  data_bus_in[2] ; clock      ; 0.211 ; 0.211 ; Rise       ; clock           ;
+;  data_bus_in[3] ; clock      ; 0.543 ; 0.543 ; Rise       ; clock           ;
+; gp_read         ; clock      ; 0.408 ; 0.408 ; Rise       ; clock           ;
+; gp_write        ; clock      ; 0.623 ; 0.623 ; Rise       ; clock           ;
+; grab_ula        ; clock      ; 0.513 ; 0.513 ; Rise       ; clock           ;
+; latch_ula       ; clock      ; 0.412 ; 0.412 ; Rise       ; clock           ;
+; reset           ; clock      ; 0.364 ; 0.364 ; Rise       ; clock           ;
++-----------------+------------+-------+-------+------------+-----------------+
 
 
--------------------
-; Clock Transfers ;
--------------------
-Nothing to report.
++------------------------------------------------------------------------+
+; Clock to Output Times                                                  ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; HEX0[*]    ; clock      ; 6.782 ; 6.782 ; Rise       ; clock           ;
+;  HEX0[0]   ; clock      ; 6.729 ; 6.729 ; Rise       ; clock           ;
+;  HEX0[1]   ; clock      ; 6.760 ; 6.760 ; Rise       ; clock           ;
+;  HEX0[2]   ; clock      ; 6.695 ; 6.695 ; Rise       ; clock           ;
+;  HEX0[3]   ; clock      ; 6.769 ; 6.769 ; Rise       ; clock           ;
+;  HEX0[4]   ; clock      ; 6.782 ; 6.782 ; Rise       ; clock           ;
+;  HEX0[5]   ; clock      ; 6.606 ; 6.606 ; Rise       ; clock           ;
+;  HEX0[6]   ; clock      ; 6.484 ; 6.484 ; Rise       ; clock           ;
+; HEX1[*]    ; clock      ; 6.739 ; 6.739 ; Rise       ; clock           ;
+;  HEX1[0]   ; clock      ; 6.739 ; 6.739 ; Rise       ; clock           ;
+;  HEX1[2]   ; clock      ; 6.596 ; 6.596 ; Rise       ; clock           ;
+;  HEX1[3]   ; clock      ; 6.585 ; 6.585 ; Rise       ; clock           ;
+;  HEX1[4]   ; clock      ; 6.282 ; 6.282 ; Rise       ; clock           ;
+;  HEX1[5]   ; clock      ; 6.686 ; 6.686 ; Rise       ; clock           ;
+;  HEX1[6]   ; clock      ; 5.428 ; 5.428 ; Rise       ; clock           ;
+; result[*]  ; clock      ; 4.596 ; 4.596 ; Rise       ; clock           ;
+;  result[0] ; clock      ; 4.505 ; 4.505 ; Rise       ; clock           ;
+;  result[1] ; clock      ; 4.349 ; 4.349 ; Rise       ; clock           ;
+;  result[2] ; clock      ; 4.596 ; 4.596 ; Rise       ; clock           ;
+;  result[3] ; clock      ; 4.374 ; 4.374 ; Rise       ; clock           ;
+;  result[4] ; clock      ; 4.290 ; 4.290 ; Rise       ; clock           ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; HEX0[*]    ; clock      ; 4.730 ; 4.730 ; Rise       ; clock           ;
+;  HEX0[0]   ; clock      ; 4.730 ; 4.730 ; Rise       ; clock           ;
+;  HEX0[1]   ; clock      ; 4.761 ; 4.761 ; Rise       ; clock           ;
+;  HEX0[2]   ; clock      ; 4.773 ; 4.773 ; Rise       ; clock           ;
+;  HEX0[3]   ; clock      ; 4.772 ; 4.772 ; Rise       ; clock           ;
+;  HEX0[4]   ; clock      ; 4.783 ; 4.783 ; Rise       ; clock           ;
+;  HEX0[5]   ; clock      ; 5.187 ; 5.187 ; Rise       ; clock           ;
+;  HEX0[6]   ; clock      ; 5.148 ; 5.148 ; Rise       ; clock           ;
+; HEX1[*]    ; clock      ; 5.332 ; 5.332 ; Rise       ; clock           ;
+;  HEX1[0]   ; clock      ; 5.841 ; 5.841 ; Rise       ; clock           ;
+;  HEX1[2]   ; clock      ; 5.671 ; 5.671 ; Rise       ; clock           ;
+;  HEX1[3]   ; clock      ; 5.687 ; 5.687 ; Rise       ; clock           ;
+;  HEX1[4]   ; clock      ; 5.545 ; 5.545 ; Rise       ; clock           ;
+;  HEX1[5]   ; clock      ; 5.808 ; 5.808 ; Rise       ; clock           ;
+;  HEX1[6]   ; clock      ; 5.332 ; 5.332 ; Rise       ; clock           ;
+; result[*]  ; clock      ; 4.290 ; 4.290 ; Rise       ; clock           ;
+;  result[0] ; clock      ; 4.505 ; 4.505 ; Rise       ; clock           ;
+;  result[1] ; clock      ; 4.349 ; 4.349 ; Rise       ; clock           ;
+;  result[2] ; clock      ; 4.596 ; 4.596 ; Rise       ; clock           ;
+;  result[3] ; clock      ; 4.374 ; 4.374 ; Rise       ; clock           ;
+;  result[4] ; clock      ; 4.290 ; 4.290 ; Rise       ; clock           ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -0.887 ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+;  clock           ; -0.887 ; 0.215 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -9.542 ; 0.0   ; 0.0      ; 0.0     ; -41.957             ;
+;  clock           ; -9.542 ; 0.000 ; N/A      ; N/A     ; -41.957             ;
++------------------+--------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------------+
+; Setup Times                                                                 ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; data_bus_in[*]  ; clock      ; 1.801 ; 1.801 ; Rise       ; clock           ;
+;  data_bus_in[0] ; clock      ; 1.801 ; 1.801 ; Rise       ; clock           ;
+;  data_bus_in[1] ; clock      ; 1.675 ; 1.675 ; Rise       ; clock           ;
+;  data_bus_in[2] ; clock      ; 1.634 ; 1.634 ; Rise       ; clock           ;
+;  data_bus_in[3] ; clock      ; 0.838 ; 0.838 ; Rise       ; clock           ;
+; gp_read         ; clock      ; 1.644 ; 1.644 ; Rise       ; clock           ;
+; gp_write        ; clock      ; 0.443 ; 0.443 ; Rise       ; clock           ;
+; grab_ula        ; clock      ; 1.480 ; 1.480 ; Rise       ; clock           ;
+; latch_ula       ; clock      ; 1.419 ; 1.419 ; Rise       ; clock           ;
+; reset           ; clock      ; 1.403 ; 1.403 ; Rise       ; clock           ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Hold Times                                                                  ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; data_bus_in[*]  ; clock      ; 0.543 ; 0.543 ; Rise       ; clock           ;
+;  data_bus_in[0] ; clock      ; 0.215 ; 0.215 ; Rise       ; clock           ;
+;  data_bus_in[1] ; clock      ; 0.268 ; 0.268 ; Rise       ; clock           ;
+;  data_bus_in[2] ; clock      ; 0.211 ; 0.211 ; Rise       ; clock           ;
+;  data_bus_in[3] ; clock      ; 0.543 ; 0.543 ; Rise       ; clock           ;
+; gp_read         ; clock      ; 0.408 ; 0.408 ; Rise       ; clock           ;
+; gp_write        ; clock      ; 0.623 ; 0.623 ; Rise       ; clock           ;
+; grab_ula        ; clock      ; 0.513 ; 0.513 ; Rise       ; clock           ;
+; latch_ula       ; clock      ; 0.412 ; 0.412 ; Rise       ; clock           ;
+; reset           ; clock      ; 0.364 ; 0.364 ; Rise       ; clock           ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; HEX0[*]    ; clock      ; 14.967 ; 14.967 ; Rise       ; clock           ;
+;  HEX0[0]   ; clock      ; 14.916 ; 14.916 ; Rise       ; clock           ;
+;  HEX0[1]   ; clock      ; 14.947 ; 14.947 ; Rise       ; clock           ;
+;  HEX0[2]   ; clock      ; 14.695 ; 14.695 ; Rise       ; clock           ;
+;  HEX0[3]   ; clock      ; 14.955 ; 14.955 ; Rise       ; clock           ;
+;  HEX0[4]   ; clock      ; 14.967 ; 14.967 ; Rise       ; clock           ;
+;  HEX0[5]   ; clock      ; 14.465 ; 14.465 ; Rise       ; clock           ;
+;  HEX0[6]   ; clock      ; 14.209 ; 14.209 ; Rise       ; clock           ;
+; HEX1[*]    ; clock      ; 14.802 ; 14.802 ; Rise       ; clock           ;
+;  HEX1[0]   ; clock      ; 14.802 ; 14.802 ; Rise       ; clock           ;
+;  HEX1[2]   ; clock      ; 14.417 ; 14.417 ; Rise       ; clock           ;
+;  HEX1[3]   ; clock      ; 14.438 ; 14.438 ; Rise       ; clock           ;
+;  HEX1[4]   ; clock      ; 13.574 ; 13.574 ; Rise       ; clock           ;
+;  HEX1[5]   ; clock      ; 14.682 ; 14.682 ; Rise       ; clock           ;
+;  HEX1[6]   ; clock      ; 11.164 ; 11.164 ; Rise       ; clock           ;
+; result[*]  ; clock      ; 9.149  ; 9.149  ; Rise       ; clock           ;
+;  result[0] ; clock      ; 8.643  ; 8.643  ; Rise       ; clock           ;
+;  result[1] ; clock      ; 8.345  ; 8.345  ; Rise       ; clock           ;
+;  result[2] ; clock      ; 9.149  ; 9.149  ; Rise       ; clock           ;
+;  result[3] ; clock      ; 8.373  ; 8.373  ; Rise       ; clock           ;
+;  result[4] ; clock      ; 8.032  ; 8.032  ; Rise       ; clock           ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                          ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; HEX0[*]    ; clock      ; 4.730 ; 4.730 ; Rise       ; clock           ;
+;  HEX0[0]   ; clock      ; 4.730 ; 4.730 ; Rise       ; clock           ;
+;  HEX0[1]   ; clock      ; 4.761 ; 4.761 ; Rise       ; clock           ;
+;  HEX0[2]   ; clock      ; 4.773 ; 4.773 ; Rise       ; clock           ;
+;  HEX0[3]   ; clock      ; 4.772 ; 4.772 ; Rise       ; clock           ;
+;  HEX0[4]   ; clock      ; 4.783 ; 4.783 ; Rise       ; clock           ;
+;  HEX0[5]   ; clock      ; 5.187 ; 5.187 ; Rise       ; clock           ;
+;  HEX0[6]   ; clock      ; 5.148 ; 5.148 ; Rise       ; clock           ;
+; HEX1[*]    ; clock      ; 5.332 ; 5.332 ; Rise       ; clock           ;
+;  HEX1[0]   ; clock      ; 5.841 ; 5.841 ; Rise       ; clock           ;
+;  HEX1[2]   ; clock      ; 5.671 ; 5.671 ; Rise       ; clock           ;
+;  HEX1[3]   ; clock      ; 5.687 ; 5.687 ; Rise       ; clock           ;
+;  HEX1[4]   ; clock      ; 5.545 ; 5.545 ; Rise       ; clock           ;
+;  HEX1[5]   ; clock      ; 5.808 ; 5.808 ; Rise       ; clock           ;
+;  HEX1[6]   ; clock      ; 5.332 ; 5.332 ; Rise       ; clock           ;
+; result[*]  ; clock      ; 4.290 ; 4.290 ; Rise       ; clock           ;
+;  result[0] ; clock      ; 4.505 ; 4.505 ; Rise       ; clock           ;
+;  result[1] ; clock      ; 4.349 ; 4.349 ; Rise       ; clock           ;
+;  result[2] ; clock      ; 4.596 ; 4.596 ; Rise       ; clock           ;
+;  result[3] ; clock      ; 4.374 ; 4.374 ; Rise       ; clock           ;
+;  result[4] ; clock      ; 4.290 ; 4.290 ; Rise       ; clock           ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 62       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 62       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
 ---------------
@@ -276,10 +1018,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 7     ; 7    ;
-; Unconstrained Input Port Paths  ; 7     ; 7    ;
-; Unconstrained Output Ports      ; 7     ; 7    ;
-; Unconstrained Output Port Paths ; 7     ; 7    ;
+; Unconstrained Input Ports       ; 9     ; 9    ;
+; Unconstrained Input Port Paths  ; 83    ; 83   ;
+; Unconstrained Output Ports      ; 18    ; 18   ;
+; Unconstrained Output Port Paths ; 63    ; 63   ;
 +---------------------------------+-------+------+
 
 
@@ -289,7 +1031,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1.78 SJ Web Edition
-    Info: Processing started: Mon Nov 21 16:28:34 2016
+    Info: Processing started: Tue Nov 22 14:11:47 2016
 Info: Command: quartus_sta processinho -c processinho
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -297,34 +1039,49 @@ Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'processinho.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock clock
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
-Info (332159): No clocks to report
 Info: Analyzing Slow Model
-Info (332140): No fmax paths to report
-Info (332140): No Setup paths to report
-Info (332140): No Hold paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.887
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.887        -9.542 clock 
+Info (332146): Worst-case hold slack is 0.445
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.445         0.000 clock 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332140): No Minimum Pulse Width paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -41.957 clock 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
-Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
-Info (332140): No Setup paths to report
-Info (332140): No Hold paths to report
+Info (332146): Worst-case setup slack is 0.278
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.278         0.000 clock 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clock 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332140): No Minimum Pulse Width paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -34.380 clock 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 594 megabytes
-    Info: Processing ended: Mon Nov 21 16:28:34 2016
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 609 megabytes
+    Info: Processing ended: Tue Nov 22 14:11:48 2016
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 

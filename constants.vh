@@ -15,14 +15,22 @@
 // Unit Control Opcodes
 // 4 bits para opcodes
 
-`define NOP  4'b0000
-`define ADD  4'b0001
-`define SUB  4'b0010
-`define MULT 4'b0011
-`define DIV  4'b0100
-`define AND  4'b0101
-`define OR   4'b0110
-`define XOR  4'b1000
-`define NOT  4'b1001
+`define NOP   4'b0000
+`define ADD   4'b0001
+`define SUB   4'b0010
+`define MULT  4'b0011
+`define DIV   4'b0100
+`define AND   4'b0101
+`define OR    4'b0110
+`define XOR   4'b0111
+`define LOAD  4'b1000
+`define STORE 4'b1001
+
+// Control state
+
+`define S_RESET  4'd0
+`define S_FETCH  4'd1
+`define S_ULA_OP 4'd2
+`define S_STORE_RES 4'd3
 
 `endif

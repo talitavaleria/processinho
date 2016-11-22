@@ -2,19 +2,19 @@ module rom (
 	input clock, //clock do processador
 	input enable, //habilita a rom
 	input[2:0] addr, //endereço 
-	output reg[2:0] data_out // instruçao
+	output reg[3:0] data_out // instruçao
 );
 
 reg [3:0]rm[6:0];
 
 initial begin
-	rm[0] = 3'b101;
-	rm[1] = 3'b010;
-	rm[2] = 3'b111;
-	rm[3] = 3'b110;
-	rm[4] = 3'b101;
-	rm[5] = 3'b100;
-	rm[6] = 3'b011;
+	rm[0] = 4'b0011;
+	rm[1] = 4'b0010;
+	rm[2] = 4'b0111;
+	rm[3] = 4'b0110;
+	rm[4] = 4'b0101;
+	rm[5] = 4'b0100;
+	rm[6] = 4'b0011;
 end
 
 always @(posedge clock) begin

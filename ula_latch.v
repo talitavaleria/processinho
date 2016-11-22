@@ -4,7 +4,7 @@ module ula_latch(
 	input[7:0] ula_result,
 	input grab,    			// armazena o valor 
 	input store_data_bus,	// coloca resultado no barramento	
-	output reg out
+	output reg[7:0] out
 );
 
 reg[7:0] value;
@@ -17,11 +17,14 @@ always @(posedge clock) begin
 		value = ula_result;
 	end
 	
-end
-
-always @(*) begin
 	if(store_data_bus == 1'b1)
 		out = value;
+	
 end
+
+/*always @(*) begin
+	if(store_data_bus == 1'b1)
+		out = value;
+end*/
 
 endmodule
