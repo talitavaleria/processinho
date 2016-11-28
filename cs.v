@@ -18,14 +18,16 @@ module cs(
 
 assign ula_operation = opcode;
 
-assign gp_read = (state === `S_ULA_OP);
+assign gp_read = (state == `S_ULA_OP);
 
-assign latch_ula = (state === `S_ULA_OP);
+assign gp_write = (state == `S_STORE_REG);
 
-assign grab_ula = (state === `S_STORE_RES);
+assign latch_ula = (state == `S_ULA_OP);
 
-assign pc_increment = (state === `S_FETCH);
+assign grab_ula = (state == `S_STORE_RES);
 
-assign rom_read = (state === `S_FETCH);
+assign pc_increment = (state == `S_FETCH);
+
+assign rom_read = (state == `S_FETCH);
 
 endmodule

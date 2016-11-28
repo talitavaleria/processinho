@@ -32,5 +32,6 @@
 `define S_FETCH  4'd1
 `define S_ULA_OP 4'd2
 `define S_STORE_RES 4'd3
+`define S_STORE_REG 4'd4
 
 `endif

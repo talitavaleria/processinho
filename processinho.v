@@ -14,7 +14,7 @@ module processinho(
 	//input gp_write,
 	//input pc_increment,
 	//input pc_cout,
-	output[3:0] state,
+	//output[3:0] state,
 	output[7:0] result,
 	output[7:0] HEX0,
 	output[7:0] HEX1,
@@ -22,6 +22,7 @@ module processinho(
 	output[7:0] HEX3
 );
 
+wire [3:0]opcode;
 wire[3:0] pc_count;
 wire[7:0] data_bus_out;
 wire[3:0] ula_operation;
@@ -31,6 +32,7 @@ wire grab_ula;
 wire gp_read;
 wire gp_write;
 wire rom_enable; 
+wire[3:0] state;
 
 initial
 begin
@@ -47,8 +49,8 @@ end
  */
 ram ram_memory(clock, ram_enable, we, addr_ram, data_in, data_out);
 rom rom_memory(clock, rom_enable, pc_count, opcode);
-//uc control_unit(clock, reset, opcode, state);
-//cs control_signal(clock, opcode, gp_read, gp_write, latch_ula, grab_ula, pc_increment, rom_enable, ula_operation);
+uc control_unit(clock, reset, opcode, state);
+cs control_signal(clock, opcode, gp_read, gp_write, latch_ula, grab_ula, pc_increment, rom_enable, ula_operation);
 
 datapath dp(	clock, 
 					reset, 
@@ -67,8 +69,8 @@ datapath dp(	clock,
 				);
 				
 //assign data_bus = operando;
-assign result = opcode;
-assign rom_enable = 1'b1;
-//assign pc_increment = 1'b0;
+assign result = state;
+//assign rom_enable = 1'b1;
+//assign pc_increment = 1'b1;
 //assign ula_operation = `ULA_ADD;
 endmodule

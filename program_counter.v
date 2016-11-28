@@ -11,9 +11,9 @@ module program_counter(
 );
 
 
-always @(posedge clock)
+always @(negedge clock)
 begin
-	if(~reset)
+	if(reset)
 		count <= 0;
 	else if(increment)
 		count <= count + 1;
