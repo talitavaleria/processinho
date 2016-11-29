@@ -13,15 +13,15 @@ input[3:0] opcode,
 output reg[7:0] result
 );
 
-wire[11:0] BCDCODE;
+//wire[11:0] BCDCODE;
 
 initial begin
 	result = 8'b0;
 end
 
-Display disp(BCDCODE, HEX3, HEX2, HEX1, HEX0);
+//Display disp(BCDCODE, HEX3, HEX2, HEX1, HEX0);
 
-always @(posedge clock) begin
+always @(*) begin
 	//result[7:0] = 8'b0;
 	
 	if(reset) begin
@@ -65,6 +65,6 @@ always @(posedge clock) begin
 	
 end
 
-assign BCDCODE =((result%10)+(result/10)*16+(result/100)*256);
+//assign BCDCODE =((result%10)+(result/10)*16+(result/100)*256);
 
 endmodule

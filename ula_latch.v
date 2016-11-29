@@ -9,16 +9,16 @@ module ula_latch(
 
 reg[7:0] value;
 
-always @(posedge clock) begin
-	if(reset == 1'b0)
-		value = 8'b0;
+always @(negedge clock) begin
+	if(reset == 1'b1)
+		value <= 8'b0;
 	
 	if(grab == 1'b1) begin
-		value = ula_result;
+		value <= ula_result;
 	end
 	
 	if(store_data_bus == 1'b1)
-		out = value;
+		out <= value;
 	
 end
 

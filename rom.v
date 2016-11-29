@@ -8,8 +8,8 @@ module rom (
 reg [3:0]rm[6:0];
 
 initial begin
-	rm[0] = 4'b1001; //STORE
-	rm[1] = 4'b0001;
+	rm[0] = 4'b1010; //ADD
+	rm[1] = 4'b0011;
 	rm[2] = 4'b0111;
 	rm[3] = 4'b0110;
 	rm[4] = 4'b0101;

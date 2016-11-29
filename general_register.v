@@ -19,7 +19,7 @@ initial begin
 	value = 8'b0;
 end
 
-always @(posedge clock)	
+always @(negedge clock)	
 begin
 	if(reset)   //reseta o registrador
 	begin

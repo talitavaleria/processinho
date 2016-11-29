@@ -16,15 +16,16 @@ module cs(
 	output[3:0] ula_operation
 );
 
-assign ula_operation = opcode;
+assign ula_operation = (state == `S_ULA_OP) ? opcode : 4'b0000;
+//assign ula_operation = opcode;
 
-assign gp_read = (state == `S_ULA_OP);
+assign gp_read = (state == `S_ULA_OP); // Le valor do RegA
 
-assign gp_write = (state == `S_STORE_REG);
+assign gp_write = (state == `S_STORE_REGA); // Armazena valor em RegA
 
-assign latch_ula = (state == `S_ULA_OP);
+assign grab_ula = (state == `S_ULA_OP); // Salva resultado da ula
 
-assign grab_ula = (state == `S_STORE_RES);
+assign latch_ula = (state == `S_STORE_ULA_RES); // Salva resultado da ula no registrador ula_res
 
 assign pc_increment = (state == `S_FETCH);
 
